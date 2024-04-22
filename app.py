@@ -21,3 +21,4 @@ def input():
 def showcompound(compid):
     compid = compid * 2
     return render_template('compound.html', compid=compid)
+# commit test
