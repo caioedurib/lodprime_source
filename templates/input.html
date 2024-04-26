@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+Input page
+<ul>
+  <li>User should be able to type in a (list of) drug(s) and automatically generate their target lists</li>
+  <li>User should also be able to input lists of target lists and classify those without inputing drug names</li>
+  <li>User selects which model(s) they want an output for and see the positive class prediction probability results</li>
+  <li>There should be warnings for annotations/targets that are not included in the original dataset, which make the output less reliable</li>
+  <li>TO DECIDE: Need to decide how to find targets automatically for input drugs (DrugBank web crawler?). If not possible remove drug name input?</li>
+  <li>TO DECIDE: Can we avoid using the STRING API (and others)? Version control?</li>
+</ul>
+<form method="post">
+    <br>
+    <label for="Compound_Name">Compound Name</label>
+    <input name="Compound_Name" id="Compound_Name" value="{{ request.form['Compound_Name'] }}">
+    <br>
+    <label for="DrugAge_ID">Compound's DrugAge ID</label>
+    <input name="DrugAge_ID" id="DrugAge_ID" value="{{ request.form['DrugAge_ID'] }}">
+    <br>
+    <input type="submit" value="Find">
+  </form>
+
+<h1>{{ request.form['Compound_Name'] }}</h1>
+{% endblock %}

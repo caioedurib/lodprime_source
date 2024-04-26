@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -7,6 +7,7 @@ app = Flask(__name__)
 # Flask Quickstart - https://flask.palletsprojects.com/en/3.0.x/quickstart/
 # Flask Template - https://flask.palletsprojects.com/en/3.0.x/tutorial/templates/
 # Bootstrap docs - https://getbootstrap.com/docs/5.3/getting-started/introduction/
+# Jinja docs - https://jinja.palletsprojects.com/en/3.1.x/templates/
 
 # TODO:
 #       - Get functions for each action a user can take
@@ -21,16 +22,23 @@ app = Flask(__name__)
 #       - Logo/favicon
 
 @app.route("/")
-def hello_world():
-    return "<p>Hello, World!</p>"
+def loadpage_home():
+    return render_template('home.html')
 
-@app.route("/inputcompound")
-def input():
+@app.route("/input/", methods=['GET', 'POST'])
+def loadpage_input():
+    if request.method == 'POST':
+        compound_name = request.form['Compound_Name']
+        drugage_id = request.form['DrugAge_ID']
+        print(compound_name)
+        print(drugage_id)
+    return render_template('input.html')
 
-    return "<b>input command</b>"
 
-@app.route("/showcompound/<int:compid>")
-def showcompound(compid):
-    compid = compid * 2
-    return render_template('compound.html', compid=compid)
-# commit test
+@app.route("/help/")
+def loadpage_help():
+    return render_template('help.html')
+
+@app.route("/datasets/")
+def loadpage_datasets():
+    return render_template('datasets.html')
