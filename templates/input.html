@@ -1,25 +1,88 @@
 {% extends 'base.html' %}
 
-{% block content %}
-Input page
-<ul>
-  <li>User should be able to type in a (list of) drug(s) and automatically generate their target lists</li>
-  <li>User should also be able to input lists of target lists and classify those without inputing drug names</li>
-  <li>User selects which model(s) they want an output for and see the positive class prediction probability results</li>
-  <li>There should be warnings for annotations/targets that are not included in the original dataset, which make the output less reliable</li>
-  <li>TO DECIDE: Need to decide how to find targets automatically for input drugs (DrugBank web crawler?). If not possible remove drug name input?</li>
-  <li>TO DECIDE: Can we avoid using the STRING API (and others)? Version control?</li>
-</ul>
-<form method="post">
-    <br>
-    <label for="Compound_Name">Compound Name</label>
-    <input name="Compound_Name" id="Compound_Name" value="{{ request.form['Compound_Name'] }}">
-    <br>
-    <label for="DrugAge_ID">Compound's DrugAge ID</label>
-    <input name="DrugAge_ID" id="DrugAge_ID" value="{{ request.form['DrugAge_ID'] }}">
-    <br>
-    <input type="submit" value="Find">
-  </form>
+{% block head %}
+<link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css">
+<script defer src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
+<script defer src="https://cdn.datatables.net/2.0.7/js/dataTables.bootstrap5.js"></script>
+<script defer src="{{url_for('static', filename='tablegen.js')}}"></script>
+<script>
+    $(window).bind("load", function() {
+        CreateTable('#table_input', false, false, false);
+    });
+</script>
+{% endblock %}
 
-<h1>{{ request.form['Compound_Name'] }}</h1>
+{% block body %}
+
+<div class="row px-5">
+    Input page
+    <ul>
+        <li>User should be able to type in a (list of) drug(s) and automatically generate their target lists</li>
+        <li>User should also be able to input lists of target lists and classify those without inputing drug names</li>
+        <li>User selects which model(s) they want an output for and see the positive class prediction probability
+            results
+        </li>
+        <li>There should be warnings for annotations/targets that are not included in the original dataset, which make
+            the output less reliable
+        </li>
+        <li>TO DECIDE: Need to decide how to find targets automatically for input drugs (DrugBank web crawler?). If not
+            possible remove drug name input?
+        </li>
+        <li>TO DECIDE: Can we avoid using the STRING API (and others)? Version control?</li>
+    </ul>
+</div>
+
+<div class="row px-5">
+    <form method="post">
+        <br>
+        <label for="Compound_Name">Compound Name</label>
+        <input name="Compound_Name" id="Compound_Name" value="{{ request.form['Compound_Name'] }}">
+        <br>
+        <label for="DrugBank_ID">DrugBank ID</label>
+        <input name="DrugBank_ID" id="DrugBank_ID" value="{{ request.form['DrugAge_ID'] }}">
+        <br>
+        <input type="submit" value="Add">
+    </form>
+
+    <div class="row px-5">
+        <div class="column">
+            <button onclick="InputTable_AddRow()">Create row</button>
+            <button onclick="InputTable_RemoveRow(0)">Delete row</button>
+        </div>
+        <div class="column -6">
+        </div>
+    </div>
+    <!-- <h1>{{ request.form['Compound_Name'] }}</h1> -->
+</div>
+
+<div class="row px-5">
+    <table id="table_input" class="display" style="width:100%">
+        <thead>
+        <tr>
+            <th>Compound</th>
+            <th>DrugBank ID</th>
+            <th>Targets List</th>
+            <th>Prediction</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>(R/S)-1,3-butanediol</td>
+            <td>DB14110</td>
+            <td>Q8TDS4, Q13547, O15379, P56524, O14843</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>17-alpha-estradiol</td>
+            <td>-</td>
+            <td>P10275, P03372, Q92731</td>
+            <td></td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+</div>
+
+
 {% endblock %}

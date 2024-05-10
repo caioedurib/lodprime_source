@@ -1,11 +1,63 @@
 {% extends 'base.html' %}
 
-{% block content %}
-Datasets page
-<ul>
-  <li>List all datasets used to create the models</li>
-  <li>Add download buttons with the option to download the full data or filter for males or females</li>
-  <li>Have readme files for each dataset explaining the feature types and meanings (include STRING output)</li>
-  <li>TO DECIDE: Include files with the feature importances of each model?</li>
-</ul>
+{% block head %}
+<link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css">
+<script defer src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
+<script defer src="https://cdn.datatables.net/2.0.7/js/dataTables.bootstrap5.js"></script>
+<script defer src="{{url_for('static', filename='tablegen.js')}}"></script>
+<script>
+    $(window).bind("load", function() {
+        var gen_table = CreateTable('#table_compounds', false, false, false);
+        let data = JSON.stringify(gen_table.rows().data().toArray());
+        console.log(data);
+    });
+</script>
+{% endblock %}
+
+{% block body %}
+<div class="container"> <!-- "container pt-5 w-50" options to add padding and width 50% -->
+    <div class="row">
+        Datasets page
+        <ul>
+          <li>List all datasets used to create the models</li>
+          <li>Add download buttons</li>
+          <li>Have readme files for each dataset explaining the feature types and meanings</li>
+          <li>TO DECIDE: Include files with the feature importances of each model?</li>
+        </ul>
+    </div>
+
+<div class="row">
+ <table id="table_compounds" class="display" style="width:100%">
+      <thead>
+          <tr>
+              <th>File</th>
+              <th>Dimensions</th>
+              <th>Filesize</th>
+              <th>Description</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>Tiger Nixon</td>
+              <td>System Architect</td>
+              <td>Edinburgh</td>
+              <td><a href="{{url_for('static', filename='files/MM Targets dataset - Group Enrichment.tsv')}}">number</a></td>
+          </tr>
+          <tr>
+              <td>Tiger Nixon</td>
+              <td>System Architect</td>
+              <td>Edinburgh</td>
+              <td>61</td>
+          </tr>
+          <tr>
+              <td>Tiger Nixon</td>
+              <td>System Architect</td>
+              <td>Edinburgh</td>
+              <td>61</td>
+          </tr>
+      </tbody>
+  </table>
+    </div>
+</div>
+
 {% endblock %}

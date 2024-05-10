@@ -29,9 +29,7 @@ def loadpage_home():
 def loadpage_input():
     if request.method == 'POST':
         compound_name = request.form['Compound_Name']
-        drugage_id = request.form['DrugAge_ID']
         print(compound_name)
-        print(drugage_id)
     return render_template('input.html')
 
 
