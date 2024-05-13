@@ -9,12 +9,12 @@
       <env name="FLASK_ENV" value="development" />
       <env name="FLASK_DEBUG" value="1" />
     </envs>
-    <option name="SDK_HOME" value="C:\Users\Caio\PycharmProjects\bbsrc_musmusculus_server\venv\Scripts\python.exe" />
-    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv" />
-    <option name="IS_MODULE_SDK" value="false" />
+    <option name="SDK_HOME" value="" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    <option name="IS_MODULE_SDK" value="true" />
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
-    <option name="SCRIPT_NAME" value="Scripts/flask.exe" />
+    <option name="SCRIPT_NAME" value="venv/Scripts/flask.exe" />
     <option name="PARAMETERS" value="run" />
     <option name="SHOW_COMMAND_LINE" value="false" />
     <option name="EMULATE_TERMINAL" value="false" />

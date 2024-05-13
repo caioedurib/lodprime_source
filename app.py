@@ -1,4 +1,4 @@
-import mysql as mysql
+#import mysql as mysql
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
