@@ -8,21 +8,21 @@ function CreateTable(table_id, info_bool, paging_bool, searching_bool) {
 }
 
 function InputTable_AddRow() {
-    var table = document.getElementById("table_input"),
-    tbody = table.getElementsByTagName("tbody")[0];
-    var row = document.createElement("tr");
-    var cell1 = document.createElement("td");
-    var cell2 = document.createElement("td");
-    var cell3 = document.createElement("td");
-    cell1.innerHTML = "1";
-    cell2.innerHTML = "2";
-    cell3.innerHTML = "3";
-    row.appendChild(cell1);
-    row.appendChild(cell2);
-    row.appendChild(cell3);
-    tbody.appendChild(row);
+    var table = new DataTable('#table_input');
+    table.row.add(['','','','TBD','']).draw();
 }
 
-function InputTable_RemoveRow(index) {
-  document.getElementById("table_input").deleteRow(index);
+function InputTable_RemoveRow() {
+  document.getElementById("table_input").deleteRow(1);
+}
+
+function InputTable_ClearTable() {
+  table = document.getElementById("table_input");
+  var rows = table.rows;
+  var i = rows.length;
+  while (--i) {
+    rows[i].parentNode.removeChild(rows[i]);
+    // or
+    // table.deleteRow(i);
+  }
 }

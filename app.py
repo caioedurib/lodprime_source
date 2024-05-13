@@ -1,3 +1,4 @@
+import mysql as mysql
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
@@ -31,7 +32,6 @@ def loadpage_input():
         compound_name = request.form['Compound_Name']
         print(compound_name)
     return render_template('input.html')
-
 
 @app.route("/help/")
 def loadpage_help():

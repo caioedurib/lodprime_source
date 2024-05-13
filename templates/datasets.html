@@ -15,18 +15,16 @@
 {% endblock %}
 
 {% block body %}
-<div class="container"> <!-- "container pt-5 w-50" options to add padding and width 50% -->
-    <div class="row">
+    <div class="row px-5">
         Datasets page
         <ul>
-          <li>List all datasets used to create the models</li>
-          <li>Add download buttons</li>
-          <li>Have readme files for each dataset explaining the feature types and meanings</li>
+          <li>List all datasets used to create the models, they should all be downloadable</li>
+          <li>Have description files for each dataset explaining the feature types and meanings</li>
           <li>TO DECIDE: Include files with the feature importances of each model?</li>
         </ul>
     </div>
 
-<div class="row">
+<div class="row px-5">
  <table id="table_compounds" class="display" style="width:100%">
       <thead>
           <tr>
@@ -38,26 +36,25 @@
       </thead>
       <tbody>
           <tr>
-              <td>Tiger Nixon</td>
-              <td>System Architect</td>
-              <td>Edinburgh</td>
-              <td><a href="{{url_for('static', filename='files/MM Targets dataset - Group Enrichment.tsv')}}">number</a></td>
+              <td><a href="{{url_for('static', filename='files/MM Targets dataset - Group Enrichment.tsv')}}">dataset_1</a></td>
+              <td>103x1446</td>
+              <td>307KB</td>
+              <td><a href="{{url_for('static', filename='files/MM Targets dataset - Group Enrichment.tsv')}}">description_file_1</a></td>
           </tr>
           <tr>
-              <td>Tiger Nixon</td>
-              <td>System Architect</td>
-              <td>Edinburgh</td>
-              <td>61</td>
+              <td><a href="{{url_for('static', filename='files/MM Targets dataset - Group Enrichment.tsv')}}">dataset_2</a></td>
+              <td>103x1446</td>
+              <td>307KB</td>
+              <td><a href="{{url_for('static', filename='files/MM Targets dataset - Group Enrichment.tsv')}}">description_file_2</a></td>
           </tr>
-          <tr>
-              <td>Tiger Nixon</td>
-              <td>System Architect</td>
-              <td>Edinburgh</td>
-              <td>61</td>
+                <tr>
+              <td><a href="{{url_for('static', filename='files/MM Targets dataset - Group Enrichment.tsv')}}">dataset_3</a></td>
+              <td>103x1446</td>
+              <td>307KB</td>
+              <td><a href="{{url_for('static', filename='files/MM Targets dataset - Group Enrichment.tsv')}}">description_file_3</a></td>
           </tr>
       </tbody>
   </table>
     </div>
-</div>
 
 {% endblock %}
