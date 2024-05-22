@@ -1,6 +1,6 @@
 #import mysql as mysql
 from flask import Flask, render_template, request
-
+from static.classify_inputs import Input_Make_Predictions
 app = Flask(__name__)
 
 # Notes
@@ -29,13 +29,17 @@ def loadpage_home():
 @app.route("/input/", methods=['GET', 'POST'])
 def loadpage_input():
     if request.method == 'POST':
-        compound_name = request.form['Compound_Name']
-        print(compound_name)
+        targets_list = request.form['Compound_Name']
+        classification_result = Input_Make_Predictions(targets_list)
     return render_template('input.html')
 
 @app.route("/help/")
 def loadpage_help():
     return render_template('help.html')
+
+@app.route("/about/")
+def loadpage_about():
+    return render_template('about.html')
 
 @app.route("/datasets/")
 def loadpage_datasets():

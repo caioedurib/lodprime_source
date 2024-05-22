@@ -9,11 +9,19 @@ function CreateTable(table_id, info_bool, paging_bool, searching_bool) {
 
 function InputTable_AddRow() {
     var table = new DataTable('#table_input');
-    table.row.add(['','','','TBD','']).draw();
+    table.row.add(['','','','']).draw();
 }
 
 function InputTable_RemoveRow() {
   document.getElementById("table_input").deleteRow(1);
+}
+
+function InputTable_LoadFromFile() {
+  //
+}
+
+function InputTable_MakePredictions(){
+   //
 }
 
 function InputTable_ClearTable() {
