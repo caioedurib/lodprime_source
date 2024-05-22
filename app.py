@@ -34,8 +34,10 @@ def loadpage_input():
     if request.method == 'POST':
         # Decode JSON, send it to function
         # TODO: Might be good to do JSON validation here, maybe with "marshmallow" library
-        targets_list = json.loads(request.form['targets_list'])
-        return input_placeholder(targets_list)
+        result = input_placeholder(json.loads(request.form['targets_list']))
+
+        # Return result as JSON
+        return json.dumps(result)
 
         # classification_result = Input_Make_Predictions(targets_list)
     return render_template('input.html')

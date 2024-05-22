@@ -1,4 +1,5 @@
 from pickle import load
+from random import randint
 
 '''
 # working example of pickle load
@@ -45,14 +46,14 @@ def create_instance(target_list):
 def input_placeholder(targets_list):
     """
     Take input, do processing on it, and return a string to be printed on the page.
-    :param targets_list: JSON formatted data from the table.
-    :return: Result of processed data as JSON, later processed by JS.
+    :param targets_list: table data
+    :return: Result of processed data.
     """
     # TODO: May want to add some catch statements here in case of malformed data input
-    result = ""
+    # Get number of targets for each compound.
     for row in targets_list:
-        targets = row[2].split(",")
-        result += '<div style="display:inline">'
-        result += f"Compound <b>{row[0]}</b> with ID <b>{row[1]}</b> contains <b>{len(targets)}</b> targets.<br>"
-    result += '</div>'
-    return str(result)
+        print(f'Received compound: {row["compound"]}, ID: {row["pubchem"]}, Targets: {row["targets"]}')
+        row["target_number"] = len(row["targets"])
+        row["prediction"] = randint(1, 100)
+
+    return targets_list
