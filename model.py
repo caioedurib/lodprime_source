@@ -12,5 +12,5 @@ clf.fit(X, y)
 
 #test pickle savefile
 import pickle
-with open("files/classifier.pkl", "wb") as f:
+with open("static/files/classifier.pkl", "wb") as f:
     pickle.dump(clf, f, protocol=pickle.HIGHEST_PROTOCOL)

@@ -21,7 +21,22 @@ function InputTable_LoadFromFile() {
 }
 
 function InputTable_MakePredictions(){
-   //
+   // Select table as DataTable instance, convert data to array
+   let table = $('#table_input').DataTable();
+   let tableArray = table.rows().data().toArray();
+
+   // Remove the last column from each row (the "remove row" button column)
+   for (let i = 0; i < tableArray.length; i++) {
+        tableArray[i].pop();
+   }
+
+   // Convert array to JSON string
+   let tableJSON = JSON.stringify(tableArray);
+
+   // Send AJAX request, append returned html to the page.
+   $.post(window.location, { targets_list: tableJSON}, function(data) {
+        $("#result").html(data);
+   })
 }
 
 function InputTable_ClearTable() {
