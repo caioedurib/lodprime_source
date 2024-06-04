@@ -23,7 +23,7 @@ with open("files/classifier.pkl", "rb") as f: #add try-catch for file not found 
 
 
 def Input_Make_Predictions(input_string):
-    with open("static/files/classifier.pkl", "rb") as f:  # add try-catch for file not found error
+    with open("static/files/models/classifier.pkl", "rb") as f:  # add try-catch for file not found error
         rf_model = load(f)
     list_predictions = []
     for compound_name, targets_list in input_string:

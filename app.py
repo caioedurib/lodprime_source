@@ -54,6 +54,6 @@ def loadpage_about():
     return render_template('about.html')
 
 
-@app.route("/datasets/")
-def loadpage_datasets():
-    return render_template('datasets.html')
+@app.route("/data/")
+def loadpage_data():
+    return render_template('data.html')
