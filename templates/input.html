@@ -6,85 +6,103 @@
     </svg>
 {% endmacro %}
 
+{% macro addIcon() %}
+    <svg xmlns="http://www.w3.org/2000/svg" id="addIcon" width="25" height="25" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+    </svg>
+{% endmacro %}
+
 {% block head %}
 <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css">
 <script defer src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
 <script defer src="https://cdn.datatables.net/2.0.7/js/dataTables.bootstrap5.js"></script>
+<script defer src="{{url_for('static', filename='dataTables.cellEdit.js')}}"></script>
 <script defer src="{{url_for('static', filename='tablegen.js')}}"></script>
 <script>
     $(window).bind("load", function() {
-        CreateTable('#table_input', false, false, false);
+        var table = CreateTable('#table_input', false, false, false);
+        table.MakeCellsEditable({
+            "onUpdate": tableUpdated,
+            "columns": [1,2,3]
+        });
     });
+
+    function tableUpdated(updatedCell, updatedRow, oldValue) {
+        // Dummy function to stop plugin complaining.
+    }
 </script>
 {% endblock %}
 
 {% block body %}
-
-<div class="row px-5">
-    Input page
-    <ul>
-        <li>User inputs lists of targets. They do not need to include drug names</li>
-        <li>There should be an option for loading input data from a text file</li>
-        <li>Inform user about the difference between predictions for male and female mice</li>
-        <li>Add warnings for annotations/targets that are not included in the original dataset, which make the output less reliable</li>
-    </ul>
-</div>
-
-<div class="row px-5">
+<div class="container">
     <div class="row px-5">
-        <div class="column">
-            <button onclick="InputTable_AddRow()">Add Compound</button>
-            <button onclick="InputTable_ClearTable()">Clear Table</button>
-            <button onclick="InputTable_LoadFromFile()">Load From File</button>
+        Input page
+        <ul>
+            <li>User inputs lists of targets. They do not need to include drug names</li>
+            <li>There should be an option for loading input data from a text file</li>
+            <li>Inform user about the difference between predictions for male and female mice</li>
+            <li>Add warnings for annotations/targets that are not included in the original dataset, which make the output less reliable</li>
+        </ul>
+    </div>
+
+    <div class="row px-5">
+        <div class="row px-5">
+            <div class="column">
+                <button onclick="InputTable_ClearTable()">Clear Table</button>
+                <button onclick="InputTable_LoadFromFile()">Load From File</button>
+            </div>
+            <div class="column -6">
+            </div>
         </div>
-        <div class="column -6">
+        <!-- <h1>{{ request.form['Compound_Name'] }}</h1> -->
+    </div>
+
+    <div class="row px-5">
+        <table id="table_input" class="display" style="width:100%">
+            <thead>
+            <tr>
+                <th></th> <!-- Remove row column -->
+                <th>Compound</th>
+                <th>PubChem ID</th>
+                <th>Targets List</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ removeIcon() }}</td>
+                <td>(R/S)-1,3-butanediol</td>
+                <td>DB14110</td>
+                <td>Q8TDS4, Q13547, O15379, P56524, O14843</td>
+
+            </tr>
+            <tr>
+                <td>{{ removeIcon() }}</td>
+                <td>17-alpha-estradiol</td>
+                <td>-</td>
+                <td>P10275, P03372, Q92731</td>
+            </tr>
+            </tbody>
+        </table>
+        <div id="addRow" onclick="InputTable_AddRow()">
+            {{ addIcon() }}
         </div>
     </div>
-    <!-- <h1>{{ request.form['Compound_Name'] }}</h1> -->
-</div>
-
-<div class="row px-5">
-    <table id="table_input" class="display" style="width:100%">
-        <thead>
-        <tr>
-            <th></th> <!-- Remove row column -->
-            <th>Compound</th>
-            <th>PubChem ID</th>
-            <th>Targets List</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>{{ removeIcon() }}</td>
-            <td contenteditable="true">(R/S)-1,3-butanediol</td>
-            <td contenteditable="true">DB14110</td>
-            <td contenteditable="true">Q8TDS4, Q13547, O15379, P56524, O14843</td>
-
-        </tr>
-        <tr>
-            <td>{{ removeIcon() }}</td>
-            <td contenteditable="true">17-alpha-estradiol</td>
-            <td contenteditable="true">-</td>
-            <td contenteditable="true">P10275, P03372, Q92731</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
 
 
-<div class="row px-5">
-        <div class="column">
-            <button onclick="InputTable_MakePredictions()">Make Predictions</button>
+    <div class="row px-5">
+            <div class="column">
+                <button onclick="InputTable_MakePredictions()">Make Predictions</button>
+            </div>
+            <div class="column -6">
+            </div>
+        <!-- <h1>{{ request.form['Compound_Name'] }}</h1> -->
+    </div>
+
+    <div class="row px-5">
+        <b>Result here</b>
+        <div id="result">
+
         </div>
-        <div class="column -6">
-        </div>
-    <!-- <h1>{{ request.form['Compound_Name'] }}</h1> -->
-</div>
-
-<div class="row px-5">
-    <b>Result here</b>
-    <div id="result">
-
     </div>
 </div>
 {% endblock %}

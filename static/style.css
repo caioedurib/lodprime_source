@@ -6,3 +6,22 @@
 #table_input tr:hover .bi-x-circle-fill {
     visibility: visible;
 }
+
+#addRow {
+    height: 41px;
+    width:  calc(100% - var(--bs-gutter-x));
+    margin-left: calc(var(--bs-gutter-x) * .5);
+    background-color: #f0f0f0;
+    display: block;
+    margin: auto;
+    text-align:center;
+    transform: translateY(-8px);
+    cursor:pointer;
+}
+
+#addIcon {
+    display: block;
+    margin: auto;
+    height: 100%;
+    color: #808080;
+}

@@ -3,7 +3,7 @@ function CreateTable(table_id, info_bool, paging_bool, searching_bool) {
         info: info_bool,
         paging: paging_bool,
         searching: searching_bool,
-        columnDefs: [{ orderable: false, width: '20px', targets: 0}],
+        columnDefs: [{orderable: false, width: '20px', targets: 0}, {type: "text", targets: [1,2,3]}],
         order: []
     });
     return gen_table;
@@ -11,13 +11,17 @@ function CreateTable(table_id, info_bool, paging_bool, searching_bool) {
 
 function InputTable_AddRow() {
     var table = new DataTable('#table_input');
-    table.row.add(['','','','']).draw();
+    removeIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="darkRed"\
+        class="bi bi-x-circle-fill" viewBox="0 0 16 16" onclick="InputTable_RemoveRow($(this).parents(\'tr\'))">\
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0\
+        .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>\
+        </svg>'
+    table.row.add([removeIcon,'','','']).draw();
 }
 
 function InputTable_RemoveRow(delRow) {
   let table = new DataTable('#table_input'); // Select table
   table.row(delRow).remove().draw();
-  //document.getElementById("table_input").deleteRow(1);
 }
 
 function InputTable_LoadFromFile() {
@@ -26,7 +30,7 @@ function InputTable_LoadFromFile() {
 
 function getColor(value){
     //value from 0 to 1
-    value = 1 - value // Flip
+    value = 1 - value // Flip, otherwise it does red for high values
     var hue=((1-value)*120).toString(10);
     return ["hsl(",hue,",100%,50%)"].join("");
 }
@@ -65,12 +69,6 @@ function InputTable_MakePredictions(){
 }
 
 function InputTable_ClearTable() {
-  table = document.getElementById("table_input");
-  var rows = table.rows;
-  var i = rows.length;
-  while (--i) {
-    rows[i].parentNode.removeChild(rows[i]);
-    // or
-    // table.deleteRow(i);
-  }
+  let table = new DataTable('#table_input'); // Select table
+  table.clear().draw();
 }
