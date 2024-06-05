@@ -1,0 +1,8 @@
+.bi-x-circle-fill {
+    cursor:pointer;
+    visibility: hidden;
+}
+
+#table_input tr:hover .bi-x-circle-fill {
+    visibility: visible;
+}

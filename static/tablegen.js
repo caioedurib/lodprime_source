@@ -2,7 +2,9 @@ function CreateTable(table_id, info_bool, paging_bool, searching_bool) {
     let gen_table = new DataTable(table_id, {
         info: info_bool,
         paging: paging_bool,
-        searching: searching_bool
+        searching: searching_bool,
+        columnDefs: [{ orderable: false, width: '20px', targets: 0}],
+        order: []
     });
     return gen_table;
 }
@@ -12,12 +14,14 @@ function InputTable_AddRow() {
     table.row.add(['','','','']).draw();
 }
 
-function InputTable_RemoveRow() {
-  document.getElementById("table_input").deleteRow(1);
+function InputTable_RemoveRow(delRow) {
+  let table = new DataTable('#table_input'); // Select table
+  table.row(delRow).remove().draw();
+  //document.getElementById("table_input").deleteRow(1);
 }
 
 function InputTable_LoadFromFile() {
-  //
+  // #Todo
 }
 
 function getColor(value){
@@ -36,8 +40,8 @@ function InputTable_MakePredictions(){
    formattedTable = []
    for (let i = 0; i < tableArray.length; i++) {
         row = tableArray[i];
-        row[2] = row[2].replaceAll(' ','').split(",") // Convert targets to array, removing spaces
-        formattedTable.push({compound: row[0], pubchem: row[1], targets:row[2]});
+        row[3] = row[3].replaceAll(' ','').split(",") // Convert targets to array, removing spaces
+        formattedTable.push({compound: row[1], pubchem: row[2], targets:row[3]});
    }
    let tableJSON = JSON.stringify(formattedTable);
 
@@ -49,7 +53,7 @@ function InputTable_MakePredictions(){
         for(i=0; i<result.length;i++){
             resultTable += '<tr><td>' + result[i]["compound"] + '</td>';
             resultTable += '<td>' + result[i]["pubchem"] + '</td>';
-            resultTable += '<td>' + result[i]["targets"] + '</td>';
+            resultTable += '<td>' + result[i]["targets"].join(", ") + '</td>';
             resultTable += '<td>' + result[i]["target_number"] + '</td>';
 
             predictionColor = getColor(result[i]["prediction"]/100)
