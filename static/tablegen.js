@@ -9,25 +9,49 @@ function CreateTable(table_id, info_bool, paging_bool, searching_bool) {
     return gen_table;
 }
 
-function InputTable_AddRow() {
+// Convert table data into JSON
+function convertTableJSON(table) {
+   let tableArray = structuredClone(table.rows().data().toArray());
+
+   // Convert table into a formatted JSON object
+   formattedTable = []
+   for (let i = 0; i < tableArray.length; i++) {
+        let row = tableArray[i];
+        if(Array.isArray(row[3])) {
+            row[3] = row[3].toString();
+        }
+        row[3] = row[3].replaceAll(' ','').split(",") // Convert targets to array, removing spaces
+        formattedTable.push({removeCol: row[0], compound: row[1], pubchem: row[2], targets:row[3]});
+   }
+   return JSON.stringify(formattedTable);
+}
+
+// Remove a single row from the table
+function InputTable_RemoveRow(delRow) {
+  let table = new DataTable('#table_input');
+  table.row(delRow).remove().draw();
+  saveTable();
+}
+
+// Clear the whole table and local data
+function InputTable_ClearTable() {
+  let table = new DataTable('#table_input');
+  table.clear().draw();
+  localStorage.removeItem("DataTables_tableData");
+}
+
+// Add a row to the table.
+function InputTable_AddRow(compound, pubchem, targets) {
     var table = new DataTable('#table_input');
     removeIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="darkRed"\
         class="bi bi-x-circle-fill" viewBox="0 0 16 16" onclick="InputTable_RemoveRow($(this).parents(\'tr\'))">\
         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0\
         .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>\
         </svg>'
-    table.row.add([removeIcon,'','','']).draw();
+    table.row.add([removeIcon, compound.toString(), pubchem.toString(), targets.toString()]).draw();
 }
 
-function InputTable_RemoveRow(delRow) {
-  let table = new DataTable('#table_input'); // Select table
-  table.row(delRow).remove().draw();
-}
-
-function InputTable_LoadFromFile() {
-  // #Todo
-}
-
+// Gen colour based on prediction result 0-100
 function getColor(value){
     //value from 0 to 1
     value = 1 - value // Flip, otherwise it does red for high values
@@ -35,19 +59,11 @@ function getColor(value){
     return ["hsl(",hue,",100%,50%)"].join("");
 }
 
+// Send data to python to get predictions.
 function InputTable_MakePredictions(){
    // Select table as DataTable instance, convert data to array (deep copy)
    let table = $('#table_input').DataTable();
-   let tableArray = structuredClone(table.rows().data().toArray());
-
-   // Convert table into a formatted JSON object
-   formattedTable = []
-   for (let i = 0; i < tableArray.length; i++) {
-        row = tableArray[i];
-        row[3] = row[3].replaceAll(' ','').split(",") // Convert targets to array, removing spaces
-        formattedTable.push({compound: row[1], pubchem: row[2], targets:row[3]});
-   }
-   let tableJSON = JSON.stringify(formattedTable);
+   let tableJSON = convertTableJSON(table);
 
    // Send AJAX request, append returned html to the page.
    $.post(window.location, { targets_list: tableJSON}, function(data) {
@@ -68,7 +84,27 @@ function InputTable_MakePredictions(){
    })
 }
 
-function InputTable_ClearTable() {
-  let table = new DataTable('#table_input'); // Select table
-  table.clear().draw();
+// Save table contents to localstorage
+function saveTable() {
+    let table = $('#table_input').DataTable();
+    let tableJSON = convertTableJSON(table);
+    localStorage.setItem('DataTables_tableData', tableJSON);
+}
+
+// Load table from localstorage
+function loadTable() {
+    let loadData = localStorage.getItem('DataTables_tableData');
+    // Check if it's valid JSON, return empty if not.
+    if(!loadData){
+        return;
+    }
+    let parseData = JSON.parse(loadData);
+    for ( i = 0; i < parseData.length; i++) {
+        row = parseData[i];
+        InputTable_AddRow(row.compound, row.pubchem, row.targets)
+    }
+}
+
+function InputTable_LoadFromFile() {
+  // #Todo
 }
