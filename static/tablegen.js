@@ -9,6 +9,18 @@ function CreateTable(table_id, info_bool, paging_bool, searching_bool) {
     return gen_table;
 }
 
+function CreateTable_data(table_id, info_bool, paging_bool, searching_bool) {
+    let gen_table = new DataTable(table_id, {
+        info: info_bool,
+        paging: paging_bool,
+        searching: searching_bool,
+        columnDefs: [{width: '200px', targets: 0}, {width: '20px', targets: [1,2]}, {width: '200px', targets: 3},
+        {orderable: true, type: "text", targets: [0,1,2,3]}],
+        order: []
+    });
+    return gen_table;
+}
+
 // Convert table data into JSON
 function convertTableJSON(table) {
    let tableArray = structuredClone(table.rows().data().toArray());
@@ -64,23 +76,26 @@ function InputTable_MakePredictions(){
    // Select table as DataTable instance, convert data to array (deep copy)
    let table = $('#table_input').DataTable();
    let tableJSON = convertTableJSON(table);
-
    // Send AJAX request, append returned html to the page.
    $.post(window.location, { targets_list: tableJSON}, function(data) {
         result = JSON.parse(data);
         var resultTable = "<table class='display dataTable'>";
+        var printdetailedResults = "<b>"
         resultTable += "<tr><th>Compound</th><th>Pubchem ID</th><th>Targets</th><th>No. Targets</th><th>Prediction</th></tr>";
         for(i=0; i<result.length;i++){
             resultTable += '<tr><td>' + result[i]["compound"] + '</td>';
             resultTable += '<td>' + result[i]["pubchem"] + '</td>';
             resultTable += '<td>' + result[i]["targets"].join(", ") + '</td>';
             resultTable += '<td>' + result[i]["target_number"] + '</td>';
-
             predictionColor = getColor(result[i]["prediction"]/100)
             resultTable += `<td style="background-color: ${predictionColor}">` + result[i]["prediction"] + '</td></tr>';
+            printdetailedResults += result[i]["detailed_results"] +'<br>'
         }
+        printdetailedResults += "</b>"
         resultTable += "</table>";
         $("#result").html(resultTable);
+        $("#detailed_results").html(printdetailedResults);
+
    })
 }
 

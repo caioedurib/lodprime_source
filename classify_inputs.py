@@ -52,8 +52,18 @@ def input_placeholder(targets_list):
     # TODO: May want to add some catch statements here in case of malformed data input
     # Get number of targets for each compound.
     for row in targets_list:
-        print(f'Received compound: {row["compound"]}, ID: {row["pubchem"]}, Targets: {row["targets"]}')
+        compound_name = row["compound"]
+        pos_prob = randint(1, 100)
+        if pos_prob >= 50:
+            prediction = "Positive class (can promote mice longevity)"
+        else:
+            prediction = "Negative class (cannot promote mice longevity)"
+        print(f'Received compound: {compound_name}, ID: {row["pubchem"]}, Targets: {row["targets"]}')
         row["target_number"] = len(row["targets"])
-        row["prediction"] = randint(1, 100)
+        row["prediction"] = pos_prob
+        if compound_name!="":
+            row["detailed_results"] = "The model predicted that the compound "+str(compound_name)+" belongs to the "+prediction+", for male mice."
+        else:
+            row["detailed_results"] = "The model predicted that the unnamed compound with Targets List: "+str(row["targets"])+" belongs to the " + prediction + ", for male mice."
 
     return targets_list

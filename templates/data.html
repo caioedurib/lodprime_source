@@ -7,18 +7,18 @@
 <script defer src="{{url_for('static', filename='tablegen.js')}}"></script>
 <script>
     $(window).bind("load", function() {
-        var gen_table = CreateTable('#table_otherdatasets', false, false, false);
+        var gen_table = CreateTable_data('#table_otherdatasets', false, false, false);
         let data = JSON.stringify(gen_table.rows().data().toArray());
         console.log(data);
     });
 
     $(window).bind("load", function() {
-        var gen_table = CreateTable('#table_FAtargetsdatasets', false, false, false);
+        var gen_table = CreateTable_data('#table_FAtargetsdatasets', false, false, false);
         let data = JSON.stringify(gen_table.rows().data().toArray());
         console.log(data);
     });
     $(window).bind("load", function() {
-        var gen_table = CreateTable('#table_NEtargetsdatasets', false, false, false);
+        var gen_table = CreateTable_data('#table_NEtargetsdatasets', false, false, false);
         let data = JSON.stringify(gen_table.rows().data().toArray());
         console.log(data);
     });
@@ -202,6 +202,5 @@
       </tbody>
   </table>
 </div>
-
 
 {% endblock %}

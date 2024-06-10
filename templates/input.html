@@ -38,63 +38,67 @@
 {% endblock %}
 
 {% block body %}
-<div class="container">
-    <div class="row px-5">
-        Input page
-        <ul>
-            <li>User inputs lists of targets. They do not need to include drug names</li>
-            <li>There should be an option for loading input data from a text file</li>
-            <li>Inform user about the difference between predictions for male and female mice</li>
-            <li>Add warnings for annotations/targets that are not included in the original dataset, which make the output less reliable</li>
-        </ul>
-    </div>
+<div class="row px-5">
+    Input page
+    <ul>
+        <li>User inputs lists of targets and pubchem IDs. They do not need to include drug names</li>
+        <li>If the PubChem ID field is also a list, combine the molecular fingerprints of all chemicals</li>
+        <li>There should be an option for loading input data from a text file</li>
+        <li>Inform user about the difference between predictions for male and female mice</li>
+        <li>Add warnings for annotations/targets that are not included in the original dataset, which make the output less reliable</li>
+    </ul>
+</div>
 
+<div class="row px-5">
     <div class="row px-5">
-        <div class="row px-5">
-            <div class="column">
-                <button onclick="InputTable_ClearTable()">Clear Table</button>
-                <button onclick="InputTable_LoadFromFile()">Load From File</button>
-            </div>
-            <div class="column -6">
-            </div>
+        <div class="column">
+            <button onclick="InputTable_ClearTable()">Clear Table</button>
+            <button onclick="InputTable_LoadFromFile()">Load From File</button>
         </div>
-        <!-- <h1>{{ request.form['Compound_Name'] }}</h1> -->
-    </div>
-
-    <div class="row px-5">
-        <table id="table_input" class="display" style="width:100%">
-            <thead>
-            <tr>
-                <th></th> <!-- Remove row column -->
-                <th>Compound</th>
-                <th>PubChem ID</th>
-                <th>Targets List</th>
-            </tr>
-            </thead>
-            <tbody>
-
-            </tbody>
-        </table>
-        <div id="addRow" onclick="InputTable_AddRow('','','')">
-            {{ addIcon() }}
+        <div class="column -6">
         </div>
     </div>
+    <!-- <h1>{{ request.form['Compound_Name'] }}</h1> -->
+</div>
 
+<div class="row px-5">
+    <table id="table_input" class="display" style="width:100%">
+        <thead>
+        <tr>
+            <th></th> <!-- Remove row column -->
+            <th>Compound</th>
+            <th>PubChem ID</th>
+            <th>Targets List</th>
+        </tr>
+        </thead>
+        <tbody>
 
-    <div class="row px-5">
-            <div class="column">
-                <button onclick="InputTable_MakePredictions()">Make Predictions</button>
-            </div>
-            <div class="column -6">
-            </div>
-        <!-- <h1>{{ request.form['Compound_Name'] }}</h1> -->
-    </div>
-
-    <div class="row px-5">
-        <b>Result here</b>
-        <div id="result">
-
-        </div>
+        </tbody>
+    </table>
+    <div id="addRow" onclick="InputTable_AddRow('','','')">
+        {{ addIcon() }}
     </div>
 </div>
+
+
+<div class="row px-5">
+        <div class="column">
+            <button onclick="InputTable_MakePredictions()">Make Predictions</button>
+        </div>
+        <div class="column -6">
+        </div>
+    <!-- <h1>{{ request.form['Compound_Name'] }}</h1> -->
+</div>
+
+<div class="row px-5">
+    <b>Result Table:</b>
+    <div id="result">
+
+    </div>
+    <b>Detailed Results:</b>
+    <div id="detailed_results">
+
+    </div>
+</div>
+
 {% endblock %}

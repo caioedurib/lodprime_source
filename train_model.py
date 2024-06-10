@@ -97,3 +97,17 @@ def test_model():
 if __name__ == "__main__":
     test_model()  # False: NoFilter, False: skip grid search
     print('All done!')
+
+'''
+Changes agreeded uppon during meeting with Aleksey on 06/06/24:
+    - No need for home page, straight to input
+    - Load targets from DrugBank file, user's input of drug name should be enough to autocomplete targets
+    - Use DrugBank synonym's file to get the correct drug's code/targets
+        - recommending pubchemid from name
+    - Add a new button which combines selected compounds into a new entry, merging their target lists
+        - There should be a warning acknowledging if some of the selected entries currently has no targets
+    - Separate option for classifying an entry using the Molecular Fingerprints models
+    - Show outputs from each model separately (mixed-sex and male-only) - two male predictions? TBD
+        - male-only and mixed-sex both on only target models
+    - For the ensemble result, instead of majority voting, just average score and show each prediction separately
+'''
