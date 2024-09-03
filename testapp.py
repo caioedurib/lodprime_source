@@ -24,8 +24,6 @@ class User(db.Model):
             'phone': self.phone,
             'email': self.email
         }
-
-
 db.create_all()
 
 

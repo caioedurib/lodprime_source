@@ -2,6 +2,7 @@
 Code to train and save the classifier model. Reusable if the source dataset files happen to change in the future.
 Saved model file (pickled) is loaded by classify_inputs.py
 '''
+
 import pickle
 import pandas as pd
 import numpy as np
@@ -45,6 +46,7 @@ def removeInvalidInstances(df):
     return df
 
 
+# TODO: check columns of input datasets to make sure features and class are correctly placed/removed
 def load_dataset(path, fixed_sex):
     df = pd.read_csv(path, na_values='?', sep='\t', encoding='unicode_escape', index_col=0)
     #remove possible header features not used in internal code
@@ -72,18 +74,31 @@ def load_dataset(path, fixed_sex):
     df = removeLowFrequencyFeatures(df, 3)
     return df
 
+# Receives a filepath for a dataset file, trains a model from it and pickles it, saving it with the desired filename.
+# Includes sex_filter option for loading only data from a specific type of instance (male, female, all)
+
+def train_and_save_model(filepath, sex_filter, classifier_savename):
+    print(f'Training: {classifier_savename}')
+    df = load_dataset(filepath, sex_filter)  # if fixed_sex is M or F, this will filter the dataset to include only instances from that sex.
+    print(df.head())
+    print(df.shape)
+    rf = RandomForestClassifier(n_estimators=500, class_weight='balanced_subsample', random_state=0)
+    X = df.iloc[:, :-1]
+    y = df.iloc[:, -1]
+    rf = rf.fit(X.values, y)  # using X.values removes a warning about feature names in X
+    with open(f"static/files/models/{classifier_savename}.pkl", "wb") as f:
+        pickle.dump(rf, f, protocol=pickle.HIGHEST_PROTOCOL)
+    print(f'Model saved: {classifier_savename}')
 
 # loads a dataset, trains a model using all its data and tests saving it to a file, loading the model from the file
 # and using it to make a prediction on dummy data.
 def test_model():
-    df = load_dataset('static/files/datasets/MM Molecular Fingerprints dataset.tsv', "all")  # if fixed_sex is M or F, this will filter the dataset to include only instances from that sex.
-    rf = RandomForestClassifier(n_estimators=500, class_weight='balanced_subsample', random_state=0)
-    X = df.iloc[:,:-1]
-    y = df.iloc[:,-1]
-    rf = rf.fit(X.values, y)  # using X.values removes a warning about feature names in X
-    with open("static/files/models/classifier.pkl", "wb") as f:
-        pickle.dump(rf, f, protocol=pickle.HIGHEST_PROTOCOL)
-    with open("static/files/models/classifier.pkl", "rb") as f:
+    dataset_name = 'MM Targets dataset - Functional Annotation - InterPro.tsv'
+    df = load_dataset(f'static/files/datasets/{dataset_name}', "M")  # if fixed_sex is M or F, this will filter the dataset to include only instances from that sex.
+    X = df.iloc[:, :-1]
+    classifier_name = 'model_FAInterPro_maleonly'
+    #train_and_save_model(f'static/files/datasets/{dataset_name}', 'M', classifier_name)
+    with open(f"static/files/models/{classifier_name}.pkl", "rb") as f:
         rf_model = pickle.load(f)
         list_predictions = []
         test_entry = [np.zeros(len(X.columns))]   # this will be a list of lists, each with len(X.columns) elements
@@ -93,14 +108,14 @@ def test_model():
             list_predictions.append(list(list_pred[i])[1])
             print(list_predictions)
 
-
 if __name__ == "__main__":
     test_model()  # False: NoFilter, False: skip grid search
     print('All done!')
 
 '''
+    NOTE: Inputs will NOT have a sex features in male-only models, and when using mixed-sex models we only need to generate F instances (M predictions should come from male-only models)
 Changes agreeded uppon during meeting with Aleksey on 06/06/24:
-    - No need for home page, straight to input
+    - No need for home page, straight to input (I disagree. To check with Alex) 
     - Load targets from DrugBank file, user's input of drug name should be enough to autocomplete targets
     - Use DrugBank synonym's file to get the correct drug's code/targets
         - recommending pubchemid from name
