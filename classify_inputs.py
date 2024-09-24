@@ -53,6 +53,9 @@ def input_placeholder(targets_list):
     # Get number of targets for each compound.
     for row in targets_list:
         compound_name = row["compound"]
+        string_ids = row["pubchem"]
+        gene_names = row["targets"]
+
         pos_prob = randint(1, 100)
         if pos_prob >= 50:
             prediction = "Positive class (can promote mice longevity)"
@@ -62,8 +65,8 @@ def input_placeholder(targets_list):
         row["target_number"] = len(row["targets"])
         row["prediction"] = pos_prob
         if compound_name!="":
-            row["detailed_results"] = "The model predicted that the compound "+str(compound_name)+" belongs to the "+prediction+", for male mice."
+            row["detailed_results"] = f'The model predicted that the compound {str(compound_name)} belongs to the {prediction}, for male mice.'
         else:
-            row["detailed_results"] = "The model predicted that the unnamed compound with Targets List: "+str(row["targets"])+" belongs to the " + prediction + ", for male mice."
+            row["detailed_results"] = f'The model predicted that the unnamed compound with Targets List: {str(row["targets"])} belongs to the {prediction}, for male mice.'
 
     return targets_list

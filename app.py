@@ -23,7 +23,6 @@ app = Flask(__name__)
 #       - Figure out hosting (openstack?)
 #       - Logo/favicon
 
-
 @app.route("/")
 def loadpage_home():
     return render_template('home.html')

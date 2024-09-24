@@ -81,7 +81,7 @@ function InputTable_MakePredictions(){
         result = JSON.parse(data);
         var resultTable = "<table class='display dataTable'>";
         var printdetailedResults = "<b>"
-        resultTable += "<tr><th>Compound</th><th>Pubchem ID</th><th>Targets</th><th>No. Targets</th><th>Prediction</th></tr>";
+        resultTable += "<tr><th>Compound</th><th>STRING Target IDs</th><th>Gene names</th><th>No. Targets</th><th>Prediction</th></tr>";
         for(i=0; i<result.length;i++){
             resultTable += '<tr><td>' + result[i]["compound"] + '</td>';
             resultTable += '<td>' + result[i]["pubchem"] + '</td>';
