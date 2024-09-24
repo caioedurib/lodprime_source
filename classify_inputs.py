@@ -76,21 +76,71 @@ def test_combinerows():
     for a in output_series:
         print(a)
 
+def validate_str_ids(str_id_list):
+    """
+    Check for potential malformed str_ids.
+    :param str_id_list: string of str_ids from user input
+    :return: string array of str_id's, string array of warnings
+    """
+    warnings = []
+
+    str_id_list = str_id_list.upper()  # Make comparison easier, as str_id's are stored in uppercase.
+    if '\t' in str_id_list:
+        warnings.append("String IDs contains tabs! This application expects comma delimited data.")
+
+    str_id_array = str_id_list.split(',')
+    for str_id in str_id_array:
+        if str_id[:9] != '9606.ENSP':
+            warnings.append(f"String ID '{str_id}' does not have human protein preamble (9606.ENSP).")
+    return str_id_array, warnings
+
+
+def validate_gene_names(gene_names_list):
+    """
+    Check for potential malformed gene names.
+    :param gene_names_list:
+    :return: string array of gene names, string array of warnings
+    """
+    warnings = []
+
+    gene_names_list = gene_names_list.upper()  # Gene names are always capitalized
+    if '\t' in gene_names_list:
+        warnings.append("Gene names contains tabs! This application expects comma delimited data.")
+
+    gene_name_array = gene_names_list.split(',')
+    return gene_name_array, warnings
+
+
 def input_placeholder(targets_list):
     """
-    Take input, do processing on it, and return a string to be printed on the page.
+    Take input, validate the data, do processing on it, and return an output to be printed on the page.
     :param targets_list: table data
     :return: Result of processed data.
     """
     # TODO: May want to add some catch statements here in case of malformed data input
     # Get number of targets for each compound.
+    string_ids = ""
 
     df_targets_source = pd.read_csv(f'internal_files/input_source/protein source sample.tsv', sep='\t', index_col=0)
 
     for row in targets_list:
         compound_name = row["compound"]
-        string_ids = row["str_ids"]
-        gene_names = row["gene_names"]
+
+        string_ids, str_id_warnings = validate_str_ids(row["str_ids"])
+        gene_names, gene_name_warnings = validate_gene_names(row["gene_names"])
+
+        warnings = str_id_warnings + gene_name_warnings
+        errors = []
+
+        if len(string_ids) == 0 and len(gene_names) == 0:
+            errors.append("No string ID's or gene names provided, skipping.")
+
+        if len(errors) == 0:
+            # TODO: run the prediction function!
+            pass
+        else:
+            # TODO: Return error state for printing.
+            pass
 
         pos_prob = randint(1, 100)
         if pos_prob >= 50:
@@ -98,14 +148,19 @@ def input_placeholder(targets_list):
         else:
             prediction = "Negative class (cannot promote mice longevity)"
         print(f'Received compound: {compound_name}, ID: {row["str_ids"]}, Gene Names: {row["gene_names"]}')
+        row["str_ids"] = string_ids
+        row["gene_names"] = gene_names
         row["target_number"] = len(row["gene_names"])
         row["prediction"] = pos_prob
-        if compound_name!="":
+        row["warnings"] = warnings
+
+        if compound_name != "":
             row["detailed_results"] = f'The model predicted that the compound {str(compound_name)} belongs to the {prediction}, for male mice.'
         else:
             row["detailed_results"] = f'The model predicted that the unnamed compound with Targets List: {str(row["targets"])} belongs to the {prediction}, for male mice.'
 
     return targets_list
+
 
 if __name__ == "__main__":
     test_combinerows()

@@ -32,7 +32,6 @@ function convertTableJSON(table) {
         if(Array.isArray(row[3])) {
             row[3] = row[3].toString();
         }
-        row[3] = row[3].replaceAll(' ','').split(",") // Convert targets to array, removing spaces
         formattedTable.push({removeCol: row[0], compound: row[1], str_ids: row[2], gene_names:row[3]});
    }
    return JSON.stringify(formattedTable);
@@ -87,7 +86,7 @@ function InputTable_MakePredictions(){
         for(let i=0; i<result.length;i++){
             resultTable += '<tr><td>' + result[i]["compound"] + '</td>';
             resultTable += '<td>' + result[i]["str_ids"] + '</td>';
-            resultTable += '<td>' + result[i]["gene_names"].join(", ") + '</td>';
+            resultTable += '<td>' + result[i]["gene_names"] + '</td>';
             resultTable += '<td>' + result[i]["target_number"] + '</td>';
             predictionColor = getColor(result[i]["prediction"]/100)
             resultTable += `<td style="background-color: ${predictionColor}">` + result[i]["prediction"] + '</td></tr>';
