@@ -76,6 +76,7 @@ def test_combinerows():
     for a in output_series:
         print(a)
 
+
 def validate_str_ids(str_id_list):
     """
     Check for potential malformed str_ids.
@@ -123,8 +124,12 @@ def input_placeholder(targets_list):
 
     df_targets_source = pd.read_csv(f'internal_files/input_source/protein source sample.tsv', sep='\t', index_col=0)
 
+    rowcount = 0
     for row in targets_list:
+        rowcount = rowcount + 1
         compound_name = row["compound"]
+        if compound_name == "":
+            compound_name = f'Row{rowcount}'
 
         string_ids, str_id_warnings = validate_str_ids(row["str_ids"])
         gene_names, gene_name_warnings = validate_gene_names(row["gene_names"])
