@@ -10,3 +10,5 @@ mysql==0.0.3
 mysqlclient==2.2.4
 Werkzeug==3.0.3
 zipp==3.18.1
+pandas~=2.2.3
+numpy~=2.1.1
