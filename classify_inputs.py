@@ -1,5 +1,7 @@
 from pickle import load
 from random import randint
+import numpy as np
+import pandas as pd
 
 '''
 # working example of pickle load
@@ -39,9 +41,40 @@ def validate_input(target_list):
     return validated_targets_list, tl_warnings
 
 
-def create_instance(target_list):
-    return ""
+def create_instance(compound_name, str_ids, gene_names, df_targets_source):
+    str_ids_df = []
+    gene_names_df = []
+    if str_ids.__len__>0:
+        str_ids_df = df_targets_source['STRING_ID'].isin(str_ids)
+        if str_ids_df.shape[1] == str_ids.__len__:
+            print('All STR IDs selected succesfully')
+    if gene_names.__len__ > 0:
+        gene_names_df = df_targets_source['GeneName'].isin(gene_names)
+        if gene_names_df.shape[1] == gene_names.__len__:
+            print('All Gene names selected succesfully')
+    instance_source_df = pd.concat([str_ids_df, gene_names_df])
+    print(str_ids_df.shape)
+    print(gene_names_df.shape)
+    print(instance_source_df.shape)
 
+    total = instance_source_df.sum(axis=1)
+    print(total)
+
+    return -1
+
+
+def test_combinerows():
+    df_targets_source = pd.read_csv(f'internal_files/input_source/protein source sample.tsv', sep='\t', index_col=0)
+    print(df_targets_source.shape)
+    df_targets_source = df_targets_source.loc[df_targets_source['GeneName'].isin(['G1', 'G2'])]
+    print(df_targets_source.shape)
+    df_targets_source.loc['total'] = df_targets_source.sum()
+    total_row = df_targets_source.loc['total']
+    output_series = total_row[3:-1]
+    print(type(output_series))
+    output_series = np.clip(output_series, 0, 1)
+    for a in output_series:
+        print(a)
 
 def input_placeholder(targets_list):
     """
@@ -51,6 +84,9 @@ def input_placeholder(targets_list):
     """
     # TODO: May want to add some catch statements here in case of malformed data input
     # Get number of targets for each compound.
+
+    df_targets_source = pd.read_csv(f'internal_files/input_source/protein source sample.tsv', sep='\t', index_col=0)
+
     for row in targets_list:
         compound_name = row["compound"]
         string_ids = row["str_ids"]
@@ -70,3 +106,6 @@ def input_placeholder(targets_list):
             row["detailed_results"] = f'The model predicted that the unnamed compound with Targets List: {str(row["targets"])} belongs to the {prediction}, for male mice.'
 
     return targets_list
+
+if __name__ == "__main__":
+    test_combinerows()
