@@ -1,3 +1,4 @@
+import math
 from pickle import load
 from random import randint
 import numpy as np
@@ -63,10 +64,9 @@ def create_instance(compound_name, str_ids, gene_names, df_targets_source):
     return -1
 
 
-def test_combinerows():
+def test_combinerows(gene_names):
     df_targets_source = pd.read_csv(f'internal_files/input_source/protein source sample_2.tsv', sep='\t', index_col=0)
-    print('what about this')
-    df_targets_source = df_targets_source.loc[df_targets_source['GeneName'].isin(['G15'])]
+    df_targets_source = df_targets_source.loc[df_targets_source['GeneName'].isin(gene_names)]
     df_targets_source.loc['total'] = df_targets_source.sum()
     total_row = df_targets_source.loc['total']
     output_series = total_row[2:-1]
@@ -134,15 +134,14 @@ def input_placeholder(targets_list):
         warnings = str_id_warnings + gene_name_warnings
         errors = []
 
-        if len(string_ids) == 0 and len(gene_names) == 0:
+        # TODO: Move "empty stripping" to the validation steps, and compare on len.
+        if string_ids == [""] and gene_names == [""]:
             errors.append("No string ID's or gene names provided, skipping.")
 
         if len(errors) == 0:
-            pos_prob = test_combinerows()
-            #pos_prob = 0
+            pos_prob = round(test_combinerows(gene_names)*100)
         else:
             pos_prob = 0
-        #pos_prob = randint(1, 100)
         if pos_prob >= 50:
             prediction = "Positive class (can promote mice longevity)"
         else:
