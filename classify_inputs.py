@@ -64,18 +64,18 @@ def create_instance(compound_name, str_ids, gene_names, df_targets_source):
 
 
 def test_combinerows():
-    df_targets_source = pd.read_csv(f'internal_files/input_source/protein source sample.tsv', sep='\t', index_col=0)
-    print(df_targets_source.shape)
-    df_targets_source = df_targets_source.loc[df_targets_source['GeneName'].isin(['G1', 'G2'])]
-    print(df_targets_source.shape)
+    df_targets_source = pd.read_csv(f'internal_files/input_source/protein source sample_2.tsv', sep='\t', index_col=0)
+    print('what about this')
+    df_targets_source = df_targets_source.loc[df_targets_source['GeneName'].isin(['G15'])]
     df_targets_source.loc['total'] = df_targets_source.sum()
     total_row = df_targets_source.loc['total']
-    output_series = total_row[3:-1]
-    print(type(output_series))
+    output_series = total_row[2:-1]
     output_series = np.clip(output_series, 0, 1)
-    for a in output_series:
-        print(a)
-
+    with open("internal_files/models/model_NEKEGG_mixedsex.pkl", "rb") as f:  # add try-catch for file not found error
+        rf_model = load(f)
+        prediction = rf_model.predict_proba(output_series.values.reshape(1, -1)) # .values to convert Series to array, then .reshape to make it into a dataframe object that can be passed as parameter to predict
+        print(prediction[0][1])
+        return prediction[0][1]
 
 def validate_str_ids(str_id_list):
     """
@@ -120,10 +120,7 @@ def input_placeholder(targets_list):
     """
     # TODO: May want to add some catch statements here in case of malformed data input
     # Get number of targets for each compound.
-    string_ids = ""
-
-    df_targets_source = pd.read_csv(f'internal_files/input_source/protein source sample.tsv', sep='\t', index_col=0)
-
+    #df_targets_source = pd.read_csv(f'internal_files/input_source/protein source sample.tsv', sep='\t', index_col=0)
     rowcount = 0
     for row in targets_list:
         rowcount = rowcount + 1
@@ -141,13 +138,11 @@ def input_placeholder(targets_list):
             errors.append("No string ID's or gene names provided, skipping.")
 
         if len(errors) == 0:
-            # TODO: run the prediction function!
-            pass
+            pos_prob = test_combinerows()
+            #pos_prob = 0
         else:
-            # TODO: Return error state for printing.
-            pass
-
-        pos_prob = randint(1, 100)
+            pos_prob = 0
+        #pos_prob = randint(1, 100)
         if pos_prob >= 50:
             prediction = "Positive class (can promote mice longevity)"
         else:
