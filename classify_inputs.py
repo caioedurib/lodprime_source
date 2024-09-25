@@ -1,8 +1,8 @@
-import math
 from pickle import load
 from random import randint
 import numpy as np
 import pandas as pd
+import sklearn
 
 '''
 # working example of pickle load
@@ -77,6 +77,8 @@ def test_combinerows(gene_names):
         print(prediction[0][1])
         return prediction[0][1]
 
+
+# TODO: merge repeating sections of these validation functions into one.
 def validate_str_ids(str_id_list):
     """
     Check for potential malformed str_ids.
@@ -90,10 +92,13 @@ def validate_str_ids(str_id_list):
         warnings.append("String IDs contains tabs! This application expects comma delimited data.")
 
     str_id_array = str_id_list.split(',')
-    for str_id in str_id_array:
+    stripped_gene_name_array = [s.strip() for s in str_id_array]
+
+    for str_id in stripped_gene_name_array:
         if str_id[:9] != '9606.ENSP':
             warnings.append(f"String ID '{str_id}' does not have human protein preamble (9606.ENSP).")
-    return str_id_array, warnings
+
+    return stripped_gene_name_array, warnings
 
 
 def validate_gene_names(gene_names_list):
@@ -109,7 +114,9 @@ def validate_gene_names(gene_names_list):
         warnings.append("Gene names contains tabs! This application expects comma delimited data.")
 
     gene_name_array = gene_names_list.split(',')
-    return gene_name_array, warnings
+    stripped_gene_name_array = [s.strip() for s in gene_name_array]
+
+    return stripped_gene_name_array, warnings
 
 
 def input_placeholder(targets_list):
@@ -159,7 +166,6 @@ def input_placeholder(targets_list):
             row["detailed_results"] = f'The model predicted that the unnamed compound with Targets List: {str(row["targets"])} belongs to the {prediction}, for male mice.'
 
     return targets_list
-
 
 if __name__ == "__main__":
     test_combinerows()
