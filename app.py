@@ -1,7 +1,8 @@
+#app.py
 #import mysql as mysql
 import json
 from flask import Flask, render_template, request
-from classify_inputs import Input_Make_Predictions, input_placeholder
+from classify_inputs import Btn_MakePredictions
 app = Flask(__name__)
 
 # Notes
@@ -32,15 +33,10 @@ def loadpage_home():
 def loadpage_input():
     if request.method == 'POST':
         # Decode JSON, send it to function
-        # TODO: Might be good to do JSON validation here, maybe with "marshmallow" library
-        result = input_placeholder(json.loads(request.form['targets_list']))
-
+        result = Btn_MakePredictions(json.loads(request.form['targets_list']))
         # Return result as JSON
         return json.dumps(result)
-
-        # classification_result = Input_Make_Predictions(targets_list)
     return render_template('input.html')
-    # GET TABLE, CONVERT TO JSON, SEND TO CLASSIFY INPUTS
 
 
 @app.route("/help/")

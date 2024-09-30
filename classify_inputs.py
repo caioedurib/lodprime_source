@@ -1,3 +1,4 @@
+#classify_inputs.py
 from pickle import load
 from random import randint
 import numpy as np
@@ -24,59 +25,128 @@ with open("files/classifier.pkl", "rb") as f: #add try-catch for file not found 
  - Run similarity checks from input instances and existing instances, output nearest neighbours (flag if high similarity)
 '''
 
+df_AllCategories = None
+df_Component_Male = None
+df_KEGG_Male = None
+df_Process_Male = None
+df_FAInterPro_Male = None
+df_KEGG_Mixed = None
+df_RCTM_Mixed = None
+df_Component_Mixed = None
+df_WikiPathways_Mixed = None
+df_FAInterPro_Mixed = None
 
-def Input_Make_Predictions(input_string):
-    with open("static/files/models/classifier.pkl", "rb") as f:  # add try-catch for file not found error
+#KEGG: model_NEKEGG_mixedsex
+def ensemble_prediction_female(filtered_df, model_name, sex, dict_InputTable):
+    with open(f'internal_files/models/{model_name}.pkl', "rb") as f:  # add try-catch for file not found error
         rf_model = load(f)
-    list_predictions = []
-    for compound_name, targets_list in input_string:
-        target_list, tl_warnings = validate_input(target_list)
-        instance = create_instance(targets_list)
-        rf_model.predict(X[0:1])  # replace by instance when model is ready
-    return -1
+        dict_KEGG_predictions = {}
+        for row_number in dict_InputTable.keys():
+            indexes_list = dict_InputTable[row_number][4]
+            row_df_targets_source = filtered_df.loc[indexes_list]  # pos 4: indexes_list
+            row_df_targets_source.loc['total'] = row_df_targets_source.sum()  # create row named 'total' with the sums of all column's values
+            total_row = row_df_targets_source.loc['total']
+            output_series = total_row[:] #transform into series
+            output_series = np.clip(output_series, 0, 1)
+            if sex == 'F':
+                output_series[0] = 1  # first position of output_series will always refer to sex variable, with a 0 value. If it isn't F there is no sex variable, so no change required
+            prediction = rf_model.predict_proba(output_series.values.reshape(1, -1))  # .values to convert Series to array, then .reshape to make it into a dataframe object that can be passed as parameter to predict
+            prediction = round(prediction[0][1]*100) # pos 5: male prediction
+            dict_KEGG_predictions.setdefault(row_number, prediction)
+    return dict_KEGG_predictions
 
 
-def validate_input(target_list):
-    validated_targets_list = target_list
-    tl_warnings = ""  # add a warning for each target that is not present in the dataset, to be shown with output
-    return validated_targets_list, tl_warnings
+def load_datasets():
+    global df_AllCategories
+    global df_Component_Male
+    global df_KEGG_Male
+    global df_Process_Male
+    global df_FAInterPro_Male
+    global df_KEGG_Mixed
+    global df_RCTM_Mixed
+    global df_Component_Mixed
+    global df_WikiPathways_Mixed
+    global df_FAInterPro_Mixed
+
+    if df_AllCategories is None:
+        df_AllCategories = pd.read_csv(f'internal_files/input_source/Annotation_Source - NE All Categories.tsv', sep='\t', index_col=0)
+        df_KEGG_Mixed = df_AllCategories.loc[:, ['sex', *df_AllCategories.loc[:, 'hsa04024':'hsa03013'].columns]]  # Select columns between two columns plus sex column
+        df_RCTM_Mixed = df_AllCategories.loc[:, ['sex', *df_AllCategories.loc[:, 'HSA-373076':'HSA-198933'].columns]]  # Select columns between two columns plus sex column
+        df_Component_Mixed = df_AllCategories.loc[:, ['sex', *df_AllCategories.loc[:, 'GO:0005667':'GO:0033553'].columns]]  # Select columns between two columns plus sex column
+        df_WikiPathways_Mixed = df_AllCategories.loc[:, ['sex', *df_AllCategories.loc[:, 'WP4320':'WP5053'].columns]]  # Select columns between two columns plus sex column
+        df_FAInterPro_Mixed = pd.read_csv(f'internal_files/input_source/Annotation_Source - FA InterPro.tsv', sep='\t', index_col=0)
+
+# Receives a dictionary object with each row in input table, with their respective list of indexes
+# fills out a male and female predprob value for each row (dictionary item) (use test_combinerows to create this)
+def update_predictions(dict_InputTable):
+    global df_AllCategories
+    global df_Component_Male
+    global df_KEGG_Male
+    global df_Process_Male
+    global df_FAInterPro_Male
+    global df_KEGG_Mixed
+    global df_RCTM_Mixed
+    global df_Component_Mixed
+    global df_WikiPathways_Mixed
+    global df_FAInterPro_Mixed
+
+    load_datasets()
+    #dict_predictions_AllCats_Male = ensemble_prediction_female(df_KEGG_Mixed, 'model_NEAllCats_maleonly', 'M', dict_InputTable)
+
+    dict_predictions_KEGG_Female = ensemble_prediction_female(df_KEGG_Mixed, 'model_NEKEGG_mixedsex', 'F', dict_InputTable)
+    dict_predictions_RCTM_Female = ensemble_prediction_female(df_RCTM_Mixed, 'model_NEReactome_mixedsex', 'F', dict_InputTable)
+    dict_predictions_Component_Female = ensemble_prediction_female(df_Component_Mixed, 'model_NEComponent_mixedsex', 'F', dict_InputTable)
+    dict_predictions_WikiPathways_Female = ensemble_prediction_female(df_WikiPathways_Mixed, 'model_NEWikiPathways_mixedsex', 'F', dict_InputTable)
+    dict_predictions_FAInterPro_Female = ensemble_prediction_female(df_FAInterPro_Mixed, 'model_FAInterPro_mixedsex', 'F', dict_InputTable)
+
+    for rownumber in dict_InputTable.keys():
+        result_prediction = 0
+        result_prediction = result_prediction + dict_predictions_KEGG_Female[rownumber]
+        result_prediction = result_prediction + dict_predictions_RCTM_Female[rownumber]
+        result_prediction = result_prediction + dict_predictions_Component_Female[rownumber]
+        result_prediction = result_prediction + dict_predictions_WikiPathways_Female[rownumber]
+        result_prediction = result_prediction + dict_predictions_FAInterPro_Female[rownumber]
+        result_prediction = round(result_prediction/5)
+        dict_InputTable[rownumber][5] = result_prediction
+    return dict_InputTable
 
 
-def create_instance(compound_name, str_ids, gene_names, df_targets_source):
-    str_ids_df = []
-    gene_names_df = []
-    if str_ids.__len__>0:
-        str_ids_df = df_targets_source['STRING_ID'].isin(str_ids)
-        if str_ids_df.shape[1] == str_ids.__len__:
-            print('All STR IDs selected succesfully')
-    if gene_names.__len__ > 0:
-        gene_names_df = df_targets_source['GeneName'].isin(gene_names)
-        if gene_names_df.shape[1] == gene_names.__len__:
-            print('All Gene names selected succesfully')
-    instance_source_df = pd.concat([str_ids_df, gene_names_df])
-    print(str_ids_df.shape)
-    print(gene_names_df.shape)
-    print(instance_source_df.shape)
-
-    total = instance_source_df.sum(axis=1)
-    print(total)
-
-    return -1
+# Receives a dictionary object with each row in input table, with their respecti str_ids and gene_names, to be looked up on Indexing_Source - Annotation Datasets
+# fills out a list of numeric indexes for each row (dictionary item), which can then be used in iloc (faster than loc) on the prediction function
+def update_indexes_list(dict_InputTable):
+    df_index_source = pd.read_csv(f'internal_files/input_source/Indexing_Source - Annotation Datasets.tsv', sep='\t', index_col=0)
+    for compound in dict_InputTable.keys():
+        strids_indexes_list = []
+        geneids_indexes_list = []
+        str_ids = dict_InputTable[compound][1]  # pos 1: str_ids
+        gene_ids = dict_InputTable[compound][2]  # pos 2: gene_ids
+        if len(str_ids) > 0:  # does not assume all input str_ids will be part of the dataset.
+            # Can compare this to len to count not found and update warnings in dictionary object
+            strids_indexes_list = df_index_source[df_index_source['STRING_ID'].isin(str_ids)].index.tolist()
+        if len(gene_ids) > 0:
+            geneids_indexes_list = df_index_source[df_index_source['Protein_Name'].isin(gene_ids)].index.tolist()
+        indexes_list = strids_indexes_list + geneids_indexes_list
+        indexes_list = [i for n, i in enumerate(indexes_list) if i not in indexes_list[:n]] #remove duplicates list comprehension
+        dict_InputTable[compound][4] = indexes_list  # pos 4: indexes
+    return dict_InputTable
 
 
-def test_combinerows(gene_names):
-    df_targets_source = pd.read_csv(f'internal_files/input_source/protein source sample_2.tsv', sep='\t', index_col=0)
-    df_targets_source = df_targets_source.loc[df_targets_source['GeneName'].isin(gene_names)]
-    df_targets_source.loc['total'] = df_targets_source.sum()
-    total_row = df_targets_source.loc['total']
-    output_series = total_row[2:-1]
-    output_series = np.clip(output_series, 0, 1)
-    with open("internal_files/models/model_NEKEGG_mixedsex.pkl", "rb") as f:  # add try-catch for file not found error
-        rf_model = load(f)
-        prediction = rf_model.predict_proba(output_series.values.reshape(1, -1)) # .values to convert Series to array, then .reshape to make it into a dataframe object that can be passed as parameter to predict
-        print(prediction[0][1])
-        return prediction[0][1]
-
+def test_combinerows(ListofLists_Numeric_Indexes):
+    df_targets_source = pd.read_csv(f'internal_files/input_source/Annotation_Source - NE All Categories.tsv', sep='\t', index_col=0)
+    prediction_list = []
+    for List_Numeric_Indexes in ListofLists_Numeric_Indexes:
+        # KEGG: 'hsa04024':'hsa03013'
+        df_targets_source = df_targets_source.loc[:, ['sex', *df_targets_source.loc[:, 'hsa04024':'hsa03013'].columns]]  # Select columns between two columns plus sex column
+        df_targets_source = df_targets_source.iloc[List_Numeric_Indexes]
+        df_targets_source.loc['total'] = df_targets_source.sum() #create row named 'total' with the sums of all column's values
+        total_row = df_targets_source.loc['total']
+        output_series = total_row[:]
+        output_series = np.clip(output_series, 0, 1)
+        with open("internal_files/models/model_NEKEGG_mixedsex.pkl", "rb") as f:  # add try-catch for file not found error
+            rf_model = load(f)
+            prediction = rf_model.predict_proba(output_series.values.reshape(1, -1)) # .values to convert Series to array, then .reshape to make it into a dataframe object that can be passed as parameter to predict
+            prediction_list.append(prediction[0][1])
+            return prediction[0][1]
 
 # TODO: merge repeating sections of these validation functions into one.
 def validate_str_ids(str_id_list):
@@ -119,53 +189,54 @@ def validate_gene_names(gene_names_list):
     return stripped_gene_name_array, warnings
 
 
-def input_placeholder(targets_list):
+def Btn_MakePredictions(targets_list):
     """
     Take input, validate the data, do processing on it, and return an output to be printed on the page.
     :param targets_list: table data
     :return: Result of processed data.
     """
-    # TODO: May want to add some catch statements here in case of malformed data input
-    # Get number of targets for each compound.
-    #df_targets_source = pd.read_csv(f'internal_files/input_source/protein source sample.tsv', sep='\t', index_col=0)
+    # Dictionary with all relevant information for each row (compound) in input table, some user-input and some processed
+    dict_inputTable = {}
+    # positions in dict: 0: "compound_name", 1: "str_ids", 2: "gene_ids", 3: "warnings", 4: "indexes", 5: "male_predprob", 6: "female_predprob"
+
+    # First run-through of the table, reading each row and filling a dictionary object, to process data.
+    # The Dict uses rowcount as key, to avoid issues with repeated compound names being used as key.
     rowcount = 0
     for row in targets_list:
         rowcount = rowcount + 1
         compound_name = row["compound"]
         if compound_name == "":
-            compound_name = f'Row{rowcount}'
+            compound_name = f'Row_{rowcount}'
 
         string_ids, str_id_warnings = validate_str_ids(row["str_ids"])
         gene_names, gene_name_warnings = validate_gene_names(row["gene_names"])
 
         warnings = str_id_warnings + gene_name_warnings
-        errors = []
+        dict_inputTable.setdefault(rowcount, [compound_name, string_ids, gene_names, warnings, [1], 0, 0])
 
-        # TODO: Move "empty stripping" to the validation steps, and compare on len.
-        if string_ids == [""] and gene_names == [""]:
-            errors.append("No string ID's or gene names provided, skipping.")
+    dict_inputTable = update_indexes_list(dict_inputTable) # get indexes of hits in the provided lists of ids and genes
+    dict_inputTable = update_predictions(dict_inputTable) # make predictions for each row of the table
 
-        if len(errors) == 0:
-            pos_prob = round(test_combinerows(gene_names)*100)
-        else:
-            pos_prob = 0
+    # Second run-through of table, writing outputs back on the web object
+    rowcount = 0
+    for row in targets_list:
+        rowcount = rowcount + 1
+        pos_prob = 1
         if pos_prob >= 50:
             prediction = "Positive class (can promote mice longevity)"
         else:
             prediction = "Negative class (cannot promote mice longevity)"
-        print(f'Received compound: {compound_name}, ID: {row["str_ids"]}, Gene Names: {row["gene_names"]}')
-        row["str_ids"] = string_ids
-        row["gene_names"] = gene_names
-        row["target_number"] = len(row["gene_names"])
-        row["prediction"] = pos_prob
-        row["warnings"] = warnings
-
-        if compound_name != "":
-            row["detailed_results"] = f'The model predicted that the compound {str(compound_name)} belongs to the {prediction}, for male mice.'
-        else:
-            row["detailed_results"] = f'The model predicted that the unnamed compound with Targets List: {str(row["targets"])} belongs to the {prediction}, for male mice.'
+        # positions in dict: 0: "compound_name", 1: "str_ids", 2: "gene_ids", 3: "warnings", 4: "indexes", 5: "male_predprob", 6: "female_predprob"
+        print(f'Received compound: {dict_inputTable[rowcount][0]}')
+        row["str_ids"] = dict_inputTable[rowcount][1]
+        row["gene_names"] = dict_inputTable[rowcount][2]
+        row["warnings"] = dict_inputTable[rowcount][3]
+        row["target_number"] = len(dict_inputTable[rowcount][4])
+        row["prediction"] = dict_inputTable[rowcount][5]
+        #row["f_prediction"] = dict_inputTable[rowcount][6] # TODO, currently only male predictions
+        row["detailed_results"] = f'The model predicted that the compound {dict_inputTable[rowcount][0]} belongs to the {prediction}, for male mice.'
 
     return targets_list
 
 if __name__ == "__main__":
-    test_combinerows()
+    test_combinerows([[1,2,3,4,5]])
