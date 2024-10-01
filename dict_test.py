@@ -76,8 +76,8 @@ def removeLowFrequencyFeatures(df, threshold):
 def update_predictions(dict_InputTable):
     df_targets_source = pd.read_csv(f'internal_files/input_source/Annotation_Source - NE All Categories.tsv', sep='\t', index_col=0)
     #df_targets_source = removeLowFrequencyFeatures(df_targets_source, 3)
-    #df_targets_source = df_targets_source.loc[:, ['sex', *df_targets_source.loc[:, 'WP4320':'WP5053'].columns]]  # Select columns between two columns plus sex column
-    dict_predictions = ensemble_prediction_female_KEGG(df_targets_source, 'model_NEComponent_maleonly', 'F', dict_InputTable)
+    df_targets_source = df_targets_source.loc[:, ['sex', *df_targets_source.loc[:, 'WP4320':'WP5053'].columns]]  # Select columns between two columns plus sex column
+    dict_predictions = ensemble_prediction_female_KEGG(df_targets_source, 'model_NEWikiPathways_mixedsex', 'F', dict_InputTable)
     for rownumber in dict_InputTable.keys():
         dict_InputTable[rownumber][5] = dict_predictions[rownumber]
     return dict_InputTable

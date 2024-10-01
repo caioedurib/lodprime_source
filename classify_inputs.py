@@ -24,17 +24,18 @@ with open("files/classifier.pkl", "rb") as f: #add try-catch for file not found 
  - Classify the input instances
  - Run similarity checks from input instances and existing instances, output nearest neighbours (flag if high similarity)
 '''
-
-df_AllCategories = None
 df_Component_Male = None
 df_KEGG_Male = None
 df_Process_Male = None
 df_FAInterPro_Male = None
-df_KEGG_Mixed = None
-df_RCTM_Mixed = None
-df_Component_Mixed = None
-df_WikiPathways_Mixed = None
-df_FAInterPro_Mixed = None
+print('Loading files into memory (this may take about a minute)')
+df_AllCategories = pd.read_csv(f'internal_files/input_source/Annotation_Source - NE All Categories.tsv', sep='\t', index_col=0)
+df_KEGG_Mixed = df_AllCategories.loc[:, ['sex', *df_AllCategories.loc[:, 'hsa04024':'hsa03013'].columns]]  # Select columns between two columns plus sex column
+df_RCTM_Mixed = df_AllCategories.loc[:, ['sex', *df_AllCategories.loc[:, 'HSA-373076':'HSA-198933'].columns]]  # Select columns between two columns plus sex column
+df_Component_Mixed = df_AllCategories.loc[:, ['sex', *df_AllCategories.loc[:, 'GO:0005667':'GO:0033553'].columns]]  # Select columns between two columns plus sex column
+df_WikiPathways_Mixed = df_AllCategories.loc[:, ['sex', *df_AllCategories.loc[:, 'WP4320':'WP5053'].columns]]  # Select columns between two columns plus sex column
+df_FAInterPro_Mixed = pd.read_csv(f'internal_files/input_source/Annotation_Source - FA InterPro.tsv', sep='\t', index_col=0)
+print('Files loaded succesfully.')
 
 #KEGG: model_NEKEGG_mixedsex
 def ensemble_prediction_female(filtered_df, model_name, sex, dict_InputTable):
@@ -56,26 +57,6 @@ def ensemble_prediction_female(filtered_df, model_name, sex, dict_InputTable):
     return dict_KEGG_predictions
 
 
-def load_datasets():
-    global df_AllCategories
-    global df_Component_Male
-    global df_KEGG_Male
-    global df_Process_Male
-    global df_FAInterPro_Male
-    global df_KEGG_Mixed
-    global df_RCTM_Mixed
-    global df_Component_Mixed
-    global df_WikiPathways_Mixed
-    global df_FAInterPro_Mixed
-
-    if df_AllCategories is None:
-        df_AllCategories = pd.read_csv(f'internal_files/input_source/Annotation_Source - NE All Categories.tsv', sep='\t', index_col=0)
-        df_KEGG_Mixed = df_AllCategories.loc[:, ['sex', *df_AllCategories.loc[:, 'hsa04024':'hsa03013'].columns]]  # Select columns between two columns plus sex column
-        df_RCTM_Mixed = df_AllCategories.loc[:, ['sex', *df_AllCategories.loc[:, 'HSA-373076':'HSA-198933'].columns]]  # Select columns between two columns plus sex column
-        df_Component_Mixed = df_AllCategories.loc[:, ['sex', *df_AllCategories.loc[:, 'GO:0005667':'GO:0033553'].columns]]  # Select columns between two columns plus sex column
-        df_WikiPathways_Mixed = df_AllCategories.loc[:, ['sex', *df_AllCategories.loc[:, 'WP4320':'WP5053'].columns]]  # Select columns between two columns plus sex column
-        df_FAInterPro_Mixed = pd.read_csv(f'internal_files/input_source/Annotation_Source - FA InterPro.tsv', sep='\t', index_col=0)
-
 # Receives a dictionary object with each row in input table, with their respective list of indexes
 # fills out a male and female predprob value for each row (dictionary item) (use test_combinerows to create this)
 def update_predictions(dict_InputTable):
@@ -90,7 +71,6 @@ def update_predictions(dict_InputTable):
     global df_WikiPathways_Mixed
     global df_FAInterPro_Mixed
 
-    load_datasets()
     #dict_predictions_AllCats_Male = ensemble_prediction_female(df_KEGG_Mixed, 'model_NEAllCats_maleonly', 'M', dict_InputTable)
 
     dict_predictions_KEGG_Female = ensemble_prediction_female(df_KEGG_Mixed, 'model_NEKEGG_mixedsex', 'F', dict_InputTable)
