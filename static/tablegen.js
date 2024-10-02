@@ -81,15 +81,17 @@ function InputTable_MakePredictions(){
         result = JSON.parse(data);
         var resultTable = "<table class='display dataTable'>";
         var printdetailedResults = "<b>"
-        resultTable += "<tr><th>Compound</th><th>STRING Target IDs</th><th>Gene names</th><th>No. Targets</th><th>Prediction</th></tr>";
+        resultTable += "<tr><th>Compound</th><th>STRING Target IDs</th><th>Gene names</th><th>Targets Found</th><th>M_Prediction</th><th>F_Prediction</th></tr>";
 
         for(let i=0; i<result.length;i++){
             resultTable += '<tr><td>' + result[i]["compound"] + '</td>';
             resultTable += '<td>' + result[i]["str_ids"] + '</td>';
             resultTable += '<td>' + result[i]["gene_names"] + '</td>';
             resultTable += '<td>' + result[i]["target_number"] + '</td>';
-            predictionColor = getColor(result[i]["prediction"]/100)
-            resultTable += `<td style="background-color: ${predictionColor}">` + result[i]["prediction"] + '</td></tr>';
+            predictionColor = getColor(result[i]["m_prediction"]/100)
+            resultTable += `<td style="background-color: ${predictionColor}">` + result[i]["m_prediction"] + '</td>';
+            predictionColor = getColor(result[i]["f_prediction"]/100)
+            resultTable += `<td style="background-color: ${predictionColor}">` + result[i]["f_prediction"] + '</td></tr>';
             printdetailedResults += result[i]["detailed_results"] +'<br>'
         }
 

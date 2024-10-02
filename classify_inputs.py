@@ -231,21 +231,25 @@ def Btn_MakePredictions(targets_list):
     rowcount = 0
     for row in targets_list:
         rowcount = rowcount + 1
-        pos_prob = 1
-        if pos_prob >= 50:
-            prediction = "Positive class (can promote mice longevity)"
-        else:
-            prediction = "Negative class (cannot promote mice longevity)"
         # positions in dict: 0: "compound_name", 1: "str_ids", 2: "gene_ids", 3: "warnings", 4: "indexes", 5: "male_predprob", 6: "female_predprob"
         print(f'Received compound: {dict_inputTable[rowcount][0]}')
         row["str_ids"] = dict_inputTable[rowcount][1]
         row["gene_names"] = dict_inputTable[rowcount][2]
         row["warnings"] = dict_inputTable[rowcount][3]
         row["target_number"] = len(dict_inputTable[rowcount][4])
-        row["prediction"] = dict_inputTable[rowcount][5]
-        #row["f_prediction"] = dict_inputTable[rowcount][6] # TODO, currently only male predictions
-        row["detailed_results"] = f'The model predicted that the compound {dict_inputTable[rowcount][0]} belongs to the {prediction}, for male mice.'
-
+        row["m_prediction"] = dict_inputTable[rowcount][5]
+        row["f_prediction"] = dict_inputTable[rowcount][6]
+        m_pos_prob = dict_inputTable[rowcount][5]
+        f_pos_prob = dict_inputTable[rowcount][6]
+        if m_pos_prob >= 50 and f_pos_prob >=50:
+            prediction = "Positive class (can promote mice longevity) for both male and female mice"
+        elif m_pos_prob >= 50:
+            prediction = "Positive class (can promote mice longevity) for male mice but Negative class (cannot promote mice longevity) for female mice"
+        elif f_pos_prob >= 50:
+            prediction = "Positive class (can promote mice longevity) for female mice but Negative class (cannot promote mice longevity) for male mice"
+        else:
+            prediction = "Negative class (cannot promote mice longetivty) for both male and female mice"
+        row["detailed_results"] = f'The model predicted that the compound {dict_inputTable[rowcount][0]} belongs to the {prediction}'
     return targets_list
 
 if __name__ == "__main__":
