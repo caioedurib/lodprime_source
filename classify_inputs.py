@@ -24,12 +24,20 @@ with open("files/classifier.pkl", "rb") as f: #add try-catch for file not found 
  - Classify the input instances
  - Run similarity checks from input instances and existing instances, output nearest neighbours (flag if high similarity)
 '''
+def load_allcatsdataset():
+    df1 = pd.read_csv(f'internal_files/input_source/Annotation_Source - NE All Categories - part 1.tsv', sep='\t', index_col=0)
+    df2 = pd.read_csv(f'internal_files/input_source/Annotation_Source - NE All Categories - part 2.tsv', sep='\t', index_col=0)
+    df3 = pd.read_csv(f'internal_files/input_source/Annotation_Source - NE All Categories - part 3.tsv', sep='\t', index_col=0)
+    return pd.concat([df1, df2, df3])
+
+
 df_Component_Male = None
 df_KEGG_Male = None
 df_Process_Male = None
 df_FAInterPro_Male = None
 print('Loading files into memory (this may take about a minute)')
-df_AllCategories = pd.read_csv(f'internal_files/input_source/Annotation_Source - NE All Categories.tsv', sep='\t', index_col=0)
+df_AllCategories = load_allcatsdataset()
+print(df_AllCategories.shape)
 df_KEGG_Mixed = df_AllCategories.loc[:, ['sex', *df_AllCategories.loc[:, 'hsa04024':'hsa03013'].columns]]  # Select columns between two columns plus sex column
 df_RCTM_Mixed = df_AllCategories.loc[:, ['sex', *df_AllCategories.loc[:, 'HSA-373076':'HSA-198933'].columns]]  # Select columns between two columns plus sex column
 df_Component_Mixed = df_AllCategories.loc[:, ['sex', *df_AllCategories.loc[:, 'GO:0005667':'GO:0033553'].columns]]  # Select columns between two columns plus sex column

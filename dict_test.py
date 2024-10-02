@@ -71,10 +71,17 @@ def removeLowFrequencyFeatures(df, threshold):
     return df
 
 
+def load_allcatsdataset():
+    df1 = pd.read_csv(f'internal_files/input_source/Annotation_Source - NE All Categories - part 1.tsv', sep='\t', index_col=0)
+    df2 = pd.read_csv(f'internal_files/input_source/Annotation_Source - NE All Categories - part 2.tsv', sep='\t', index_col=0)
+    df3 = pd.read_csv(f'internal_files/input_source/Annotation_Source - NE All Categories - part 3.tsv', sep='\t', index_col=0)
+    return pd.concat([df1, df2, df3])
+
+
 # Receives a dictionary object with each row in input table, with their respective list of indexes
 # fills out a male and female predprob value for each row (dictionary item) (use test_combinerows to create this)
 def update_predictions(dict_InputTable):
-    df_targets_source = pd.read_csv(f'internal_files/input_source/Annotation_Source - NE All Categories.tsv', sep='\t', index_col=0)
+    df_targets_source = load_allcatsdataset()
     #df_targets_source = removeLowFrequencyFeatures(df_targets_source, 3)
     df_targets_source = df_targets_source.loc[:, ['sex', *df_targets_source.loc[:, 'WP4320':'WP5053'].columns]]  # Select columns between two columns plus sex column
     dict_predictions = ensemble_prediction_female_KEGG(df_targets_source, 'model_NEWikiPathways_mixedsex', 'F', dict_InputTable)
