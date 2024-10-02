@@ -3,6 +3,7 @@ from random import randint
 import numpy as np
 import pandas as pd
 import sklearn
+from csv import reader
 
 rows = [1, 2, 3]
 dict_InputTable = {}
@@ -71,6 +72,18 @@ def removeLowFrequencyFeatures(df, threshold):
     return df
 
 
+def filter_male_dataset(df_mixed_sex, feature_list):
+    featureList = []
+    with open(f'internal_files/input_source/male dataset feature lists/{feature_list}.txt', encoding='utf-8') as read_obj:
+        csv_reader = reader(read_obj, delimiter="\t")
+        for row in csv_reader:
+            featureList.append(row[0])
+    print(df_mixed_sex.shape)
+    df_male = df_mixed_sex.loc[:, featureList]  # Select columns between two columns plus sex column
+    print(df_male.shape)
+    return df_male
+
+
 def load_allcatsdataset():
     df1 = pd.read_csv(f'internal_files/input_source/Annotation_Source - NE All Categories - part 1.tsv', sep='\t', index_col=0)
     df2 = pd.read_csv(f'internal_files/input_source/Annotation_Source - NE All Categories - part 2.tsv', sep='\t', index_col=0)
@@ -82,11 +95,15 @@ def load_allcatsdataset():
 # fills out a male and female predprob value for each row (dictionary item) (use test_combinerows to create this)
 def update_predictions(dict_InputTable):
     df_targets_source = load_allcatsdataset()
+    #df_targets_source = df_targets_source.loc[:, ['sex', *df_targets_source.loc[:, 'GO:0005667':'GO:0033553'].columns]]  # Select columns between two columns plus sex column
+    male_df = filter_male_dataset(df_targets_source, 'FeatureList - Process')
+    '''
     #df_targets_source = removeLowFrequencyFeatures(df_targets_source, 3)
     df_targets_source = df_targets_source.loc[:, ['sex', *df_targets_source.loc[:, 'WP4320':'WP5053'].columns]]  # Select columns between two columns plus sex column
     dict_predictions = ensemble_prediction_female_KEGG(df_targets_source, 'model_NEWikiPathways_mixedsex', 'F', dict_InputTable)
     for rownumber in dict_InputTable.keys():
         dict_InputTable[rownumber][5] = dict_predictions[rownumber]
+    '''
     return dict_InputTable
 
 dict_InputTable = update_predictions(dict_InputTable)

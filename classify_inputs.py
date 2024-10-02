@@ -4,7 +4,7 @@ from random import randint
 import numpy as np
 import pandas as pd
 import sklearn
-
+from csv import reader
 '''
 # working example of pickle load
 from sklearn import datasets
@@ -30,23 +30,33 @@ def load_allcatsdataset():
     df3 = pd.read_csv(f'internal_files/input_source/Annotation_Source - NE All Categories - part 3.tsv', sep='\t', index_col=0)
     return pd.concat([df1, df2, df3])
 
+def filter_male_dataset(df_mixed_sex, feature_list):
+    featureList = []
+    with open(f'internal_files/input_source/male dataset feature lists/{feature_list}.txt', encoding='utf-8') as read_obj:
+        csv_reader = reader(read_obj, delimiter="\t")
+        for row in csv_reader:
+            featureList.append(row[0])
+    df_male = df_mixed_sex.loc[:, featureList]  # Select columns between two columns plus sex column
+    return df_male
 
-df_Component_Male = None
-df_KEGG_Male = None
-df_Process_Male = None
-df_FAInterPro_Male = None
 print('Loading files into memory (this may take about a minute)')
 df_AllCategories = load_allcatsdataset()
-print(df_AllCategories.shape)
+
 df_KEGG_Mixed = df_AllCategories.loc[:, ['sex', *df_AllCategories.loc[:, 'hsa04024':'hsa03013'].columns]]  # Select columns between two columns plus sex column
 df_RCTM_Mixed = df_AllCategories.loc[:, ['sex', *df_AllCategories.loc[:, 'HSA-373076':'HSA-198933'].columns]]  # Select columns between two columns plus sex column
 df_Component_Mixed = df_AllCategories.loc[:, ['sex', *df_AllCategories.loc[:, 'GO:0005667':'GO:0033553'].columns]]  # Select columns between two columns plus sex column
 df_WikiPathways_Mixed = df_AllCategories.loc[:, ['sex', *df_AllCategories.loc[:, 'WP4320':'WP5053'].columns]]  # Select columns between two columns plus sex column
 df_FAInterPro_Mixed = pd.read_csv(f'internal_files/input_source/Annotation_Source - FA InterPro.tsv', sep='\t', index_col=0)
+
+df_FAInterPro_Male = filter_male_dataset(df_FAInterPro_Mixed, 'FeatureList - FAInterPro')
+df_Process_Male = filter_male_dataset(df_AllCategories, 'FeatureList - Process')  # uses all cats ds, must be before it gets filtered in next line
+df_AllCategories = filter_male_dataset(df_AllCategories, 'FeatureList - All Categories')
+df_Component_Male = filter_male_dataset(df_Component_Mixed, 'FeatureList - Component')
+df_KEGG_Male = filter_male_dataset(df_KEGG_Mixed, 'FeatureList - KEGG')
 print('Files loaded succesfully.')
 
 #KEGG: model_NEKEGG_mixedsex
-def ensemble_prediction_female(filtered_df, model_name, sex, dict_InputTable):
+def make_predictions(filtered_df, model_name, dict_InputTable):
     with open(f'internal_files/models/{model_name}.pkl', "rb") as f:  # add try-catch for file not found error
         rf_model = load(f)
         dict_KEGG_predictions = {}
@@ -57,8 +67,6 @@ def ensemble_prediction_female(filtered_df, model_name, sex, dict_InputTable):
             total_row = row_df_targets_source.loc['total']
             output_series = total_row[:] #transform into series
             output_series = np.clip(output_series, 0, 1)
-            if sex == 'F':
-                output_series[0] = 1  # first position of output_series will always refer to sex variable, with a 0 value. If it isn't F there is no sex variable, so no change required
             prediction = rf_model.predict_proba(output_series.values.reshape(1, -1))  # .values to convert Series to array, then .reshape to make it into a dataframe object that can be passed as parameter to predict
             prediction = round(prediction[0][1]*100) # pos 5: male prediction
             dict_KEGG_predictions.setdefault(row_number, prediction)
@@ -67,7 +75,7 @@ def ensemble_prediction_female(filtered_df, model_name, sex, dict_InputTable):
 
 # Receives a dictionary object with each row in input table, with their respective list of indexes
 # fills out a male and female predprob value for each row (dictionary item) (use test_combinerows to create this)
-def update_predictions(dict_InputTable):
+def get_ensemble_predictions(dict_InputTable):
     global df_AllCategories
     global df_Component_Male
     global df_KEGG_Male
@@ -79,13 +87,27 @@ def update_predictions(dict_InputTable):
     global df_WikiPathways_Mixed
     global df_FAInterPro_Mixed
 
-    #dict_predictions_AllCats_Male = ensemble_prediction_female(df_KEGG_Mixed, 'model_NEAllCats_maleonly', 'M', dict_InputTable)
+    dict_predictions_FAInterPro_Male = make_predictions(df_FAInterPro_Male, 'model_FAInterPro_maleonly', dict_InputTable)
+    dict_predictions_AllCats_Male = make_predictions(df_AllCategories, 'model_NEAllCats_maleonly', dict_InputTable)
+    dict_predictions_Component_Male = make_predictions(df_Component_Male, 'model_NEComponent_maleonly', dict_InputTable)
+    dict_predictions_KEGG_Male = make_predictions(df_KEGG_Male, 'model_NEKEGG_maleonly', dict_InputTable)
+    dict_predictions_Process_Male = make_predictions(df_Process_Male, 'model_NEProcess_maleonly', dict_InputTable)
 
-    dict_predictions_KEGG_Female = ensemble_prediction_female(df_KEGG_Mixed, 'model_NEKEGG_mixedsex', 'F', dict_InputTable)
-    dict_predictions_RCTM_Female = ensemble_prediction_female(df_RCTM_Mixed, 'model_NEReactome_mixedsex', 'F', dict_InputTable)
-    dict_predictions_Component_Female = ensemble_prediction_female(df_Component_Mixed, 'model_NEComponent_mixedsex', 'F', dict_InputTable)
-    dict_predictions_WikiPathways_Female = ensemble_prediction_female(df_WikiPathways_Mixed, 'model_NEWikiPathways_mixedsex', 'F', dict_InputTable)
-    dict_predictions_FAInterPro_Female = ensemble_prediction_female(df_FAInterPro_Mixed, 'model_FAInterPro_mixedsex', 'F', dict_InputTable)
+    for rownumber in dict_InputTable.keys():
+        result_prediction = 0
+        result_prediction = result_prediction + dict_predictions_FAInterPro_Male[rownumber]
+        result_prediction = result_prediction + dict_predictions_AllCats_Male[rownumber]
+        result_prediction = result_prediction + dict_predictions_Component_Male[rownumber]
+        result_prediction = result_prediction + dict_predictions_KEGG_Male[rownumber]
+        result_prediction = result_prediction + dict_predictions_Process_Male[rownumber]
+        result_prediction = round(result_prediction / 5)
+        dict_InputTable[rownumber][5] = result_prediction  # pos 5: male mice prediction, from male-only model
+
+    dict_predictions_KEGG_Female = make_predictions(df_KEGG_Mixed, 'model_NEKEGG_mixedsex', dict_InputTable)
+    dict_predictions_RCTM_Female = make_predictions(df_RCTM_Mixed, 'model_NEReactome_mixedsex', dict_InputTable)
+    dict_predictions_Component_Female = make_predictions(df_Component_Mixed, 'model_NEComponent_mixedsex', dict_InputTable)
+    dict_predictions_WikiPathways_Female = make_predictions(df_WikiPathways_Mixed, 'model_NEWikiPathways_mixedsex', dict_InputTable)
+    dict_predictions_FAInterPro_Female = make_predictions(df_FAInterPro_Mixed, 'model_FAInterPro_mixedsex', dict_InputTable)
 
     for rownumber in dict_InputTable.keys():
         result_prediction = 0
@@ -95,7 +117,7 @@ def update_predictions(dict_InputTable):
         result_prediction = result_prediction + dict_predictions_WikiPathways_Female[rownumber]
         result_prediction = result_prediction + dict_predictions_FAInterPro_Female[rownumber]
         result_prediction = round(result_prediction/5)
-        dict_InputTable[rownumber][5] = result_prediction
+        dict_InputTable[rownumber][6] = result_prediction  # pos 6: female mice prediction, from mixed-sex model
     return dict_InputTable
 
 
@@ -203,7 +225,7 @@ def Btn_MakePredictions(targets_list):
         dict_inputTable.setdefault(rowcount, [compound_name, string_ids, gene_names, warnings, [1], 0, 0])
 
     dict_inputTable = update_indexes_list(dict_inputTable) # get indexes of hits in the provided lists of ids and genes
-    dict_inputTable = update_predictions(dict_inputTable) # make predictions for each row of the table
+    dict_inputTable = get_ensemble_predictions(dict_inputTable) # make predictions for each row of the table
 
     # Second run-through of table, writing outputs back on the web object
     rowcount = 0
