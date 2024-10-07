@@ -19,9 +19,9 @@ def removeLowFrequencyFeatures(df, threshold):
                     zero_counts = (df[feature] == 0).sum()
                     one_counts = (df[feature] == 1).sum()
                     if number_instances - zero_counts < threshold:
-                        df = df.drop(feature, 1)
+                        df = df.drop(feature, axis=1)
                     elif number_instances - one_counts < threshold:
-                        df = df.drop(feature, 1)
+                        df = df.drop(feature, axis=1)
                 else:
                     print(f'Warning: skipped {feature} for having values different from 0 and 1')
             except:
@@ -59,18 +59,18 @@ def load_dataset(path, fixed_sex):
     if 'Pubchem_ID' in df:
         df = df.drop('Pubchem_ID', 1)
     if 'Compound_name' in df:
-        df = df.drop('Compound_name', 1)
+        df = df.drop('Compound_name', axis=1)
 
     sex_values = {'M': 0, 'F': 1} #map string values into numeric values for sex variable
     df['sex'] = df['sex'].map(sex_values)
     if fixed_sex == 'M':
         print('Male-only dataset filter applied.')
         df = df.query('sex == 0')
-        df = df.drop('sex', 1)
+        df = df.drop('sex', axis=1)
     elif fixed_sex == 'F':
         print('Female-only dataset filter applied.')
         df = df.query('sex == 1')
-        df = df.drop('sex', 1)
+        df = df.drop('sex', axis=1)
     df = removeLowFrequencyFeatures(df, 3)
     return df
 
@@ -95,6 +95,9 @@ def train_and_save_model(filepath, sex_filter, classifier_savename):
 def test_model():
     dataset_name = 'MM Targets dataset - Functional Annotation - InterPro.tsv'
     df = load_dataset(f'static/files/datasets/{dataset_name}', "M")  # if fixed_sex is M or F, this will filter the dataset to include only instances from that sex.
+    print(df.columns)
+    print(df.shape)
+    '''
     X = df.iloc[:, :-1]
     classifier_name = 'model_FAInterPro_maleonly'
     #train_and_save_model(f'static/files/datasets/{dataset_name}', 'M', classifier_name)
@@ -107,7 +110,7 @@ def test_model():
         for i in range(0, len(list_pred)):
             list_predictions.append(list(list_pred[i])[1])
             print(list_predictions)
-
+'''
 if __name__ == "__main__":
     test_model()  # False: NoFilter, False: skip grid search
     print('All done!')

@@ -94,9 +94,13 @@ def load_allcatsdataset():
 # Receives a dictionary object with each row in input table, with their respective list of indexes
 # fills out a male and female predprob value for each row (dictionary item) (use test_combinerows to create this)
 def update_predictions(dict_InputTable):
-    df_targets_source = load_allcatsdataset()
+    #df_targets_source = load_allcatsdataset()
     #df_targets_source = df_targets_source.loc[:, ['sex', *df_targets_source.loc[:, 'GO:0005667':'GO:0033553'].columns]]  # Select columns between two columns plus sex column
-    male_df = filter_male_dataset(df_targets_source, 'FeatureList - Process')
+
+    df_targets_source = pd.read_csv(f'internal_files/input_source/Annotation_Source - FA InterPro.tsv', sep='\t', index_col=0)
+    male_df = filter_male_dataset(df_targets_source, 'FeatureList - FAInterPro')
+    print(male_df.columns)
+    print(male_df.shape)
     '''
     #df_targets_source = removeLowFrequencyFeatures(df_targets_source, 3)
     df_targets_source = df_targets_source.loc[:, ['sex', *df_targets_source.loc[:, 'WP4320':'WP5053'].columns]]  # Select columns between two columns plus sex column
