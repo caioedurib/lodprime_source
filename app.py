@@ -12,12 +12,6 @@ app = Flask(__name__)
 # Bootstrap docs - https://getbootstrap.com/docs/5.3/getting-started/introduction/
 # Jinja docs - https://jinja.palletsprojects.com/en/3.1.x/templates/
 
-# TODO:
-#       - Get functions for each action a user can take
-#       - List the variables in
-#       - Define what is displayed
-#       - Figure out how the input is gathered (GET/POST/Form?)
-
 # TODO FUTURE:
 #       - Figure out a URL
 #       - Request HTTPS cert

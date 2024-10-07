@@ -9,7 +9,7 @@
       <env name="FLASK_ENV" value="development" />
       <env name="FLASK_DEBUG" value="1" />
     </envs>
-    <option name="SDK_HOME" value="C:\Users\Caio\PycharmProjects\bbsrc_musmusculus_server\venv\Scripts\python.exe" />
+    <option name="SDK_HOME" value="C:\Users\caioe\PycharmProjects\bbsrc_musmusculus_server\venv\Scripts\python.exe" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     <option name="IS_MODULE_SDK" value="false" />
     <option name="ADD_CONTENT_ROOTS" value="true" />

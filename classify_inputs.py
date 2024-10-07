@@ -67,8 +67,11 @@ def make_predictions(filtered_df, model_name, dict_InputTable):
             total_row = row_df_targets_source.loc['total']
             output_series = total_row[:] #transform into series
             output_series = np.clip(output_series, 0, 1)
-            prediction = rf_model.predict_proba(output_series.values.reshape(1, -1))  # .values to convert Series to array, then .reshape to make it into a dataframe object that can be passed as parameter to predict
-            prediction = round(prediction[0][1]*100) # pos 5: male prediction
+            if np.sum(output_series) > 0:  # valid input, with at least one '1' value
+                prediction = rf_model.predict_proba(output_series.values.reshape(1, -1))  # .values to convert Series to array, then .reshape to make it into a dataframe object that can be passed as parameter to predict
+                prediction = round(prediction[0][1]*100) # pos 5: male prediction
+            else:
+                prediction = -1
             dict_KEGG_predictions.setdefault(row_number, prediction)
     return dict_KEGG_predictions
 
@@ -95,14 +98,40 @@ def get_ensemble_predictions(dict_InputTable):
 
     for rownumber in dict_InputTable.keys():
         result_prediction = 0
-        result_prediction = result_prediction + dict_predictions_FAInterPro_Male[rownumber]
-        result_prediction = result_prediction + dict_predictions_AllCats_Male[rownumber]
-        result_prediction = result_prediction + dict_predictions_Component_Male[rownumber]
-        result_prediction = result_prediction + dict_predictions_KEGG_Male[rownumber]
-        result_prediction = result_prediction + dict_predictions_Process_Male[rownumber]
-        result_prediction = round(result_prediction / 5)
+        valid_predictions = 5
+        if dict_predictions_FAInterPro_Male[rownumber] != -1:
+            result_prediction = result_prediction + dict_predictions_FAInterPro_Male[rownumber]
+        else:
+            valid_predictions = valid_predictions -1
+        if dict_predictions_AllCats_Male[rownumber] != -1:
+            result_prediction = result_prediction + dict_predictions_AllCats_Male[rownumber]
+        else:
+            valid_predictions = valid_predictions -1
+        if dict_predictions_Component_Male[rownumber] != -1:
+            result_prediction = result_prediction + dict_predictions_Component_Male[rownumber]
+        else:
+            valid_predictions = valid_predictions -1
+        if dict_predictions_KEGG_Male[rownumber] != -1:
+            result_prediction = result_prediction + dict_predictions_KEGG_Male[rownumber]
+        else:
+            valid_predictions = valid_predictions -1
+        if dict_predictions_Process_Male[rownumber] != -1:
+            result_prediction = result_prediction + dict_predictions_Process_Male[rownumber]
+        else:
+            valid_predictions = valid_predictions - 1
+        if valid_predictions != 0:  # if there are any valid predictions, average them
+            result_prediction = round(result_prediction / valid_predictions)
+        else:  # otherwise return defaul value of 0
+            result_prediction = 0
         dict_InputTable[rownumber][5] = result_prediction  # pos 5: male mice prediction, from male-only model
-
+        '''
+        print(f'Male KEGG: {dict_predictions_FAInterPro_Male[rownumber]}')
+        print(f'Male AllCats: {dict_predictions_AllCats_Male[rownumber]}')
+        print(f'Male Component: {dict_predictions_Component_Male[rownumber]}')
+        print(f'Male KEGG: {dict_predictions_KEGG_Male[rownumber]}')
+        print(f'Male Process: {dict_predictions_Process_Male[rownumber]}')
+        print(f'Male average: {result_prediction}')
+        '''
     dict_predictions_KEGG_Female = make_predictions(df_KEGG_Mixed, 'model_NEKEGG_mixedsex', dict_InputTable)
     dict_predictions_RCTM_Female = make_predictions(df_RCTM_Mixed, 'model_NEReactome_mixedsex', dict_InputTable)
     dict_predictions_Component_Female = make_predictions(df_Component_Mixed, 'model_NEComponent_mixedsex', dict_InputTable)
@@ -111,12 +140,31 @@ def get_ensemble_predictions(dict_InputTable):
 
     for rownumber in dict_InputTable.keys():
         result_prediction = 0
-        result_prediction = result_prediction + dict_predictions_KEGG_Female[rownumber]
-        result_prediction = result_prediction + dict_predictions_RCTM_Female[rownumber]
-        result_prediction = result_prediction + dict_predictions_Component_Female[rownumber]
-        result_prediction = result_prediction + dict_predictions_WikiPathways_Female[rownumber]
-        result_prediction = result_prediction + dict_predictions_FAInterPro_Female[rownumber]
-        result_prediction = round(result_prediction/5)
+        valid_predictions = 5
+        if dict_predictions_KEGG_Female[rownumber] != -1:
+            result_prediction = result_prediction + dict_predictions_KEGG_Female[rownumber]
+        else:
+            valid_predictions = valid_predictions - 1
+        if dict_predictions_RCTM_Female[rownumber] != -1:
+            result_prediction = result_prediction + dict_predictions_RCTM_Female[rownumber]
+        else:
+            valid_predictions = valid_predictions - 1
+        if dict_predictions_Component_Female[rownumber] != -1:
+            result_prediction = result_prediction + dict_predictions_Component_Female[rownumber]
+        else:
+            valid_predictions = valid_predictions - 1
+        if dict_predictions_WikiPathways_Female[rownumber] != -1:
+            result_prediction = result_prediction + dict_predictions_WikiPathways_Female[rownumber]
+        else:
+            valid_predictions = valid_predictions - 1
+        if dict_predictions_FAInterPro_Female[rownumber] != -1:
+            result_prediction = result_prediction + dict_predictions_FAInterPro_Female[rownumber]
+        else:
+            valid_predictions = valid_predictions - 1
+        if valid_predictions != 0:  # if there are any valid predictions, average them
+            result_prediction = round(result_prediction / valid_predictions)
+        else:  # otherwise return defaul value of 0
+            result_prediction = 0
         dict_InputTable[rownumber][6] = result_prediction  # pos 6: female mice prediction, from mixed-sex model
     return dict_InputTable
 

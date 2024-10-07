@@ -93,11 +93,8 @@ def train_and_save_model(filepath, sex_filter, classifier_savename):
 # loads a dataset, trains a model using all its data and tests saving it to a file, loading the model from the file
 # and using it to make a prediction on dummy data.
 def test_model():
-    dataset_name = 'MM Targets dataset - Functional Annotation - InterPro.tsv'
+    dataset_name = 'MM Targets dataset - Neighbour Enrichment - Process.tsv'
     df = load_dataset(f'static/files/datasets/{dataset_name}', "M")  # if fixed_sex is M or F, this will filter the dataset to include only instances from that sex.
-    print(df.columns)
-    print(df.shape)
-    '''
     X = df.iloc[:, :-1]
     classifier_name = 'model_FAInterPro_maleonly'
     #train_and_save_model(f'static/files/datasets/{dataset_name}', 'M', classifier_name)
@@ -110,7 +107,6 @@ def test_model():
         for i in range(0, len(list_pred)):
             list_predictions.append(list(list_pred[i])[1])
             print(list_predictions)
-'''
 if __name__ == "__main__":
     test_model()  # False: NoFilter, False: skip grid search
     print('All done!')
