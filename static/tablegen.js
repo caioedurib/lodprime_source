@@ -73,6 +73,8 @@ function getColor(value){
 // Send data to python to get predictions.
 function InputTable_MakePredictions(){
    // Select table as DataTable instance, convert data to array (deep copy)
+   //$('#Btn_DetailedPredictionsFile').prop("disabled", "False")
+
    let table = $('#table_input').DataTable();
    let tableJSON = convertTableJSON(table);
 
@@ -81,7 +83,7 @@ function InputTable_MakePredictions(){
         result = JSON.parse(data);
         var resultTable = "<table class='display dataTable'>";
         var printdetailedResults = "<b>"
-        resultTable += "<tr><th>Compound</th><th>STRING Target IDs</th><th>Gene names</th><th>Targets Found</th><th>M_Prediction</th><th>F_Prediction</th></tr>";
+        resultTable += "<tr><th>Compound</th><th>STRING Target IDs</th><th>Gene names</th><th>Valid Targets</th><th>M_Prediction</th><th>F_Prediction</th></tr>";
 
         for(let i=0; i<result.length;i++){
             resultTable += '<tr><td>' + result[i]["compound"] + '</td>';
@@ -92,7 +94,8 @@ function InputTable_MakePredictions(){
             resultTable += `<td style="background-color: ${predictionColor}">` + result[i]["m_prediction"] + '</td>';
             predictionColor = getColor(result[i]["f_prediction"]/100)
             resultTable += `<td style="background-color: ${predictionColor}">` + result[i]["f_prediction"] + '</td></tr>';
-            printdetailedResults += result[i]["detailed_results"] +'<br>'
+            if result[i]["detailed_results"] != "":
+                printdetailedResults += result[i]["detailed_results"] +'<br>'
         }
 
         printdetailedResults += "</b>"

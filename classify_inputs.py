@@ -103,22 +103,27 @@ def get_ensemble_predictions(dict_InputTable):
             result_prediction = result_prediction + dict_predictions_FAInterPro_Male[rownumber]
         else:
             valid_predictions = valid_predictions -1
+            dict_InputTable[rownumber][3].append(f'Warning: Model InterPro Domains (M) had no valid data for {dict_InputTable[rownumber][0]}.')
         if dict_predictions_AllCats_Male[rownumber] != -1:
             result_prediction = result_prediction + dict_predictions_AllCats_Male[rownumber]
         else:
             valid_predictions = valid_predictions -1
+            dict_InputTable[rownumber][3].append(f'Warning: Model All Categories (M) had no valid data for {dict_InputTable[rownumber][0]}.')
         if dict_predictions_Component_Male[rownumber] != -1:
             result_prediction = result_prediction + dict_predictions_Component_Male[rownumber]
         else:
             valid_predictions = valid_predictions -1
+            dict_InputTable[rownumber][3].append(f'Warning: Model GO Components (M) had no valid data for {dict_InputTable[rownumber][0]}.')
         if dict_predictions_KEGG_Male[rownumber] != -1:
             result_prediction = result_prediction + dict_predictions_KEGG_Male[rownumber]
         else:
             valid_predictions = valid_predictions -1
+            dict_InputTable[rownumber][3].append(f'Warning: Model KEGG Pathways (M) had no valid data for {dict_InputTable[rownumber][0]}.')
         if dict_predictions_Process_Male[rownumber] != -1:
             result_prediction = result_prediction + dict_predictions_Process_Male[rownumber]
         else:
             valid_predictions = valid_predictions - 1
+            dict_InputTable[rownumber][3].append(f'Warning: Model GO Process (M) had no valid data for {dict_InputTable[rownumber][0]}.')
         if valid_predictions != 0:  # if there are any valid predictions, average them
             result_prediction = round(result_prediction / valid_predictions)
         else:  # otherwise return defaul value of 0
@@ -145,22 +150,27 @@ def get_ensemble_predictions(dict_InputTable):
             result_prediction = result_prediction + dict_predictions_KEGG_Female[rownumber]
         else:
             valid_predictions = valid_predictions - 1
+            dict_InputTable[rownumber][3].append(f'Warning: Model KEGG Pathways (F) had no valid data for {dict_InputTable[rownumber][0]}.')
         if dict_predictions_RCTM_Female[rownumber] != -1:
             result_prediction = result_prediction + dict_predictions_RCTM_Female[rownumber]
         else:
             valid_predictions = valid_predictions - 1
+            dict_InputTable[rownumber][3].append(f'Warning: Model Reactome Pathways (F) had no valid data for {dict_InputTable[rownumber][0]}.')
         if dict_predictions_Component_Female[rownumber] != -1:
             result_prediction = result_prediction + dict_predictions_Component_Female[rownumber]
         else:
             valid_predictions = valid_predictions - 1
+            dict_InputTable[rownumber][3].append(f'Warning: Model GO Component (F) had no valid data for {dict_InputTable[rownumber][0]}.')
         if dict_predictions_WikiPathways_Female[rownumber] != -1:
             result_prediction = result_prediction + dict_predictions_WikiPathways_Female[rownumber]
         else:
             valid_predictions = valid_predictions - 1
+            dict_InputTable[rownumber][3].append(f'Warning: Model Wiki Pathways (F) had no valid data for {dict_InputTable[rownumber][0]}.')
         if dict_predictions_FAInterPro_Female[rownumber] != -1:
             result_prediction = result_prediction + dict_predictions_FAInterPro_Female[rownumber]
         else:
             valid_predictions = valid_predictions - 1
+            dict_InputTable[rownumber][3].append(f'Warning: Model InterPro Domains (F) had no valid data for {dict_InputTable[rownumber][0]}.')
         if valid_predictions != 0:  # if there are any valid predictions, average them
             result_prediction = round(result_prediction / valid_predictions)
         else:  # otherwise return defaul value of 0
@@ -188,23 +198,6 @@ def update_indexes_list(dict_InputTable):
         dict_InputTable[compound][4] = indexes_list  # pos 4: indexes
     return dict_InputTable
 
-
-def test_combinerows(ListofLists_Numeric_Indexes):
-    df_targets_source = pd.read_csv(f'internal_files/input_source/Annotation_Source - NE All Categories.tsv', sep='\t', index_col=0)
-    prediction_list = []
-    for List_Numeric_Indexes in ListofLists_Numeric_Indexes:
-        # KEGG: 'hsa04024':'hsa03013'
-        df_targets_source = df_targets_source.loc[:, ['sex', *df_targets_source.loc[:, 'hsa04024':'hsa03013'].columns]]  # Select columns between two columns plus sex column
-        df_targets_source = df_targets_source.iloc[List_Numeric_Indexes]
-        df_targets_source.loc['total'] = df_targets_source.sum() #create row named 'total' with the sums of all column's values
-        total_row = df_targets_source.loc['total']
-        output_series = total_row[:]
-        output_series = np.clip(output_series, 0, 1)
-        with open("internal_files/models/model_NEKEGG_mixedsex.pkl", "rb") as f:  # add try-catch for file not found error
-            rf_model = load(f)
-            prediction = rf_model.predict_proba(output_series.values.reshape(1, -1)) # .values to convert Series to array, then .reshape to make it into a dataframe object that can be passed as parameter to predict
-            prediction_list.append(prediction[0][1])
-            return prediction[0][1]
 
 # TODO: merge repeating sections of these validation functions into one.
 def validate_str_ids(str_id_list):
@@ -236,7 +229,6 @@ def validate_gene_names(gene_names_list):
     :return: string array of gene names, string array of warnings
     """
     warnings = []
-
     gene_names_list = gene_names_list.upper()  # Gene names are always capitalized
     if '\t' in gene_names_list:
         warnings.append("Gene names contains tabs! This application expects comma delimited data.")
@@ -245,6 +237,28 @@ def validate_gene_names(gene_names_list):
     stripped_gene_name_array = [s.strip() for s in gene_name_array]
 
     return stripped_gene_name_array, warnings
+
+
+def Btn_DetailedResultsFile(dict_inputTable):
+    """
+    Generate a text file to be downloaded by the user with the detailed results of all predictions in their input
+    File should contain detailed information such as the warning/erros and results of each prediction.
+    :param dict_inputTable: dictionary object representing the entire input from user and the additional info processed
+    :return: no returns, but prompts user to save output fiile
+    """
+    for rowcount in range(0, len(dict_inputTable.keys())):
+        m_pos_prob = dict_inputTable[rowcount][5]
+        f_pos_prob = dict_inputTable[rowcount][6]
+        if m_pos_prob >= 50 and f_pos_prob >= 50:
+            prediction = "Positive class (can promote mice longevity) for both male and female mice"
+        elif m_pos_prob >= 50:
+            prediction = "Positive class (can promote mice longevity) for male mice but Negative class (cannot promote mice longevity) for female mice"
+        elif f_pos_prob >= 50:
+            prediction = "Positive class (can promote mice longevity) for female mice but Negative class (cannot promote mice longevity) for male mice"
+        else:
+            prediction = "Negative class (cannot promote mice longetivty) for both male and female mice"
+        row_prediction_message = f'The model predicted that the compound {dict_inputTable[rowcount][0]} belongs to the {prediction}'
+        row_warning_messages = dict_inputTable[rowcount][3]
 
 
 def Btn_MakePredictions(targets_list):
@@ -283,22 +297,15 @@ def Btn_MakePredictions(targets_list):
         print(f'Received compound: {dict_inputTable[rowcount][0]}')
         row["str_ids"] = dict_inputTable[rowcount][1]
         row["gene_names"] = dict_inputTable[rowcount][2]
-        row["warnings"] = dict_inputTable[rowcount][3]
         row["target_number"] = len(dict_inputTable[rowcount][4])
         row["m_prediction"] = dict_inputTable[rowcount][5]
         row["f_prediction"] = dict_inputTable[rowcount][6]
-        m_pos_prob = dict_inputTable[rowcount][5]
-        f_pos_prob = dict_inputTable[rowcount][6]
-        if m_pos_prob >= 50 and f_pos_prob >=50:
-            prediction = "Positive class (can promote mice longevity) for both male and female mice"
-        elif m_pos_prob >= 50:
-            prediction = "Positive class (can promote mice longevity) for male mice but Negative class (cannot promote mice longevity) for female mice"
-        elif f_pos_prob >= 50:
-            prediction = "Positive class (can promote mice longevity) for female mice but Negative class (cannot promote mice longevity) for male mice"
-        else:
-            prediction = "Negative class (cannot promote mice longetivty) for both male and female mice"
-        row["detailed_results"] = f'The model predicted that the compound {dict_inputTable[rowcount][0]} belongs to the {prediction}'
-    return targets_list
 
-if __name__ == "__main__":
-    test_combinerows([[1,2,3,4,5]])
+        if len(dict_inputTable[rowcount][3]) > 0:  # if there are any errors or warnings to print
+            warning_string = ""
+            for warning in dict_inputTable[rowcount][3]:
+                warning_text = warning_string + warning + "\n"
+            row["detailed_results"] = warning_text
+        else:
+            row["detailed_results"] = ""
+    return targets_list
