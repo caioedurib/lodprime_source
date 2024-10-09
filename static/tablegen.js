@@ -1,3 +1,5 @@
+var result = null
+
 function CreateTable(table_id, info_bool, paging_bool, searching_bool) {
     let gen_table = new DataTable(table_id, {
         info: info_bool,
@@ -73,7 +75,7 @@ function getColor(value){
 // Send data to python to get predictions.
 function InputTable_MakePredictions(){
    // Select table as DataTable instance, convert data to array (deep copy)
-   //$('#Btn_DetailedPredictionsFile').prop("disabled", "False")
+   $('#Btn_DetailedPredictionsFile').prop("hidden", false)
 
    let table = $('#table_input').DataTable();
    let tableJSON = convertTableJSON(table);
@@ -94,8 +96,9 @@ function InputTable_MakePredictions(){
             resultTable += `<td style="background-color: ${predictionColor}">` + result[i]["m_prediction"] + '</td>';
             predictionColor = getColor(result[i]["f_prediction"]/100)
             resultTable += `<td style="background-color: ${predictionColor}">` + result[i]["f_prediction"] + '</td></tr>';
-            if result[i]["detailed_results"] != "":
-                printdetailedResults += result[i]["detailed_results"] +'<br>'
+            if(result[i]["detailed_results"] != ""){
+                printdetailedResults += result[i]["detailed_results"] +'<br>';
+            }
         }
 
         printdetailedResults += "</b>"
@@ -103,6 +106,21 @@ function InputTable_MakePredictions(){
         $("#result").html(resultTable);
         $("#detailed_results").html(printdetailedResults);
    })
+}
+
+function InputTable_ExportTable() {
+    var textToSave = "";
+    for(let i=0; i<result.length;i++){
+        textToSave += result[i]["compound"] + ' ' + result[i]["m_prediction"] +  ' ' + result[i]["f_prediction"] + '\n';
+        if(result[i]["detailed_results"] != ""){
+            textToSave += result[i]["detailed_results"] + '\n';
+        }
+    }
+    var hiddenElement = document.createElement('a');
+    hiddenElement.href = 'data:attachment/text,' + encodeURI(textToSave);
+    hiddenElement.target = '_blank';
+    hiddenElement.download = 'Model Predictions - Detailed Results.txt';
+    hiddenElement.click();
 }
 
 // Save table contents to localstorage
@@ -127,5 +145,20 @@ function loadTable() {
 }
 
 function InputTable_LoadFromFile() {
-  // #Todo
+  const fileList = event.target.files;
+    const reader = new FileReader();
+    reader.addEventListener('load', (event) => {
+        console.log(event.target.result);
+        console.log("Running!");
+        console.log(filecontent);
+    });
+    let filecontent = reader.readAsText(fileList[0]);
+    console.log(filecontent);
+    var lines = filecontent.split('\n');
+    for (var i = 0; i < lines.length; i++) {
+        var tabs = lines.split('\t');
+        console.log(tabs[0]);
+    }
+
+
 }
