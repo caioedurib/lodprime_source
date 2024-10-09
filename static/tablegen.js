@@ -75,8 +75,6 @@ function getColor(value){
 // Send data to python to get predictions.
 function InputTable_MakePredictions(){
    // Select table as DataTable instance, convert data to array (deep copy)
-   $('#Btn_DetailedPredictionsFile').prop("hidden", false)
-
    let table = $('#table_input').DataTable();
    let tableJSON = convertTableJSON(table);
 
@@ -105,6 +103,7 @@ function InputTable_MakePredictions(){
         resultTable += "</table>";
         $("#result").html(resultTable);
         $("#detailed_results").html(printdetailedResults);
+       $('#Btn_DetailedPredictionsFile').prop("hidden", false)
    })
 }
 
@@ -144,21 +143,26 @@ function loadTable() {
     }
 }
 
-function InputTable_LoadFromFile() {
-  const fileList = event.target.files;
+function InputTable_LoadFromFile(fileInput) {
+    // Identify the file path
+    let file = fileInput.files[0];
+
+    // Set up a reader to read the file, and set up a function to run when it is finished reading
     const reader = new FileReader();
     reader.addEventListener('load', (event) => {
-        console.log(event.target.result);
-        console.log("Running!");
+        let filecontent = event.target.result.toString();
+
         console.log(filecontent);
+        let lines = filecontent.split('\n');
+        for (let i = 0; i < lines.length; i++) {
+            let tabs = lines[i].split('\t');
+            console.log("Drugs: " + tabs[0]);
+            console.log("String IDs: " + tabs[1]);
+            console.log("Gene Names: " + tabs[2]);
+            console.log("----");
+        }
     });
-    let filecontent = reader.readAsText(fileList[0]);
-    console.log(filecontent);
-    var lines = filecontent.split('\n');
-    for (var i = 0; i < lines.length; i++) {
-        var tabs = lines.split('\t');
-        console.log(tabs[0]);
-    }
 
-
+    // Read the file, trigger the "load" listener.
+    reader.readAsText(file);
 }
