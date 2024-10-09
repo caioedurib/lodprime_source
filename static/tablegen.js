@@ -77,7 +77,7 @@ function InputTable_MakePredictions(){
    // Select table as DataTable instance, convert data to array (deep copy)
    let table = $('#table_input').DataTable();
    let tableJSON = convertTableJSON(table);
-
+    // TODO: Reveal spinner here
    // Send AJAX request, append returned html to the page.
    $.post(window.location, { targets_list: tableJSON}, function(data) {
         result = JSON.parse(data);
@@ -98,7 +98,7 @@ function InputTable_MakePredictions(){
                 printdetailedResults += result[i]["detailed_results"] +'<br>';
             }
         }
-
+        // TODO: Hide spinner here
         printdetailedResults += "</b>"
         resultTable += "</table>";
         $("#result").html(resultTable);
