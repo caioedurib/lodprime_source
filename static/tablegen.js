@@ -1,3 +1,5 @@
+var result = null
+
 function CreateTable(table_id, info_bool, paging_bool, searching_bool) {
     let gen_table = new DataTable(table_id, {
         info: info_bool,
@@ -73,11 +75,9 @@ function getColor(value){
 // Send data to python to get predictions.
 function InputTable_MakePredictions(){
    // Select table as DataTable instance, convert data to array (deep copy)
-   //$('#Btn_DetailedPredictionsFile').prop("disabled", "False")
-
    let table = $('#table_input').DataTable();
    let tableJSON = convertTableJSON(table);
-
+    // TODO: Reveal spinner here
    // Send AJAX request, append returned html to the page.
    $.post(window.location, { targets_list: tableJSON}, function(data) {
         result = JSON.parse(data);
@@ -94,15 +94,32 @@ function InputTable_MakePredictions(){
             resultTable += `<td style="background-color: ${predictionColor}">` + result[i]["m_prediction"] + '</td>';
             predictionColor = getColor(result[i]["f_prediction"]/100)
             resultTable += `<td style="background-color: ${predictionColor}">` + result[i]["f_prediction"] + '</td></tr>';
-            if result[i]["detailed_results"] != "":
-                printdetailedResults += result[i]["detailed_results"] +'<br>'
+            if(result[i]["detailed_results"] != ""){
+                printdetailedResults += result[i]["detailed_results"] +'<br>';
+            }
         }
-
+        // TODO: Hide spinner here
         printdetailedResults += "</b>"
         resultTable += "</table>";
         $("#result").html(resultTable);
         $("#detailed_results").html(printdetailedResults);
+       $('#Btn_DetailedPredictionsFile').prop("hidden", false)
    })
+}
+
+function InputTable_ExportTable() {
+    var textToSave = "";
+    for(let i=0; i<result.length;i++){
+        textToSave += result[i]["compound"] + ' ' + result[i]["m_prediction"] +  ' ' + result[i]["f_prediction"] + '\n';
+        if(result[i]["detailed_results"] != ""){
+            textToSave += result[i]["detailed_results"] + '\n';
+        }
+    }
+    var hiddenElement = document.createElement('a');
+    hiddenElement.href = 'data:attachment/text,' + encodeURI(textToSave);
+    hiddenElement.target = '_blank';
+    hiddenElement.download = 'Model Predictions - Detailed Results.txt';
+    hiddenElement.click();
 }
 
 // Save table contents to localstorage
@@ -126,6 +143,26 @@ function loadTable() {
     }
 }
 
-function InputTable_LoadFromFile() {
-  // #Todo
+function InputTable_LoadFromFile(fileInput) {
+    // Identify the file path
+    let file = fileInput.files[0];
+
+    // Set up a reader to read the file, and set up a function to run when it is finished reading
+    const reader = new FileReader();
+    reader.addEventListener('load', (event) => {
+        let filecontent = event.target.result.toString();
+
+        console.log(filecontent);
+        let lines = filecontent.split('\n');
+        for (let i = 0; i < lines.length; i++) {
+            let tabs = lines[i].split('\t');
+            console.log("Drugs: " + tabs[0]);
+            console.log("String IDs: " + tabs[1]);
+            console.log("Gene Names: " + tabs[2]);
+            console.log("----");
+        }
+    });
+
+    // Read the file, trigger the "load" listener.
+    reader.readAsText(file);
 }
