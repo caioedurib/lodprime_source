@@ -2,14 +2,12 @@
 
 {% block body %}
 <div class="row px-5 pt-4">
-<div class="h-100 p-5 bg-body-tertiary border rounded-3">
-  <h3>Welcome to MiceLongevity</h3>
-    <p>This service provides predictions from machine learning models for deciding whether a compound’s protein targets make it likely to be associated with mice longevity.</p>
-    <p>In the Input page, users can provide examples of compounds and their protein targets, then click the Make Predictions button to get predictions for each entry. </p>
-    <p>The outputs are predicted percentage likelihoods of being associated with increasing mouse longevity, for each compound, based on their protein targets’ annotations (namely Gene Ontology terms, InterPro protein domains, UniProt keywords and pathway data from Reactome, KEGG and WikiPathways), which are automatically retrieved from the STRING database.</p>
-    <p>Please see the Help page for a tutorial with examples of how to use the tool, and details about its implementation. </p>
-    <p>In the Download page, we have made all datasets used to generate the models from this project available for download, as well as a table with all human protein’s STRING code and name, which are used to identify targets in the Input page.
-    </p>
-</div>
+  <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+    <h3>Welcome to MiceLongevity</h3>
+      <p>A tool that provides predictions from machine learning models for whether a compound’s protein targets make it likely to be associated with mice longevity.</p>
+      <p>To get predictions, go to the <a href="/input">Input</a> page and provide examples of compounds and their protein targets.</p>
+      <p>We have also made all datasets used to generate the models from this project available for download in the <a href="/data">Data</a> tab.</p>
+      <p>Please see the <a href="/help">Help</a> page for a tutorial with examples of how to use the tool, and details about its implementation. </p>
+  </div>
 </div>
 {% endblock %}

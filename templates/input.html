@@ -42,18 +42,19 @@
     <div class="accordion" id="accordionExample">
       <div class="accordion-item">
         <h2 class="accordion-header">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
             Manual Input Instructions
           </button>
         </h2>
         <div id="collapseOne" class="accordion-collapse collapse">
           <div class="accordion-body">
             <ul>
-                <li>Click the + button on the input table below to create new lines</li>
-                <li>For each line, fill in the required information (name and protein targets) about the compounds you want the models to make a prediction about:</li>
-                <li>Protein targets may be represented by their STRING Target IDs (e.g.: 9606.ENSP00000345659) or by their names (e.g.: CA7, for the same protein);</li>
-                <li>Our models are trained on annotations from human proteins, so the inputs must be human protein targets;</li>
-                <li>Clicking the Make Predictions button will load a result table with the number of valid targets (those with annotations in our source data) and the prediction results for male and female mice.</li>
+                <li>Click the + button on the input table below to create new lines;</li>
+                <li>For each line, fill in the required information (name and protein targets) about the compounds you want predictions for;</li>
+                <li>Protein targets may be represented by their STRING Target IDs (e.g.: 9606.ENSP00000345659) or by their names (e.g.: CA7, for the same protein). Any field can be left blank;</li>
+                <li>Our models are trained on annotations from human proteins, so the inputs must use human protein targets;</li>
+                <li>Clicking the Make Predictions button will load a result table with the number of valid targets (those with annotations in our source data) and the prediction results for male and female mice;</li>
+                <li>The output is a percentage likelihood for the compound's association with mouse longevity. <i>All values above 50% are positive classifications</i>, but values closer to 100% indicate a stronger association.</li>
             </ul>
           </div>
         </div>
@@ -68,10 +69,11 @@
           <div class="accordion-body">
                 <ul>
                     <li>Prepare a .txt file where each line corresponds to an entry for a compound;</li>
-                    <li>Each line should have 3 tab-separated values: The compound's name (tab) a comma-separated list of STRING IDs (tab) a comma-separated list of gene names</li>
-                    <li>Any element of the line can be left blank, as long as the tabs are present.</li>
-                    <li>Our models are trained on annotations from human proteins, so the inputs must be human protein targets;</li>
-                    <li>Clicking the Make Predictions button will load a result table with the number of valid targets (those with annotations in our source data) and the prediction results for male and female mice.</li>
+                    <li>Each line should have 3 tab-separated values: The compound's name (tab) a comma-separated list of STRING IDs (tab) a comma-separated list of gene names;</li>
+                    <li>Any element of the line can be left blank, as long as the tab separations are present;</li>
+                    <li>Our models are trained on annotations from human proteins, so the inputs must use human protein targets;</li>
+                    <li>Clicking the Make Predictions button will load a result table with the number of valid targets (those with annotations in our source data) and the prediction results for male and female mice;</li>
+                    <li>The output is a percentage likelihood for the compound's association with mouse longevity. <i>All values above 50% are positive classifications</i>, but values closer to 100% indicate a stronger association.</li>
                 </ul>
           </div>
         </div>
