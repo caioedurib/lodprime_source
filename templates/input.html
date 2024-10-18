@@ -38,23 +38,51 @@
 {% endblock %}
 
 {% block body %}
-<div class="row px-5">
-    Input page
-    <ul>
-        <li>User inputs lists of targets and pubchem IDs. They do not need to include drug names</li>
-        <li>If the PubChem ID field is also a list, combine the molecular fingerprints of all chemicals</li>
-        <li>There should be an option for loading input data from a text file</li>
-        <li>Inform user about the difference between predictions for male and female mice</li>
-        <li>Add warnings for annotations/targets that are not included in the original dataset, which make the output less reliable</li>
-    </ul>
+<div class="row px-5 pt-3 pb-3">
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Manual Input Instructions
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <ul>
+                <li>Click the + button on the input table below to create new lines</li>
+                <li>For each line, fill in the required information (name and protein targets) about the compounds you want the models to make a prediction about:</li>
+                <li>Protein targets may be represented by their STRING Target IDs (e.g.: 9606.ENSP00000345659) or by their names (e.g.: CA7, for the same protein);</li>
+                <li>Our models are trained on annotations from human proteins, so the inputs must be human protein targets;</li>
+                <li>Clicking the Make Predictions button will load a result table with the number of valid targets (those with annotations in our source data) and the prediction results for male and female mice.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Load From File Instructions
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse">
+          <div class="accordion-body">
+                <ul>
+                    <li>Prepare a .txt file where each line corresponds to an entry for a compound;</li>
+                    <li>Each line should have 3 tab-separated values: The compound's name (tab) a comma-separated list of STRING IDs (tab) a comma-separated list of gene names</li>
+                    <li>Any element of the line can be left blank, as long as the tabs are present.</li>
+                    <li>Our models are trained on annotations from human proteins, so the inputs must be human protein targets;</li>
+                    <li>Clicking the Make Predictions button will load a result table with the number of valid targets (those with annotations in our source data) and the prediction results for male and female mice.</li>
+                </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
 
 <div class="row px-5">
     <div class="row px-5">
         <div class="column">
-            <button onclick="InputTable_ClearTable()">Clear Table</button>
-                <label for="file-selector" class="btn">Load From File</label>
-                <input type="file" style="display:none" id="file-selector" onchange="InputTable_LoadFromFile(this)">
+
 
         </div>
         <div class="column -6">
@@ -84,20 +112,20 @@
 
 <div class="row px-5">
         <div class="column">
-            <button onclick="InputTable_MakePredictions()">Make Predictions</button>
+            <label for="file-selector" class="btn btn-success inputpagebtn">Load From File</label>
+            <input type="file" style="display:none" id="file-selector" onchange="InputTable_LoadFromFile(this)">
+            <button class="btn btn-success inputpagebtn ml-5" onclick="InputTable_ClearTable()">Clear Table</button> <br>
+            <button class="btn btn-success inputpagebtn mt-2" onclick="InputTable_MakePredictions()">Make Predictions</button>
         </div>
-        <div class="column -6">
-        </div>
-    <!-- <h1>{{ request.form['Compound_Name'] }}</h1> -->
 </div>
 
-<div class="row px-5">
+<div class="row px-5 mx-20">
     <b>Result Table:</b>
     <div id="result">
 
     </div>
     <div class="column">
-        <button id="Btn_DetailedPredictionsFile" onclick="InputTable_ExportTable()" hidden>Detailed Results File</button>
+        <button class="btn btn-success inputpagebtn" id="Btn_DetailedPredictionsFile" onclick="InputTable_ExportTable()" hidden>Export TSV</button>
     </div>
     <b>Warnings and Errors:</b>
     <div id="detailed_results">

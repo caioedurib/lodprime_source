@@ -7,6 +7,14 @@
     visibility: visible;
 }
 
+.navbar a {
+    color: white;
+}
+
+.inputpagebtn {
+width:150px;
+}
+
 #addRow {
     height: 41px;
     width:  calc(100% - var(--bs-gutter-x));

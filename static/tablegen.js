@@ -83,17 +83,18 @@ function InputTable_MakePredictions(){
         result = JSON.parse(data);
         var resultTable = "<table class='display dataTable'>";
         var printdetailedResults = "<b>"
-        resultTable += "<tr><th>Compound</th><th>STRING Target IDs</th><th>Gene names</th><th>Valid Targets</th><th>M_Prediction</th><th>F_Prediction</th></tr>";
+        //resultTable += "<tr><th>Compound</th><th>STRING Target IDs</th><th>Gene names</th><th>Valid Targets</th><th>Male Pos-class likelihood %</th><th>Female Pos-class likelihood %</th></tr>";
+        resultTable += "<tr><th>Compound</th><th>Valid Targets</th><th>Male Pos-class likelihood</th><th>Female Pos-class likelihood</th></tr>";
 
         for(let i=0; i<result.length;i++){
             resultTable += '<tr><td>' + result[i]["compound"] + '</td>';
-            resultTable += '<td>' + result[i]["str_ids"] + '</td>';
-            resultTable += '<td>' + result[i]["gene_names"] + '</td>';
+            //resultTable += '<td>' + result[i]["str_ids"] + '</td>';
+            //resultTable += '<td>' + result[i]["gene_names"] + '</td>';
             resultTable += '<td>' + result[i]["target_number"] + '</td>';
             predictionColor = getColor(result[i]["m_prediction"]/100)
-            resultTable += `<td style="background-color: ${predictionColor}">` + result[i]["m_prediction"] + '</td>';
+            resultTable += `<td style="background-color: ${predictionColor}">` + result[i]["m_prediction"] + '%</td>';
             predictionColor = getColor(result[i]["f_prediction"]/100)
-            resultTable += `<td style="background-color: ${predictionColor}">` + result[i]["f_prediction"] + '</td></tr>';
+            resultTable += `<td style="background-color: ${predictionColor}">` + result[i]["f_prediction"] + '%</td></tr>';
             if(result[i]["detailed_results"] != ""){
                 printdetailedResults += result[i]["detailed_results"] +'<br>';
             }
@@ -144,6 +145,7 @@ function loadTable() {
 }
 
 function InputTable_LoadFromFile(fileInput) {
+    InputTable_ClearTable();
     // Identify the file path
     let file = fileInput.files[0];
 
@@ -160,7 +162,11 @@ function InputTable_LoadFromFile(fileInput) {
             console.log("String IDs: " + tabs[1]);
             console.log("Gene Names: " + tabs[2]);
             console.log("----");
+            tabs[1] = tabs[1].replaceAll("\"",""); //if loading from .tsv file, Excel may have added quotations
+            tabs[2] = tabs[2].replaceAll("\"",""); //if loading from .tsv file, Excel may have added quotations
+            InputTable_AddRow(tabs[0], tabs[1], tabs[2]);
         }
+        saveTable();
     });
 
     // Read the file, trigger the "load" listener.
