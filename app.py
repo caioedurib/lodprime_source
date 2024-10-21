@@ -12,11 +12,11 @@ app = Flask(__name__)
 # Bootstrap docs - https://getbootstrap.com/docs/5.3/getting-started/introduction/
 # Jinja docs - https://jinja.palletsprojects.com/en/3.1.x/templates/
 
-# TODO FUTURE:
-#       - Figure out a URL
-#       - Request HTTPS cert
-#       - Figure out hosting (openstack?)
-#       - Logo/favicon
+# TODO:
+#       - URL and project name
+#       - Logo/favicon?
+#       - Warning messages printing
+#       - TSV export formatting (include warnings?)
 
 @app.route("/")
 def loadpage_home():

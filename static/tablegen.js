@@ -109,17 +109,17 @@ function InputTable_MakePredictions(){
 }
 
 function InputTable_ExportTable() {
-    var textToSave = "";
+    var textToSave = "Compound\tMale Pos-class likelihood\tFemale Pos-class likelihood\n";
     for(let i=0; i<result.length;i++){
-        textToSave += result[i]["compound"] + ' ' + result[i]["m_prediction"] +  ' ' + result[i]["f_prediction"] + '\n';
-        if(result[i]["detailed_results"] != ""){
-            textToSave += result[i]["detailed_results"] + '\n';
-        }
+        textToSave += result[i]["compound"] + '\t' + result[i]["m_prediction"] +  '%\t' + result[i]["f_prediction"] + '%\n';
+       //if(result[i]["detailed_results"] != ""){
+       //     textToSave += result[i]["detailed_results"] + '\n';
+       // }
     }
     var hiddenElement = document.createElement('a');
     hiddenElement.href = 'data:attachment/text,' + encodeURI(textToSave);
     hiddenElement.target = '_blank';
-    hiddenElement.download = 'Model Predictions - Detailed Results.txt';
+    hiddenElement.download = 'Model Predictions - Detailed Results.tsv';
     hiddenElement.click();
 }
 
