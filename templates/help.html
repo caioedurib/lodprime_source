@@ -44,7 +44,6 @@
         <div id="collapseTwo" class="accordion-collapse collapse">
           <div class="accordion-body">
             <ul>
-              <li><b>Source Paper</b>: <a href="https://google.com" target="_blank">Link to paper preprint</a></li>
               <li><a href="https://genomics.senescence.info/drugs/" target="_blank">DrugAge</a>: Database used as a source for all class labels in our training data. It compiles results from peer-reviewed longevity studies on various target organisms, including mus musculus.</li>
               <li><a href="https://go.drugbank.com/" target="_blank">DrugBank</a>: Main source for obtaining protein targets for a compound.</li>
               <li><a href="https://www.uniprot.org/id-mapping" target="_blank">ID Mapping</a>: Tool from UniProt for converting protein identifiers to different formats. This tool accepts either STRING ID formatting (e.g. 9606.ENSP00000354558) or protein names (e.g., MTOR).</li>
@@ -65,20 +64,22 @@
         </h2>
         <div id="collapseThree" class="accordion-collapse collapse">
           <div class="accordion-body">
+            All details regarding the data preparation and experimental setup is included in the <a href="https://google.com" target="_blank">source paper</a>.<br>
+            Here, we include a summary of that information:
             <h5>Machine learning models:</h5>
-            <p>Prediction outputs in this tool are obtained from an ensemble of 5 Random Forest models (different models used for male and female mice, based on each models'
+            <p>Prediction outputs in this tool are obtained from ensembles of 5 Random Forest models (different ensembles for male and female mice, based on each models'
               performance in our experiments). The features used to describe each compound are annotations associated with their user-provided protein targets, which include
              Gene Ontology, InterPro protein domains, UniProt Keywords and Pathway data from KEGG, Wiki and Reactome.</p>
             <h5>Class label definition:</h5>
             <p>A compound is considered a member of the positive class (associated with mouse longevity) if mice treated with it had at least 5% average lifespan increase in the majority
               of experimental reports from peer-reviewed studies, with significant results (data sourced from the DrugAge database). Compounds may have different class labels for male and
               female mice, as results for each sex are considered separately.</p>
-            <h5>Male and Female predictions:</h5>
+            <h5>Predictions for male and female mice:</h5>
             <p>The male mouse predictions are from an ensemble of models trained exclusively with examples from male mice, which had the best predictive accuracy performance in our experiments.
-            For female mice, we lacked enough data to obtain reliable female-only models so the predictions are obtained from mixed-sex datasets. Predictions for female mice are less reliable, as discussed in our <a href="https://google.com" target="_blank">article</a>.</p>
+            For female mice, we lacked enough data to obtain reliable female-only models so the predictions are obtained from mixed-sex datasets. Predictions for female mice are less reliable (please see the source paper for a detailed discussion of the experimental results).
             <h5>Implementation:</h5>
             <p>This web service was implemented in Python, using the Flask framework for the website portion.
-              All models were trained using the sklearn library (v1.0.2), using the datasets provided in the Data page. We selected the models for the ensembles in this tool based on their cross-validation experimental results.
+              All models were trained using the sklearn library (v1.0.2), using the datasets provided in the  <a href="/data">Data</a> page. We selected the models for the ensembles in this tool based on their cross-validation experimental results.
               The data was preprocessed to remove features with fewer than 3 occurrences ('1' values). Otherwise, it includes all STRING annotations from the selected categories.</p>
           </div>
         </div>

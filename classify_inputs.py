@@ -216,9 +216,9 @@ def validate_str_ids(str_id_list):
     stripped_gene_name_array = [s.strip() for s in str_id_array]
 
     for str_id in stripped_gene_name_array:
-        if str_id[:9] != '9606.ENSP':
-            warnings.append(f"String ID '{str_id}' does not have human protein preamble (9606.ENSP).")
-
+        if str_id != "" and str_id[:9] != '9606.ENSP':
+            #warnings.append(f"String ID '{str_id}' does not have human protein preamble (9606.ENSP).")
+            warnings.append(f"Warning: String ID '{str_id}' not recognized. A full list of human protein identifiers is available for download in the Data page.")
     return stripped_gene_name_array, warnings
 
 
@@ -231,7 +231,7 @@ def validate_gene_names(gene_names_list):
     warnings = []
     gene_names_list = gene_names_list.upper()  # Gene names are always capitalized
     if '\t' in gene_names_list:
-        warnings.append("Gene names contains tabs! This application expects comma delimited data.")
+        warnings.append(f"Gene name not recognized. A full list of human protein identifiers is available for download in the Data page.")
 
     gene_name_array = gene_names_list.split(',')
     stripped_gene_name_array = [s.strip() for s in gene_name_array]
