@@ -7,6 +7,10 @@
     visibility: visible;
 }
 
+#table_cheminput tr:hover .bi-x-circle-fill {
+    visibility: visible;
+}
+
 .navbar a {
     color: white;
 }

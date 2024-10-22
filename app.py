@@ -2,7 +2,8 @@
 #import mysql as mysql
 import json
 from flask import Flask, render_template, request
-from classify_inputs import Btn_MakePredictions
+from classify_inputs import Btn_MakeTargetPredictions
+from classify_inputs import Btn_MakeChemPredictions
 app = Flask(__name__)
 
 # Notes
@@ -23,15 +24,24 @@ def loadpage_home():
     return render_template('home.html')
 
 
-@app.route("/input/", methods=['GET', 'POST'])
+@app.route("/target_pred/", methods=['GET', 'POST'])
 def loadpage_input():
     if request.method == 'POST':
         # Decode JSON, send it to function
-        result = Btn_MakePredictions(json.loads(request.form['targets_list']))
+        result = Btn_MakeTargetPredictions(json.loads(request.form['targets_list']))
         # Return result as JSON
         return json.dumps(result)
-    return render_template('input.html')
+    return render_template('target_pred.html')
 
+
+@app.route("/chemical_pred/", methods=['GET', 'POST'])
+def loadpage_chemical_pred():
+    if request.method == 'POST':
+        # Decode JSON, send it to function
+        result = Btn_MakeChemPredictions(json.loads(request.form['targets_list']))
+        # Return result as JSON
+        return json.dumps(result)
+    return render_template('chemical_pred.html')
 
 @app.route("/help/")
 def loadpage_help():

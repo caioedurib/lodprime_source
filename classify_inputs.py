@@ -261,7 +261,59 @@ def Btn_DetailedResultsFile(dict_inputTable):
         row_warning_messages = dict_inputTable[rowcount][3]
 
 
-def Btn_MakePredictions(targets_list):
+def Btn_MakeTargetPredictions(targets_list):
+    """
+    Take input, validate the data, do processing on it, and return an output to be printed on the page.
+    :param targets_list: table data
+    :return: Result of processed data.
+    """
+    # Dictionary with all relevant information for each row (compound) in input table, some user-input and some processed
+    dict_inputTable = {}
+    # positions in dict: 0: "compound_name", 1: "str_ids", 2: "gene_ids", 3: "warnings", 4: "indexes", 5: "male_predprob", 6: "female_predprob"
+
+    # First run-through of the table, reading each row and filling a dictionary object, to process data.
+    # The Dict uses rowcount as key, to avoid issues with repeated compound names being used as key.
+    rowcount = 0
+    for row in targets_list:
+        rowcount = rowcount + 1
+        compound_name = row["compound"]
+        if compound_name == "":
+            compound_name = f'Row_{rowcount}'
+
+        string_ids, str_id_warnings = validate_str_ids(row["str_ids"])
+        gene_names, gene_name_warnings = validate_gene_names(row["gene_names"])
+
+        warnings = str_id_warnings + gene_name_warnings
+        dict_inputTable.setdefault(rowcount, [compound_name, string_ids, gene_names, warnings, [1], 0, 0])
+
+    dict_inputTable = update_indexes_list(dict_inputTable) # get indexes of hits in the provided lists of ids and genes
+    dict_inputTable = get_ensemble_predictions(dict_inputTable) # make predictions for each row of the table
+
+    # Second run-through of table, writing outputs back on the web object
+    rowcount = 0
+    for row in targets_list:
+        rowcount = rowcount + 1
+        # positions in dict: 0: "compound_name", 1: "str_ids", 2: "gene_ids", 3: "warnings", 4: "indexes", 5: "male_predprob", 6: "female_predprob"
+        print(f'Received compound: {dict_inputTable[rowcount][0]}')
+        row["str_ids"] = dict_inputTable[rowcount][1]
+        row["gene_names"] = dict_inputTable[rowcount][2]
+        row["target_number"] = len(dict_inputTable[rowcount][4])
+        row["m_prediction"] = dict_inputTable[rowcount][5]
+        row["f_prediction"] = dict_inputTable[rowcount][6]
+
+        if len(dict_inputTable[rowcount][3]) > 0:  # if there are any errors or warnings to print
+            warning_string = ""
+            for warning in dict_inputTable[rowcount][3]:
+                warning_text = warning_string + warning + "\n"
+            row["detailed_results"] = warning_text
+        else:
+            row["detailed_results"] = ""
+    return targets_list
+
+
+
+
+def Btn_MakeChemPredictions(targets_list):
     """
     Take input, validate the data, do processing on it, and return an output to be printed on the page.
     :param targets_list: table data

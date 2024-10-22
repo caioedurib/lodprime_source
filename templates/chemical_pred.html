@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+
+{% macro removeIcon() %}
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="darkRed" class="bi bi-x-circle-fill" viewBox="0 0 16 16" onclick="ChemInputTable_RemoveRow($(this).parents('tr'))">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>
+    </svg>
+{% endmacro %}
+
+{% macro addIcon() %}
+    <svg xmlns="http://www.w3.org/2000/svg" id="addIcon" width="25" height="25" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
+    </svg>
+{% endmacro %}
+
+{% block head %}
+<link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css">
+<script defer src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
+<script defer src="https://cdn.datatables.net/2.0.7/js/dataTables.bootstrap5.js"></script>
+<script defer src="{{url_for('static', filename='dataTables.cellEdit.js')}}"></script>
+<script defer src="{{url_for('static', filename='tablegen.js')}}"></script>
+<script defer>
+    $(window).bind("load", function() {
+        var table = ChemCreateTable('#table_cheminput', false, false, false); // Create datatable
+        // Load data from localmemory, and make columns editable.
+        ChemloadTable();
+        table.MakeCellsEditable({
+            "onUpdate": ChemtableUpdated,
+            "columns": [1,2,3]
+        });
+    });
+    // When updated, save table content to localstorage.
+    function ChemtableUpdated(updatedCell, updatedRow, oldValue) {
+        ChemsaveTable();
+    }
+</script>
+{% endblock %}
+
+{% block body %}
+<div class="row px-5 pt-3 pb-3">
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            Manual Input Instructions
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <ul>
+                <li>Click the + button on the input table below to create new lines;</li>
+                <li>For each line, fill in the required information (name and protein targets) about the compounds you want predictions for;</li>
+                <li>Protein targets may be represented by their STRING Target IDs (e.g.: 9606.ENSP00000345659) or by their names (e.g.: CA7, for the same protein). Any field can be left blank;</li>
+                <li>Our models are trained on annotations from human proteins, so the inputs must use human protein targets;</li>
+                <li>Clicking the Make Predictions button will load a result table with the number of valid targets (those with annotations in our source data) and the prediction results for male and female mice;</li>
+                <li>The output is a percentage likelihood for the compound's association with mouse longevity. <i>All values above 50% are positive classifications</i>, but values closer to 100% indicate a stronger association.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Load From File Instructions
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse">
+          <div class="accordion-body">
+                <ul>
+                    <li>Prepare a .txt file where each line corresponds to an entry for a compound;</li>
+                    <li>Each line should have 3 tab-separated values: The compound's name (tab) a comma-separated list of STRING IDs (tab) a comma-separated list of gene names;</li>
+                    <li>Any element of the line can be left blank, as long as the tab separations are present;</li>
+                    <li>Our models are trained on annotations from human proteins, so the inputs must use human protein targets;</li>
+                    <li>Clicking the Make Predictions button will load a result table with the number of valid targets (those with annotations in our source data) and the prediction results for male and female mice;</li>
+                    <li>The output is a percentage likelihood for the compound's association with mouse longevity. <i>All values above 50% are positive classifications</i>, but values closer to 100% indicate a stronger association.</li>
+                </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="row px-5">
+    <div class="row px-5">
+        <div class="column">
+        </div>
+        <div class="column -6">
+        </div>
+    </div>
+    <!-- <h1>{{ request.form['Compound_Name'] }}</h1> -->
+</div>
+<div class="row px-5">
+    <table id="table_cheminput" class="display" style="width:100%">
+        <thead>
+        <tr>
+            <th></th> <!-- Remove row column -->
+            <th>Compound</th>
+            <th>STRING Target IDs</th>
+            <th>Gene names</th>
+        </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <div id="addRow" onclick="ChemInputTable_AddRow('','','')">
+        {{ addIcon() }}
+    </div>
+</div>
+
+
+<div class="row px-5">
+        <div class="column">
+            <label for="file-selector" class="btn btn-success inputpagebtn">Load From File</label>
+            <input type="file" style="display:none" id="file-selector" onchange="ChemInputTable_LoadFromFile(this)">
+            <button class="btn btn-success inputpagebtn ml-5" onclick="ChemInputTable_ClearTable()">Clear Table</button> <br>
+            <button class="btn btn-success inputpagebtn mt-2" onclick="ChemInputTable_MakePredictions()">Make Predictions</button>
+        </div>
+</div>
+
+<div class="row px-5 mx-20">
+    <b>Result Table:</b>
+    <div id="result">
+
+    </div>
+    <div class="column">
+        <button class="btn btn-success inputpagebtn" id="Btn_DetailedPredictionsFile" onclick="ChemInputTable_ExportTable()" hidden>Export TSV</button>
+    </div>
+    <div id="detailed_results">
+    </div>
+</div>
+
+{% endblock %}
