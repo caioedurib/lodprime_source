@@ -11,6 +11,8 @@
     visibility: visible;
 }
 
+h3 {text-align: center;}
+
 .navbar a {
     color: white;
 }
