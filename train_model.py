@@ -80,25 +80,29 @@ def load_dataset(path, fixed_sex):
 def train_and_save_model(filepath, sex_filter, classifier_savename):
     print(f'Training: {classifier_savename}')
     df = load_dataset(filepath, sex_filter)  # if fixed_sex is M or F, this will filter the dataset to include only instances from that sex.
-    print(df.head())
-    print(df.shape)
+    for c in df.columns:
+        print(c)
+    '''
     rf = RandomForestClassifier(n_estimators=500, class_weight='balanced_subsample', random_state=0)
     X = df.iloc[:, :-1]
     y = df.iloc[:, -1]
     rf = rf.fit(X.values, y)  # using X.values removes a warning about feature names in X
-    with open(f"static/files/models/{classifier_savename}.pkl", "wb") as f:
+    with open(f"internal_files/models/{classifier_savename}.pkl", "wb") as f:
         pickle.dump(rf, f, protocol=pickle.HIGHEST_PROTOCOL)
     print(f'Model saved: {classifier_savename}')
+    '''
 
 # loads a dataset, trains a model using all its data and tests saving it to a file, loading the model from the file
 # and using it to make a prediction on dummy data.
 def test_model():
-    dataset_name = 'MM Targets dataset - Neighbour Enrichment - Process.tsv'
-    df = load_dataset(f'static/files/datasets/{dataset_name}', "M")  # if fixed_sex is M or F, this will filter the dataset to include only instances from that sex.
+    dataset_name = 'MM Molecular Fingerprints dataset.tsv'
+    df = load_dataset(f'static/files/datasets/{dataset_name}', "both")  # if fixed_sex is M or F, this will filter the dataset to include only instances from that sex.
     X = df.iloc[:, :-1]
-    classifier_name = 'model_FAInterPro_maleonly'
+    print(df.shape)
+    print(df.head())
+    classifier_name = 'model_Fingerprints_mixedsex'
     #train_and_save_model(f'static/files/datasets/{dataset_name}', 'M', classifier_name)
-    with open(f"static/files/models/{classifier_name}.pkl", "rb") as f:
+    with open(f"internal_files/models/{classifier_name}.pkl", "rb") as f:
         rf_model = pickle.load(f)
         list_predictions = []
         test_entry = [np.zeros(len(X.columns))]   # this will be a list of lists, each with len(X.columns) elements
@@ -108,7 +112,10 @@ def test_model():
             list_predictions.append(list(list_pred[i])[1])
             print(list_predictions)
 if __name__ == "__main__":
-    test_model()  # False: NoFilter, False: skip grid search
+    #test_model()  # False: NoFilter, False: skip grid search
+    filepath = 'static/files/datasets/MM Molecular Fingerprints dataset.tsv'
+    classifier_name = 'model_Fingerprints_maleonly'
+    train_and_save_model(filepath, 'M', classifier_name)
     print('All done!')
 
 '''
