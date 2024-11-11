@@ -80,9 +80,6 @@ def load_dataset(path, fixed_sex):
 def train_and_save_model(filepath, sex_filter, classifier_savename):
     print(f'Training: {classifier_savename}')
     df = load_dataset(filepath, sex_filter)  # if fixed_sex is M or F, this will filter the dataset to include only instances from that sex.
-    for c in df.columns:
-        print(c)
-    '''
     rf = RandomForestClassifier(n_estimators=500, class_weight='balanced_subsample', random_state=0)
     X = df.iloc[:, :-1]
     y = df.iloc[:, -1]
@@ -90,7 +87,6 @@ def train_and_save_model(filepath, sex_filter, classifier_savename):
     with open(f"internal_files/models/{classifier_savename}.pkl", "wb") as f:
         pickle.dump(rf, f, protocol=pickle.HIGHEST_PROTOCOL)
     print(f'Model saved: {classifier_savename}')
-    '''
 
 # loads a dataset, trains a model using all its data and tests saving it to a file, loading the model from the file
 # and using it to make a prediction on dummy data.
