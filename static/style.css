@@ -45,6 +45,11 @@ background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg
     border: black 2px solid;
     border-radius: 0;
     box-shadow: 6px 5px 10px rgba(0, 0, 0, 0.5), inset 0.2em 0.2em 0.2em 0 rgba(255,255,255,0.5), inset -0.2em -0.2em 0.2em 0 rgba(0,0,0,0.5);
+    min-height: 115px;
+}
+
+.homebutton img {
+    width: 60%;
 }
 
 .homebutton:hover {
@@ -68,6 +73,10 @@ background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg
 
 #drug {
     height: 75px;
+}
+
+#homeinfo {
+    margin-top: 35px;
 }
 
 #addRow {
