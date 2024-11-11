@@ -30,9 +30,44 @@ background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg
 }
 
 .inputpagebtn {
-border-color: #5dc27b !important;
-background-color: #5dc27b !important;
-width:150px;
+    border-color: #5dc27b !important;
+    background-color: #5dc27b !important;
+    width:150px;
+}
+
+.homedesc {
+    font-size: 20px;
+}
+
+.homebutton {
+    width: 70%;
+    background-color: #8fd29f;
+    border: black 2px solid;
+    border-radius: 0;
+    box-shadow: 6px 5px 10px rgba(0, 0, 0, 0.5), inset 0.2em 0.2em 0.2em 0 rgba(255,255,255,0.5), inset -0.2em -0.2em 0.2em 0 rgba(0,0,0,0.5);
+}
+
+.homebutton:hover {
+    background-color: #6dc07f;
+    border: #2c2a2a 2px solid;
+}
+
+.homebutton:active {
+    background-color: #439f66 !important;
+    border: #131313 2px solid !important;
+}
+
+#middlerow {
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+#mousemonitor {
+    height: 150px;
+}
+
+#drug {
+    height: 75px;
 }
 
 #addRow {

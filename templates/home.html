@@ -4,7 +4,55 @@
 <div class="row px-5 pt-4">
   <div class="h-100 p-5 bg-body-tertiary border rounded-3">
     <h3>Welcome to LODPRIME - Longevity Drug Prediction in Mice</h3>
-    
+      <hr>
+    <div class="container">
+      <div class="row">
+
+        <div class="col-4">
+            <div class="row h-100">
+                <div class="col d-flex align-items-center text-center pe-0 homedesc">
+                    Machine learning models trained using mouse data
+                </div>
+                <div class="col d-flex align-items-center ps-0 pt-4">
+                    <img src="{{url_for('static', filename='img/mousemonitor.png')}}" class="float-right" id="mousemonitor">
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="row">
+                <span class="homedesc text-center">Protein Target Annotations</span>
+                    <a type="button" href="target_pred" class="btn btn-primary mx-auto homebutton">
+                        <div class="homebuttoninner">
+                            <img src="{{url_for('static', filename='img/protein.png')}}" class="float-right">
+                        </div>
+                    </a>
+            </div>
+            <div class="row" id="middlerow">
+                <span class="homedesc text-center fw-bold">Click to make predictions<br>based on...</span>
+            </div>
+            <div class="row">
+                <a href="chemical_pred">
+                    <a type="button" href="chemical_pred" class="btn btn-primary mx-auto homebutton">
+                        <div class="homebuttoninner">
+                            <img src="{{url_for('static', filename='img/chemical.png')}}" class="float-right">
+                        </div>
+                    </a>
+                </a>
+                <span class="homedesc text-center">Chemical Structure</span>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="row h-100">
+                <div class="col-4 d-flex align-items-center ps-5 pt-4">
+                    <img src="{{url_for('static', filename='img/drug.png')}}" class="float-right" id="drug">
+                </div>
+                <div class="col-6 d-flex align-items-center text-center pe-0 homedesc">
+                    To find compounds that could increase mouse longevity
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}
