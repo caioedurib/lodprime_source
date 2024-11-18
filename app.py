@@ -4,6 +4,7 @@ import json
 from flask import Flask, render_template, request
 from classify_inputs import Btn_MakeTargetPredictions
 from classify_inputs import Btn_MakeChemPredictions
+from classify_inputs import Btn_Autofill_Targets
 app = Flask(__name__)
 
 # Notes
@@ -22,6 +23,14 @@ app = Flask(__name__)
 @app.route("/")
 def loadpage_home():
     return render_template('home.html')
+
+
+@app.route("/autocomplete/", methods=['POST'])
+def targetsautofill_function():
+    # Decode JSON, send it to function
+    result = Btn_Autofill_Targets(json.loads(request.form['empty_targets_list']))
+    # Return result as JSON
+    return json.dumps(result)
 
 
 @app.route("/target_pred/", methods=['GET', 'POST'])

@@ -55,6 +55,54 @@ df_Component_Male = filter_male_dataset(df_Component_Mixed, 'FeatureList - Compo
 df_KEGG_Male = filter_male_dataset(df_KEGG_Mixed, 'FeatureList - KEGG')
 print('Files loaded succesfully :)')
 
+df_DrugBank_source = pd.read_csv('static/files/datasets/DrugBank_TargetsSource.tsv', sep='\t', index_col=0, encoding='utf-8')
+
+def find_targets(input_string):
+    input_string = str.lower(input_string)
+    try:
+        targets_list = df_DrugBank_source.loc[input_string]['Targets_List_STRINGIDs']  # exact name search
+    except:
+        targets_list = "Not found"
+    if targets_list == "Not found":
+        for row in df_DrugBank_source.itertuples():
+            try:
+                if row[1].find(input_string) != -1:  # drugbank id search
+                    targets_list = row[3]
+                    break
+                if row[2].find(input_string) != -1:  # synonyms list search
+                    targets_list = row[3]
+                    break
+            except:
+                continue
+    try:
+        genenames_list = df_DrugBank_source.loc[input_string]['Targets_List_GeneNames']  # exact name search
+    except:
+        genenames_list = "Not found"
+    if genenames_list == "Not found":
+        for row in df_DrugBank_source.itertuples():
+            try:
+                if row[1].find(input_string) != -1:  # drugbank id search
+                    genenames_list = row[4]
+                    break
+                if row[2].find(input_string) != -1:  # synonyms list search
+                    genenames_list = row[4]
+                    break
+            except:
+                continue
+    return targets_list, genenames_list
+
+
+def Btn_Autofill_Targets(input_table):
+    print(input_table)
+    for row in input_table:
+        compound_name = row["compound"]
+        if compound_name != "":
+            targets_list, genenames_list = find_targets(compound_name)
+            row["str_ids"] = targets_list
+            row["gene_names"] = genenames_list
+    print(input_table)
+    return input_table
+
 #KEGG: model_NEKEGG_mixedsex
 def make_predictions(filtered_df, model_name, dict_InputTable):
     with open(f'internal_files/models/{model_name}.pkl', "rb") as f:  # add try-catch for file not found error
@@ -309,8 +357,6 @@ def Btn_MakeTargetPredictions(targets_list):
         else:
             row["detailed_results"] = ""
     return targets_list
-
-
 
 
 def Btn_MakeChemPredictions(targets_list):

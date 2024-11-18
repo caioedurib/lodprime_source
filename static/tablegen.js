@@ -72,6 +72,22 @@ function getColor(value){
     return ["hsl(",hue,",100%,50%)"].join("");
 }
 
+
+// Automatically fill the targets column based on the compound names column
+function InputTable_AutofillTargets(){
+   let table = $('#table_input').DataTable();
+   let tableJSON = convertTableJSON(table);
+   $.post("/autocomplete", { empty_targets_list: tableJSON}, function(data) {
+        var result = JSON.parse(data);
+        for(let i=0; i<result.length;i++){
+            table.cell(i,2).data(result[i]["str_ids"]);
+            table.cell(i,3).data(result[i]["gene_names"]);
+        }
+        table.draw();
+   })
+}
+
+
 // Send data to python to get predictions.
 function InputTable_MakePredictions(){
    // Select table as DataTable instance, convert data to array (deep copy)
