@@ -1,0 +1,396 @@
+1  >= 8 H
+2 >= 16 H
+3 >= 32 H
+9 >= 2 C
+10 >= 4 C
+11 >= 8 C
+12 >= 16 C
+13 >= 32 C
+14 >= 1 N
+15 >= 2 N
+16 >= 4 N
+18 >= 1 O
+19 >= 2 O
+20 >= 4 O
+21 >= 8 O
+23 >= 1 F
+24 >= 2 F
+26 >= 1 Na
+30 >= 1 P
+33 >= 1 S
+34 >= 2 S
+37 >= 1 Cl
+38 >= 2 Cl
+143 >= 1 any ring size 5
+144 >= 1 saturated or aromatic carbon-only ring size 5
+145 >= 1 saturated or aromatic nitrogen-containing ring size 5
+146 >= 1 saturated or aromatic heteroatom-containing ring size 5
+150 >= 2 any ring size 5
+152 >= 2 saturated or aromatic nitrogen-containing ring size 5
+153 >= 2 saturated or aromatic heteroatom-containing ring size 5
+178 >= 1 any ring size 6
+179 >= 1 saturated or aromatic carbon-only ring size 6
+180 >= 1 saturated or aromatic nitrogen-containing ring size 6
+181 >= 1 saturated or aromatic heteroatom-containing ring size 6
+185 >= 2 any ring size 6
+186 >= 2 saturated or aromatic carbon-only ring size 6
+188 >= 2 saturated or aromatic heteroatom-containing ring size 6
+192 >= 3 any ring size 6
+193 >= 3 saturated or aromatic carbon-only ring size 6
+199 >= 4 any ring size 6
+200 >= 4 saturated or aromatic carbon-only ring size 6
+206 >= 5 any ring size 6
+227 >= 1 any ring size 8
+230 >= 1 saturated or aromatic heteroatom-containing ring size 8
+241 >= 1 any ring size 9
+242 >= 1 saturated or aromatic carbon-only ring size 9
+243 >= 1 saturated or aromatic nitrogen-containing ring size 9
+244 >= 1 saturated or aromatic heteroatom-containing ring size 9
+248 >= 1 any ring size 10
+249 >= 1 saturated or aromatic carbon-only ring size 10
+250 >= 1 saturated or aromatic nitrogen-containing ring size 10
+251 >= 1 saturated or aromatic heteroatom-containing ring size 10
+255 >= 1 aromatic ring
+256 >= 1 hetero-aromatic ring
+257 >= 2 aromatic rings
+258 >= 2 hetero-aromatic rings
+259 >= 3 aromatic rings
+260 >= 3 hetero-aromatic rings
+261 >= 4 aromatic rings
+283 C-H
+284 C-C
+285 C-N
+286 C-O
+287 C-F
+293 C-S
+294 C-Cl
+299 N-H
+301 N-O
+308 O-H
+332 C(~C)(~C)
+333 C(~C)(~C)(~C)
+334 C(~C)(~C)(~C)(~C)
+335 C(~C)(~C)(~C)(~H)
+336 C(~C)(~C)(~C)(~N)
+337 C(~C)(~C)(~C)(~O)
+338 C(~C)(~C)(~H)(~N)
+339 C(~C)(~C)(~H)(~O)
+340 C(~C)(~C)(~N)
+341 C(~C)(~C)(~O)
+342 C(~C)(~Cl)
+344 C(~C)(~H)
+345 C(~C)(~H)(~N)
+346 C(~C)(~H)(~O)
+347 C(~C)(~H)(~O)(~O)
+349 C(~C)(~H)(~S)
+351 C(~C)(~N)
+352 C(~C)(~O)
+353 C(~C)(~S)
+355 C(~C)(:C)
+356 C(~C)(:C)(:C)
+357 C(~C)(:C)(:N)
+358 C(~C)(:N)
+362 C(~Cl)(:C)
+364 C(~F)(:C)
+365 C(~H)(~N)
+366 C(~H)(~O)
+367 C(~H)(~O)(~O)
+368 C(~H)(~S)
+370 C(~H)(:C)
+371 C(~H)(:C)(:C)
+372 C(~H)(:C)(:N)
+373 C(~H)(:N)
+374 C(~H)(~H)(~H)
+375 C(~N)(~N)
+376 C(~N)(:C)
+377 C(~N)(:C)(:C)
+379 C(~N)(:N)
+380 C(~O)(~O)
+381 C(~O)(:C)
+382 C(~O)(:C)(:C)
+383 C(~S)(:C)
+384 C(:C)(:C)
+385 C(:C)(:C)(:C)
+386 C(:C)(:C)(:N)
+387 C(:C)(:N)
+389 C(:N)(:N)
+390 N(~C)(~C)
+391 N(~C)(~C)(~C)
+392 N(~C)(~C)(~H)
+393 N(~C)(~H)
+395 N(~C)(~O)
+396 N(~C)(:C)
+397 N(~C)(:C)(:C)
+401 N(~O)(~O)
+403 N(:C)(:C)
+405 O(~C)(~C)
+406 O(~C)(~H)
+412 S(~C)(~C)
+413 S(~C)(~H)
+414 S(~C)(~O)
+416 C=C
+418 C=N
+420 C=O
+421 C=S
+423 N=O
+430 C(-C)(-C)(=C)
+431 C(-C)(-C)(=N)
+432 C(-C)(-C)(=O)
+434 C(-C)(-H)(=C)
+435 C(-C)(-H)(=N)
+437 C(-C)(-N)(=C)
+438 C(-C)(-N)(=N)
+439 C(-C)(-N)(=O)
+440 C(-C)(-O)(=O)
+441 C(-C)(=C)
+442 C(-C)(=N)
+443 C(-C)(=O)
+445 C(-H)(-N)(=C)
+446 C(-H)(=C)
+447 C(-H)(=N)
+449 C(-N)(=C)
+450 C(-N)(=N)
+451 C(-N)(=O)
+452 C(-O)(=O)
+453 N(-C)(=C)
+455 N(-O)(=O)
+457 S(-C)(=O)
+458 S(-O)(=O)
+459 S(=O)(=O)
+462 O-C-C=O
+464 N-C-C=C
+465 O=S-C-C
+470 C:C-C=C
+471 S:C:C:C
+472 C:N:C-C
+473 S-C:N:C
+474 S:C:C:N
+475 S-C=N-C
+476 C-O-C=C
+480 C:S:C-C
+482 C:N-C:C
+484 N-C:N:C
+485 N:C:C:N
+487 N-C=N-C
+488 N-C=N-[#1]
+489 N-C-S-C
+490 C-C-C=C
+491 C-N:C-[#1]
+493 O=C-C:C
+495 C-N-C:C
+498 O-C=C-C
+499 N-C:C:N
+500 C-S-C:C
+501 Cl-C:C-C
+502 N-C=C-[#1]
+503 Cl-C:C-[#1]
+504 N:C:N-C
+506 C-C:N:C
+507 C-C-S-C
+508 S=C-N-C
+513 S:C:C-[#1]
+514 O-N-C-C
+516 [#1]-C=C-[#1]
+519 N=C-N-C
+520 C=C-C:C
+521 C:N-C-[#1]
+523 N:C:C-C
+524 C-C=C-C
+528 [#1]-N-C-[#1]
+530 N:C-C:C
+531 S-C:C-C
+532 S-C:C-[#1]
+533 S-C:C-N
+535 O=C-C-C
+536 O=C-C-N
+537 O=C-C-O
+538 N=C-C-C
+539 N=C-C-[#1]
+540 C-N-C-[#1]
+541 O-C:C-C
+542 O-C:C-[#1]
+543 O-C:C-N
+544 O-C:C-O
+545 N-C:C-C
+546 N-C:C-[#1]
+547 N-C:C-N
+548 O-C-C:C
+549 N-C-C:C
+550 Cl-C-C-C
+552 C:C-C:C
+553 O=C-C=C
+555 N=C-C=C
+556 C=C-C-C
+560 N-C-N-C
+563 O-C-O-C
+564 C=C-C=C
+565 C:C-O-C
+566 O-C-C-N
+567 O-C-C-O
+569 N-C-C-N
+570 C:C-C-C
+571 [#1]-C-O-[#1]
+572 N:C:N:C
+573 O-C-C=C
+574 O-C-C:C-C
+575 O-C-C:C-O
+576 N=C-C:C-[#1]
+577 C:C-N-C:C
+578 C-C:C-C:C
+579 O=C-C-C-C
+580 O=C-C-C-N
+581 O=C-C-C-O
+582 C-C-C-C-C
+584 C:C-C=C-C
+585 C-C:C-N-C
+586 C-S-C-C-C
+588 O=C-C-C=O
+589 C-C:C-O-C
+590 C-C:C-O-[#1]
+591 Cl-C-C-C-C
+592 N-C-C-C-C
+593 N-C-C-C-N
+594 C-O-C-C=C
+595 C:C-C-C-C
+596 N=C-N-C-C
+597 O=C-C-C:C
+598 Cl-C:C:C-C
+599 [#1]-C-C=C-[#1]
+600 N-C:C:C-C
+601 N-C:C:C-N
+602 O=C-C-N-C
+603 C-C:C:C-C
+604 C-O-C-C:C
+605 O=C-C-O-C
+606 O-C:C-C-C
+607 N-C-C-C:C
+608 C-C-C-C:C
+610 C-O-C-O-C
+611 N-C-C-N-C
+612 N-C-O-C-C
+613 C-N-C-C-C
+614 C-C-O-C-C
+615 N-C-C-O-C
+617 C-C-C-O-[#1]
+618 C:C-C-C:C
+619 O-C-C=C-C
+620 C:C-O-C-C
+622 O=C-O-C:C
+623 O=C-C:C-C
+624 O=C-C:C-N
+625 O=C-C:C-O
+626 C-O-C:C-C
+628 C-N-C-C:C
+630 O-C:C-O-C
+631 O-C:C-O-[#1]
+632 C-C-O-C:C
+633 N-C-C:C-C
+634 C-C-C:C-C
+636 C-N-C-N-C
+637 O-C-C-C-C
+638 O-C-C-C-N
+639 O-C-C-C-O
+640 C=C-C-C-C
+641 O-C-C-C=C
+642 O-C-C-C=O
+643 [#1]-C-C-N-[#1]
+645 O=C-N-C-C
+646 O=C-N-C-[#1]
+647 O=C-N-C-N
+651 O-C:C:C-C
+653 O-C:C:C-O
+654 N-C-N-C-C
+655 O-C-C-C:C
+656 C-C-N-C-C
+657 C-N-C:C-C
+658 C-C-S-C-C
+659 O-C-C-N-C
+660 C-C=C-C-C
+661 O-C-O-C-C
+662 O-C-C-O-C
+663 O-C-C-O-[#1]
+664 C-C=C-C=C
+665 N-C:C-C-C
+666 C=C-C-O-C
+667 C=C-C-O-[#1]
+668 C-C:C-C-C
+671 O=C-C=C-C
+672 O=C-C=C-[#1]
+673 O=C-C=C-N
+674 N-C-N-C:C
+677 C-C=C-C:C
+678 C-C-C=C-C
+679 C-C-C-C-C-C
+680 O-C-C-C-C-C
+681 O-C-C-C-C-O
+682 O-C-C-C-C-N
+683 N-C-C-C-C-C
+684 O=C-C-C-C-C
+685 O=C-C-C-C-N
+686 O=C-C-C-C-O
+687 O=C-C-C-C=O
+688 C-C-C-C-C-C-C
+689 O-C-C-C-C-C-C
+690 O-C-C-C-C-C-O
+691 O-C-C-C-C-C-N
+692 O=C-C-C-C-C-C
+693 O=C-C-C-C-C-O
+694 O=C-C-C-C-C=O
+695 O=C-C-C-C-C-N
+696 C-C-C-C-C-C-C-C
+697 C-C-C-C-C-C(C)-C
+698 O-C-C-C-C-C-C-C
+699 O-C-C-C-C-C(C)-C
+700 O-C-C-C-C-C-O-C
+701 O-C-C-C-C-C(O)-C
+702 O-C-C-C-C-C-N-C
+703 O-C-C-C-C-C(N)-C
+704 O=C-C-C-C-C-C-C
+705 O=C-C-C-C-C(O)-C
+708 C-C(C)-C-C
+709 C-C(C)-C-C-C
+710 C-C-C(C)-C-C
+711 C-C(C)(C)-C-C
+712 C-C(C)-C(C)-C
+713 Cc1ccc(C)cc1
+714 Cc1ccc(O)cc1
+716 Cc1ccc(N)cc1
+717 Cc1ccc(Cl)cc1
+721 Oc1ccc(N)cc1
+722 Oc1ccc(Cl)cc1
+734 Cc1cc(C)ccc1
+735 Cc1cc(O)ccc1
+737 Cc1cc(N)ccc1
+738 Cc1cc(Cl)ccc1
+740 Oc1cc(O)ccc1
+750 Nc1cc(Cl)ccc1
+755 Cc1c(C)cccc1
+756 Cc1c(O)cccc1
+758 Cc1c(N)cccc1
+761 Oc1c(O)cccc1
+763 Oc1c(N)cccc1
+767 Sc1c(N)cccc1
+770 Nc1c(N)cccc1
+776 CC1CCC(C)CC1
+777 CC1CCC(O)CC1
+779 CC1CCC(N)CC1
+780 CC1CCC(Cl)CC1
+784 OC1CCC(N)CC1
+785 OC1CCC(Cl)CC1
+797 CC1CC(C)CCC1
+798 CC1CC(O)CCC1
+800 CC1CC(N)CCC1
+801 CC1CC(Cl)CCC1
+803 OC1CC(O)CCC1
+813 NC1CC(Cl)CCC1
+818 CC1C(C)CCCC1
+819 CC1C(O)CCCC1
+821 CC1C(N)CCCC1
+824 OC1C(O)CCCC1
+826 OC1C(N)CCCC1
+830 SC1C(N)CCCC1
+833 NC1C(N)CCCC1
+839 CC1CC(C)CC1
+840 CC1CC(O)CC1
+860 CC1C(C)CCC1
+861 CC1C(O)CCC1

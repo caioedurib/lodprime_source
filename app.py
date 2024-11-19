@@ -3,7 +3,7 @@
 import json
 from flask import Flask, render_template, request
 from classify_inputs import Btn_MakeTargetPredictions
-from classify_inputs import Btn_MakeChemPredictions
+from chemical_pred import Btn_MakeChemPredictions
 from classify_inputs import Btn_Autofill_Targets
 app = Flask(__name__)
 
@@ -48,6 +48,7 @@ def loadpage_chemical_pred():
     if request.method == 'POST':
         # Decode JSON, send it to function
         result = Btn_MakeChemPredictions(json.loads(request.form['targets_list']))
+        print(result)
         # Return result as JSON
         return json.dumps(result)
     return render_template('chemical_pred.html')

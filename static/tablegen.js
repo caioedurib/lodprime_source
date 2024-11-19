@@ -195,7 +195,7 @@ function ChemCreateTable(table_id, info_bool, paging_bool, searching_bool) {
         info: info_bool,
         paging: paging_bool,
         searching: searching_bool,
-        columnDefs: [{orderable: false, width: '20px', targets: 0}, {type: "text", targets: [1,2,3]}],
+        columnDefs: [{orderable: false, width: '20px', targets: 0}, {type: "text", targets: [1,2]}],
         order: []
     });
     return gen_table;
@@ -206,8 +206,8 @@ function ChemCreateTable_data(table_id, info_bool, paging_bool, searching_bool) 
         info: info_bool,
         paging: paging_bool,
         searching: searching_bool,
-        columnDefs: [{width: '200px', targets: 0}, {width: '20px', targets: [1,2]}, {width: '200px', targets: 3},
-        {orderable: true, type: "text", targets: [0,1,2,3]}],
+        columnDefs: [{width: '200px', targets: 0}, {width: '20px', targets: [1]}, {width: '200px', targets: 2},
+        {orderable: true, type: "text", targets: [0,1,2]}],
         order: []
     });
     return gen_table;
@@ -216,15 +216,11 @@ function ChemCreateTable_data(table_id, info_bool, paging_bool, searching_bool) 
 // Convert table data into JSON
 function ChemconvertTableJSON(table) {
    let tableArray = structuredClone(table.rows().data().toArray());
-
    // Convert table into a formatted JSON object
    formattedTable = []
    for (let i = 0; i < tableArray.length; i++) {
         let row = tableArray[i];
-        if(Array.isArray(row[3])) {
-            row[3] = row[3].toString();
-        }
-        formattedTable.push({removeCol: row[0], compound: row[1], str_ids: row[2], gene_names:row[3]});
+        formattedTable.push({removeCol: row[0], compound: row[1], cid: row[2]});
    }
    return JSON.stringify(formattedTable);
 }
@@ -245,21 +241,21 @@ function ChemInputTable_ClearTable() {
 }
 
 // Add a row to the table.
-function ChemInputTable_AddRow(compound, str_ids, gene_names) {
+function ChemInputTable_AddRow(compound, cid) {
     var table = new DataTable('#table_cheminput');
     removeIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="darkRed"\
         class="bi bi-x-circle-fill" viewBox="0 0 16 16" onclick="ChemInputTable_RemoveRow($(this).parents(\'tr\'))">\
         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0\
         .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>\
         </svg>'
-    table.row.add([removeIcon, compound.toString(), str_ids.toString(), gene_names.toString()]).draw();
+    table.row.add([removeIcon, compound.toString(), cid.toString()]).draw();
 }
 
 
 // Save table contents to localstorage
 function ChemsaveTable() {
     let table = $('#table_cheminput').DataTable();
-    let tableJSON = convertTableJSON(table);
+    let tableJSON = ChemconvertTableJSON(table);
     localStorage.setItem('DataTables_chemtableData', tableJSON);
 }
 
@@ -273,7 +269,7 @@ function ChemloadTable() {
     let parseData = JSON.parse(loadData);
     for ( i = 0; i < parseData.length; i++) {
         row = parseData[i];
-        ChemInputTable_AddRow(row.compound, row.str_ids, row.gene_names)
+        ChemInputTable_AddRow(row.compound, row.cid)
     }
 }
 
@@ -291,15 +287,14 @@ function ChemInputTable_LoadFromFile(fileInput) {
         let lines = filecontent.split('\n');
         for (let i = 0; i < lines.length; i++) {
             let tabs = lines[i].split('\t');
-            console.log("Drugs: " + tabs[0]);
-            console.log("String IDs: " + tabs[1]);
-            console.log("Gene Names: " + tabs[2]);
+            console.log("Compound: " + tabs[0]);
+            console.log("CID: " + tabs[1]);
             console.log("----");
             tabs[1] = tabs[1].replaceAll("\"",""); //if loading from .tsv file, Excel may have added quotations
             tabs[2] = tabs[2].replaceAll("\"",""); //if loading from .tsv file, Excel may have added quotations
-            ChemInputTable_AddRow(tabs[0], tabs[1], tabs[2]);
+            ChemInputTable_AddRow(tabs[0], tabs[1]);
         }
-        saveTable();
+        ChemsaveTable();
     });
 
     // Read the file, trigger the "load" listener.
@@ -310,8 +305,8 @@ function ChemInputTable_LoadFromFile(fileInput) {
 // Send data to python to get predictions.
 function ChemInputTable_MakePredictions(){
    // Select table as DataTable instance, convert data to array (deep copy)
-   let table = $('#chemtable_input').DataTable();
-   let tableJSON = convertTableJSON(table);
+   let table = $('#table_cheminput').DataTable();
+   let tableJSON = ChemconvertTableJSON(table);
     // TODO: Reveal spinner here
    // Send AJAX request, append returned html to the page.
    $.post(window.location, { targets_list: tableJSON}, function(data) {
@@ -319,13 +314,11 @@ function ChemInputTable_MakePredictions(){
         var resultTable = "<table class='display dataTable'>";
         var printdetailedResults = "<b>"
         //resultTable += "<tr><th>Compound</th><th>STRING Target IDs</th><th>Gene names</th><th>Valid Targets</th><th>Male Pos-class likelihood %</th><th>Female Pos-class likelihood %</th></tr>";
-        resultTable += "<tr><th>Compound</th><th>Valid Targets</th><th>Male Pos-class likelihood</th><th>Female Pos-class likelihood</th></tr>";
+        resultTable += "<tr><th>Compound</th><th>CID</th><th>Male Pos-class likelihood</th><th>Female Pos-class likelihood</th></tr>";
 
         for(let i=0; i<result.length;i++){
             resultTable += '<tr><td>' + result[i]["compound"] + '</td>';
-            //resultTable += '<td>' + result[i]["str_ids"] + '</td>';
-            //resultTable += '<td>' + result[i]["gene_names"] + '</td>';
-            resultTable += '<td>' + result[i]["target_number"] + '</td>';
+            resultTable += '<td>' + result[i]["cid"] + '</td>';
             predictionColor = getColor(result[i]["m_prediction"]/100)
             resultTable += `<td style="background-color: ${predictionColor}">` + result[i]["m_prediction"] + '%</td>';
             predictionColor = getColor(result[i]["f_prediction"]/100)
