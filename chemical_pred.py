@@ -29,18 +29,21 @@ def make_predictions(model, dict_InputTable):
         rf_model = load(f)
         dict_KEGG_predictions = {}
         for row_number in dict_InputTable.keys():
-            if dict_InputTable[row_number][0] == "":  # if no cid is provided in the table for this row, use name as identifier
+            if dict_InputTable[row_number][1] == "":  # if no cid is provided in the table for this row, use name as identifier
                 fingerprint = get_filteredfingerprint(dict_InputTable[row_number][0], model, False)
             else:
                 fingerprint = get_filteredfingerprint(dict_InputTable[row_number][1], model, True)  # otherwise, use cid
             if np.sum(fingerprint) > 0:  # valid input, with at least one '1' value
-                prediction = rf_model.predict_proba(fingerprint.values.reshape(1, -1))  # .values to convert Series to array, then .reshape to make it into a dataframe object that can be passed as parameter to predict
+                prediction = rf_model.predict_proba(fingerprint.reshape(1, -1))  # .values to convert Series to array, then .reshape to make it into a dataframe object that can be passed as parameter to predict
                 prediction = round(prediction[0][1]*100) # pos 5: male prediction
             else:
-                prediction = -1
+                prediction = 0
                 dict_InputTable[row_number][2] = f'Warning: compound in row {row_number} not found, skipped. Provided identifiers: Name={dict_InputTable[row_number][0]} CID={dict_InputTable[row_number][1]}.'
-            dict_KEGG_predictions.setdefault(row_number, prediction)
-    return dict_KEGG_predictions
+            if model == 'mixed-sex':
+                dict_InputTable[row_number][4] = prediction  # position 4 for female mouse prediction
+            elif model == 'male-only':
+                dict_InputTable[row_number][3] = prediction  # position 3 for male mouse prediction
+    return dict_InputTable
 
 
 def get_filteredfingerprint(identifier, model, cid_provided):
@@ -70,7 +73,7 @@ def get_filteredfingerprint(identifier, model, cid_provided):
         return [0]
     if model == 'mixed-sex':
         filtered_fingerprint = np.insert(filtered_fingerprint, 0, 1) # add a 1 value at the beggining of the array for sex = F
-    return filtered_fingerprint
+    return filtered_fingerprint.astype(np.int)
 
 
 def Btn_MakeChemPredictions(targets_list):
@@ -98,7 +101,7 @@ def Btn_MakeChemPredictions(targets_list):
         row["m_prediction"] = dict_inputTable[rowcount][3]
         row["f_prediction"] = dict_inputTable[rowcount][4]
 
-        if len(dict_inputTable[rowcount][3]) > 0:  # if there are any errors or warnings to print
+        if len(dict_inputTable[rowcount][2]) > 0:  # if there are any errors or warnings to print
             warning_string = ""
             for warning in dict_inputTable[rowcount][2]:
                 warning_text = warning_string + warning + "\n"

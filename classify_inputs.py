@@ -107,7 +107,7 @@ def Btn_Autofill_Targets(input_table):
 def make_predictions(filtered_df, model_name, dict_InputTable):
     with open(f'internal_files/models/{model_name}.pkl', "rb") as f:  # add try-catch for file not found error
         rf_model = load(f)
-        dict_KEGG_predictions = {}
+        dict_predictions_currentmodel = {}
         for row_number in dict_InputTable.keys():
             indexes_list = dict_InputTable[row_number][4]
             row_df_targets_source = filtered_df.loc[indexes_list]  # pos 4: indexes_list
@@ -120,8 +120,8 @@ def make_predictions(filtered_df, model_name, dict_InputTable):
                 prediction = round(prediction[0][1]*100) # pos 5: male prediction
             else:
                 prediction = -1
-            dict_KEGG_predictions.setdefault(row_number, prediction)
-    return dict_KEGG_predictions
+            dict_predictions_currentmodel.setdefault(row_number, prediction)
+    return dict_predictions_currentmodel
 
 
 # Receives a dictionary object with each row in input table, with their respective list of indexes
