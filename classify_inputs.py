@@ -58,17 +58,22 @@ print('Files loaded succesfully :)')
 df_DrugBank_source = pd.read_csv('static/files/datasets/DrugBank_TargetsSource.tsv', sep='\t', index_col=0, encoding='utf-8')
 df_KnownClassLabel_source = pd.read_csv('static/files/datasets/Compounds with known class label.tsv', sep='\t', index_col=0, encoding='utf-8')
 
-def check_knownclasslabels(dict_InputTable):
+
+def check_knownclasslabels(dict_InputTable, warning_position):
+    print(f'checking known class labels with pos {warning_position}')
+    print(dict_InputTable)
     global df_KnownClassLabel_source
     for row_number in dict_InputTable.keys():
-        current_compound = dict_InputTable[row_number]["compound"]
+        current_compound = dict_InputTable[row_number][0]
         try:
             Class_M = df_KnownClassLabel_source.loc[current_compound]['Class_M']  # exact name search
             Class_F = df_KnownClassLabel_source.loc[current_compound]['Class_F']  # exact name search
             print(f'Compound found: {current_compound} with Class_M {Class_M} and Class_F {Class_F}')
-            dict_InputTable[row_number][3].append(f'Compound found: {current_compound} with Class_M {Class_M} and Class_F {Class_F}')  # errors and warnings in position 3.
+            dict_InputTable[row_number][warning_position].append(f'Compound found: {current_compound} with Class_M {Class_M} and Class_F {Class_F}')  # errors and warnings in position 3.
         except:
             print(f'Compound not found: {current_compound}.')
+    return dict_InputTable
+
 
 def find_targets(input_string):
     input_string = str.lower(input_string)
@@ -347,7 +352,7 @@ def Btn_MakeTargetPredictions(targets_list):
         warnings = str_id_warnings + gene_name_warnings
         dict_inputTable.setdefault(rowcount, [compound_name, string_ids, gene_names, warnings, [1], 0, 0])
 
-    dict_inputTable = check_knownclasslabels(dict_inputTable)
+    dict_inputTable = check_knownclasslabels(dict_inputTable, 3) # warning position is 3 for target predictions
     dict_inputTable = update_indexes_list(dict_inputTable) # get indexes of hits in the provided lists of ids and genes
     dict_inputTable = get_ensemble_predictions(dict_inputTable) # make predictions for each row of the table
 
