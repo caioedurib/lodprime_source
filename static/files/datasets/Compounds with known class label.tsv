@@ -1,104 +1,100 @@
 compound_name	Class_M	Class_F
-(R/S)-1,3-butanediol	0	0
+(r/s)-1,3-butanediol	0	0
 17-alpha-estradiol	1	0
-17-dimethylaminoethylamino-17-demethoxygeldanamycin hydrochloride (DMAG)	0	0
-2-(2-hydroxyphenyl)benzothiazole (HBX)	0	0
-2,2'-Diaminodiethyl Disulfide Dihydrochloride	0	0
+17-dimethylaminoethylamino-17-demethoxygeldanamycin hydrochloride (dmag)	0	0
+2-(2-hydroxyphenyl)benzothiazole (hbx)	0	0
+2,2'-diaminodiethyl disulfide dihydrochloride	0	0
 2,4-dinitrophenol	?	1
-2-Mercaptoethylamine Hydrochloride	0	1
-4-hydroxyphenyl-N-tert-butylnitrone (4-OH-PBN)	0	0
+2-mercaptoethylamine hydrochloride	0	1
+4-hydroxyphenyl-n-tert-butylnitrone (4-oh-pbn)	0	0
 4-phenylbutyrate	0	0
-78c (CD38 inhibitor) 	1	0
-Acarbose	1	0
-Acetaminophen	?	0
-Alpelisib	1	1
-Alpha-ketoglutarate	0	1
-Alpha-lipoic acid	0	?
-Aluminium chloride	0	?
-Ascorbic acid	1	?
-Aspirin	1	0
-Astaxanthin	1	0
-Berberine	1	?
-Beta-Aminopropionitrile fumarate	1	?
-Beta-Carotene (trans)	0	?
-Beta-Guanidinopropionic acid(bGPA)	0	0
-Butylated hydroxytoluene	1	1
-Caffeic Acid Phenethyl Ester	0	0
-Calcium Pantothenate	1	1
-Canagliflozin	1	0
-Candesartan cilexetil	0	0
-Captopril	1	0
-CASIN (Cdc42 activity-specific inhibitor)	?	1
-Chloroquine	1	0
-Chlorpheniramine	?	0
-Chlorpromazine	?	0
-Coenzyme Q10	0	?
-Creatine	?	1
-Curcumin	0	0
-Cysteine Hydrochloride	0	0
-Dehydroepiandrosterone sulfate	0	0
-D-glucosamine	0	?
-Dimethyl fumarate	0	0
-Dimethylaminoethyl p-chlorophenoxyacetate	?	0
-Enalapril	0	0
-Epitalon	?	0
-Ethoxyquin	1	1
-Fisetin	0	0
-Geranylgeranylacetone	0	0
-Glycine	1	0
-Hesperetin	1	?
-Hexachlorophene	0	0
-Hydroxylamine Hydrochloride	1	1
-Icariin	1	?
-IGF-1R mAb (L2-Cmu)	?	1
-INT-767d	0	0
-Ivabradine	1	?
-L-deprenyl	1	1
-Levodopa	1	?
-L-leucine	0	0
-L-methionine	0	?
-LY444711 (ghrelin agonist)	0	?
-Meclizine	1	0
-Melatonin	?	1
-Metformin	0	0
-Methylene blue	0	0
-Metoprolol	1	?
-MIF098	0	0
-Minocycline	0	0
-MitoQ	0	0
-Morin	0	?
-Mycophenolic acid	0	0
-N-acetyl-L-cysteine	?	0
-Nebivolol	1	?
-Nicotinamide	0	?
-Nicotinamide mononucleotide	0	?
-Nicotinamide riboside	0	0
-Nitroflurbiprofen	0	0
-Nordihydroguaiaretic acid	1	0
-N-tert-butyl-alpha-phenylnitrone	0	?
-Oridonin	0	?
-Oxaloacetatic acid	0	0
-P-fluorophenylalanine	0	0
-Phenformin	?	1
-Prednisolone sodium phosphate	?	0
-Putrescine	?	0
-Quercetin	0	0
-Rapamycin	1	1
-Resveratrol	0	0
-SG1002 (hydrogen sulfide donor)	0	0
-Simvastatin	0	0
-Spermidine	1	1
-Spermine	?	1
-SRT1720	1	?
-Sulindac	0	0
-Syringaresinol?	0	0
-Taurine	1	1
-Taxifolin	0	?
-Tetrahydrocurcumin	1	?
-TM5441	0	0
-Ursodeoxycholic acid	0	0
-Ursolic acid	0	0
-		
-		
-		
-		
+78c (cd38 inhibitor) 	1	0
+acarbose	1	0
+acetaminophen	?	0
+alpelisib	1	1
+alpha-ketoglutarate	0	1
+alpha-lipoic acid	0	?
+aluminium chloride	0	?
+ascorbic acid	1	?
+aspirin	1	0
+astaxanthin	1	0
+berberine	1	?
+beta-aminopropionitrile fumarate	1	?
+beta-carotene (trans)	0	?
+beta-guanidinopropionic acid(bgpa)	0	0
+butylated hydroxytoluene	1	1
+caffeic acid phenethyl ester	0	0
+calcium pantothenate	1	1
+canagliflozin	1	0
+candesartan cilexetil	0	0
+captopril	1	0
+casin (cdc42 activity-specific inhibitor)	?	1
+chloroquine	1	0
+chlorpheniramine	?	0
+chlorpromazine	?	0
+coenzyme q10	0	?
+creatine	?	1
+curcumin	0	0
+cysteine hydrochloride	0	0
+dehydroepiandrosterone sulfate	0	0
+d-glucosamine	0	?
+dimethyl fumarate	0	0
+dimethylaminoethyl p-chlorophenoxyacetate	?	0
+enalapril	0	0
+epitalon	?	0
+ethoxyquin	1	1
+fisetin	0	0
+geranylgeranylacetone	0	0
+glycine	1	0
+hesperetin	1	?
+hexachlorophene	0	0
+hydroxylamine hydrochloride	1	1
+icariin	1	?
+igf-1r mab (l2-cmu)	?	1
+int-767d	0	0
+ivabradine	1	?
+l-deprenyl	1	1
+levodopa	1	?
+l-leucine	0	0
+l-methionine	0	?
+ly444711 (ghrelin agonist)	0	?
+meclizine	1	0
+melatonin	?	1
+metformin	0	0
+methylene blue	0	0
+metoprolol	1	?
+mif098	0	0
+minocycline	0	0
+mitoq	0	0
+morin	0	?
+mycophenolic acid	0	0
+n-acetyl-l-cysteine	?	0
+nebivolol	1	?
+nicotinamide	0	?
+nicotinamide mononucleotide	0	?
+nicotinamide riboside	0	0
+nitroflurbiprofen	0	0
+nordihydroguaiaretic acid	1	0
+n-tert-butyl-alpha-phenylnitrone	0	?
+oridonin	0	?
+oxaloacetatic acid	0	0
+p-fluorophenylalanine	0	0
+phenformin	?	1
+prednisolone sodium phosphate	?	0
+putrescine	?	0
+quercetin	0	0
+rapamycin	1	1
+resveratrol	0	0
+sg1002 (hydrogen sulfide donor)	0	0
+simvastatin	0	0
+spermidine	1	1
+spermine	?	1
+srt1720	1	?
+sulindac	0	0
+syringaresinol?	0	0
+taurine	1	1
+taxifolin	0	?
+tetrahydrocurcumin	1	?
+tm5441	0	0
+ursodeoxycholic acid	0	0
+ursolic acid	0	0

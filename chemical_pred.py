@@ -20,6 +20,20 @@ with open(f"internal_files/input_source/male dataset feature lists/FeatureList -
         keep_positions_maleonlyds.append((bit[0].split(' ')[0]))
     f.close()
 
+
+def check_knownclasslabels(dict_InputTable):
+    global df_KnownClassLabel_source
+    for row_number in dict_InputTable.keys():
+        current_compound = dict_InputTable[row_number]["compound"]
+        try:
+            Class_M = df_KnownClassLabel_source.loc[current_compound]['Class_M']  # exact name search
+            Class_F = df_KnownClassLabel_source.loc[current_compound]['Class_F']  # exact name search
+            print(f'Compound found: {current_compound} with Class_M {Class_M} and Class_F {Class_F}')
+            dict_InputTable[row_number][2].append(f'Compound found: {current_compound} with Class_M {Class_M} and Class_F {Class_F}')
+        except:
+            print(f'Compound not found: {current_compound}.')
+
+
 def make_predictions(model, dict_InputTable):
     if model == 'mixed-sex':
         model_name = 'model_Fingerprints_mixedsex'
@@ -88,6 +102,7 @@ def Btn_MakeChemPredictions(targets_list):
         #compound_names, warnings = validate_str_ids(row["compound"])
         dict_inputTable.setdefault(rowcount, [compound_name, row["cid"], "", 0, 0])
 
+    dict_inputTable = check_knownclasslabels(dict_inputTable)
     dict_inputTable = make_predictions('mixed-sex', dict_inputTable) # make F predictions for each row of the table
     dict_inputTable = make_predictions('male-only', dict_inputTable)  # make M predictions for each row of the table
     # Second run-through of table, writing outputs back on the web object
