@@ -75,7 +75,7 @@ def get_filteredfingerprint(identifier, model, cid_provided):
         return [0]
     if model == 'mixed-sex':
         filtered_fingerprint = np.insert(filtered_fingerprint, 0, 1) # add a 1 value at the beggining of the array for sex = F
-    return filtered_fingerprint.astype(np.int)
+    return filtered_fingerprint.astype(np.int32)
 
 
 def Btn_MakeChemPredictions(targets_list):

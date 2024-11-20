@@ -61,7 +61,6 @@ df_KnownClassLabel_source = pd.read_csv('static/files/datasets/Compounds with kn
 
 def check_knownclasslabels(dict_InputTable, warning_position):
     print(f'checking known class labels with pos {warning_position}')
-    print(dict_InputTable)
     global df_KnownClassLabel_source
     for row_number in dict_InputTable.keys():
         current_compound = dict_InputTable[row_number][0]
@@ -111,14 +110,12 @@ def find_targets(input_string):
 
 
 def Btn_Autofill_Targets(input_table):
-    print(input_table)
     for row in input_table:
         compound_name = row["compound"]
         if compound_name != "":
             targets_list, genenames_list = find_targets(compound_name)
             row["str_ids"] = targets_list
             row["gene_names"] = genenames_list
-    print(input_table)
     return input_table
 
 #KEGG: model_NEKEGG_mixedsex
