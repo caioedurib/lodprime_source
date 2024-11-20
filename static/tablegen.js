@@ -77,7 +77,7 @@ function getColor(value){
 function InputTable_AutofillTargets(){
    let table = $('#table_input').DataTable();
    let tableJSON = convertTableJSON(table);
-   $.post("/autocomplete", { empty_targets_list: tableJSON}, function(data) {
+   $.post("../autocomplete/", { empty_targets_list: tableJSON}, function(data) {
         var result = JSON.parse(data);
         for(let i=0; i<result.length;i++){
             table.cell(i,2).data(result[i]["str_ids"]);
