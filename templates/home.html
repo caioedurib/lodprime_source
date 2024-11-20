@@ -14,16 +14,16 @@
                     Machine learning models trained using mouse data
                 </div>
                 <div class="col d-flex align-items-center ps-0 pt-4">
-                    <img src="{{url_for('static', filename='img/mousemonitor.png')}}" class="float-right" id="mousemonitor">
+                    <img src="{{prefix + url_for('static', filename='img/mousemonitor.png')}}" class="float-right" id="mousemonitor">
                 </div>
             </div>
         </div>
         <div class="col-3">
             <div class="row">
                 <span class="homedesc text-center">Protein Target Annotations</span>
-                    <a type="button" href="target_pred" class="btn btn-primary mx-auto homebutton">
+                    <a type="button" href="{{prefix}}/target_pred" class="btn btn-primary mx-auto homebutton">
                         <div class="homebuttoninner">
-                            <img src="{{url_for('static', filename='img/protein.png')}}" class="float-right">
+                            <img src="{{prefix + url_for('static', filename='img/protein.png')}}" class="float-right">
                         </div>
                     </a>
             </div>
@@ -31,10 +31,10 @@
                 <span class="homedesc text-center fw-bold">Click to make predictions<br>based on...</span>
             </div>
             <div class="row">
-                <a href="chemical_pred">
-                    <a type="button" href="chemical_pred" class="btn btn-primary mx-auto homebutton">
+                <a href="{{prefix}}/chemical_pred">
+                    <a type="button" href="{{prefix}}/chemical_pred" class="btn btn-primary mx-auto homebutton">
                         <div class="homebuttoninner">
-                            <img src="{{url_for('static', filename='img/chemical.png')}}" class="float-right">
+                            <img src="{{prefix + url_for('static', filename='img/chemical.png')}}" class="float-right">
                         </div>
                     </a>
                 </a>
@@ -44,7 +44,7 @@
         <div class="col-4">
             <div class="row h-100">
                 <div class="col-4 d-flex align-items-center ps-5 pt-4">
-                    <img src="{{url_for('static', filename='img/drug.png')}}" class="float-right" id="drug">
+                    <img src="{{prefix + url_for('static', filename='img/drug.png')}}" class="float-right" id="drug">
                 </div>
                 <div class="col-6 d-flex align-items-center text-center pe-0 homedesc">
                     To find compounds that could increase mouse longevity
@@ -54,7 +54,7 @@
       </div>
     </div>
       <div class="text-center" id="homeinfo">
-      You can download our source datasets in the <a href="data">Data</a> page. Details about the tool and example inputs are available in the <a href="help">Help</a> page.
+      You can download our source datasets in the <a href="{{prefix}}/data">Data</a> page. Details about the tool and example inputs are available in the <a href="{{prefix}}/help">Help</a> page.
           </div>
   </div>
 </div>

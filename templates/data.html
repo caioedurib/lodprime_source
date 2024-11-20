@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css">
 <script defer src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
 <script defer src="https://cdn.datatables.net/2.0.7/js/dataTables.bootstrap5.js"></script>
-<script defer src="{{url_for('static', filename='tablegen.js')}}"></script>
+<script defer src="{{prefix + url_for('static', filename='tablegen.js')}}"></script>
 <script>
     $(window).bind("load", function() {
         var gen_table = CreateTable_data('#table_otherdatasets', false, false, false);
@@ -44,46 +44,46 @@
       </thead>
       <tbody>
           <tr>
-              <td><a href="{{url_for('static', filename='files/datasets/MM Targets dataset - Neighbour Enrichment.tsv')}}">Targets - Neighbour Enrichment (all categories).tsv</a></td>
+              <td><a href="{{prefix + url_for('static', filename='files/datasets/MM Targets dataset - Neighbour Enrichment.tsv')}}">Targets - Neighbour Enrichment (all categories).tsv</a></td>
               <td>143/6460</td>
               <td>1,874 KB</td>
-              <td><a href="{{url_for('static', filename='files/dsdescriptors/placeholder.txt')}}">NE Targets (description file).txt</a></td>
+              <td><a href="{{prefix + url_for('static', filename='files/dsdescriptors/placeholder.txt')}}">NE Targets (description file).txt</a></td>
           </tr>
           <tr>
-              <td><a href="{{url_for('static', filename='files/datasets/MM Targets dataset - Functional Annotation - InterPro.tsv')}}">FA Targets (InterPro Domains).tsv</a></td>
+              <td><a href="{{prefix + url_for('static', filename='files/datasets/MM Targets dataset - Functional Annotation - InterPro.tsv')}}">FA Targets (InterPro Domains).tsv</a></td>
               <td>136/476</td>
               <td>135 KB</td>
-              <td><a href="{{url_for('static', filename='files/dsdescriptors/placeholder.txt')}}">FA Targets (description file).txt</a></td>
+              <td><a href="{{prefix + url_for('static', filename='files/dsdescriptors/placeholder.txt')}}">FA Targets (description file).txt</a></td>
           </tr>
        <tr>
-              <td><a href="{{url_for('static', filename='files/datasets/MM Targets dataset - Neighbour Enrichment - Component.tsv')}}">NE Targets (GO Cellular Component).tsv</a></td>
+              <td><a href="{{prefix + url_for('static', filename='files/datasets/MM Targets dataset - Neighbour Enrichment - Component.tsv')}}">NE Targets (GO Cellular Component).tsv</a></td>
               <td>134/363</td>
               <td>103 KB</td>
-              <td><a href="{{url_for('static', filename='files/dsdescriptors/placeholder.txt')}}">NE Targets (description file).txt</a></td>
+              <td><a href="{{prefix + url_for('static', filename='files/dsdescriptors/placeholder.txt')}}">NE Targets (description file).txt</a></td>
           </tr>
           <tr>
-              <td><a href="{{url_for('static', filename='files/datasets/MM Targets dataset - Neighbour Enrichment - Process.tsv')}}">NE Targets (GO Biological Process).tsv</a></td>
+              <td><a href="{{prefix + url_for('static', filename='files/datasets/MM Targets dataset - Neighbour Enrichment - Process.tsv')}}">NE Targets (GO Biological Process).tsv</a></td>
               <td>143/2570</td>
               <td>749 KB</td>
-              <td><a href="{{url_for('static', filename='files/dsdescriptors/placeholder.txt')}}">NE Targets (description file).txt</a></td>
+              <td><a href="{{prefix + url_for('static', filename='files/dsdescriptors/placeholder.txt')}}">NE Targets (description file).txt</a></td>
           </tr>
           <tr>
-              <td><a href="{{url_for('static', filename='files/datasets/MM Targets dataset - Neighbour Enrichment - KEGG.tsv')}}">NE Targets (KEGG Pathways).tsv</a></td>
+              <td><a href="{{prefix + url_for('static', filename='files/datasets/MM Targets dataset - Neighbour Enrichment - KEGG.tsv')}}">NE Targets (KEGG Pathways).tsv</a></td>
               <td>143/298</td>
               <td>90 KB</td>
-              <td><a href="{{url_for('static', filename='files/dsdescriptors/placeholder.txt')}}">NE Targets (description file).txt</a></td>
+              <td><a href="{{prefix + url_for('static', filename='files/dsdescriptors/placeholder.txt')}}">NE Targets (description file).txt</a></td>
           </tr>
           <tr>
-              <td><a href="{{url_for('static', filename='files/datasets/MM Targets dataset - Neighbour Enrichment - RCTM.tsv')}}">NE Targets (Reactome Pathways).tsv</a></td>
+              <td><a href="{{prefix + url_for('static', filename='files/datasets/MM Targets dataset - Neighbour Enrichment - RCTM.tsv')}}">NE Targets (Reactome Pathways).tsv</a></td>
               <td>143/1050</td>
               <td>309 KB</td>
-              <td><a href="{{url_for('static', filename='files/dsdescriptors/placeholder.txt')}}">NE Targets (description file).txt</a></td>
+              <td><a href="{{prefix + url_for('static', filename='files/dsdescriptors/placeholder.txt')}}">NE Targets (description file).txt</a></td>
           </tr>
           <tr>
-              <td><a href="{{url_for('static', filename='files/datasets/MM Targets dataset - Neighbour Enrichment - WikiPathways.tsv')}}">NE Targets (WikiPathways).tsv</a></td>
+              <td><a href="{{prefix + url_for('static', filename='files/datasets/MM Targets dataset - Neighbour Enrichment - WikiPathways.tsv')}}">NE Targets (WikiPathways).tsv</a></td>
               <td>140/598</td>
               <td>171 KB</td>
-              <td><a href="{{url_for('static', filename='files/dsdescriptors/placeholder.txt')}}">NE Targets (description file).txt</a></td>
+              <td><a href="{{prefix + url_for('static', filename='files/dsdescriptors/placeholder.txt')}}">NE Targets (description file).txt</a></td>
           </tr>
       </tbody>
   </table>
@@ -91,6 +91,6 @@
 <br>
 <div class="row px-5">
     <b>Other files:</b>
-<a href="{{url_for('static', filename='files/dsdescriptors/Human proteins list.tsv')}}">List of human proteins names and STRING IDs.tsv</a>
+<a href="{{prefix + url_for('static', filename='files/dsdescriptors/Human proteins list.tsv')}}">List of human proteins names and STRING IDs.tsv</a>
 </div>
 {% endblock %}

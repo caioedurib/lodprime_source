@@ -1,10 +1,11 @@
 #app.py
 #import mysql as mysql
 import json
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, Blueprint
 from classify_inputs import Btn_MakeTargetPredictions
 from chemical_pred import Btn_MakeChemPredictions
 from classify_inputs import Btn_Autofill_Targets
+from os import environ
 app = Flask(__name__)
 
 # Notes
@@ -20,10 +21,11 @@ app = Flask(__name__)
 #       - Warning messages printing
 #       - TSV export formatting (include warnings?)
 
+prefix = environ.get('prefix', '')
+
 @app.route("/")
 def loadpage_home():
-    return render_template('home.html')
-
+    return render_template('home.html', prefix=prefix)
 
 @app.route("/autocomplete/", methods=['POST'])
 def targetsautofill_function():
@@ -40,7 +42,7 @@ def loadpage_input():
         result = Btn_MakeTargetPredictions(json.loads(request.form['targets_list']))
         # Return result as JSON
         return json.dumps(result)
-    return render_template('target_pred.html')
+    return render_template('target_pred.html', prefix=prefix)
 
 
 @app.route("/chemical_pred/", methods=['GET', 'POST'])
@@ -51,18 +53,18 @@ def loadpage_chemical_pred():
         print(result)
         # Return result as JSON
         return json.dumps(result)
-    return render_template('chemical_pred.html')
+    return render_template('chemical_pred.html', prefix=prefix)
 
 @app.route("/help/")
 def loadpage_help():
-    return render_template('help.html')
+    return render_template('help.html', prefix=prefix)
 
 
 @app.route("/about/")
 def loadpage_about():
-    return render_template('about.html')
+    return render_template('about.html', prefix=prefix)
 
 
 @app.route("/data/")
 def loadpage_data():
-    return render_template('data.html')
+    return render_template('data.html', prefix=prefix)

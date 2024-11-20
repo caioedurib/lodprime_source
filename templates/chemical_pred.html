@@ -16,8 +16,8 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.css">
 <script defer src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
 <script defer src="https://cdn.datatables.net/2.0.7/js/dataTables.bootstrap5.js"></script>
-<script defer src="{{url_for('static', filename='dataTables.cellEdit.js')}}"></script>
-<script defer src="{{url_for('static', filename='tablegen.js')}}"></script>
+<script defer src="{{prefix + url_for('static', filename='dataTables.cellEdit.js')}}"></script>
+<script defer src="{{prefix + url_for('static', filename='tablegen.js')}}"></script>
 <script defer>
     $(window).bind("load", function() {
         var table = ChemCreateTable('#table_cheminput', false, false, false); // Create datatable
