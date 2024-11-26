@@ -8,7 +8,7 @@
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-            Input Examples
+            Input Examples - Target-based Prediction
           </button>
         </h2>
         <div id="collapseOne" class="accordion-collapse collapse">
@@ -16,6 +16,7 @@
             <p>In the Input page, users can provide examples of compounds and comma-separated lists of their protein targets, then click the Make Predictions button to get predictions for each entry. </p>
             <p>Protein targets can be referenced by <i>either</i> their gene name or by their STRING ID. Any combination of inputs from both fields will be processed.</p>
             <p>The <a href="{{prefix}}/data/">Data</a> page has a downloadable file listing all human proteins, including their names and STRING IDs. Protein targets can be obtained from several online resources, some of which are cited below in 'External Resources'. Make sure to use only human proteins, as our models are trained on human protein annotations.</p>
+            <p>There is also an Autofill button provided, which tries to find the compound names in the input table on a list of DrugBank compounds and targets, and automatically fill the target data based on that.</p>
             <p>Input example with gene names (results in positive classifications for both male and female mice):</p>
             <ul>
               <li>Compound: Rapamycin</li>
@@ -26,7 +27,7 @@
               <li>Compound: Alpelisib</li>
               <li>String IDs: 9606.ENSP00000263967, 9606.ENSP00000501150, 9606.ENSP00000366563, 9606.ENSP00000419260</li>
             </ul>
-            <p>Input example (results in negative classifications for both male and female mice):</p>
+            <p>Input example (results in negative classifications for both male and female mice).:</p>
             <ul>
               <li>Compound: Taxifolin</li>
               <li>String IDs: 9606.ENSP00000345659, 9606.ENSP00000178638</li>
@@ -35,17 +36,47 @@
           </div>
         </div>
       </div>
+
       <div class="accordion-item">
         <h2 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            External resources
+            Input Examples - Chemical Prediction
           </button>
         </h2>
         <div id="collapseTwo" class="accordion-collapse collapse">
           <div class="accordion-body">
+            <p>In the Input page, users can provide examples of compounds and their numeric PubChem cid, then click the Make Predictions button to get predictions for each entry. </p>
+            <p>Input example with only the compound name (cid is obtained automatically, results in positive classifications for both male and female mice):</p>
+            <ul>
+              <li>Compound: Rapamycin</li>
+              <li>PubChem CID: ""</li>
+            </ul>
+            <p>Input example with both name and cid (name is disregarded as cid is provided, results in a positive classification for male mice and negative for female mice):</p>
+            <ul>
+              <li>Compound: Putrescine</li>
+              <li>PubChem CID: 1045</li>
+            </ul>
+            <p>Input example with only the cid (same input from previous example, results in a positive classification for male mice and negative for female mice):</p>
+            <ul>
+              <li>Compound: ""</li>
+              <li>PubChem CID: 1045</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            External resources
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse">
+          <div class="accordion-body">
             <ul>
               <li><a href="https://genomics.senescence.info/drugs/" target="_blank">DrugAge</a>: Database used as a source for all class labels in our training data. It compiles results from peer-reviewed longevity studies on various target organisms, including mus musculus.</li>
               <li><a href="https://go.drugbank.com/" target="_blank">DrugBank</a>: Main source for obtaining protein targets for a compound.</li>
+              <li><a href="https://pubchem.ncbi.nlm.nih.gov/" target="_blank">PubChem</a>: Used for the Chemical Prediction tool, use the name search to find the numeric id associated with a compound.</li>
               <li><a href="https://www.uniprot.org/id-mapping" target="_blank">ID Mapping</a>: Tool from UniProt for converting protein identifiers to different formats. This tool accepts either STRING ID formatting (e.g. 9606.ENSP00000354558) or protein names (e.g., MTOR).</li>
               <li>Alternative target sources:
                 <a href="https://thebiogrid.org/" target="_blank">BioGrid</a>,
@@ -58,29 +89,31 @@
       </div>
       <div class="accordion-item">
         <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
             Additional details
           </button>
         </h2>
-        <div id="collapseThree" class="accordion-collapse collapse">
+        <div id="collapseFour" class="accordion-collapse collapse">
           <div class="accordion-body">
             All details regarding the data preparation and experimental setup is included in the <a href="https://www.biorxiv.org/content/10.1101/2024.10.29.620854v1" target="_blank">source paper</a>.<br>
             Here, we include a summary of that information:
             <h5>Machine learning models:</h5>
-            <p>Prediction outputs in this tool are obtained from ensembles of 5 Random Forest models (different ensembles for male and female mice, based on each models'
+            <p><b>For the Target Prediction tool:</b> Prediction outputs are obtained from ensembles of 5 Random Forest models (different ensembles for male and female mice, selected based on each models'
               performance in our experiments). The features used to describe each compound are annotations associated with their user-provided protein targets, which include
              Gene Ontology, InterPro protein domains, UniProt Keywords and Pathway data from KEGG, Wiki and Reactome.</p>
+            <p><b>For the Chemical Prediction tool:</b> Prediction outputs are obtained from a single Random Forest model (different models for male and female mice). The features used to describe each compound are
+            binary values from PubChem's molecular fingerprints describing chemical substructures that are present/absent in the compound's composition.</p>
             <h5>Class label definition:</h5>
             <p>A compound is considered a member of the positive class (associated with mouse longevity) if mice treated with it had at least 5% average lifespan increase in the majority
               of experimental reports from peer-reviewed studies, with significant results (data sourced from the DrugAge database). Compounds may have different class labels for male and
               female mice, as results for each sex are considered separately.</p>
             <h5>Predictions for male and female mice:</h5>
-            <p>The male mouse predictions are from an ensemble of models trained exclusively with examples from male mice, which had the best predictive accuracy performance in our experiments.
+            <p>The male mouse predictions are from models trained exclusively with examples from male mice, which had the best predictive accuracy performance in our experiments.
             For female mice, we lacked enough data to obtain reliable female-only models so the predictions are obtained from mixed-sex datasets. Predictions for female mice are less reliable (please see the source paper for a detailed discussion of the experimental results).
             <h5>Implementation:</h5>
             <p>This web service was implemented in Python, using the Flask framework for the website portion.
-              All models were trained using the sklearn library (v1.0.2), using the datasets provided in the  <a href="{{prefix}}/data">Data</a> page. We selected the models for the ensembles in this tool based on their cross-validation experimental results.
-              The data was preprocessed to remove features with fewer than 3 occurrences ('1' values). Otherwise, it includes all STRING annotations from the selected categories.</p>
+              All models were trained using the sklearn library (v1.1.0), using the datasets provided in the  <a href="{{prefix}}/data">Data</a> page. We selected the models for the ensembles in this tool based on their cross-validation experimental results.
+              The data was preprocessed to remove features with fewer than 3 occurrences ('1' values). Otherwise, Target models include all STRING annotations from the selected categories, and Chemical models include all chemical substructures in the fingerprint.</p>
           </div>
         </div>
       </div>

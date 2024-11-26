@@ -28,8 +28,16 @@
 {% block body %}
 <div class="row px-5 pt-4">
   <div class="h-100 p-5 bg-body-tertiary border rounded-3">
-      <p>All models used in this tool have been created using the datasets below.<br>
-          The description files include a list of all features in the data and the class label definition.</p>
+      <p>All machine learning models used in this tool have been trained using the datasets in this page. Their binary features indicate the presence/absence of a given annotation within the targets associated with each example compound, and the class label indicates whether the compound has been associated with mouse longevity ('1') or not ('0').
+          The description files include a list of all features in the data and the class label definition.
+
+      </p>
+      <p>Other files available for download:
+      <ul>
+      <li> A source file of all human proteins that includes their names and STRING IDs. These are valid inputs for the Target Prediction functionality.</li>
+      <li> A list of all compounds for which there is known evidence for their class label value (for male mice, female mice, or both sexes). Note: the class labels are created from evidence of peer-reviewed studies, with information from <a href="https://genomics.senescence.info/drugs/" target="_blank">DrugAge</a>, as described in the <a href="https://www.biorxiv.org/content/10.1101/2024.10.29.620854v1" target="_blank">source paper</a>.</li>
+      </ul>
+      </p>
   </div>
 </div>
 <div class="row px-5">
@@ -91,6 +99,7 @@
 <br>
 <div class="row px-5">
     <b>Other files:</b>
-<a href="{{prefix + url_for('static', filename='files/dsdescriptors/Human proteins list.tsv')}}">List of human proteins names and STRING IDs.tsv</a>
+    <a href="{{prefix + url_for('static', filename='files/dsdescriptors/Human proteins list.tsv')}}">List of human proteins names and STRING IDs.tsv</a>
+    <a href="{{prefix + url_for('static', filename='files/datasets/Compounds with known class label.tsv')}}">List of compounds with assigned class labels.tsv</a>
 </div>
 {% endblock %}

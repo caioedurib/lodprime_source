@@ -47,12 +47,11 @@
         <div id="collapseOne" class="accordion-collapse collapse">
           <div class="accordion-body">
             <ul>
-                <li>Click the + button on the input table below to create new lines;</li>
-                <li>For each line, fill in the required information (name and protein targets) about the compounds you want predictions for;</li>
-                <li>Protein targets may be represented by their STRING Target IDs (e.g.: 9606.ENSP00000345659) or by their names (e.g.: CA7, for the same protein). Any field can be left blank;</li>
-                <li>Our models are trained on annotations from human proteins, so the inputs must use human protein targets;</li>
-                <li>Clicking the Make Predictions button will load a result table with the number of valid targets (those with annotations in our source data) and the prediction results for male and female mice;</li>
-                <li>The output is a percentage likelihood for the compound's association with mouse longevity. <i>All values above 50% are positive classifications</i>, but values closer to 100% indicate a stronger association.</li>
+                <li>Click the + button on the input table below to create new lines.</li>
+                <li>For each line, fill in the required information (the compound's name and/or PubChem cid number) about the compounds you want predictions for.</li>
+                <li>If only the name is inputted, the program does a search for this name and automatically fills the cid if it finds a hit. It is more precise to manually input the cid number, to make sure the desired compound is being used.</li>
+                <li>Clicking the Make Predictions button will load a result table with the number of valid targets (those with annotations in our source data) and the prediction results for male and female mice.</li>
+                <li>The output is the probability for the compound's association with mouse longevity. <i>All values above 50% are positive classifications</i>, with values closer to 100% indicating a stronger association.</li>
             </ul>
           </div>
         </div>
@@ -66,12 +65,12 @@
         <div id="collapseTwo" class="accordion-collapse collapse">
           <div class="accordion-body">
                 <ul>
-                    <li>Prepare a .txt file where each line corresponds to an entry for a compound;</li>
-                    <li>Each line should have 3 tab-separated values: The compound's name (tab) a comma-separated list of STRING IDs (tab) a comma-separated list of gene names;</li>
-                    <li>Any element of the line can be left blank, as long as the tab separations are present;</li>
-                    <li>Our models are trained on annotations from human proteins, so the inputs must use human protein targets;</li>
-                    <li>Clicking the Make Predictions button will load a result table with the number of valid targets (those with annotations in our source data) and the prediction results for male and female mice;</li>
-                    <li>The output is a percentage likelihood for the compound's association with mouse longevity. <i>All values above 50% are positive classifications</i>, but values closer to 100% indicate a stronger association.</li>
+                    <li>Prepare a text file (.txt or .tsv) where each line corresponds to an entry for a compound. Click the Load from File button and select the input file.</li>
+                    <li>Each line should have 2 tab-separated values: The compound's name (tab) The compound's PubChem id number.</li>
+                    <li>Any element of the line can be left blank, as long as the tab separations are present.</li>
+                    <li>If only the name is inputted, the program does a search for this name and automatically fills the cid if it finds a hit. It is more precise to manually input the cid number, to make sure the desired compound is being used.</li>
+                    <li>Clicking the Make Predictions button will load a result table with the number of valid targets (those with annotations in our source data) and the prediction results for male and female mice.</li>
+                    <li>The output is the probability for the compound's association with mouse longevity. <i>All values above 50% are positive classifications</i>, with values closer to 100% indicating a stronger association.</li>
                 </ul>
           </div>
         </div>
