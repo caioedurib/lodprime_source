@@ -85,10 +85,19 @@ def Btn_MakeChemPredictions(targets_list):
     for row in targets_list:
         rowcount = rowcount + 1
         compound_name = row["compound"]
+        compound_cid = row["cid"]
         if compound_name == "":
-            compound_name = f'Row_{rowcount}'
+            try:
+                compound_name = pcp.get_compounds(identifier={compound_cid}, namespace='cid')[0].iupac_name
+            except:
+                compound_name = "Not found."
+        if compound_cid == "":
+            try:
+                compound_cid = pcp.get_compounds(identifier={compound_name}, namespace='name')[0].cid
+            except:
+                compound_cid = -1
         #compound_names, warnings = validate_str_ids(row["compound"])
-        dict_inputTable.setdefault(rowcount, [compound_name, row["cid"], "", 0, 0])
+        dict_inputTable.setdefault(rowcount, [compound_name, compound_cid, "", 0, 0])
 
     dict_inputTable = check_knownclasslabels(dict_inputTable, 2)  # warning position is 2 for chem predictions
     dict_inputTable = make_predictions('mixed-sex', dict_inputTable)  # make F predictions for each row of the table
@@ -112,4 +121,3 @@ def Btn_MakeChemPredictions(targets_list):
         else:
             row["detailed_results"] = ""
     return targets_list
-

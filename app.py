@@ -50,7 +50,6 @@ def loadpage_chemical_pred():
     if request.method == 'POST':
         # Decode JSON, send it to function
         result = Btn_MakeChemPredictions(json.loads(request.form['targets_list']))
-        print(result)
         # Return result as JSON
         return json.dumps(result)
     return render_template('chemical_pred.html', prefix=prefix)

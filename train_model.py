@@ -107,6 +107,8 @@ def test_model():
         for i in range(0, len(list_pred)):
             list_predictions.append(list(list_pred[i])[1])
             print(list_predictions)
+
+
 if __name__ == "__main__":
     #test_model()  # False: NoFilter, False: skip grid search
     filepath = 'static/files/datasets/MM Molecular Fingerprints dataset.tsv'

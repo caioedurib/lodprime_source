@@ -67,8 +67,8 @@ def check_knownclasslabels(dict_InputTable, warning_position):
         try:
             Class_M = df_KnownClassLabel_source.loc[current_compound]['Class_M']  # exact name search
             Class_F = df_KnownClassLabel_source.loc[current_compound]['Class_F']  # exact name search
-            print(f'Compound found: {current_compound} with Class_M {Class_M} and Class_F {Class_F}')
-            dict_InputTable[row_number][warning_position].append(f'Compound found: {current_compound} with Class_M {Class_M} and Class_F {Class_F}')  # errors and warnings in position 3.
+            print(f'Known compound found: {current_compound}. It has Class_Male = {Class_M} and Class_Female = {Class_F}')
+            dict_InputTable[row_number][warning_position].append(f'Known compound found: {current_compound}. It has Class_Male = {Class_M} and Class_Female = {Class_F}')  # errors and warnings in position 3.
         except:
             print(f'Compound not found: {current_compound}.')
     return dict_InputTable
@@ -192,14 +192,7 @@ def get_ensemble_predictions(dict_InputTable):
         else:  # otherwise return defaul value of 0
             result_prediction = 0
         dict_InputTable[rownumber][5] = result_prediction  # pos 5: male mice prediction, from male-only model
-        '''
-        print(f'Male KEGG: {dict_predictions_FAInterPro_Male[rownumber]}')
-        print(f'Male AllCats: {dict_predictions_AllCats_Male[rownumber]}')
-        print(f'Male Component: {dict_predictions_Component_Male[rownumber]}')
-        print(f'Male KEGG: {dict_predictions_KEGG_Male[rownumber]}')
-        print(f'Male Process: {dict_predictions_Process_Male[rownumber]}')
-        print(f'Male average: {result_prediction}')
-        '''
+
     dict_predictions_KEGG_Female = make_predictions(df_KEGG_Mixed, 'model_NEKEGG_mixedsex', dict_InputTable)
     dict_predictions_RCTM_Female = make_predictions(df_RCTM_Mixed, 'model_NEReactome_mixedsex', dict_InputTable)
     dict_predictions_Component_Female = make_predictions(df_Component_Mixed, 'model_NEComponent_mixedsex', dict_InputTable)
