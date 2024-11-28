@@ -51,6 +51,7 @@ function InputTable_ClearTable() {
   let table = new DataTable('#table_input');
   table.clear().draw();
   localStorage.removeItem("DataTables_tableData");
+  InputTable_AddRow('', '', '');
 }
 
 // Add a row to the table.
@@ -238,6 +239,7 @@ function ChemInputTable_ClearTable() {
   let table = new DataTable('#table_cheminput');
   table.clear().draw();
   localStorage.removeItem("DataTables_chemtableData");
+  ChemInputTable_AddRow('', '');
 }
 
 // Add a row to the table.
