@@ -16,9 +16,9 @@
 </div>
   </div>
 <div class="row px-5 pt-4">
-  <div class="h-100 p-5 bg-body-tertiary border rounded-3">
-      <div class="row px-5">
-        <h5>Info:</h5>
+  <div class="h-100 p-5 mb-5 bg-body-tertiary border rounded-3">
+    <div class="row px-5">
+      <h5>Info:</h5>
       <ul>
         <li><b>Source Paper</b>: <a href="https://www.biorxiv.org/content/10.1101/2024.10.29.620854v1" target="_blank">Link</a></li>
         <li><b>GitHub Project</b>: <a href="https://github.com/caioedurib/bbsrc_musmusculus_server" target="_blank">Link</a></li>
@@ -28,34 +28,39 @@
         <li><b>Funding</b>: This web service was developed as part of a project funded by a research grant from the UK’s Biotechnology and Biological Sciences Research Council (BBSRC), grant reference numbers BB/V007971/1 <br>(to J. P. de Magalhães) and BB/V010123/1 to (A. A. Freitas). It is hosted by the University of Kent’s <a href="https://www.kent.ac.uk/computing/" target="_blank">School of Computing</a>.</li>
         <li><b>Image Attribution:</b> The favicon and images in the home screen were created using Flaticon icons:<br>
           <ul>
-          <li><a href="https://www.flaticon.com/free-icon/chemistry_4299789" title="compound icon">Compound icon created by Nadiinko</a></li>
-          <li><a href="https://www.flaticon.com/free-icon/desktop_18120420" title="desktop icon">Computer icon created by Gajah Mada</a></li>
-          <li><a href="https://www.flaticon.com/free-icon/mouse_3969773" title="mouse icons">Mouse icon created by Freepik</a></li>
-          <li><a href="https://www.flaticon.com/free-icon/pill_684267" title="pill icon">Pill icon created by Good Ware</a></li>
+            <li><a href="https://www.flaticon.com/free-icon/chemistry_4299789" title="compound icon">Compound icon created by Nadiinko</a></li>
+            <li><a href="https://www.flaticon.com/free-icon/desktop_18120420" title="desktop icon">Computer icon created by Gajah Mada</a></li>
+            <li><a href="https://www.flaticon.com/free-icon/mouse_3969773" title="mouse icons">Mouse icon created by Freepik</a></li>
+            <li><a href="https://www.flaticon.com/free-icon/pill_684267" title="pill icon">Pill icon created by Good Ware</a></li>
             <li><a href="https://en.wikipedia.org/wiki/Protein#/media/File:Myoglobin.png" title="protein icon">Protein icon is a public domain image</a></li>
-
           </ul>
         </li>
         <li><b>Version</b>: 1.0</li>
       </ul>
-      </div>
-
+    </div>
     <br>
-      <div class="row px-5">
-        <div class="col-3">
-
-        <a href="https://research.kent.ac.uk/artificial-intelligence-and-data-science/" target="_blank"><img class="img-fluid img-thumbnail" src="{{prefix + url_for('static', filename='files/images/logo_Kent.png')}}" alt="University of Kent - School of Computing" style="width:210px; height:120px"></a>
-        </div>
-        <div class="col-3">
-        <a href="https://research.kent.ac.uk/chss/" target="_blank"><img class="img-fluid img-thumbnail" src="{{prefix + url_for('static', filename='files/images/logo_CHSS.jpg')}}" alt="University of Kent - Centre for Health Services Studies" style="width:120px; height:120px"></a>
-        </div>
-        <div class="col-4">
-        <a href="https://www.birmingham.ac.uk/" target="_blank"><img class="img-fluid img-thumbnail" src="{{prefix + url_for('static', filename='files/images/logo_Birmingham.jpg')}}" alt="University of Birmingham" style="width:270px; height:120px"></a>
-        </div>
-        <div class="col-2">
-        <a href="https://rejuvenomicslab.com/" target="_blank"><img class="img-fluid img-thumbnail" src="{{prefix + url_for('static', filename='files/images/logo_Rejuvenomics.png')}}" alt="Rejuvenomics Lab" style="width:200px; height:120px"></a>
-        </div>
+    <div class="row px-4 align-items-center">
+      <div class="col-3">
+        <a href="https://research.kent.ac.uk/artificial-intelligence-and-data-science/" target="_blank">
+          <img class="img-fluid img-thumbnail mx-auto d-block" src="{{prefix + url_for('static', filename='img/logos/logo_Kent.png')}}" alt="University of Kent - School of Computing">
+        </a>
       </div>
+      <div class="col-3">
+        <a href="https://research.kent.ac.uk/chss/" target="_blank">
+          <img class="logo img-fluid img-thumbnail mx-auto d-block" src="{{prefix + url_for('static', filename='img/logos/logo_CHSS.png')}}" alt="University of Kent - Centre for Health Services Studies">
+        </a>
+      </div>
+      <div class="col-3">
+        <a href="https://www.birmingham.ac.uk/" target="_blank">
+          <img class="img-fluid img-thumbnail mx-auto d-block" src="{{prefix + url_for('static', filename='img/logos/logo_Birmingham.jpg')}}" alt="University of Birmingham">
+        </a>
+      </div>
+      <div class="col-3">
+        <a href="https://rejuvenomicslab.com/" target="_blank">
+          <img class="img-fluid img-thumbnail mx-auto d-block" src="{{prefix + url_for('static', filename='img/logos/logo_Rejuvenomics.png')}}" alt="Rejuvenomics Lab">
+        </a>
+      </div>
+    </div>
   </div>
+</div>
 {% endblock %}
-
