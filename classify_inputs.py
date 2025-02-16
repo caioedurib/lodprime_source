@@ -67,6 +67,7 @@ def check_knownclasslabels(dict_InputTable, warning_position):
         try:
             Class_M = df_KnownClassLabel_source.loc[current_compound]['Class_M']  # exact name search
             Class_F = df_KnownClassLabel_source.loc[current_compound]['Class_F']  # exact name search
+            # FIXME: Need to trim input, as this message will fail if a space is used.
             print(f'Known compound found: {current_compound}. It has Class_Male = {Class_M} and Class_Female = {Class_F}')
             dict_InputTable[row_number][warning_position].append(f'Known compound found: {current_compound}. It has Class_Male = {Class_M} and Class_Female = {Class_F}')  # errors and warnings in position 3.
         except:
@@ -106,16 +107,24 @@ def find_targets(input_string):
                     break
             except:
                 continue
-    return targets_list, genenames_list
+    return map(str.strip, targets_list.split(",")), map(str.strip, genenames_list.split(","))
 
 
 def Btn_Autofill_Targets(input_table):
     for row in input_table:
-        compound_name = row["compound"]
-        if compound_name != "":
-            targets_list, genenames_list = find_targets(compound_name)
-            row["str_ids"] = targets_list
-            row["gene_names"] = genenames_list
+        compounds = row["compound"].split(';')
+        all_targets = []
+        all_genenames = []
+        for compound_name in compounds:
+            if compound_name != "":
+                targets_list, genenames_list = find_targets(compound_name)
+                all_targets.extend(targets_list)
+                all_genenames.extend(genenames_list)
+            else:
+                # TODO: Add a warning for "missing" compound name
+                pass
+        row["str_ids"] = ', '.join(all_targets)
+        row["gene_names"] = ', '.join(all_genenames)
     return input_table
 
 #KEGG: model_NEKEGG_mixedsex

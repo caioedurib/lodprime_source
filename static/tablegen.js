@@ -41,6 +41,7 @@ function convertTableJSON(table) {
 
 // Remove a single row from the table
 function InputTable_RemoveRow(delRow) {
+  //https://examples.bootstrap-table.com/#methods/remove.html#view-source
   let table = new DataTable('#table_input');
   table.row(delRow).remove().draw();
   saveTable();
@@ -56,7 +57,7 @@ function InputTable_ClearTable() {
 
 // Add a row to the table.
 function InputTable_AddRow(compound, str_ids, gene_names) {
-    var table = new DataTable('#table_input');
+    let table = new DataTable('#table_input');
     removeIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="darkRed"\
         class="bi bi-x-circle-fill" viewBox="0 0 16 16" onclick="InputTable_RemoveRow($(this).parents(\'tr\'))">\
         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0\
@@ -69,7 +70,7 @@ function InputTable_AddRow(compound, str_ids, gene_names) {
 function getColor(value){
     //value from 0 to 1
     value = 1 - value // Flip, otherwise it does red for high values
-    var hue=((1-value)*120).toString(10);
+    let hue=((1-value)*120).toString(10);
     return ["hsl(",hue,",100%,50%)"].join("");
 }
 
@@ -79,7 +80,7 @@ function InputTable_AutofillTargets(){
    let table = $('#table_input').DataTable();
    let tableJSON = convertTableJSON(table);
    $.post("../autocomplete/", { empty_targets_list: tableJSON}, function(data) {
-        var result = JSON.parse(data);
+        let result = JSON.parse(data);
         for(let i=0; i<result.length;i++){
             table.cell(i,2).data(result[i]["str_ids"]);
             table.cell(i,3).data(result[i]["gene_names"]);
@@ -98,8 +99,8 @@ function InputTable_MakePredictions(){
    // Send AJAX request, append returned html to the page.
    $.post(window.location, { targets_list: tableJSON}, function(data) {
         result = JSON.parse(data);
-        var resultTable = "<table class='display dataTable'>";
-        var printdetailedResults = "<b>"
+        let resultTable = "<table class='display dataTable'>";
+        let printdetailedResults = "<b>"
         //resultTable += "<tr><th>Compound</th><th>STRING Target IDs</th><th>Gene names</th><th>Valid Targets</th><th>Male Pos-class likelihood %</th><th>Female Pos-class likelihood %</th></tr>";
         resultTable += "<tr><th>Compound</th><th>Valid Targets</th><th>Male Pos-class likelihood</th><th>Female Pos-class likelihood</th></tr>";
 
@@ -126,14 +127,14 @@ function InputTable_MakePredictions(){
 }
 
 function InputTable_ExportTable() {
-    var textToSave = "Compound\tMale Pos-class likelihood\tFemale Pos-class likelihood\n";
+    let textToSave = "Compound\tMale Pos-class likelihood\tFemale Pos-class likelihood\n";
     for(let i=0; i<result.length;i++){
         textToSave += result[i]["compound"] + '\t' + result[i]["m_prediction"] +  '%\t' + result[i]["f_prediction"] + '%\n';
        //if(result[i]["detailed_results"] != ""){
        //     textToSave += result[i]["detailed_results"] + '\n';
        // }
     }
-    var hiddenElement = document.createElement('a');
+    let hiddenElement = document.createElement('a');
     hiddenElement.href = 'data:attachment/text,' + encodeURI(textToSave);
     hiddenElement.target = '_blank';
     hiddenElement.download = 'Model Predictions - Detailed Results.tsv';
@@ -244,7 +245,7 @@ function ChemInputTable_ClearTable() {
 
 // Add a row to the table.
 function ChemInputTable_AddRow(compound, cid) {
-    var table = new DataTable('#table_cheminput');
+    let table = new DataTable('#table_cheminput');
     removeIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="darkRed"\
         class="bi bi-x-circle-fill" viewBox="0 0 16 16" onclick="ChemInputTable_RemoveRow($(this).parents(\'tr\'))">\
         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0\
@@ -313,8 +314,8 @@ function ChemInputTable_MakePredictions(){
    // Send AJAX request, append returned html to the page.
    $.post(window.location, { targets_list: tableJSON}, function(data) {
         result = JSON.parse(data);
-        var resultTable = "<table class='display dataTable'>";
-        var printdetailedResults = "<b>"
+        let resultTable = "<table class='display dataTable'>";
+        let printdetailedResults = "<b>"
         //resultTable += "<tr><th>Compound</th><th>STRING Target IDs</th><th>Gene names</th><th>Valid Targets</th><th>Male Pos-class likelihood %</th><th>Female Pos-class likelihood %</th></tr>";
         resultTable += "<tr><th>Compound</th><th>CID</th><th>Male Pos-class likelihood</th><th>Female Pos-class likelihood</th></tr>";
 
@@ -334,19 +335,19 @@ function ChemInputTable_MakePredictions(){
         resultTable += "</table>";
         $("#result").html(resultTable);
         $("#detailed_results").html(printdetailedResults);
-       $('#Btn_DetailedPredictionsFile').prop("hidden", false)
+        $('#Btn_DetailedPredictionsFile').prop("hidden", false)
    })
 }
 
 function ChemInputTable_ExportTable() {
-    var textToSave = "Compound\tMale Pos-class likelihood\tFemale Pos-class likelihood\n";
+    let textToSave = "Compound\tMale Pos-class likelihood\tFemale Pos-class likelihood\n";
     for(let i=0; i<result.length;i++){
         textToSave += result[i]["compound"] + '\t' + result[i]["m_prediction"] +  '%\t' + result[i]["f_prediction"] + '%\n';
        //if(result[i]["detailed_results"] != ""){
        //     textToSave += result[i]["detailed_results"] + '\n';
        // }
     }
-    var hiddenElement = document.createElement('a');
+    let hiddenElement = document.createElement('a');
     hiddenElement.href = 'data:attachment/text,' + encodeURI(textToSave);
     hiddenElement.target = '_blank';
     hiddenElement.download = 'Chem_Model Predictions - Detailed Results.tsv';
