@@ -42,14 +42,14 @@ function convertTableJSON(table) {
 // Remove a single row from the table
 function InputTable_RemoveRow(delRow) {
   //https://examples.bootstrap-table.com/#methods/remove.html#view-source
-  let table = new DataTable('#table_input');
+  let table = $('#table_input').DataTable();
   table.row(delRow).remove().draw();
   saveTable();
 }
 
 // Clear the whole table and local data
 function InputTable_ClearTable() {
-  let table = new DataTable('#table_input');
+  let table = $('#table_input').DataTable();
   table.clear().draw();
   localStorage.removeItem("DataTables_tableData");
   InputTable_AddRow('', '', '');
@@ -57,7 +57,7 @@ function InputTable_ClearTable() {
 
 // Add a row to the table.
 function InputTable_AddRow(compound, str_ids, gene_names) {
-    let table = new DataTable('#table_input');
+    let table = $('#table_input').DataTable();
     removeIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="darkRed"\
         class="bi bi-x-circle-fill" viewBox="0 0 16 16" onclick="InputTable_RemoveRow($(this).parents(\'tr\'))">\
         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0\
@@ -82,16 +82,55 @@ function InputTable_AutofillTargets(){
    $.post("../autocomplete/", { empty_targets_list: tableJSON}, function(data) {
         let result = JSON.parse(data);
         for(let i=0; i<result.length;i++){
-            table.cell(i,2).data(result[i]["str_ids"]);
-            table.cell(i,3).data(result[i]["gene_names"]);
+            /*
+            eq() is a css selector to find the row(s) we want to edit.
+            Means we ref by "render" instead of internal "array" that may get shifted by delete.
+             */
+            let row = table.row(`:eq(${i})`).data();
+            row[2] = result[i]["str_ids"];
+            row[3] = result[i]["gene_names"];
+            table.row(`:eq(${i})`).data(row);
         }
         table.draw();
    })
 }
 
+// Scan for "empty" compound rows (no STRING target ID/Gene Name) -> Trigger autofill for that row.
+function InputTable_AutofillEmpty(){
+    let table = $('#table_input').DataTable();
+    let tableJSON = convertTableJSON(table);
+
+    // Must be async, or we might make a prediction before the autocomplete is done!
+    $.ajax({
+        type: "POST",
+        url: "../autocomplete/",
+        async: false,
+        data: {empty_targets_list: tableJSON}
+    })
+       .done(function(data) {
+           console.log(data);
+            let result = JSON.parse(data);
+            for(let i=0; i<result.length;i++){
+                console.log("Row: " + i);
+                let row = table.row(`:eq(${i})`).data();
+                // If both string ID/gene name are empty...
+                if(row[2].trim() === "" && row[3].trim() === "") {
+                    row[2] = result[i]["str_ids"];
+                    row[3] = result[i]["gene_names"];
+                    table.row(`:eq(${i})`).data(row);
+                }
+            }
+            table.draw();
+       })
+}
+
 
 // Send data to python to get predictions.
 function InputTable_MakePredictions(){
+
+    // Autofill any "empty" lines.
+    InputTable_AutofillEmpty();
+
    // Select table as DataTable instance, convert data to array (deep copy)
    let table = $('#table_input').DataTable();
    let tableJSON = convertTableJSON(table);
@@ -230,14 +269,14 @@ function ChemconvertTableJSON(table) {
 
 // Remove a single row from the table
 function ChemInputTable_RemoveRow(delRow) {
-  let table = new DataTable('#table_cheminput');
+  let table = $('#table_cheminput').DataTable();
   table.row(delRow).remove().draw();
   saveTable();
 }
 
 // Clear the whole table and local data
 function ChemInputTable_ClearTable() {
-  let table = new DataTable('#table_cheminput');
+  let table = $('#table_cheminput').DataTable();
   table.clear().draw();
   localStorage.removeItem("DataTables_chemtableData");
   ChemInputTable_AddRow('', '');
@@ -245,9 +284,9 @@ function ChemInputTable_ClearTable() {
 
 // Add a row to the table.
 function ChemInputTable_AddRow(compound, cid) {
-    let table = new DataTable('#table_cheminput');
+    let table = $('#table_cheminput').DataTable();
     removeIcon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="darkRed"\
-        class="bi bi-x-circle-fill" viewBox="0 0 16 16" onclick="ChemInputTable_RemoveRow($(this).parents(\'tr\'))">\
+        class="bi bi-x-circle-fill" viewBox="0 0 16 16" onclick="ChemInputTable_RemoveRow($(this).closest(\'tr\'))">\
         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0\
         .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>\
         </svg>'
