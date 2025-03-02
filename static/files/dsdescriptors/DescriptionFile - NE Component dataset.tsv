@@ -1,0 +1,373 @@
+Data Description file for Dataset: Neighbour Enrichment - Component
+
+Description: Dataset of target annotations collected using the Neibhour Enrichment function in STRING, which includes annotations from nearest neighbour proteins to the input target.
+The predictive features in this dataset refer only to Gene Ontology annotations from the Cellular Component category.
+
+Special Columns:	Category	Description
+Index	ID	Unique identifier for the compound/sex combination (instance) in the data. Ignored when training the classification model.
+Compound_name	ID	Name of the compound (drug). Ignored when training the classification model.
+class	Target Variable	Class label, with 0 indicating that the drug/sex combination is NOT associated with mouse longevity, and 1 indicating that it IS associated with mouse longevity, based on results from peer-reviewed studies.
+
+Predictive Features:	Category	Description
+GO:0005667	GO - Cellular Component	Transcription regulator complex
+GO:0000118	GO - Cellular Component	Histone deacetylase complex
+GO:0017053	GO - Cellular Component	Transcription repressor complex
+GO:0070603	GO - Cellular Component	SWI/SNF superfamily-type complex
+GO:0005694	GO - Cellular Component	Chromosome
+GO:0005654	GO - Cellular Component	Nucleoplasm
+GO:0000785	GO - Cellular Component	Chromatin
+GO:0140513	GO - Cellular Component	Nuclear protein-containing complex
+GO:0016581	GO - Cellular Component	NuRD complex
+GO:1902494	GO - Cellular Component	Catalytic complex
+GO:0000792	GO - Cellular Component	Heterochromatin
+GO:0005677	GO - Cellular Component	Chromatin silencing complex
+GO:0032991	GO - Cellular Component	Protein-containing complex
+GO:0072686	GO - Cellular Component	Mitotic spindle
+GO:0035098	GO - Cellular Component	ESC/E(Z) complex
+GO:0016580	GO - Cellular Component	Sin3 complex
+GO:0043232	GO - Cellular Component	Intracellular non-membrane-bounded organelle
+GO:0005829	GO - Cellular Component	Cytosol
+GO:0005887	GO - Cellular Component	Integral component of plasma membrane
+GO:0005634	GO - Cellular Component	Nucleus
+GO:0044294	GO - Cellular Component	Dendritic growth cone
+GO:0044295	GO - Cellular Component	Axonal growth cone
+GO:0097524	GO - Cellular Component	Sperm plasma membrane
+GO:0016323	GO - Cellular Component	Basolateral plasma membrane
+GO:0000791	GO - Cellular Component	Euchromatin
+GO:0035976	GO - Cellular Component	Transcription factor AP-1 complex
+GO:0090575	GO - Cellular Component	RNA polymerase II transcription regulator complex
+GO:0032993	GO - Cellular Component	protein-DNA complex
+GO:0101031	GO - Cellular Component	Chaperone complex
+GO:1990565	GO - Cellular Component	HSP90-CDC37 chaperone complex
+GO:0034751	GO - Cellular Component	Aryl hydrocarbon receptor complex
+GO:0061827	GO - Cellular Component	Sperm head
+GO:0070062	GO - Cellular Component	Extracellular exosome
+GO:0140535	GO - Cellular Component	Intracellular protein-containing complex
+GO:0005615	GO - Cellular Component	Extracellular space
+GO:0062023	GO - Cellular Component	Collagen-containing extracellular matrix
+GO:0097386	GO - Cellular Component	Glial cell projection
+GO:0043293	GO - Cellular Component	Apoptosome
+GO:0008303	GO - Cellular Component	Caspase complex
+GO:0031264	GO - Cellular Component	Death-inducing signaling complex
+GO:0045121	GO - Cellular Component	Membrane raft
+GO:0005834	GO - Cellular Component	Heterotrimeric G-protein complex
+GO:0097730	GO - Cellular Component	Non-motile cilium
+GO:0000786	GO - Cellular Component	Nucleosome
+GO:0000124	GO - Cellular Component	SAGA complex
+GO:0000228	GO - Cellular Component	Nuclear chromosome
+GO:0031519	GO - Cellular Component	PcG protein complex
+GO:0098687	GO - Cellular Component	Chromosomal region
+GO:0000781	GO - Cellular Component	Chromosome, telomeric region
+GO:0005721	GO - Cellular Component	Pericentric heterochromatin
+GO:0000775	GO - Cellular Component	Chromosome, centromeric region
+GO:0016234	GO - Cellular Component	Inclusion body
+GO:1904813	GO - Cellular Component	ficolin-1-rich granule lumen
+GO:0005739	GO - Cellular Component	Mitochondrion
+GO:0016235	GO - Cellular Component	Aggresome
+GO:0030425	GO - Cellular Component	Dendrite
+GO:0036464	GO - Cellular Component	Cytoplasmic ribonucleoprotein granule
+GO:0031526	GO - Cellular Component	Brush border membrane
+GO:0048471	GO - Cellular Component	Perinuclear region of cytoplasm
+GO:0005764	GO - Cellular Component	Lysosome
+GO:0034774	GO - Cellular Component	Secretory granule lumen
+GO:0031981	GO - Cellular Component	Nuclear lumen
+GO:0044815	GO - Cellular Component	DNA packaging complex
+GO:0016363	GO - Cellular Component	Nuclear matrix
+GO:0097431	GO - Cellular Component	Mitotic spindle pole
+GO:0000793	GO - Cellular Component	Condensed chromosome
+GO:0005576	GO - Cellular Component	Extracellular region
+GO:0031982	GO - Cellular Component	Vesicle
+GO:0030141	GO - Cellular Component	Secretory granule
+GO:0101002	GO - Cellular Component	ficolin-1-rich granule
+GO:0005641	GO - Cellular Component	Nuclear envelope lumen
+GO:0120293	GO - Cellular Component	Dynein axonemal particle
+GO:0043005	GO - Cellular Component	Neuron projection
+GO:0099056	GO - Cellular Component	Integral component of presynaptic membrane
+GO:0045202	GO - Cellular Component	Synapse
+GO:0099154	GO - Cellular Component	Serotonergic synapse
+GO:0098666	GO - Cellular Component	G protein-coupled serotonin receptor complex
+GO:0098793	GO - Cellular Component	Presynapse
+GO:0030424	GO - Cellular Component	Axon
+GO:0098794	GO - Cellular Component	Postsynapse
+GO:0031234	GO - Cellular Component	Extrinsic component of cytoplasmic side of plasma membrane
+GO:0019898	GO - Cellular Component	Extrinsic component of membrane
+GO:0005886	GO - Cellular Component	Plasma membrane
+GO:0044297	GO - Cellular Component	Cell body
+GO:0016020	GO - Cellular Component	Membrane
+GO:0005943	GO - Cellular Component	Phosphatidylinositol 3-kinase complex, class IA
+GO:0098796	GO - Cellular Component	Membrane protein complex
+GO:0005944	GO - Cellular Component	Phosphatidylinositol 3-kinase complex, class IB
+GO:0070161	GO - Cellular Component	Anchoring junction
+GO:0031252	GO - Cellular Component	Cell leading edge
+GO:0005911	GO - Cellular Component	Cell-cell junction
+GO:0005759	GO - Cellular Component	Mitochondrial matrix
+GO:0016324	GO - Cellular Component	Apical plasma membrane
+GO:0070013	GO - Cellular Component	Intracellular organelle lumen
+GO:1990229	GO - Cellular Component	Iron-sulfur cluster assembly complex
+GO:0005788	GO - Cellular Component	Endoplasmic reticulum lumen
+GO:0005783	GO - Cellular Component	Endoplasmic reticulum
+GO:0012505	GO - Cellular Component	Endomembrane system
+GO:0005791	GO - Cellular Component	Rough endoplasmic reticulum
+GO:0005782	GO - Cellular Component	Peroxisomal matrix
+GO:0005604	GO - Cellular Component	Basement membrane
+GO:0030133	GO - Cellular Component	Transport vesicle
+GO:0043204	GO - Cellular Component	Perikaryon
+GO:0031410	GO - Cellular Component	Cytoplasmic vesicle
+GO:0034663	GO - Cellular Component	Endoplasmic reticulum chaperone complex
+GO:0140534	GO - Cellular Component	Endoplasmic reticulum protein-containing complex
+GO:0010494	GO - Cellular Component	Cytoplasmic stress granule
+GO:1990904	GO - Cellular Component	Ribonucleoprotein complex
+GO:0016604	GO - Cellular Component	Nuclear body
+GO:0016607	GO - Cellular Component	Nuclear speck
+GO:1990391	GO - Cellular Component	DNA repair complex
+GO:0030054	GO - Cellular Component	Cell junction
+GO:0001750	GO - Cellular Component	Photoreceptor outer segment
+GO:0005765	GO - Cellular Component	Lysosomal membrane
+GO:0120025	GO - Cellular Component	Plasma membrane bounded cell projection
+GO:0031588	GO - Cellular Component	Nucleotide-activated protein kinase complex
+GO:1902911	GO - Cellular Component	Protein kinase complex
+GO:0031931	GO - Cellular Component	TORC1 complex
+GO:0034707	GO - Cellular Component	Chloride channel complex
+GO:0005776	GO - Cellular Component	Autophagosome
+GO:0031143	GO - Cellular Component	Pseudopodium
+GO:0005770	GO - Cellular Component	Late endosome
+GO:0005769	GO - Cellular Component	Early endosome
+GO:0005925	GO - Cellular Component	Focal adhesion
+GO:0005768	GO - Cellular Component	Endosome
+GO:0032156	GO - Cellular Component	Septin cytoskeleton
+GO:0005789	GO - Cellular Component	Endoplasmic reticulum membrane
+GO:0030868	GO - Cellular Component	Smooth endoplasmic reticulum membrane
+GO:0070852	GO - Cellular Component	Cell body fiber
+GO:0016605	GO - Cellular Component	PML body
+GO:0005730	GO - Cellular Component	Nucleolus
+GO:0030176	GO - Cellular Component	Integral component of endoplasmic reticulum membrane
+GO:0042470	GO - Cellular Component	Melanosome
+GO:0005790	GO - Cellular Component	Smooth endoplasmic reticulum
+GO:0071682	GO - Cellular Component	Endocytic vesicle lumen
+GO:0005794	GO - Cellular Component	Golgi apparatus
+GO:0008385	GO - Cellular Component	IkappaB kinase complex
+GO:0071159	GO - Cellular Component	NF-kappaB complex
+GO:0035525	GO - Cellular Component	NF-kappaB p50/p65 complex
+GO:1990234	GO - Cellular Component	Transferase complex
+GO:0033256	GO - Cellular Component	I-kappaB/NF-kappaB complex
+GO:0019005	GO - Cellular Component	SCF ubiquitin ligase complex
+GO:0000151	GO - Cellular Component	Ubiquitin ligase complex
+GO:0035631	GO - Cellular Component	CD40 receptor complex
+GO:0031012	GO - Cellular Component	Extracellular matrix
+GO:0005577	GO - Cellular Component	Fibrinogen complex
+GO:0061702	GO - Cellular Component	Inflammasome complex
+GO:0072559	GO - Cellular Component	NLRP3 inflammasome complex
+GO:0072558	GO - Cellular Component	NLRP1 inflammasome complex
+GO:0097169	GO - Cellular Component	AIM2 inflammasome complex
+GO:0140738	GO - Cellular Component	NLRP6 inflammasome complex
+GO:0072557	GO - Cellular Component	IPAF inflammasome complex
+GO:0043235	GO - Cellular Component	Receptor complex
+GO:0009898	GO - Cellular Component	Cytoplasmic side of plasma membrane
+GO:0098552	GO - Cellular Component	Side of membrane
+GO:0000307	GO - Cellular Component	Cyclin-dependent protein kinase holoenzyme complex
+GO:0097128	GO - Cellular Component	Cyclin D1-CDK4 complex
+GO:0016592	GO - Cellular Component	Mediator complex
+GO:0090571	GO - Cellular Component	RNA polymerase II transcription repressor complex
+GO:0005657	GO - Cellular Component	Replication fork
+GO:0043202	GO - Cellular Component	Lysosomal lumen
+GO:0042582	GO - Cellular Component	Azurophil granule
+GO:0035578	GO - Cellular Component	Azurophil granule lumen
+GO:0033257	GO - Cellular Component	Bcl3/NF-kappaB2 complex
+GO:0016021	GO - Cellular Component	Integral component of membrane
+GO:0043197	GO - Cellular Component	Dendritic spine
+GO:0031594	GO - Cellular Component	Neuromuscular junction
+GO:0043083	GO - Cellular Component	Synaptic cleft
+GO:0098797	GO - Cellular Component	Plasma membrane protein complex
+GO:0002947	GO - Cellular Component	Tumor necrosis factor receptor superfamily complex
+GO:0015630	GO - Cellular Component	Microtubule cytoskeleton
+GO:0030496	GO - Cellular Component	Midbody
+GO:0005815	GO - Cellular Component	Microtubule organizing center
+GO:0000776	GO - Cellular Component	Kinetochore
+GO:0097125	GO - Cellular Component	Cyclin B1-CDK1 complex
+GO:0099080	GO - Cellular Component	Supramolecular complex
+GO:0005874	GO - Cellular Component	Microtubule
+GO:0031095	GO - Cellular Component	Platelet dense tubular network membrane
+GO:0031965	GO - Cellular Component	Nuclear membrane
+GO:0005640	GO - Cellular Component	Nuclear outer membrane
+GO:0034703	GO - Cellular Component	Cation channel complex
+GO:0008076	GO - Cellular Component	Voltage-gated potassium channel complex
+GO:1990794	GO - Cellular Component	Basolateral part of cell
+GO:0030315	GO - Cellular Component	T-tubule
+GO:0009986	GO - Cellular Component	Cell surface
+GO:0043025	GO - Cellular Component	Neuronal cell body
+GO:0030018	GO - Cellular Component	Z disc
+GO:0098590	GO - Cellular Component	Plasma membrane region
+GO:0014704	GO - Cellular Component	Intercalated disc
+GO:0045178	GO - Cellular Component	Basal part of cell
+GO:0016328	GO - Cellular Component	Lateral plasma membrane
+GO:0071944	GO - Cellular Component	Cell periphery
+GO:0099512	GO - Cellular Component	Supramolecular fiber
+GO:0098591	GO - Cellular Component	External side of apical plasma membrane
+GO:0070449	GO - Cellular Component	Elongin complex
+GO:0031466	GO - Cellular Component	Cul5-RING ubiquitin ligase complex
+GO:0005859	GO - Cellular Component	Muscle myosin complex
+GO:0016459	GO - Cellular Component	Myosin complex
+GO:0043292	GO - Cellular Component	Contractile fiber
+GO:0030017	GO - Cellular Component	Sarcomere
+GO:0015629	GO - Cellular Component	Actin cytoskeleton
+GO:0032982	GO - Cellular Component	Myosin filament
+GO:0045177	GO - Cellular Component	Apical part of cell
+GO:0016471	GO - Cellular Component	Vacuolar proton-transporting V-type ATPase complex
+GO:1903767	GO - Cellular Component	Sweet taste receptor complex
+GO:0031093	GO - Cellular Component	Platelet alpha granule lumen
+GO:0072562	GO - Cellular Component	Blood microparticle
+GO:0031091	GO - Cellular Component	Platelet alpha granule
+GO:1905370	GO - Cellular Component	Serine-type endopeptidase complex
+GO:0009897	GO - Cellular Component	External side of plasma membrane
+GO:1903561	GO - Cellular Component	Extracellular vesicle
+GO:0031094	GO - Cellular Component	Platelet dense tubular network
+GO:0030027	GO - Cellular Component	Lamellipodium
+GO:0099513	GO - Cellular Component	Polymeric cytoskeletal fiber
+GO:0005856	GO - Cellular Component	Cytoskeleton
+GO:0005938	GO - Cellular Component	Cell cortex
+GO:0030175	GO - Cellular Component	Filopodium
+GO:0001726	GO - Cellular Component	Ruffle
+GO:0012506	GO - Cellular Component	Vesicle membrane
+GO:0030139	GO - Cellular Component	Endocytic vesicle
+GO:0097342	GO - Cellular Component	Ripoptosome
+GO:0010008	GO - Cellular Component	Endosome membrane
+GO:0098588	GO - Cellular Component	Bounding membrane of organelle
+GO:0005773	GO - Cellular Component	Vacuole
+GO:0031984	GO - Cellular Component	Organelle subcompartment
+GO:0098691	GO - Cellular Component	Dopaminergic synapse
+GO:0030672	GO - Cellular Component	Synaptic vesicle membrane
+GO:0036477	GO - Cellular Component	Somatodendritic compartment
+GO:0042734	GO - Cellular Component	Presynaptic membrane
+GO:0043679	GO - Cellular Component	Axon terminus
+GO:0048787	GO - Cellular Component	Presynaptic active zone membrane
+GO:0008021	GO - Cellular Component	Synaptic vesicle
+GO:0030659	GO - Cellular Component	Cytoplasmic vesicle membrane
+GO:0098978	GO - Cellular Component	Glutamatergic synapse
+GO:0043195	GO - Cellular Component	Terminal bouton
+GO:0014069	GO - Cellular Component	Postsynaptic density
+GO:0098982	GO - Cellular Component	GABA-ergic synapse
+GO:0048786	GO - Cellular Component	Presynaptic active zone
+GO:0045211	GO - Cellular Component	Postsynaptic membrane
+GO:0099055	GO - Cellular Component	Integral component of postsynaptic membrane
+GO:0031224	GO - Cellular Component	Intrinsic component of membrane
+GO:0005891	GO - Cellular Component	Voltage-gated calcium channel complex
+GO:0042383	GO - Cellular Component	Sarcolemma
+GO:0035580	GO - Cellular Component	Specific granule lumen
+GO:1904724	GO - Cellular Component	Tertiary granule lumen
+GO:0097060	GO - Cellular Component	Synaptic membrane
+GO:0150034	GO - Cellular Component	Distal axon
+GO:0042995	GO - Cellular Component	Cell projection
+GO:0043198	GO - Cellular Component	Dendritic shaft
+GO:0000139	GO - Cellular Component	Golgi membrane
+GO:0034704	GO - Cellular Component	Calcium channel complex
+GO:0014701	GO - Cellular Component	Junctional sarcoplasmic reticulum membrane
+GO:0005901	GO - Cellular Component	Caveola
+GO:0099634	GO - Cellular Component	Postsynaptic specialization membrane
+GO:0098685	GO - Cellular Component	Schaffer collateral - CA1 synapse
+GO:0099060	GO - Cellular Component	Integral component of postsynaptic specialization membrane
+GO:0031090	GO - Cellular Component	Organelle membrane
+GO:0034705	GO - Cellular Component	Potassium channel complex
+GO:0005747	GO - Cellular Component	Mitochondrial respiratory chain complex I
+GO:0005746	GO - Cellular Component	Mitochondrial respirasome
+GO:0098803	GO - Cellular Component	Respiratory chain complex
+GO:1990204	GO - Cellular Component	Oxidoreductase complex
+GO:0098798	GO - Cellular Component	Mitochondrial protein-containing complex
+GO:0098800	GO - Cellular Component	Inner mitochondrial membrane protein complex
+GO:0005749	GO - Cellular Component	Mitochondrial respiratory chain complex II, succinate dehydrogenase complex (ubiquinone)
+GO:0045239	GO - Cellular Component	Tricarboxylic acid cycle enzyme complex
+GO:0005743	GO - Cellular Component	Mitochondrial inner membrane
+GO:0031966	GO - Cellular Component	Mitochondrial membrane
+GO:0034364	GO - Cellular Component	High-density lipoprotein particle
+GO:0034363	GO - Cellular Component	Intermediate-density lipoprotein particle
+GO:0099503	GO - Cellular Component	Secretory vesicle
+GO:0070765	GO - Cellular Component	Gamma-secretase complex
+GO:0035253	GO - Cellular Component	Ciliary rootlet
+GO:0030426	GO - Cellular Component	Growth cone
+GO:0055037	GO - Cellular Component	Recycling endosome
+GO:0005802	GO - Cellular Component	trans-Golgi network
+GO:0035577	GO - Cellular Component	Azurophil granule membrane
+GO:0005771	GO - Cellular Component	Multivesicular body
+GO:0060205	GO - Cellular Component	Cytoplasmic vesicle lumen
+GO:0005798	GO - Cellular Component	Golgi-associated vesicle
+GO:0005796	GO - Cellular Component	Golgi lumen
+GO:0017109	GO - Cellular Component	Glutamate-cysteine ligase complex
+GO:0017101	GO - Cellular Component	aminoacyl-tRNA synthetase multienzyme complex
+GO:0061202	GO - Cellular Component	Clathrin-sculpted gamma-aminobutyric acid transport vesicle membrane
+GO:0060077	GO - Cellular Component	Inhibitory synapse
+GO:1902710	GO - Cellular Component	GABA receptor complex
+GO:1902711	GO - Cellular Component	GABA-A receptor complex
+GO:0032590	GO - Cellular Component	Dendrite membrane
+GO:1904115	GO - Cellular Component	Axon cytoplasm
+GO:0099572	GO - Cellular Component	Postsynaptic specialization
+GO:0032838	GO - Cellular Component	Plasma membrane bounded cell projection cytoplasm
+GO:1902712	GO - Cellular Component	G protein-coupled GABA receptor complex
+GO:0038039	GO - Cellular Component	G protein-coupled receptor heterodimeric complex
+GO:0032589	GO - Cellular Component	Neuron projection membrane
+GO:0000421	GO - Cellular Component	Autophagosome membrane
+GO:0034702	GO - Cellular Component	Ion channel complex
+GO:0044304	GO - Cellular Component	Main axon
+GO:0033268	GO - Cellular Component	Node of Ranvier
+GO:0001518	GO - Cellular Component	Voltage-gated sodium channel complex
+GO:0005774	GO - Cellular Component	Vacuolar membrane
+GO:0099699	GO - Cellular Component	Integral component of synaptic membrane
+GO:0017146	GO - Cellular Component	NMDA selective glutamate receptor complex
+GO:0008328	GO - Cellular Component	Ionotropic glutamate receptor complex
+GO:0098839	GO - Cellular Component	Postsynaptic density membrane
+GO:0099146	GO - Cellular Component	Intrinsic component of postsynaptic density membrane
+GO:0099061	GO - Cellular Component	Integral component of postsynaptic density membrane
+GO:0060076	GO - Cellular Component	Excitatory synapse
+GO:0044224	GO - Cellular Component	Juxtaparanode region of axon
+GO:0032281	GO - Cellular Component	AMPA glutamate receptor complex
+GO:0005912	GO - Cellular Component	Adherens junction
+GO:0120111	GO - Cellular Component	Neuron projection cytoplasm
+GO:0098948	GO - Cellular Component	Intrinsic component of postsynaptic specialization membrane
+GO:0044306	GO - Cellular Component	Neuron projection terminus
+GO:0044300	GO - Cellular Component	Cerebellar mossy fiber
+GO:0030666	GO - Cellular Component	Endocytic vesicle membrane
+GO:0098686	GO - Cellular Component	Hippocampal mossy fiber to CA3 synapse
+GO:0071011	GO - Cellular Component	Precatalytic spliceosome
+GO:0005686	GO - Cellular Component	U2 snRNP
+GO:0097525	GO - Cellular Component	Spliceosomal snRNP complex
+GO:0005684	GO - Cellular Component	U2-type spliceosomal complex
+GO:0071005	GO - Cellular Component	U2-type precatalytic spliceosome
+GO:0071013	GO - Cellular Component	Catalytic step 2 spliceosome
+GO:0005689	GO - Cellular Component	U12-type spliceosomal complex
+GO:0071007	GO - Cellular Component	U2-type catalytic step 2 spliceosome
+GO:0005682	GO - Cellular Component	U5 snRNP
+GO:0005685	GO - Cellular Component	U1 snRNP
+GO:0046540	GO - Cellular Component	U4/U6 x U5 tri-snRNP complex
+GO:0071004	GO - Cellular Component	U2-type prespliceosome
+GO:0098690	GO - Cellular Component	Glycinergic synapse
+GO:0016935	GO - Cellular Component	Glycine-gated chloride channel complex
+GO:0031226	GO - Cellular Component	Intrinsic component of plasma membrane
+GO:0099029	GO - Cellular Component	Anchored component of presynaptic active zone membrane
+GO:0043256	GO - Cellular Component	Laminin complex
+GO:0009925	GO - Cellular Component	Basal plasma membrane
+GO:1990184	GO - Cellular Component	Amino acid transport complex
+GO:0030669	GO - Cellular Component	Clathrin-coated endocytic vesicle membrane
+GO:0030667	GO - Cellular Component	Secretory granule membrane
+GO:0031253	GO - Cellular Component	Cell projection membrane
+GO:0005899	GO - Cellular Component	Insulin receptor complex
+GO:0035867	GO - Cellular Component	alphav-beta3 integrin-IGF-1-IGF1R complex
+GO:0035861	GO - Cellular Component	Site of double-strand break
+GO:0044391	GO - Cellular Component	Ribosomal subunit
+GO:1990513	GO - Cellular Component	CLOCK-BMAL transcription complex
+GO:0033391	GO - Cellular Component	Chromatoid body
+GO:0045335	GO - Cellular Component	Phagocytic vesicle
+GO:0097013	GO - Cellular Component	Phagocytic vesicle lumen
+GO:0071556	GO - Cellular Component	Integral component of lumenal side of endoplasmic reticulum membrane
+GO:0016529	GO - Cellular Component	Sarcoplasmic reticulum
+GO:0033018	GO - Cellular Component	Sarcoplasmic reticulum lumen
+GO:0012507	GO - Cellular Component	ER to Golgi transport vesicle membrane
+GO:1902495	GO - Cellular Component	Transmembrane transporter complex
+GO:0005751	GO - Cellular Component	Mitochondrial respiratory chain complex IV
+GO:0005750	GO - Cellular Component	Mitochondrial respiratory chain complex III
+GO:0005741	GO - Cellular Component	Mitochondrial outer membrane
+GO:0043194	GO - Cellular Component	Axon initial segment
+GO:0005956	GO - Cellular Component	Protein kinase CK2 complex
+GO:1902555	GO - Cellular Component	Endoribonuclease complex
+GO:0098636	GO - Cellular Component	Protein complex involved in cell adhesion
+GO:0008305	GO - Cellular Component	Integrin complex
+GO:0098802	GO - Cellular Component	Plasma membrane signaling receptor complex
+GO:0061773	GO - Cellular Component	eNoSc complex
+GO:0033553	GO - Cellular Component	rDNA heterochromatin

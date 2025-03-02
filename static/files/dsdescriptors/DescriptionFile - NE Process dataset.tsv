@@ -1,0 +1,2580 @@
+Data Description file for Dataset: Neighbour Enrichment - Process
+
+Description: Dataset of target annotations collected using the Neibhour Enrichment function in STRING, which includes annotations from nearest neighbour proteins to the input target.
+The predictive features in this dataset refer only to Gene Ontology annotations from the Biological Process category.
+
+Special Columns:	Category	Description
+Index	ID	Unique identifier for the compound/sex combination (instance) in the data. Ignored when training the classification model.
+Compound_name	ID	Name of the compound (drug). Ignored when training the classification model.
+class	Target Variable	Class label, with 0 indicating that the drug/sex combination is NOT associated with mouse longevity, and 1 indicating that it IS associated with mouse longevity, based on results from peer-reviewed studies.
+
+Predictive Features:	Category	Description
+GO:0007186	GO - Biological Process	G protein-coupled receptor signaling pathway
+GO:0035815	GO - Biological Process	Positive regulation of renal sodium excretion
+GO:0003014	GO - Biological Process	Renal system process
+GO:0051047	GO - Biological Process	Positive regulation of secretion
+GO:1903530	GO - Biological Process	Regulation of secretion by cell
+GO:0045987	GO - Biological Process	Positive regulation of smooth muscle contraction
+GO:0051048	GO - Biological Process	Negative regulation of secretion
+GO:0008217	GO - Biological Process	Regulation of blood pressure
+GO:0032103	GO - Biological Process	Positive regulation of response to external stimulus
+GO:1904000	GO - Biological Process	Positive regulation of eating behavior
+GO:0050886	GO - Biological Process	Endocrine process
+GO:0051240	GO - Biological Process	Positive regulation of multicellular organismal process
+GO:0032100	GO - Biological Process	Positive regulation of appetite
+GO:0046883	GO - Biological Process	Regulation of hormone secretion
+GO:1903532	GO - Biological Process	Positive regulation of secretion by cell
+GO:0007631	GO - Biological Process	Feeding behavior
+GO:0008343	GO - Biological Process	Adult feeding behavior
+GO:0035810	GO - Biological Process	Positive regulation of urine volume
+GO:0032308	GO - Biological Process	Positive regulation of prostaglandin secretion
+GO:0050727	GO - Biological Process	Regulation of inflammatory response
+GO:1903531	GO - Biological Process	Negative regulation of secretion by cell
+GO:0031644	GO - Biological Process	Regulation of nervous system process
+GO:0050804	GO - Biological Process	Modulation of chemical synaptic transmission
+GO:0007165	GO - Biological Process	Signal transduction
+GO:0031667	GO - Biological Process	Response to nutrient levels
+GO:0043410	GO - Biological Process	Positive regulation of MAPK cascade
+GO:0010647	GO - Biological Process	Positive regulation of cell communication
+GO:0023056	GO - Biological Process	Positive regulation of signaling
+GO:0023061	GO - Biological Process	Signal release
+GO:0065008	GO - Biological Process	Regulation of biological quality
+GO:0044703	GO - Biological Process	Multi-organism reproductive process
+GO:0001975	GO - Biological Process	Response to amphetamine
+GO:0007204	GO - Biological Process	Positive regulation of cytosolic calcium ion concentration
+GO:0034694	GO - Biological Process	Response to prostaglandin
+GO:0044706	GO - Biological Process	Multi-multicellular organism process
+GO:0007267	GO - Biological Process	Cell-cell signaling
+GO:0071398	GO - Biological Process	Cellular response to fatty acid
+GO:0001990	GO - Biological Process	Regulation of systemic arterial blood pressure by hormone
+GO:0044057	GO - Biological Process	Regulation of system process
+GO:0051930	GO - Biological Process	Regulation of sensory perception of pain
+GO:1904707	GO - Biological Process	Positive regulation of vascular associated smooth muscle cell proliferation
+GO:0006325	GO - Biological Process	Chromatin organization
+GO:0045892	GO - Biological Process	Negative regulation of transcription, DNA-templated
+GO:0000122	GO - Biological Process	Negative regulation of transcription by RNA polymerase II
+GO:0070828	GO - Biological Process	Heterochromatin organization
+GO:0006357	GO - Biological Process	Regulation of transcription by RNA polymerase II
+GO:0010629	GO - Biological Process	Negative regulation of gene expression
+GO:0040029	GO - Biological Process	Regulation of gene expression, epigenetic
+GO:0045893	GO - Biological Process	Positive regulation of transcription, DNA-templated
+GO:0031507	GO - Biological Process	Heterochromatin assembly
+GO:0031497	GO - Biological Process	Chromatin assembly
+GO:0016575	GO - Biological Process	Histone deacetylation
+GO:0062014	GO - Biological Process	Negative regulation of small molecule metabolic process
+GO:0010604	GO - Biological Process	Positive regulation of macromolecule metabolic process
+GO:0006338	GO - Biological Process	Chromatin remodeling
+GO:0060765	GO - Biological Process	Regulation of androgen receptor signaling pathway
+GO:0007623	GO - Biological Process	Circadian rhythm
+GO:0016570	GO - Biological Process	Histone modification
+GO:0048518	GO - Biological Process	Positive regulation of biological process
+GO:0043470	GO - Biological Process	Regulation of carbohydrate catabolic process
+GO:0045912	GO - Biological Process	Negative regulation of carbohydrate metabolic process
+GO:0045595	GO - Biological Process	Regulation of cell differentiation
+GO:0090311	GO - Biological Process	Regulation of protein deacetylation
+GO:0034349	GO - Biological Process	Glial cell apoptotic process
+GO:0007507	GO - Biological Process	Heart development
+GO:0006346	GO - Biological Process	DNA methylation-dependent heterochromatin assembly
+GO:0070933	GO - Biological Process	Histone H4 deacetylation
+GO:0030097	GO - Biological Process	Hemopoiesis
+GO:0034644	GO - Biological Process	Cellular response to UV
+GO:0014013	GO - Biological Process	Regulation of gliogenesis
+GO:0045944	GO - Biological Process	Positive regulation of transcription by RNA polymerase II
+GO:0080135	GO - Biological Process	Regulation of cellular response to stress
+GO:1901796	GO - Biological Process	Regulation of signal transduction by p53 class mediator
+GO:0003002	GO - Biological Process	Regionalization
+GO:0048522	GO - Biological Process	Positive regulation of cellular process
+GO:2001233	GO - Biological Process	Regulation of apoptotic signaling pathway
+GO:0010225	GO - Biological Process	Response to UV-C
+GO:0080134	GO - Biological Process	Regulation of response to stress
+GO:0060253	GO - Biological Process	Negative regulation of glial cell proliferation
+GO:0060766	GO - Biological Process	Negative regulation of androgen receptor signaling pathway
+GO:1903799	GO - Biological Process	Negative regulation of miRNA maturation
+GO:0030183	GO - Biological Process	B cell differentiation
+GO:0043467	GO - Biological Process	Regulation of generation of precursor metabolites and energy
+GO:0048513	GO - Biological Process	Animal organ development
+GO:0017015	GO - Biological Process	Regulation of transforming growth factor beta receptor signaling pathway
+GO:0010675	GO - Biological Process	Regulation of cellular carbohydrate metabolic process
+GO:1901522	GO - Biological Process	Positive regulation of transcription from RNA polymerase II promoter involved in cellular response to chemical stimulus
+GO:0051093	GO - Biological Process	Negative regulation of developmental process
+GO:0031065	GO - Biological Process	Positive regulation of histone deacetylation
+GO:0048512	GO - Biological Process	Circadian behavior
+GO:2000679	GO - Biological Process	Positive regulation of transcription regulatory region DNA binding
+GO:0030154	GO - Biological Process	Cell differentiation
+GO:2001242	GO - Biological Process	Regulation of intrinsic apoptotic signaling pathway
+GO:0042659	GO - Biological Process	Regulation of cell fate specification
+GO:0014009	GO - Biological Process	Glial cell proliferation
+GO:0009887	GO - Biological Process	Animal organ morphogenesis
+GO:0051099	GO - Biological Process	Positive regulation of binding
+GO:0001501	GO - Biological Process	Skeletal system development
+GO:0030308	GO - Biological Process	Negative regulation of cell growth
+GO:0009790	GO - Biological Process	Embryo development
+GO:0003180	GO - Biological Process	Aortic valve morphogenesis
+GO:0042771	GO - Biological Process	Intrinsic apoptotic signaling pathway in response to DNA damage by p53 class mediator
+GO:0009952	GO - Biological Process	Anterior/posterior pattern specification
+GO:0048731	GO - Biological Process	System development
+GO:0010628	GO - Biological Process	Positive regulation of gene expression
+GO:0043516	GO - Biological Process	Regulation of DNA damage response, signal transduction by p53 class mediator
+GO:0048583	GO - Biological Process	Regulation of response to stimulus
+GO:0007610	GO - Biological Process	Behavior
+GO:2001234	GO - Biological Process	Negative regulation of apoptotic signaling pathway
+GO:0042063	GO - Biological Process	Gliogenesis
+GO:0006110	GO - Biological Process	Regulation of glycolytic process
+GO:0009966	GO - Biological Process	Regulation of signal transduction
+GO:0071310	GO - Biological Process	Cellular response to organic substance
+GO:0009968	GO - Biological Process	Negative regulation of signal transduction
+GO:0030099	GO - Biological Process	Myeloid cell differentiation
+GO:0010677	GO - Biological Process	Negative regulation of cellular carbohydrate metabolic process
+GO:0045596	GO - Biological Process	Negative regulation of cell differentiation
+GO:0032502	GO - Biological Process	Developmental process
+GO:0043170	GO - Biological Process	Macromolecule metabolic process
+GO:0009719	GO - Biological Process	Response to endogenous stimulus
+GO:0048511	GO - Biological Process	Rhythmic process
+GO:0060965	GO - Biological Process	Negative regulation of miRNA-mediated gene silencing
+GO:0042752	GO - Biological Process	Regulation of circadian rhythm
+GO:0046329	GO - Biological Process	Negative regulation of JNK cascade
+GO:0043409	GO - Biological Process	Negative regulation of MAPK cascade
+GO:0043408	GO - Biological Process	Regulation of MAPK cascade
+GO:0030512	GO - Biological Process	Negative regulation of transforming growth factor beta receptor signaling pathway
+GO:0019216	GO - Biological Process	Regulation of lipid metabolic process
+GO:0048584	GO - Biological Process	Positive regulation of response to stimulus
+GO:0031325	GO - Biological Process	Positive regulation of cellular metabolic process
+GO:0050872	GO - Biological Process	White fat cell differentiation
+GO:0051173	GO - Biological Process	Positive regulation of nitrogen compound metabolic process
+GO:0010565	GO - Biological Process	Regulation of cellular ketone metabolic process
+GO:0009967	GO - Biological Process	Positive regulation of signal transduction
+GO:1902455	GO - Biological Process	Negative regulation of stem cell population maintenance
+GO:0010875	GO - Biological Process	Positive regulation of cholesterol efflux
+GO:0032501	GO - Biological Process	Multicellular organismal process
+GO:1902459	GO - Biological Process	Positive regulation of stem cell population maintenance
+GO:0010468	GO - Biological Process	Regulation of gene expression
+GO:0010605	GO - Biological Process	Negative regulation of macromolecule metabolic process
+GO:0031324	GO - Biological Process	Negative regulation of cellular metabolic process
+GO:0051153	GO - Biological Process	Regulation of striated muscle cell differentiation
+GO:0051172	GO - Biological Process	Negative regulation of nitrogen compound metabolic process
+GO:0060255	GO - Biological Process	Regulation of macromolecule metabolic process
+GO:0010832	GO - Biological Process	Negative regulation of myotube differentiation
+GO:0045820	GO - Biological Process	Negative regulation of glycolytic process
+GO:0055012	GO - Biological Process	Ventricular cardiac muscle cell differentiation
+GO:0046649	GO - Biological Process	Lymphocyte activation
+GO:1901700	GO - Biological Process	Response to oxygen-containing compound
+GO:0010243	GO - Biological Process	Response to organonitrogen compound
+GO:0051276	GO - Biological Process	Chromosome organization
+GO:0001958	GO - Biological Process	Endochondral ossification
+GO:0090276	GO - Biological Process	Regulation of peptide hormone secretion
+GO:0070542	GO - Biological Process	Response to fatty acid
+GO:0030072	GO - Biological Process	Peptide hormone secretion
+GO:0051049	GO - Biological Process	Regulation of transport
+GO:0090277	GO - Biological Process	Positive regulation of peptide hormone secretion
+GO:0007218	GO - Biological Process	Neuropeptide signaling pathway
+GO:0010737	GO - Biological Process	Protein kinase A signaling
+GO:0010646	GO - Biological Process	Regulation of cell communication
+GO:0023051	GO - Biological Process	Regulation of signaling
+GO:0014070	GO - Biological Process	Response to organic cyclic compound
+GO:0010033	GO - Biological Process	Response to organic substance
+GO:0051239	GO - Biological Process	Regulation of multicellular organismal process
+GO:0010557	GO - Biological Process	Positive regulation of macromolecule biosynthetic process
+GO:0060742	GO - Biological Process	Epithelial cell differentiation involved in prostate gland development
+GO:0031328	GO - Biological Process	Positive regulation of cellular biosynthetic process
+GO:0045597	GO - Biological Process	Positive regulation of cell differentiation
+GO:0045793	GO - Biological Process	Positive regulation of cell size
+GO:0045935	GO - Biological Process	Positive regulation of nucleobase-containing compound metabolic process
+GO:0051094	GO - Biological Process	Positive regulation of developmental process
+GO:0071407	GO - Biological Process	Cellular response to organic cyclic compound
+GO:0050793	GO - Biological Process	Regulation of developmental process
+GO:0071495	GO - Biological Process	Cellular response to endogenous stimulus
+GO:0010556	GO - Biological Process	Regulation of macromolecule biosynthetic process
+GO:0051973	GO - Biological Process	Positive regulation of telomerase activity
+GO:0019219	GO - Biological Process	Regulation of nucleobase-containing compound metabolic process
+GO:0031326	GO - Biological Process	Regulation of cellular biosynthetic process
+GO:0033993	GO - Biological Process	Response to lipid
+GO:0048608	GO - Biological Process	Reproductive structure development
+GO:0042981	GO - Biological Process	Regulation of apoptotic process
+GO:0046677	GO - Biological Process	Response to antibiotic
+GO:0060769	GO - Biological Process	Positive regulation of epithelial cell proliferation involved in prostate gland development
+GO:1905323	GO - Biological Process	Telomerase holoenzyme complex assembly
+GO:0044093	GO - Biological Process	Positive regulation of molecular function
+GO:0043627	GO - Biological Process	Response to estrogen
+GO:0033143	GO - Biological Process	Regulation of intracellular steroid hormone receptor signaling pathway
+GO:0051091	GO - Biological Process	Positive regulation of DNA-binding transcription factor activity
+GO:1901701	GO - Biological Process	Cellular response to oxygen-containing compound
+GO:1902949	GO - Biological Process	Positive regulation of tau-protein kinase activity
+GO:1903320	GO - Biological Process	Regulation of protein modification by small protein conjugation or removal
+GO:1990138	GO - Biological Process	Neuron projection extension
+GO:0071394	GO - Biological Process	Cellular response to testosterone stimulus
+GO:0035112	GO - Biological Process	Genitalia morphogenesis
+GO:0033148	GO - Biological Process	Positive regulation of intracellular estrogen receptor signaling pathway
+GO:0009725	GO - Biological Process	Response to hormone
+GO:0032355	GO - Biological Process	Response to estradiol
+GO:0043518	GO - Biological Process	Negative regulation of DNA damage response, signal transduction by p53 class mediator
+GO:0071391	GO - Biological Process	Cellular response to estrogen stimulus
+GO:0048754	GO - Biological Process	Branching morphogenesis of an epithelial tube
+GO:0032880	GO - Biological Process	Regulation of protein localization
+GO:0048589	GO - Biological Process	Developmental growth
+GO:0030522	GO - Biological Process	Intracellular receptor signaling pathway
+GO:0043066	GO - Biological Process	Negative regulation of apoptotic process
+GO:0007004	GO - Biological Process	Telomere maintenance via telomerase
+GO:0030520	GO - Biological Process	Intracellular estrogen receptor signaling pathway
+GO:0034654	GO - Biological Process	Nucleobase-containing compound biosynthetic process
+GO:0051131	GO - Biological Process	Chaperone-mediated protein complex assembly
+GO:0060740	GO - Biological Process	Prostate gland epithelium morphogenesis
+GO:1902254	GO - Biological Process	Negative regulation of intrinsic apoptotic signaling pathway by p53 class mediator
+GO:0006355	GO - Biological Process	Regulation of transcription, DNA-templated
+GO:0009651	GO - Biological Process	Response to salt stress
+GO:0030539	GO - Biological Process	Male genitalia development
+GO:0048469	GO - Biological Process	Cell maturation
+GO:0051716	GO - Biological Process	Cellular response to stimulus
+GO:0046661	GO - Biological Process	Male sex differentiation
+GO:0060487	GO - Biological Process	Lung epithelial cell differentiation
+GO:0060441	GO - Biological Process	Epithelial tube branching involved in lung morphogenesis
+GO:0032870	GO - Biological Process	Cellular response to hormone stimulus
+GO:0002052	GO - Biological Process	Positive regulation of neuroblast proliferation
+GO:0003156	GO - Biological Process	Regulation of animal organ formation
+GO:0071480	GO - Biological Process	Cellular response to gamma radiation
+GO:0048468	GO - Biological Process	Cell development
+GO:1902531	GO - Biological Process	Regulation of intracellular signal transduction
+GO:0110110	GO - Biological Process	Positive regulation of animal organ morphogenesis
+GO:0030182	GO - Biological Process	Neuron differentiation
+GO:0051052	GO - Biological Process	Regulation of DNA metabolic process
+GO:0000904	GO - Biological Process	Cell morphogenesis involved in differentiation
+GO:0071542	GO - Biological Process	Dopaminergic neuron differentiation
+GO:1901654	GO - Biological Process	Response to ketone
+GO:0048729	GO - Biological Process	Tissue morphogenesis
+GO:0009628	GO - Biological Process	Response to abiotic stimulus
+GO:0031396	GO - Biological Process	Regulation of protein ubiquitination
+GO:1905332	GO - Biological Process	Positive regulation of morphogenesis of an epithelium
+GO:0021955	GO - Biological Process	Central nervous system neuron axonogenesis
+GO:0048645	GO - Biological Process	Animal organ formation
+GO:0051569	GO - Biological Process	Regulation of histone H3-K4 methylation
+GO:2000008	GO - Biological Process	Regulation of protein localization to cell surface
+GO:0042307	GO - Biological Process	Positive regulation of protein import into nucleus
+GO:0045429	GO - Biological Process	Positive regulation of nitric oxide biosynthetic process
+GO:0042220	GO - Biological Process	Response to cocaine
+GO:0034605	GO - Biological Process	Cellular response to heat
+GO:2000648	GO - Biological Process	Positive regulation of stem cell proliferation
+GO:0048675	GO - Biological Process	Axon extension
+GO:0060688	GO - Biological Process	Regulation of morphogenesis of a branching structure
+GO:0048545	GO - Biological Process	Response to steroid hormone
+GO:0010648	GO - Biological Process	Negative regulation of cell communication
+GO:0023057	GO - Biological Process	Negative regulation of signaling
+GO:0030858	GO - Biological Process	Positive regulation of epithelial cell differentiation
+GO:0090304	GO - Biological Process	Nucleic acid metabolic process
+GO:0009059	GO - Biological Process	Macromolecule biosynthetic process
+GO:0009653	GO - Biological Process	Anatomical structure morphogenesis
+GO:0002067	GO - Biological Process	Glandular epithelial cell differentiation
+GO:0032570	GO - Biological Process	Response to progesterone
+GO:0071392	GO - Biological Process	Cellular response to estradiol stimulus
+GO:1990646	GO - Biological Process	Cellular response to prolactin
+GO:0022602	GO - Biological Process	Ovulation cycle process
+GO:1904017	GO - Biological Process	Cellular response to Thyroglobulin triiodothyronine
+GO:1900076	GO - Biological Process	Regulation of cellular response to insulin stimulus
+GO:1904179	GO - Biological Process	Positive regulation of adipose tissue development
+GO:0035357	GO - Biological Process	Peroxisome proliferator activated receptor signaling pathway
+GO:0008585	GO - Biological Process	Female gonad development
+GO:0007179	GO - Biological Process	Transforming growth factor beta receptor signaling pathway
+GO:0045475	GO - Biological Process	Locomotor rhythm
+GO:0006366	GO - Biological Process	Transcription by RNA polymerase II
+GO:0034614	GO - Biological Process	Cellular response to reactive oxygen species
+GO:0006979	GO - Biological Process	Response to oxidative stress
+GO:0043923	GO - Biological Process	Positive regulation by host of viral transcription
+GO:0002573	GO - Biological Process	Myeloid leukocyte differentiation
+GO:0009410	GO - Biological Process	Response to xenobiotic stimulus
+GO:0010634	GO - Biological Process	Positive regulation of epithelial cell migration
+GO:0060444	GO - Biological Process	Branching involved in mammary gland duct morphogenesis
+GO:0060065	GO - Biological Process	Uterus development
+GO:0035994	GO - Biological Process	Response to muscle stretch
+GO:0010941	GO - Biological Process	Regulation of cell death
+GO:0071396	GO - Biological Process	Cellular response to lipid
+GO:0031334	GO - Biological Process	Positive regulation of protein-containing complex assembly
+GO:0140467	GO - Biological Process	Integrated stress response signaling
+GO:0071276	GO - Biological Process	Cellular response to cadmium ion
+GO:0009612	GO - Biological Process	Response to mechanical stimulus
+GO:0071417	GO - Biological Process	Cellular response to organonitrogen compound
+GO:1902745	GO - Biological Process	Positive regulation of lamellipodium organization
+GO:0010942	GO - Biological Process	Positive regulation of cell death
+GO:0051385	GO - Biological Process	Response to mineralocorticoid
+GO:0031952	GO - Biological Process	Regulation of protein autophosphorylation
+GO:0071375	GO - Biological Process	Cellular response to peptide hormone stimulus
+GO:0042789	GO - Biological Process	mRNA transcription by RNA polymerase II
+GO:1902895	GO - Biological Process	Positive regulation of miRNA transcription
+GO:0044403	GO - Biological Process	Biological process involved in symbiotic interaction
+GO:0051972	GO - Biological Process	Regulation of telomerase activity
+GO:0001541	GO - Biological Process	Ovarian follicle development
+GO:0009409	GO - Biological Process	Response to cold
+GO:0030316	GO - Biological Process	Osteoclast differentiation
+GO:0048146	GO - Biological Process	Positive regulation of fibroblast proliferation
+GO:0030518	GO - Biological Process	Intracellular steroid hormone receptor signaling pathway
+GO:0060443	GO - Biological Process	Mammary gland morphogenesis
+GO:0048732	GO - Biological Process	Gland development
+GO:0086098	GO - Biological Process	Angiotensin-activated signaling pathway involved in heart process
+GO:0060750	GO - Biological Process	Epithelial cell proliferation involved in mammary gland duct elongation
+GO:2000144	GO - Biological Process	Positive regulation of DNA-templated transcription, initiation
+GO:0060745	GO - Biological Process	Mammary gland branching involved in pregnancy
+GO:0030855	GO - Biological Process	Epithelial cell differentiation
+GO:0048145	GO - Biological Process	Regulation of fibroblast proliferation
+GO:0035239	GO - Biological Process	Tube morphogenesis
+GO:0008283	GO - Biological Process	Cell population proliferation
+GO:0062012	GO - Biological Process	Regulation of small molecule metabolic process
+GO:0031953	GO - Biological Process	Negative regulation of protein autophosphorylation
+GO:0050678	GO - Biological Process	Regulation of epithelial cell proliferation
+GO:0045618	GO - Biological Process	Positive regulation of keratinocyte differentiation
+GO:0030224	GO - Biological Process	Monocyte differentiation
+GO:0001936	GO - Biological Process	Regulation of endothelial cell proliferation
+GO:2000811	GO - Biological Process	Negative regulation of anoikis
+GO:0044271	GO - Biological Process	Cellular nitrogen compound biosynthetic process
+GO:0030856	GO - Biological Process	Regulation of epithelial cell differentiation
+GO:0071560	GO - Biological Process	Cellular response to transforming growth factor beta stimulus
+GO:0008284	GO - Biological Process	Positive regulation of cell population proliferation
+GO:0071363	GO - Biological Process	Cellular response to growth factor stimulus
+GO:0050673	GO - Biological Process	Epithelial cell proliferation
+GO:0042127	GO - Biological Process	Regulation of cell population proliferation
+GO:0010469	GO - Biological Process	Regulation of signaling receptor activity
+GO:0043065	GO - Biological Process	Positive regulation of apoptotic process
+GO:0008209	GO - Biological Process	Androgen metabolic process
+GO:1902532	GO - Biological Process	Negative regulation of intracellular signal transduction
+GO:0030335	GO - Biological Process	Positive regulation of cell migration
+GO:0098751	GO - Biological Process	Bone cell development
+GO:0048144	GO - Biological Process	Fibroblast proliferation
+GO:0050679	GO - Biological Process	Positive regulation of epithelial cell proliferation
+GO:0033146	GO - Biological Process	Regulation of intracellular estrogen receptor signaling pathway
+GO:0007595	GO - Biological Process	Lactation
+GO:0044092	GO - Biological Process	Negative regulation of molecular function
+GO:0050999	GO - Biological Process	Regulation of nitric-oxide synthase activity
+GO:0031295	GO - Biological Process	T cell costimulation
+GO:0062197	GO - Biological Process	Cellular response to chemical stress
+GO:0045428	GO - Biological Process	Regulation of nitric oxide biosynthetic process
+GO:0060261	GO - Biological Process	Positive regulation of transcription initiation from RNA polymerase II promoter
+GO:0001525	GO - Biological Process	Angiogenesis
+GO:0006457	GO - Biological Process	Protein folding
+GO:0038128	GO - Biological Process	ERBB2 signaling pathway
+GO:0051338	GO - Biological Process	Regulation of transferase activity
+GO:0051128	GO - Biological Process	Regulation of cellular component organization
+GO:0051205	GO - Biological Process	Protein insertion into membrane
+GO:0043462	GO - Biological Process	Regulation of ATP-dependent activity
+GO:0038134	GO - Biological Process	ERBB2-EGFR signaling pathway
+GO:0061684	GO - Biological Process	Chaperone-mediated autophagy
+GO:0010659	GO - Biological Process	Cardiac muscle cell apoptotic process
+GO:0031647	GO - Biological Process	Regulation of protein stability
+GO:0031943	GO - Biological Process	Regulation of glucocorticoid metabolic process
+GO:0045040	GO - Biological Process	Protein insertion into mitochondrial outer membrane
+GO:1903800	GO - Biological Process	Positive regulation of miRNA maturation
+GO:0006986	GO - Biological Process	Response to unfolded protein
+GO:0007006	GO - Biological Process	Mitochondrial membrane organization
+GO:0065009	GO - Biological Process	Regulation of molecular function
+GO:0043254	GO - Biological Process	Regulation of protein-containing complex assembly
+GO:0001558	GO - Biological Process	Regulation of cell growth
+GO:0006839	GO - Biological Process	Mitochondrial transport
+GO:0031399	GO - Biological Process	Regulation of protein modification process
+GO:0033554	GO - Biological Process	Cellular response to stress
+GO:0044087	GO - Biological Process	Regulation of cellular component biogenesis
+GO:1903829	GO - Biological Process	Positive regulation of protein localization
+GO:0031401	GO - Biological Process	Positive regulation of protein modification process
+GO:0007417	GO - Biological Process	Central nervous system development
+GO:0006626	GO - Biological Process	Protein targeting to mitochondrion
+GO:0006605	GO - Biological Process	Protein targeting
+GO:0061077	GO - Biological Process	Chaperone-mediated protein folding
+GO:0001666	GO - Biological Process	Response to hypoxia
+GO:0043618	GO - Biological Process	Regulation of transcription from RNA polymerase II promoter in response to stress
+GO:0061418	GO - Biological Process	Regulation of transcription from RNA polymerase II promoter in response to hypoxia
+GO:0071456	GO - Biological Process	Cellular response to hypoxia
+GO:0006950	GO - Biological Process	Response to stress
+GO:0090287	GO - Biological Process	Regulation of cellular response to growth factor stimulus
+GO:0051171	GO - Biological Process	Regulation of nitrogen compound metabolic process
+GO:0080090	GO - Biological Process	Regulation of primary metabolic process
+GO:0018076	GO - Biological Process	N-terminal peptidyl-lysine acetylation
+GO:0050821	GO - Biological Process	Protein stabilization
+GO:0002218	GO - Biological Process	Activation of innate immune response
+GO:0009894	GO - Biological Process	Regulation of catabolic process
+GO:0061419	GO - Biological Process	Positive regulation of transcription from RNA polymerase II promoter in response to hypoxia
+GO:0043009	GO - Biological Process	Chordate embryonic development
+GO:0046886	GO - Biological Process	Positive regulation of hormone biosynthetic process
+GO:0009416	GO - Biological Process	Response to light stimulus
+GO:0043619	GO - Biological Process	Regulation of transcription from RNA polymerase II promoter in response to oxidative stress
+GO:0030949	GO - Biological Process	Positive regulation of vascular endothelial growth factor receptor signaling pathway
+GO:0006089	GO - Biological Process	Lactate metabolic process
+GO:0031329	GO - Biological Process	Regulation of cellular catabolic process
+GO:0070243	GO - Biological Process	Regulation of thymocyte apoptotic process
+GO:0001701	GO - Biological Process	In utero embryonic development
+GO:1900034	GO - Biological Process	Regulation of cellular response to heat
+GO:0045821	GO - Biological Process	Positive regulation of glycolytic process
+GO:0002223	GO - Biological Process	Stimulatory C-type lectin receptor signaling pathway
+GO:0010821	GO - Biological Process	Regulation of mitochondrion organization
+GO:0018126	GO - Biological Process	Protein hydroxylation
+GO:0009896	GO - Biological Process	Positive regulation of catabolic process
+GO:0010575	GO - Biological Process	Positive regulation of vascular endothelial growth factor production
+GO:0070887	GO - Biological Process	Cellular response to chemical stimulus
+GO:0006915	GO - Biological Process	Apoptotic process
+GO:0030511	GO - Biological Process	Positive regulation of transforming growth factor beta receptor signaling pathway
+GO:0045648	GO - Biological Process	Positive regulation of erythrocyte differentiation
+GO:0051246	GO - Biological Process	Regulation of protein metabolic process
+GO:1903146	GO - Biological Process	Regulation of autophagy of mitochondrion
+GO:0043523	GO - Biological Process	Regulation of neuron apoptotic process
+GO:0019538	GO - Biological Process	Protein metabolic process
+GO:0034599	GO - Biological Process	Cellular response to oxidative stress
+GO:1902692	GO - Biological Process	Regulation of neuroblast proliferation
+GO:0042221	GO - Biological Process	Response to chemical
+GO:2000378	GO - Biological Process	Negative regulation of reactive oxygen species metabolic process
+GO:0042325	GO - Biological Process	Regulation of phosphorylation
+GO:0007405	GO - Biological Process	Neuroblast proliferation
+GO:0031648	GO - Biological Process	Protein destabilization
+GO:0042060	GO - Biological Process	Wound healing
+GO:0048514	GO - Biological Process	Blood vessel morphogenesis
+GO:0016477	GO - Biological Process	Cell migration
+GO:0007161	GO - Biological Process	Calcium-independent cell-matrix adhesion
+GO:0048646	GO - Biological Process	Anatomical structure formation involved in morphogenesis
+GO:0009888	GO - Biological Process	Tissue development
+GO:0051580	GO - Biological Process	Regulation of neurotransmitter uptake
+GO:0043281	GO - Biological Process	Regulation of cysteine-type endopeptidase activity involved in apoptotic process
+GO:0043067	GO - Biological Process	Regulation of programmed cell death
+GO:0050790	GO - Biological Process	Regulation of catalytic activity
+GO:0051247	GO - Biological Process	Positive regulation of protein metabolic process
+GO:0016485	GO - Biological Process	Protein processing
+GO:0097202	GO - Biological Process	Activation of cysteine-type endopeptidase activity
+GO:0097190	GO - Biological Process	Apoptotic signaling pathway
+GO:0008635	GO - Biological Process	Activation of cysteine-type endopeptidase activity involved in apoptotic process by cytochrome c
+GO:0097193	GO - Biological Process	Intrinsic apoptotic signaling pathway
+GO:0032025	GO - Biological Process	Response to cobalt ion
+GO:0070424	GO - Biological Process	Regulation of nucleotide-binding oligomerization domain containing signaling pathway
+GO:0032268	GO - Biological Process	Regulation of cellular protein metabolic process
+GO:0006919	GO - Biological Process	Activation of cysteine-type endopeptidase activity involved in apoptotic process
+GO:0060546	GO - Biological Process	Negative regulation of necroptotic process
+GO:0051402	GO - Biological Process	Neuron apoptotic process
+GO:1901216	GO - Biological Process	Positive regulation of neuron death
+GO:0031398	GO - Biological Process	Positive regulation of protein ubiquitination
+GO:0071214	GO - Biological Process	Cellular response to abiotic stimulus
+GO:0006508	GO - Biological Process	Proteolysis
+GO:0009411	GO - Biological Process	Response to UV
+GO:0034612	GO - Biological Process	Response to tumor necrosis factor
+GO:0010803	GO - Biological Process	Regulation of tumor necrosis factor-mediated signaling pathway
+GO:0043069	GO - Biological Process	Negative regulation of programmed cell death
+GO:0035556	GO - Biological Process	Intracellular signal transduction
+GO:0043068	GO - Biological Process	Positive regulation of programmed cell death
+GO:0045088	GO - Biological Process	Regulation of innate immune response
+GO:0051248	GO - Biological Process	Negative regulation of protein metabolic process
+GO:0051726	GO - Biological Process	Regulation of cell cycle
+GO:0044346	GO - Biological Process	Fibroblast apoptotic process
+GO:1902510	GO - Biological Process	Regulation of apoptotic DNA fragmentation
+GO:0006974	GO - Biological Process	Cellular response to DNA damage stimulus
+GO:0010038	GO - Biological Process	Response to metal ion
+GO:0008152	GO - Biological Process	Metabolic process
+GO:0002682	GO - Biological Process	Regulation of immune system process
+GO:0030220	GO - Biological Process	Platelet formation
+GO:1902916	GO - Biological Process	Positive regulation of protein polyubiquitination
+GO:0010212	GO - Biological Process	Response to ionizing radiation
+GO:0039535	GO - Biological Process	Regulation of RIG-I signaling pathway
+GO:0031960	GO - Biological Process	Response to corticosteroid
+GO:0010804	GO - Biological Process	Negative regulation of tumor necrosis factor-mediated signaling pathway
+GO:1902533	GO - Biological Process	Positive regulation of intracellular signal transduction
+GO:0030225	GO - Biological Process	Macrophage differentiation
+GO:0043123	GO - Biological Process	Positive regulation of I-kappaB kinase/NF-kappaB signaling
+GO:0038061	GO - Biological Process	NIK/NF-kappaB signaling
+GO:0043085	GO - Biological Process	Positive regulation of catalytic activity
+GO:0071887	GO - Biological Process	Leukocyte apoptotic process
+GO:0097305	GO - Biological Process	Response to alcohol
+GO:0007166	GO - Biological Process	Cell surface receptor signaling pathway
+GO:1904019	GO - Biological Process	Epithelial cell apoptotic process
+GO:0043525	GO - Biological Process	Positive regulation of neuron apoptotic process
+GO:0010332	GO - Biological Process	Response to gamma radiation
+GO:0033209	GO - Biological Process	Tumor necrosis factor-mediated signaling pathway
+GO:0007188	GO - Biological Process	Adenylate cyclase-modulating G protein-coupled receptor signaling pathway
+GO:0007193	GO - Biological Process	Adenylate cyclase-inhibiting G protein-coupled receptor signaling pathway
+GO:0007191	GO - Biological Process	Adenylate cyclase-activating dopamine receptor signaling pathway
+GO:0097306	GO - Biological Process	Cellular response to alcohol
+GO:1901655	GO - Biological Process	Cellular response to ketone
+GO:0050896	GO - Biological Process	Response to stimulus
+GO:0007187	GO - Biological Process	G protein-coupled receptor signaling pathway, coupled to cyclic nucleotide second messenger
+GO:0009755	GO - Biological Process	Hormone-mediated signaling pathway
+GO:0008285	GO - Biological Process	Negative regulation of cell population proliferation
+GO:0030900	GO - Biological Process	Forebrain development
+GO:0006282	GO - Biological Process	Regulation of DNA repair
+GO:0046600	GO - Biological Process	Negative regulation of centriole replication
+GO:0006111	GO - Biological Process	Regulation of gluconeogenesis
+GO:0051253	GO - Biological Process	Negative regulation of RNA metabolic process
+GO:0034983	GO - Biological Process	Peptidyl-lysine deacetylation
+GO:0018205	GO - Biological Process	Peptidyl-lysine modification
+GO:0045722	GO - Biological Process	Positive regulation of gluconeogenesis
+GO:0018394	GO - Biological Process	Peptidyl-lysine acetylation
+GO:2000736	GO - Biological Process	Regulation of stem cell differentiation
+GO:0006259	GO - Biological Process	DNA metabolic process
+GO:0006306	GO - Biological Process	DNA methylation
+GO:0051148	GO - Biological Process	Negative regulation of muscle cell differentiation
+GO:0043412	GO - Biological Process	Macromolecule modification
+GO:2000757	GO - Biological Process	Negative regulation of peptidyl-lysine acetylation
+GO:0003300	GO - Biological Process	Cardiac muscle hypertrophy
+GO:0051241	GO - Biological Process	Negative regulation of multicellular organismal process
+GO:0006807	GO - Biological Process	Nitrogen compound metabolic process
+GO:0036211	GO - Biological Process	Protein modification process
+GO:0051154	GO - Biological Process	Negative regulation of striated muscle cell differentiation
+GO:0044238	GO - Biological Process	Primary metabolic process
+GO:0043535	GO - Biological Process	Regulation of blood vessel endothelial cell migration
+GO:0071498	GO - Biological Process	Cellular response to fluid shear stress
+GO:0072359	GO - Biological Process	Circulatory system development
+GO:0048523	GO - Biological Process	Negative regulation of cellular process
+GO:0042113	GO - Biological Process	B cell activation
+GO:0006954	GO - Biological Process	Inflammatory response
+GO:0048856	GO - Biological Process	Anatomical structure development
+GO:0043537	GO - Biological Process	Negative regulation of blood vessel endothelial cell migration
+GO:0045321	GO - Biological Process	Leukocyte activation
+GO:0090049	GO - Biological Process	Regulation of cell migration involved in sprouting angiogenesis
+GO:0019220	GO - Biological Process	Regulation of phosphate metabolic process
+GO:0033138	GO - Biological Process	Positive regulation of peptidyl-serine phosphorylation
+GO:0045937	GO - Biological Process	Positive regulation of phosphate metabolic process
+GO:0070201	GO - Biological Process	Regulation of establishment of protein localization
+GO:0006996	GO - Biological Process	Organelle organization
+GO:0001932	GO - Biological Process	Regulation of protein phosphorylation
+GO:0006914	GO - Biological Process	Autophagy
+GO:0071897	GO - Biological Process	DNA biosynthetic process
+GO:0006886	GO - Biological Process	Intracellular protein transport
+GO:0000902	GO - Biological Process	Cell morphogenesis
+GO:0048588	GO - Biological Process	Developmental cell growth
+GO:1903008	GO - Biological Process	Organelle disassembly
+GO:0001934	GO - Biological Process	Positive regulation of protein phosphorylation
+GO:0030163	GO - Biological Process	Protein catabolic process
+GO:0031323	GO - Biological Process	Regulation of cellular metabolic process
+GO:0051897	GO - Biological Process	Positive regulation of protein kinase B signaling
+GO:0032535	GO - Biological Process	Regulation of cellular component size
+GO:0060560	GO - Biological Process	Developmental growth involved in morphogenesis
+GO:0043933	GO - Biological Process	Protein-containing complex organization
+GO:0098780	GO - Biological Process	Response to mitochondrial depolarisation
+GO:0010558	GO - Biological Process	Negative regulation of macromolecule biosynthetic process
+GO:0031327	GO - Biological Process	Negative regulation of cellular biosynthetic process
+GO:0048812	GO - Biological Process	Neuron projection morphogenesis
+GO:0008361	GO - Biological Process	Regulation of cell size
+GO:0051130	GO - Biological Process	Positive regulation of cellular component organization
+GO:0097061	GO - Biological Process	Dendritic spine organization
+GO:0032271	GO - Biological Process	Regulation of protein polymerization
+GO:0019941	GO - Biological Process	Modification-dependent protein catabolic process
+GO:0030041	GO - Biological Process	Actin filament polymerization
+GO:0033043	GO - Biological Process	Regulation of organelle organization
+GO:0045933	GO - Biological Process	Positive regulation of muscle contraction
+GO:0030968	GO - Biological Process	Endoplasmic reticulum unfolded protein response
+GO:0007399	GO - Biological Process	Nervous system development
+GO:0060429	GO - Biological Process	Epithelium development
+GO:2000273	GO - Biological Process	Positive regulation of signaling receptor activity
+GO:0061198	GO - Biological Process	Fungiform papilla formation
+GO:0048585	GO - Biological Process	Negative regulation of response to stimulus
+GO:0060789	GO - Biological Process	Hair follicle placode formation
+GO:1901983	GO - Biological Process	Regulation of protein acetylation
+GO:0022008	GO - Biological Process	Neurogenesis
+GO:0001817	GO - Biological Process	Regulation of cytokine production
+GO:0061029	GO - Biological Process	Eyelid development in camera-type eye
+GO:0070932	GO - Biological Process	Histone H3 deacetylation
+GO:0016573	GO - Biological Process	Histone acetylation
+GO:0001816	GO - Biological Process	Cytokine production
+GO:0044419	GO - Biological Process	Biological process involved in interspecies interaction between organisms
+GO:0035295	GO - Biological Process	Tube development
+GO:0051090	GO - Biological Process	Regulation of DNA-binding transcription factor activity
+GO:0009314	GO - Biological Process	Response to radiation
+GO:0002070	GO - Biological Process	Epithelial cell maturation
+GO:0045591	GO - Biological Process	Positive regulation of regulatory T cell differentiation
+GO:0048714	GO - Biological Process	Positive regulation of oligodendrocyte differentiation
+GO:0001782	GO - Biological Process	B cell homeostasis
+GO:0042593	GO - Biological Process	Glucose homeostasis
+GO:0071634	GO - Biological Process	Regulation of transforming growth factor beta production
+GO:0050769	GO - Biological Process	Positive regulation of neurogenesis
+GO:0043536	GO - Biological Process	Positive regulation of blood vessel endothelial cell migration
+GO:0090596	GO - Biological Process	Sensory organ morphogenesis
+GO:0042733	GO - Biological Process	Embryonic digit morphogenesis
+GO:1901985	GO - Biological Process	Positive regulation of protein acetylation
+GO:0009607	GO - Biological Process	Response to biotic stimulus
+GO:2000026	GO - Biological Process	Regulation of multicellular organismal development
+GO:0070482	GO - Biological Process	Response to oxygen levels
+GO:0022409	GO - Biological Process	Positive regulation of cell-cell adhesion
+GO:0007062	GO - Biological Process	Sister chromatid cohesion
+GO:0000183	GO - Biological Process	rDNA heterochromatin assembly
+GO:0016043	GO - Biological Process	Cellular component organization
+GO:0044260	GO - Biological Process	Cellular macromolecule metabolic process
+GO:0140014	GO - Biological Process	Mitotic nuclear division
+GO:0006281	GO - Biological Process	DNA repair
+GO:0031400	GO - Biological Process	Negative regulation of protein modification process
+GO:0045663	GO - Biological Process	Positive regulation of myoblast differentiation
+GO:0051851	GO - Biological Process	Modulation by host of symbiont process
+GO:0007517	GO - Biological Process	Muscle organ development
+GO:0051251	GO - Biological Process	Positive regulation of lymphocyte activation
+GO:0045582	GO - Biological Process	Positive regulation of T cell differentiation
+GO:1903706	GO - Biological Process	Regulation of hemopoiesis
+GO:0002684	GO - Biological Process	Positive regulation of immune system process
+GO:0006351	GO - Biological Process	Transcription, DNA-templated
+GO:0002429	GO - Biological Process	Immune response-activating cell surface receptor signaling pathway
+GO:0030098	GO - Biological Process	Lymphocyte differentiation
+GO:0001818	GO - Biological Process	Negative regulation of cytokine production
+GO:0009435	GO - Biological Process	NAD biosynthetic process
+GO:0005975	GO - Biological Process	Carbohydrate metabolic process
+GO:0006073	GO - Biological Process	Cellular glucan metabolic process
+GO:0009251	GO - Biological Process	Glucan catabolic process
+GO:0044247	GO - Biological Process	Cellular polysaccharide catabolic process
+GO:0016052	GO - Biological Process	Carbohydrate catabolic process
+GO:0005977	GO - Biological Process	Glycogen metabolic process
+GO:0005980	GO - Biological Process	Glycogen catabolic process
+GO:1901575	GO - Biological Process	Organic substance catabolic process
+GO:0044262	GO - Biological Process	Cellular carbohydrate metabolic process
+GO:0009311	GO - Biological Process	Oligosaccharide metabolic process
+GO:0006006	GO - Biological Process	Glucose metabolic process
+GO:0006096	GO - Biological Process	Glycolytic process
+GO:0001678	GO - Biological Process	Cellular glucose homeostasis
+GO:0051651	GO - Biological Process	Maintenance of location in cell
+GO:0061621	GO - Biological Process	Canonical glycolysis
+GO:0006091	GO - Biological Process	Generation of precursor metabolites and energy
+GO:1901135	GO - Biological Process	Carbohydrate derivative metabolic process
+GO:0044275	GO - Biological Process	Cellular carbohydrate catabolic process
+GO:0005978	GO - Biological Process	Glycogen biosynthetic process
+GO:0019725	GO - Biological Process	Cellular homeostasis
+GO:0006633	GO - Biological Process	Fatty acid biosynthetic process
+GO:0006636	GO - Biological Process	Unsaturated fatty acid biosynthetic process
+GO:0006690	GO - Biological Process	Icosanoid metabolic process
+GO:0033559	GO - Biological Process	Unsaturated fatty acid metabolic process
+GO:0046456	GO - Biological Process	Icosanoid biosynthetic process
+GO:0019369	GO - Biological Process	Arachidonic acid metabolic process
+GO:0001516	GO - Biological Process	Prostaglandin biosynthetic process
+GO:0032787	GO - Biological Process	Monocarboxylic acid metabolic process
+GO:0032101	GO - Biological Process	Regulation of response to external stimulus
+GO:0002673	GO - Biological Process	Regulation of acute inflammatory response
+GO:0019371	GO - Biological Process	Cyclooxygenase pathway
+GO:0031620	GO - Biological Process	Regulation of fever generation
+GO:0034097	GO - Biological Process	Response to cytokine
+GO:0045765	GO - Biological Process	Regulation of angiogenesis
+GO:1901576	GO - Biological Process	Organic substance biosynthetic process
+GO:0002675	GO - Biological Process	Positive regulation of acute inflammatory response
+GO:0071345	GO - Biological Process	Cellular response to cytokine stimulus
+GO:0150077	GO - Biological Process	Regulation of neuroinflammatory response
+GO:0030595	GO - Biological Process	Leukocyte chemotaxis
+GO:0060251	GO - Biological Process	Regulation of glial cell proliferation
+GO:1905952	GO - Biological Process	Regulation of lipid localization
+GO:0006952	GO - Biological Process	Defense response
+GO:0002819	GO - Biological Process	Regulation of adaptive immune response
+GO:2001301	GO - Biological Process	Lipoxin biosynthetic process
+GO:0044249	GO - Biological Process	Cellular biosynthetic process
+GO:0071216	GO - Biological Process	Cellular response to biotic stimulus
+GO:0010573	GO - Biological Process	Vascular endothelial growth factor production
+GO:0031394	GO - Biological Process	Positive regulation of prostaglandin biosynthetic process
+GO:0031622	GO - Biological Process	Positive regulation of fever generation
+GO:0060353	GO - Biological Process	Regulation of cell adhesion molecule production
+GO:0051122	GO - Biological Process	Hepoxilin biosynthetic process
+GO:1900119	GO - Biological Process	Positive regulation of execution phase of apoptosis
+GO:0019372	GO - Biological Process	Lipoxygenase pathway
+GO:0032496	GO - Biological Process	Response to lipopolysaccharide
+GO:0071347	GO - Biological Process	Cellular response to interleukin-1
+GO:1901503	GO - Biological Process	Ether biosynthetic process
+GO:0002824	GO - Biological Process	Positive regulation of adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
+GO:0035358	GO - Biological Process	Regulation of peroxisome proliferator activated receptor signaling pathway
+GO:0071236	GO - Biological Process	Cellular response to antibiotic
+GO:0019221	GO - Biological Process	Cytokine-mediated signaling pathway
+GO:0030155	GO - Biological Process	Regulation of cell adhesion
+GO:0150078	GO - Biological Process	Positive regulation of neuroinflammatory response
+GO:0045598	GO - Biological Process	Regulation of fat cell differentiation
+GO:0060252	GO - Biological Process	Positive regulation of glial cell proliferation
+GO:0097529	GO - Biological Process	Myeloid leukocyte migration
+GO:0002827	GO - Biological Process	Positive regulation of T-helper 1 type immune response
+GO:0050768	GO - Biological Process	Negative regulation of neurogenesis
+GO:0019370	GO - Biological Process	Leukotriene biosynthetic process
+GO:0043651	GO - Biological Process	Linoleic acid metabolic process
+GO:0050796	GO - Biological Process	Regulation of insulin secretion
+GO:1904996	GO - Biological Process	Positive regulation of leukocyte adhesion to vascular endothelial cell
+GO:0002360	GO - Biological Process	T cell lineage commitment
+GO:0045766	GO - Biological Process	Positive regulation of angiogenesis
+GO:0002726	GO - Biological Process	Positive regulation of T cell cytokine production
+GO:0045785	GO - Biological Process	Positive regulation of cell adhesion
+GO:0051223	GO - Biological Process	Regulation of protein transport
+GO:0071354	GO - Biological Process	Cellular response to interleukin-6
+GO:0046903	GO - Biological Process	Secretion
+GO:0032309	GO - Biological Process	Icosanoid secretion
+GO:0071222	GO - Biological Process	Cellular response to lipopolysaccharide
+GO:0033198	GO - Biological Process	Response to ATP
+GO:0035633	GO - Biological Process	Maintenance of blood-brain barrier
+GO:0034976	GO - Biological Process	Response to endoplasmic reticulum stress
+GO:0048519	GO - Biological Process	Negative regulation of biological process
+GO:0006953	GO - Biological Process	Acute-phase response
+GO:0007566	GO - Biological Process	Embryo implantation
+GO:0009889	GO - Biological Process	Regulation of biosynthetic process
+GO:0010718	GO - Biological Process	Positive regulation of epithelial to mesenchymal transition
+GO:0006959	GO - Biological Process	Humoral immune response
+GO:0010543	GO - Biological Process	Regulation of platelet activation
+GO:1903039	GO - Biological Process	Positive regulation of leukocyte cell-cell adhesion
+GO:0001775	GO - Biological Process	Cell activation
+GO:0043269	GO - Biological Process	Regulation of ion transport
+GO:0006955	GO - Biological Process	Immune response
+GO:0051707	GO - Biological Process	Response to other organism
+GO:1900015	GO - Biological Process	Regulation of cytokine production involved in inflammatory response
+GO:0030282	GO - Biological Process	Bone mineralization
+GO:0071704	GO - Biological Process	Organic substance metabolic process
+GO:0043030	GO - Biological Process	Regulation of macrophage activation
+GO:0050805	GO - Biological Process	Negative regulation of synaptic transmission
+GO:0046824	GO - Biological Process	Positive regulation of nucleocytoplasmic transport
+GO:0032757	GO - Biological Process	Positive regulation of interleukin-8 production
+GO:0051179	GO - Biological Process	Localization
+GO:0071496	GO - Biological Process	Cellular response to external stimulus
+GO:0032722	GO - Biological Process	Positive regulation of chemokine production
+GO:0009605	GO - Biological Process	Response to external stimulus
+GO:0019233	GO - Biological Process	Sensory perception of pain
+GO:0034103	GO - Biological Process	Regulation of tissue remodeling
+GO:0071260	GO - Biological Process	Cellular response to mechanical stimulus
+GO:0002286	GO - Biological Process	T cell activation involved in immune response
+GO:1901751	GO - Biological Process	Leukotriene A4 metabolic process
+GO:2001303	GO - Biological Process	Lipoxin A4 biosynthetic process
+GO:2000255	GO - Biological Process	Negative regulation of male germ cell proliferation
+GO:0034440	GO - Biological Process	Lipid oxidation
+GO:0042921	GO - Biological Process	Glucocorticoid receptor signaling pathway
+GO:0019722	GO - Biological Process	Calcium-mediated signaling
+GO:0050955	GO - Biological Process	Thermoception
+GO:0034380	GO - Biological Process	High-density lipoprotein particle assembly
+GO:0003091	GO - Biological Process	Renal water homeostasis
+GO:0051282	GO - Biological Process	Regulation of sequestering of calcium ion
+GO:0009266	GO - Biological Process	Response to temperature stimulus
+GO:0050968	GO - Biological Process	Detection of chemical stimulus involved in sensory perception of pain
+GO:0002027	GO - Biological Process	Regulation of heart rate
+GO:0048871	GO - Biological Process	Multicellular organismal homeostasis
+GO:0042592	GO - Biological Process	Homeostatic process
+GO:0009581	GO - Biological Process	Detection of external stimulus
+GO:0009582	GO - Biological Process	Detection of abiotic stimulus
+GO:0010881	GO - Biological Process	Regulation of cardiac muscle contraction by regulation of the release of sequestered calcium ion
+GO:0048878	GO - Biological Process	Chemical homeostasis
+GO:0044281	GO - Biological Process	Small molecule metabolic process
+GO:0046486	GO - Biological Process	Glycerolipid metabolic process
+GO:0044242	GO - Biological Process	Cellular lipid catabolic process
+GO:0019752	GO - Biological Process	Carboxylic acid metabolic process
+GO:0045759	GO - Biological Process	Negative regulation of action potential
+GO:0051001	GO - Biological Process	Negative regulation of nitric-oxide synthase activity
+GO:0033004	GO - Biological Process	Negative regulation of mast cell activation
+GO:0001505	GO - Biological Process	Regulation of neurotransmitter levels
+GO:0018958	GO - Biological Process	Phenol-containing compound metabolic process
+GO:0014062	GO - Biological Process	Regulation of serotonin secretion
+GO:0042428	GO - Biological Process	Serotonin metabolic process
+GO:0051952	GO - Biological Process	Regulation of amine transport
+GO:0051588	GO - Biological Process	Regulation of neurotransmitter transport
+GO:0042417	GO - Biological Process	Dopamine metabolic process
+GO:0097746	GO - Biological Process	Blood vessel diameter maintenance
+GO:0042310	GO - Biological Process	Vasoconstriction
+GO:0007268	GO - Biological Process	Chemical synaptic transmission
+GO:0042427	GO - Biological Process	Serotonin biosynthetic process
+GO:0050433	GO - Biological Process	Regulation of catecholamine secretion
+GO:0090066	GO - Biological Process	Regulation of anatomical structure size
+GO:0007198	GO - Biological Process	Adenylate cyclase-inhibiting serotonin receptor signaling pathway
+GO:0042420	GO - Biological Process	Dopamine catabolic process
+GO:0046928	GO - Biological Process	Regulation of neurotransmitter secretion
+GO:0051967	GO - Biological Process	Negative regulation of synaptic transmission, glutamatergic
+GO:0042135	GO - Biological Process	Neurotransmitter catabolic process
+GO:0048148	GO - Biological Process	Behavioral response to cocaine
+GO:0032879	GO - Biological Process	Regulation of localization
+GO:0007613	GO - Biological Process	Memory
+GO:0042053	GO - Biological Process	Regulation of dopamine metabolic process
+GO:0043271	GO - Biological Process	Negative regulation of ion transport
+GO:1903305	GO - Biological Process	Regulation of regulated secretory pathway
+GO:0051590	GO - Biological Process	Positive regulation of neurotransmitter transport
+GO:0001662	GO - Biological Process	Behavioral fear response
+GO:0009072	GO - Biological Process	Aromatic amino acid family metabolic process
+GO:0006874	GO - Biological Process	Cellular calcium ion homeostasis
+GO:0060627	GO - Biological Process	Regulation of vesicle-mediated transport
+GO:0014059	GO - Biological Process	Regulation of dopamine secretion
+GO:0051954	GO - Biological Process	Positive regulation of amine transport
+GO:0006725	GO - Biological Process	Cellular aromatic compound metabolic process
+GO:0046849	GO - Biological Process	Bone remodeling
+GO:0007189	GO - Biological Process	Adenylate cyclase-activating G protein-coupled receptor signaling pathway
+GO:0032228	GO - Biological Process	Regulation of synaptic transmission, GABAergic
+GO:1901698	GO - Biological Process	Response to nitrogen compound
+GO:0007212	GO - Biological Process	Dopamine receptor signaling pathway
+GO:0002683	GO - Biological Process	Negative regulation of immune system process
+GO:0099536	GO - Biological Process	Synaptic signaling
+GO:0033602	GO - Biological Process	Negative regulation of dopamine secretion
+GO:2000300	GO - Biological Process	Regulation of synaptic vesicle exocytosis
+GO:0050795	GO - Biological Process	Regulation of behavior
+GO:0051966	GO - Biological Process	Regulation of synaptic transmission, glutamatergic
+GO:0031347	GO - Biological Process	Regulation of defense response
+GO:0001973	GO - Biological Process	G protein-coupled adenosine receptor signaling pathway
+GO:0007200	GO - Biological Process	Phospholipase C-activating G protein-coupled receptor signaling pathway
+GO:0043279	GO - Biological Process	Response to alkaloid
+GO:0051341	GO - Biological Process	Regulation of oxidoreductase activity
+GO:0003008	GO - Biological Process	System process
+GO:0060134	GO - Biological Process	Prepulse inhibition
+GO:0043086	GO - Biological Process	Negative regulation of catalytic activity
+GO:0045187	GO - Biological Process	Regulation of circadian sleep/wake cycle, sleep
+GO:0001963	GO - Biological Process	Synaptic transmission, dopaminergic
+GO:0071380	GO - Biological Process	Cellular response to prostaglandin E stimulus
+GO:0001956	GO - Biological Process	Positive regulation of neurotransmitter secretion
+GO:0008015	GO - Biological Process	Blood circulation
+GO:0050806	GO - Biological Process	Positive regulation of synaptic transmission
+GO:0008277	GO - Biological Process	Regulation of G protein-coupled receptor signaling pathway
+GO:0007213	GO - Biological Process	G protein-coupled acetylcholine receptor signaling pathway
+GO:0042391	GO - Biological Process	Regulation of membrane potential
+GO:0007194	GO - Biological Process	Negative regulation of adenylate cyclase activity
+GO:1900273	GO - Biological Process	Positive regulation of long-term synaptic potentiation
+GO:0007600	GO - Biological Process	Sensory perception
+GO:0043278	GO - Biological Process	Response to morphine
+GO:0051482	GO - Biological Process	Positive regulation of cytosolic calcium ion concentration involved in phospholipase C-activating G protein-coupled signaling pathway
+GO:0070374	GO - Biological Process	Positive regulation of ERK1 and ERK2 cascade
+GO:0031348	GO - Biological Process	Negative regulation of defense response
+GO:1901699	GO - Biological Process	Cellular response to nitrogen compound
+GO:0050708	GO - Biological Process	Regulation of protein secretion
+GO:0035094	GO - Biological Process	Response to nicotine
+GO:0045744	GO - Biological Process	Negative regulation of G protein-coupled receptor signaling pathway
+GO:0045776	GO - Biological Process	Negative regulation of blood pressure
+GO:0051924	GO - Biological Process	Regulation of calcium ion transport
+GO:2000179	GO - Biological Process	Positive regulation of neural precursor cell proliferation
+GO:0014065	GO - Biological Process	Phosphatidylinositol 3-kinase signaling
+GO:0007169	GO - Biological Process	Transmembrane receptor protein tyrosine kinase signaling pathway
+GO:0008286	GO - Biological Process	Insulin receptor signaling pathway
+GO:0046854	GO - Biological Process	Phosphatidylinositol phosphate biosynthetic process
+GO:0043549	GO - Biological Process	Regulation of kinase activity
+GO:0006796	GO - Biological Process	Phosphate-containing compound metabolic process
+GO:0042327	GO - Biological Process	Positive regulation of phosphorylation
+GO:0048009	GO - Biological Process	Insulin-like growth factor receptor signaling pathway
+GO:0016310	GO - Biological Process	Phosphorylation
+GO:1903076	GO - Biological Process	Regulation of protein localization to plasma membrane
+GO:0046326	GO - Biological Process	Positive regulation of glucose import
+GO:0035924	GO - Biological Process	Cellular response to vascular endothelial growth factor stimulus
+GO:0030217	GO - Biological Process	T cell differentiation
+GO:0007173	GO - Biological Process	Epidermal growth factor receptor signaling pathway
+GO:0043491	GO - Biological Process	Protein kinase B signaling
+GO:0033674	GO - Biological Process	Positive regulation of kinase activity
+GO:1903078	GO - Biological Process	Positive regulation of protein localization to plasma membrane
+GO:0033031	GO - Biological Process	Positive regulation of neutrophil apoptotic process
+GO:0043542	GO - Biological Process	Endothelial cell migration
+GO:0035022	GO - Biological Process	Positive regulation of Rac protein signal transduction
+GO:1900182	GO - Biological Process	Positive regulation of protein localization to nucleus
+GO:0045859	GO - Biological Process	Regulation of protein kinase activity
+GO:0043276	GO - Biological Process	Anoikis
+GO:0010595	GO - Biological Process	Positive regulation of endothelial cell migration
+GO:0010506	GO - Biological Process	Regulation of autophagy
+GO:0002376	GO - Biological Process	Immune system process
+GO:0003376	GO - Biological Process	sphingosine-1-phosphate receptor signaling pathway
+GO:0045725	GO - Biological Process	Positive regulation of glycogen biosynthetic process
+GO:0071900	GO - Biological Process	Regulation of protein serine/threonine kinase activity
+GO:0045860	GO - Biological Process	Positive regulation of protein kinase activity
+GO:0002042	GO - Biological Process	Cell migration involved in sprouting angiogenesis
+GO:0031998	GO - Biological Process	Regulation of fatty acid beta-oxidation
+GO:0038084	GO - Biological Process	Vascular endothelial growth factor signaling pathway
+GO:0051000	GO - Biological Process	Positive regulation of nitric-oxide synthase activity
+GO:0010592	GO - Biological Process	Positive regulation of lamellipodium assembly
+GO:0043405	GO - Biological Process	Regulation of MAP kinase activity
+GO:0055082	GO - Biological Process	Cellular chemical homeostasis
+GO:0060416	GO - Biological Process	Response to growth hormone
+GO:0016242	GO - Biological Process	Negative regulation of macroautophagy
+GO:1901215	GO - Biological Process	Negative regulation of neuron death
+GO:0071902	GO - Biological Process	Positive regulation of protein serine/threonine kinase activity
+GO:0071364	GO - Biological Process	Cellular response to epidermal growth factor stimulus
+GO:1900087	GO - Biological Process	Positive regulation of G1/S transition of mitotic cell cycle
+GO:0045737	GO - Biological Process	Positive regulation of cyclin-dependent protein serine/threonine kinase activity
+GO:0110053	GO - Biological Process	Regulation of actin filament organization
+GO:0006468	GO - Biological Process	Protein phosphorylation
+GO:0046626	GO - Biological Process	Regulation of insulin receptor signaling pathway
+GO:0009895	GO - Biological Process	Negative regulation of catabolic process
+GO:0010639	GO - Biological Process	Negative regulation of organelle organization
+GO:0009893	GO - Biological Process	Positive regulation of metabolic process
+GO:0042110	GO - Biological Process	T cell activation
+GO:0002521	GO - Biological Process	Leukocyte differentiation
+GO:0035747	GO - Biological Process	Natural killer cell chemotaxis
+GO:0001667	GO - Biological Process	Ameboidal-type cell migration
+GO:0050900	GO - Biological Process	Leukocyte migration
+GO:0072672	GO - Biological Process	Neutrophil extravasation
+GO:2000270	GO - Biological Process	Negative regulation of fibroblast apoptotic process
+GO:0002679	GO - Biological Process	Respiratory burst involved in defense response
+GO:0006810	GO - Biological Process	Transport
+GO:0051492	GO - Biological Process	Regulation of stress fiber assembly
+GO:0030168	GO - Biological Process	Platelet activation
+GO:0016192	GO - Biological Process	Vesicle-mediated transport
+GO:0043406	GO - Biological Process	Positive regulation of MAP kinase activity
+GO:0010818	GO - Biological Process	T cell chemotaxis
+GO:0006897	GO - Biological Process	Endocytosis
+GO:0030307	GO - Biological Process	Positive regulation of cell growth
+GO:0043303	GO - Biological Process	Mast cell degranulation
+GO:0050995	GO - Biological Process	Negative regulation of lipid catabolic process
+GO:0051491	GO - Biological Process	Positive regulation of filopodium assembly
+GO:0051641	GO - Biological Process	Cellular localization
+GO:0010810	GO - Biological Process	Regulation of cell-substrate adhesion
+GO:0070527	GO - Biological Process	Platelet aggregation
+GO:0031330	GO - Biological Process	Negative regulation of cellular catabolic process
+GO:0120035	GO - Biological Process	Regulation of plasma membrane bounded cell projection organization
+GO:0090068	GO - Biological Process	Positive regulation of cell cycle process
+GO:0040008	GO - Biological Process	Regulation of growth
+GO:0051129	GO - Biological Process	Negative regulation of cellular component organization
+GO:0030593	GO - Biological Process	Neutrophil chemotaxis
+GO:0071229	GO - Biological Process	Cellular response to acid chemical
+GO:0048661	GO - Biological Process	Positive regulation of smooth muscle cell proliferation
+GO:0051656	GO - Biological Process	Establishment of organelle localization
+GO:0001892	GO - Biological Process	Embryonic placenta development
+GO:0051896	GO - Biological Process	Regulation of protein kinase B signaling
+GO:2000106	GO - Biological Process	Regulation of leukocyte apoptotic process
+GO:0001952	GO - Biological Process	Regulation of cell-matrix adhesion
+GO:0001819	GO - Biological Process	Positive regulation of cytokine production
+GO:0050853	GO - Biological Process	B cell receptor signaling pathway
+GO:1904375	GO - Biological Process	Regulation of protein localization to cell periphery
+GO:1905475	GO - Biological Process	Regulation of protein localization to membrane
+GO:0044237	GO - Biological Process	Cellular metabolic process
+GO:0050852	GO - Biological Process	T cell receptor signaling pathway
+GO:1905477	GO - Biological Process	Positive regulation of protein localization to membrane
+GO:0120034	GO - Biological Process	Positive regulation of plasma membrane bounded cell projection assembly
+GO:0032956	GO - Biological Process	Regulation of actin cytoskeleton organization
+GO:0090316	GO - Biological Process	Positive regulation of intracellular protein transport
+GO:0006935	GO - Biological Process	Chemotaxis
+GO:0060612	GO - Biological Process	Adipose tissue development
+GO:0050870	GO - Biological Process	Positive regulation of T cell activation
+GO:0050776	GO - Biological Process	Regulation of immune response
+GO:0002250	GO - Biological Process	Adaptive immune response
+GO:0098900	GO - Biological Process	Regulation of action potential
+GO:0018401	GO - Biological Process	Peptidyl-proline hydroxylation to 4-hydroxy-L-proline
+GO:0032364	GO - Biological Process	Oxygen homeostasis
+GO:0055072	GO - Biological Process	Iron ion homeostasis
+GO:1901214	GO - Biological Process	Regulation of neuron death
+GO:2000434	GO - Biological Process	Regulation of protein neddylation
+GO:0009249	GO - Biological Process	Protein lipoylation
+GO:0006637	GO - Biological Process	acyl-CoA metabolic process
+GO:0006790	GO - Biological Process	Sulfur compound metabolic process
+GO:0006767	GO - Biological Process	Water-soluble vitamin metabolic process
+GO:0015711	GO - Biological Process	Organic anion transport
+GO:0006811	GO - Biological Process	Ion transport
+GO:0046942	GO - Biological Process	Carboxylic acid transport
+GO:0071702	GO - Biological Process	Organic substance transport
+GO:0098660	GO - Biological Process	Inorganic ion transmembrane transport
+GO:0016226	GO - Biological Process	Iron-sulfur cluster assembly
+GO:0051604	GO - Biological Process	Protein maturation
+GO:0006536	GO - Biological Process	Glutamate metabolic process
+GO:0043648	GO - Biological Process	Dicarboxylic acid metabolic process
+GO:0009065	GO - Biological Process	Glutamine family amino acid catabolic process
+GO:1901607	GO - Biological Process	Alpha-amino acid biosynthetic process
+GO:0043650	GO - Biological Process	Dicarboxylic acid biosynthetic process
+GO:0009084	GO - Biological Process	Glutamine family amino acid biosynthetic process
+GO:0006538	GO - Biological Process	Glutamate catabolic process
+GO:0009063	GO - Biological Process	Cellular amino acid catabolic process
+GO:0044283	GO - Biological Process	Small molecule biosynthetic process
+GO:0006537	GO - Biological Process	Glutamate biosynthetic process
+GO:0006541	GO - Biological Process	Glutamine metabolic process
+GO:0006103	GO - Biological Process	2-oxoglutarate metabolic process
+GO:0019550	GO - Biological Process	Glutamate catabolic process to aspartate
+GO:0019551	GO - Biological Process	Glutamate catabolic process to 2-oxoglutarate
+GO:0006532	GO - Biological Process	Aspartate biosynthetic process
+GO:0006533	GO - Biological Process	Aspartate catabolic process
+GO:0006543	GO - Biological Process	Glutamine catabolic process
+GO:1901564	GO - Biological Process	Organonitrogen compound metabolic process
+GO:0006107	GO - Biological Process	Oxaloacetate metabolic process
+GO:0072350	GO - Biological Process	Tricarboxylic acid metabolic process
+GO:0030198	GO - Biological Process	Extracellular matrix organization
+GO:0018193	GO - Biological Process	Peptidyl-amino acid modification
+GO:0019395	GO - Biological Process	Fatty acid oxidation
+GO:0044255	GO - Biological Process	Cellular lipid metabolic process
+GO:0006635	GO - Biological Process	Fatty acid beta-oxidation
+GO:0001764	GO - Biological Process	Neuron migration
+GO:0006578	GO - Biological Process	Amino-acid betaine biosynthetic process
+GO:0006081	GO - Biological Process	Cellular aldehyde metabolic process
+GO:0006584	GO - Biological Process	Catecholamine metabolic process
+GO:0009308	GO - Biological Process	Amine metabolic process
+GO:0042133	GO - Biological Process	Neurotransmitter metabolic process
+GO:0042423	GO - Biological Process	Catecholamine biosynthetic process
+GO:0033076	GO - Biological Process	Isoquinoline alkaloid metabolic process
+GO:0015842	GO - Biological Process	Aminergic neurotransmitter loading into synaptic vesicle
+GO:0042416	GO - Biological Process	Dopamine biosynthetic process
+GO:0042136	GO - Biological Process	Neurotransmitter biosynthetic process
+GO:0045471	GO - Biological Process	Response to ethanol
+GO:0051412	GO - Biological Process	Response to corticosterone
+GO:0010259	GO - Biological Process	Multicellular organism aging
+GO:0071466	GO - Biological Process	Cellular response to xenobiotic stimulus
+GO:0016486	GO - Biological Process	Peptide hormone processing
+GO:0060348	GO - Biological Process	Bone development
+GO:0006417	GO - Biological Process	Regulation of translation
+GO:0070989	GO - Biological Process	Oxidative demethylation
+GO:0006307	GO - Biological Process	DNA dealkylation involved in DNA repair
+GO:0034641	GO - Biological Process	Cellular nitrogen compound metabolic process
+GO:0006400	GO - Biological Process	tRNA modification
+GO:0030488	GO - Biological Process	tRNA methylation
+GO:0010467	GO - Biological Process	Gene expression
+GO:0032508	GO - Biological Process	DNA duplex unwinding
+GO:0006396	GO - Biological Process	RNA processing
+GO:0055065	GO - Biological Process	Metal ion homeostasis
+GO:0019318	GO - Biological Process	Hexose metabolic process
+GO:0051156	GO - Biological Process	Glucose 6-phosphate metabolic process
+GO:0044282	GO - Biological Process	Small molecule catabolic process
+GO:0006687	GO - Biological Process	Glycosphingolipid metabolic process
+GO:0046477	GO - Biological Process	Glycosylceramide catabolic process
+GO:0044597	GO - Biological Process	Daunorubicin metabolic process
+GO:0044598	GO - Biological Process	Doxorubicin metabolic process
+GO:0006082	GO - Biological Process	Organic acid metabolic process
+GO:1901136	GO - Biological Process	Carbohydrate derivative catabolic process
+GO:0009112	GO - Biological Process	Nucleobase metabolic process
+GO:0009161	GO - Biological Process	Ribonucleoside monophosphate metabolic process
+GO:0006206	GO - Biological Process	Pyrimidine nucleobase metabolic process
+GO:0046049	GO - Biological Process	UMP metabolic process
+GO:0046112	GO - Biological Process	Nucleobase biosynthetic process
+GO:0009156	GO - Biological Process	Ribonucleoside monophosphate biosynthetic process
+GO:0044205	GO - Biological Process	De novo UMP biosynthetic process
+GO:0006225	GO - Biological Process	UDP biosynthetic process
+GO:0006207	GO - Biological Process	De novo pyrimidine nucleobase biosynthetic process
+GO:0009259	GO - Biological Process	Ribonucleotide metabolic process
+GO:0006144	GO - Biological Process	Purine nucleobase metabolic process
+GO:0007596	GO - Biological Process	Blood coagulation
+GO:0007265	GO - Biological Process	Ras protein signal transduction
+GO:0007266	GO - Biological Process	Rho protein signal transduction
+GO:1904753	GO - Biological Process	Negative regulation of vascular associated smooth muscle cell migration
+GO:0007603	GO - Biological Process	Phototransduction, visible light
+GO:0071880	GO - Biological Process	Adenylate cyclase-activating adrenergic receptor signaling pathway
+GO:1904706	GO - Biological Process	Negative regulation of vascular associated smooth muscle cell proliferation
+GO:0032148	GO - Biological Process	Activation of protein kinase B activity
+GO:0009649	GO - Biological Process	Entrainment of circadian clock
+GO:0031669	GO - Biological Process	Cellular response to nutrient levels
+GO:0042149	GO - Biological Process	Cellular response to glucose starvation
+GO:0009267	GO - Biological Process	Cellular response to starvation
+GO:0006109	GO - Biological Process	Regulation of carbohydrate metabolic process
+GO:0032007	GO - Biological Process	Negative regulation of TOR signaling
+GO:0014823	GO - Biological Process	Response to activity
+GO:0045913	GO - Biological Process	Positive regulation of carbohydrate metabolic process
+GO:0010508	GO - Biological Process	Positive regulation of autophagy
+GO:0062013	GO - Biological Process	Positive regulation of small molecule metabolic process
+GO:0031331	GO - Biological Process	Positive regulation of cellular catabolic process
+GO:0016126	GO - Biological Process	Sterol biosynthetic process
+GO:1990044	GO - Biological Process	Protein localization to lipid droplet
+GO:0062028	GO - Biological Process	Regulation of stress granule assembly
+GO:0006112	GO - Biological Process	Energy reserve metabolic process
+GO:1904428	GO - Biological Process	Negative regulation of tubulin deacetylation
+GO:1905691	GO - Biological Process	Lipid droplet disassembly
+GO:0055089	GO - Biological Process	Fatty acid homeostasis
+GO:0120161	GO - Biological Process	Regulation of cold-induced thermogenesis
+GO:0016241	GO - Biological Process	Regulation of macroautophagy
+GO:0055088	GO - Biological Process	Lipid homeostasis
+GO:0014850	GO - Biological Process	Response to muscle activity
+GO:0043368	GO - Biological Process	Positive T cell selection
+GO:0018105	GO - Biological Process	Peptidyl-serine phosphorylation
+GO:0046627	GO - Biological Process	Negative regulation of insulin receptor signaling pathway
+GO:0032147	GO - Biological Process	Activation of protein kinase activity
+GO:0019222	GO - Biological Process	Regulation of metabolic process
+GO:0055086	GO - Biological Process	Nucleobase-containing small molecule metabolic process
+GO:1901362	GO - Biological Process	Organic cyclic compound biosynthetic process
+GO:0006695	GO - Biological Process	Cholesterol biosynthetic process
+GO:0097009	GO - Biological Process	Energy homeostasis
+GO:2000758	GO - Biological Process	Positive regulation of peptidyl-lysine acetylation
+GO:0032886	GO - Biological Process	Regulation of microtubule-based process
+GO:0033365	GO - Biological Process	Protein localization to organelle
+GO:1903578	GO - Biological Process	Regulation of ATP metabolic process
+GO:0042594	GO - Biological Process	Response to starvation
+GO:0006631	GO - Biological Process	Fatty acid metabolic process
+GO:1903580	GO - Biological Process	Positive regulation of ATP metabolic process
+GO:0032006	GO - Biological Process	Regulation of TOR signaling
+GO:0045834	GO - Biological Process	Positive regulation of lipid metabolic process
+GO:1905857	GO - Biological Process	Positive regulation of pentose-phosphate shunt
+GO:0015980	GO - Biological Process	Energy derivation by oxidation of organic compounds
+GO:0046889	GO - Biological Process	Positive regulation of lipid biosynthetic process
+GO:0120162	GO - Biological Process	Positive regulation of cold-induced thermogenesis
+GO:0071233	GO - Biological Process	Cellular response to leucine
+GO:0038202	GO - Biological Process	TORC1 signaling
+GO:0045945	GO - Biological Process	Positive regulation of transcription by RNA polymerase III
+GO:1901863	GO - Biological Process	Positive regulation of muscle tissue development
+GO:0010800	GO - Biological Process	Positive regulation of peptidyl-threonine phosphorylation
+GO:0046320	GO - Biological Process	Regulation of fatty acid oxidation
+GO:0071470	GO - Biological Process	Cellular response to osmotic stress
+GO:0061762	GO - Biological Process	CAMKK-AMPK signaling cascade
+GO:0046777	GO - Biological Process	Protein autophosphorylation
+GO:0008610	GO - Biological Process	Lipid biosynthetic process
+GO:0090170	GO - Biological Process	Regulation of Golgi inheritance
+GO:1903798	GO - Biological Process	Regulation of miRNA maturation
+GO:2000637	GO - Biological Process	Positive regulation of miRNA-mediated gene silencing
+GO:0060440	GO - Biological Process	Trachea formation
+GO:0000165	GO - Biological Process	MAPK cascade
+GO:2000641	GO - Biological Process	Regulation of early endosome to late endosome transport
+GO:0030878	GO - Biological Process	Thyroid gland development
+GO:0048534	GO - Biological Process	Hematopoietic or lymphoid organ development
+GO:0060425	GO - Biological Process	Lung morphogenesis
+GO:0032872	GO - Biological Process	Regulation of stress-activated MAPK cascade
+GO:0048538	GO - Biological Process	Thymus development
+GO:0060324	GO - Biological Process	Face development
+GO:0043620	GO - Biological Process	Regulation of DNA-templated transcription in response to stress
+GO:0060502	GO - Biological Process	Epithelial cell proliferation involved in lung morphogenesis
+GO:0070371	GO - Biological Process	ERK1 and ERK2 cascade
+GO:0048708	GO - Biological Process	Astrocyte differentiation
+GO:0060020	GO - Biological Process	Bergmann glial cell differentiation
+GO:0045936	GO - Biological Process	Negative regulation of phosphate metabolic process
+GO:0007369	GO - Biological Process	Gastrulation
+GO:2000145	GO - Biological Process	Regulation of cell motility
+GO:0048679	GO - Biological Process	Regulation of axon regeneration
+GO:0070848	GO - Biological Process	Response to growth factor
+GO:0060674	GO - Biological Process	Placenta blood vessel development
+GO:2000147	GO - Biological Process	Positive regulation of cell motility
+GO:0048598	GO - Biological Process	Embryonic morphogenesis
+GO:0007167	GO - Biological Process	Enzyme-linked receptor protein signaling pathway
+GO:0060711	GO - Biological Process	Labyrinthine layer development
+GO:0009299	GO - Biological Process	mRNA transcription
+GO:0007275	GO - Biological Process	Multicellular organism development
+GO:0001706	GO - Biological Process	Endoderm formation
+GO:2000278	GO - Biological Process	Regulation of DNA biosynthetic process
+GO:0060322	GO - Biological Process	Head development
+GO:0007178	GO - Biological Process	Transmembrane receptor protein serine/threonine kinase signaling pathway
+GO:0072584	GO - Biological Process	Caveolin-mediated endocytosis
+GO:0120041	GO - Biological Process	Positive regulation of macrophage proliferation
+GO:0031668	GO - Biological Process	Cellular response to extracellular stimulus
+GO:2000573	GO - Biological Process	Positive regulation of DNA biosynthetic process
+GO:1903351	GO - Biological Process	Cellular response to dopamine
+GO:0042473	GO - Biological Process	Outer ear morphogenesis
+GO:0002031	GO - Biological Process	G protein-coupled receptor internalization
+GO:0061308	GO - Biological Process	Cardiac neural crest cell development involved in heart development
+GO:0031058	GO - Biological Process	Positive regulation of histone modification
+GO:0071675	GO - Biological Process	Regulation of mononuclear cell migration
+GO:0002688	GO - Biological Process	Regulation of leukocyte chemotaxis
+GO:1904355	GO - Biological Process	Positive regulation of telomere capping
+GO:0010759	GO - Biological Process	Positive regulation of macrophage chemotaxis
+GO:0048568	GO - Biological Process	Embryonic organ development
+GO:0018108	GO - Biological Process	Peptidyl-tyrosine phosphorylation
+GO:0071356	GO - Biological Process	Cellular response to tumor necrosis factor
+GO:0002092	GO - Biological Process	Positive regulation of receptor internalization
+GO:0048863	GO - Biological Process	Stem cell differentiation
+GO:0032212	GO - Biological Process	Positive regulation of telomere maintenance via telomerase
+GO:0051347	GO - Biological Process	Positive regulation of transferase activity
+GO:0031663	GO - Biological Process	Lipopolysaccharide-mediated signaling pathway
+GO:0035066	GO - Biological Process	Positive regulation of histone acetylation
+GO:0070849	GO - Biological Process	Response to epidermal growth factor
+GO:0033044	GO - Biological Process	Regulation of chromosome organization
+GO:0090199	GO - Biological Process	Regulation of release of cytochrome c from mitochondria
+GO:0007049	GO - Biological Process	Cell cycle
+GO:0032715	GO - Biological Process	Negative regulation of interleukin-6 production
+GO:0034198	GO - Biological Process	Cellular response to amino acid starvation
+GO:0043330	GO - Biological Process	Response to exogenous dsRNA
+GO:0010823	GO - Biological Process	Negative regulation of mitochondrion organization
+GO:0061912	GO - Biological Process	Selective autophagy
+GO:0090398	GO - Biological Process	Cellular senescence
+GO:0010660	GO - Biological Process	Regulation of muscle cell apoptotic process
+GO:0045861	GO - Biological Process	Negative regulation of proteolysis
+GO:0043154	GO - Biological Process	Negative regulation of cysteine-type endopeptidase activity involved in apoptotic process
+GO:0051403	GO - Biological Process	Stress-activated MAPK cascade
+GO:0050772	GO - Biological Process	Positive regulation of axonogenesis
+GO:0016358	GO - Biological Process	Dendrite development
+GO:0060996	GO - Biological Process	Dendritic spine development
+GO:0060999	GO - Biological Process	Positive regulation of dendritic spine development
+GO:0002768	GO - Biological Process	Immune response-regulating cell surface receptor signaling pathway
+GO:0048813	GO - Biological Process	Dendrite morphogenesis
+GO:0031175	GO - Biological Process	Neuron projection development
+GO:0060997	GO - Biological Process	Dendritic spine morphogenesis
+GO:0022603	GO - Biological Process	Regulation of anatomical structure morphogenesis
+GO:0050770	GO - Biological Process	Regulation of axonogenesis
+GO:0048010	GO - Biological Process	Vascular endothelial growth factor receptor signaling pathway
+GO:0071499	GO - Biological Process	Cellular response to laminar fluid shear stress
+GO:0051336	GO - Biological Process	Regulation of hydrolase activity
+GO:0019933	GO - Biological Process	cAMP-mediated signaling
+GO:0051346	GO - Biological Process	Negative regulation of hydrolase activity
+GO:0070375	GO - Biological Process	ERK5 cascade
+GO:0045927	GO - Biological Process	Positive regulation of growth
+GO:0030336	GO - Biological Process	Negative regulation of cell migration
+GO:1901653	GO - Biological Process	Cellular response to peptide
+GO:0034115	GO - Biological Process	Negative regulation of heterotypic cell-cell adhesion
+GO:0060537	GO - Biological Process	Muscle tissue development
+GO:1902176	GO - Biological Process	Negative regulation of oxidative stress-induced intrinsic apoptotic signaling pathway
+GO:0051050	GO - Biological Process	Positive regulation of transport
+GO:0036003	GO - Biological Process	Positive regulation of transcription from RNA polymerase II promoter in response to stress
+GO:0010613	GO - Biological Process	Positive regulation of cardiac muscle hypertrophy
+GO:0048738	GO - Biological Process	Cardiac muscle tissue development
+GO:0055023	GO - Biological Process	Positive regulation of cardiac muscle tissue growth
+GO:2000352	GO - Biological Process	Negative regulation of endothelial cell apoptotic process
+GO:0010035	GO - Biological Process	Response to inorganic substance
+GO:0071248	GO - Biological Process	Cellular response to metal ion
+GO:2001240	GO - Biological Process	Negative regulation of extrinsic apoptotic signaling pathway in absence of ligand
+GO:0034762	GO - Biological Process	Regulation of transmembrane transport
+GO:0070884	GO - Biological Process	Regulation of calcineurin-NFAT signaling cascade
+GO:0034764	GO - Biological Process	Positive regulation of transmembrane transport
+GO:0090257	GO - Biological Process	Regulation of muscle system process
+GO:0051155	GO - Biological Process	Positive regulation of striated muscle cell differentiation
+GO:0007611	GO - Biological Process	Learning or memory
+GO:0071320	GO - Biological Process	Cellular response to cAMP
+GO:0030162	GO - Biological Process	Regulation of proteolysis
+GO:1904705	GO - Biological Process	Regulation of vascular associated smooth muscle cell proliferation
+GO:0034754	GO - Biological Process	Cellular hormone metabolic process
+GO:0008207	GO - Biological Process	C21-steroid hormone metabolic process
+GO:0008202	GO - Biological Process	Steroid metabolic process
+GO:0006702	GO - Biological Process	Androgen biosynthetic process
+GO:0006694	GO - Biological Process	Steroid biosynthetic process
+GO:0042448	GO - Biological Process	Progesterone metabolic process
+GO:0042180	GO - Biological Process	Cellular ketone metabolic process
+GO:0120254	GO - Biological Process	Olefinic compound metabolic process
+GO:1901615	GO - Biological Process	Organic hydroxy compound metabolic process
+GO:0071395	GO - Biological Process	Cellular response to jasmonic acid stimulus
+GO:0021766	GO - Biological Process	Hippocampus development
+GO:0016042	GO - Biological Process	Lipid catabolic process
+GO:0006706	GO - Biological Process	Steroid catabolic process
+GO:0006720	GO - Biological Process	Isoprenoid metabolic process
+GO:0006066	GO - Biological Process	Alcohol metabolic process
+GO:0006693	GO - Biological Process	Prostaglandin metabolic process
+GO:1901617	GO - Biological Process	Organic hydroxy compound biosynthetic process
+GO:0016095	GO - Biological Process	Polyprenol catabolic process
+GO:0046164	GO - Biological Process	Alcohol catabolic process
+GO:0071799	GO - Biological Process	Cellular response to prostaglandin D stimulus
+GO:0061370	GO - Biological Process	Testosterone biosynthetic process
+GO:0007548	GO - Biological Process	Sex differentiation
+GO:0016101	GO - Biological Process	Diterpenoid metabolic process
+GO:0030540	GO - Biological Process	Female genitalia development
+GO:0032354	GO - Biological Process	Response to follicle-stimulating hormone
+GO:0042574	GO - Biological Process	Retinal metabolic process
+GO:0051384	GO - Biological Process	Response to glucocorticoid
+GO:0008584	GO - Biological Process	Male gonad development
+GO:0021854	GO - Biological Process	Hypothalamus development
+GO:0008206	GO - Biological Process	Bile acid metabolic process
+GO:0033574	GO - Biological Process	Response to testosterone
+GO:0007568	GO - Biological Process	Aging
+GO:0014824	GO - Biological Process	Artery smooth muscle contraction
+GO:0086100	GO - Biological Process	Endothelin receptor signaling pathway
+GO:0050878	GO - Biological Process	Regulation of body fluid levels
+GO:0010518	GO - Biological Process	Positive regulation of phospholipase activity
+GO:0051353	GO - Biological Process	Positive regulation of oxidoreductase activity
+GO:0070294	GO - Biological Process	Renal sodium ion absorption
+GO:0019229	GO - Biological Process	Regulation of vasoconstriction
+GO:0019932	GO - Biological Process	Second-messenger-mediated signaling
+GO:1904752	GO - Biological Process	Regulation of vascular associated smooth muscle cell migration
+GO:0010460	GO - Biological Process	Positive regulation of heart rate
+GO:0006875	GO - Biological Process	Cellular metal ion homeostasis
+GO:0001569	GO - Biological Process	Branching involved in blood vessel morphogenesis
+GO:0007202	GO - Biological Process	Activation of phospholipase C activity
+GO:0055067	GO - Biological Process	Monovalent inorganic cation homeostasis
+GO:0055078	GO - Biological Process	Sodium ion homeostasis
+GO:1904064	GO - Biological Process	Positive regulation of cation transmembrane transport
+GO:0009611	GO - Biological Process	Response to wounding
+GO:0042311	GO - Biological Process	Vasodilation
+GO:0030334	GO - Biological Process	Regulation of cell migration
+GO:0007249	GO - Biological Process	I-kappaB kinase/NF-kappaB signaling
+GO:0051345	GO - Biological Process	Positive regulation of hydrolase activity
+GO:0002690	GO - Biological Process	Positive regulation of leukocyte chemotaxis
+GO:0060070	GO - Biological Process	Canonical Wnt signaling pathway
+GO:0071372	GO - Biological Process	Cellular response to follicle-stimulating hormone stimulus
+GO:0048246	GO - Biological Process	Macrophage chemotaxis
+GO:0043434	GO - Biological Process	Response to peptide hormone
+GO:0042474	GO - Biological Process	Middle ear morphogenesis
+GO:0003081	GO - Biological Process	Regulation of systemic arterial blood pressure by renin-angiotensin
+GO:0003071	GO - Biological Process	Renal system process involved in regulation of systemic arterial blood pressure
+GO:1902074	GO - Biological Process	Response to salt
+GO:0010817	GO - Biological Process	Regulation of hormone levels
+GO:0070588	GO - Biological Process	Calcium ion transmembrane transport
+GO:0061028	GO - Biological Process	Establishment of endothelial barrier
+GO:0001974	GO - Biological Process	Blood vessel remodeling
+GO:0010762	GO - Biological Process	Regulation of fibroblast migration
+GO:0007411	GO - Biological Process	Axon guidance
+GO:0045840	GO - Biological Process	Positive regulation of mitotic nuclear division
+GO:0030195	GO - Biological Process	Negative regulation of blood coagulation
+GO:0030001	GO - Biological Process	Metal ion transport
+GO:0032892	GO - Biological Process	Positive regulation of organic acid transport
+GO:0098662	GO - Biological Process	Inorganic cation transmembrane transport
+GO:1903793	GO - Biological Process	Positive regulation of anion transport
+GO:0032412	GO - Biological Process	Regulation of ion transmembrane transporter activity
+GO:0001822	GO - Biological Process	Kidney development
+GO:0045761	GO - Biological Process	Regulation of adenylate cyclase activity
+GO:1904888	GO - Biological Process	Cranial skeletal system development
+GO:2001259	GO - Biological Process	Positive regulation of cation channel activity
+GO:0035050	GO - Biological Process	Embryonic heart tube development
+GO:0071705	GO - Biological Process	Nitrogen compound transport
+GO:0072331	GO - Biological Process	Signal transduction by p53 class mediator
+GO:0008630	GO - Biological Process	Intrinsic apoptotic signaling pathway in response to DNA damage
+GO:0071478	GO - Biological Process	Cellular response to radiation
+GO:0072332	GO - Biological Process	Intrinsic apoptotic signaling pathway by p53 class mediator
+GO:0071479	GO - Biological Process	Cellular response to ionizing radiation
+GO:0006977	GO - Biological Process	DNA damage response, signal transduction by p53 class mediator resulting in cell cycle arrest
+GO:0045786	GO - Biological Process	Negative regulation of cell cycle
+GO:1902253	GO - Biological Process	Regulation of intrinsic apoptotic signaling pathway by p53 class mediator
+GO:0006289	GO - Biological Process	Nucleotide-excision repair
+GO:0072717	GO - Biological Process	Cellular response to actinomycin D
+GO:0045934	GO - Biological Process	Negative regulation of nucleobase-containing compound metabolic process
+GO:0001756	GO - Biological Process	Somitogenesis
+GO:0051097	GO - Biological Process	Negative regulation of helicase activity
+GO:0090400	GO - Biological Process	Stress-induced premature senescence
+GO:0000723	GO - Biological Process	Telomere maintenance
+GO:0010906	GO - Biological Process	Regulation of glucose metabolic process
+GO:2000774	GO - Biological Process	Positive regulation of cellular senescence
+GO:0090399	GO - Biological Process	Replicative senescence
+GO:0001836	GO - Biological Process	Release of cytochrome c from mitochondria
+GO:0007346	GO - Biological Process	Regulation of mitotic cell cycle
+GO:0050778	GO - Biological Process	Positive regulation of immune response
+GO:0010165	GO - Biological Process	Response to X-ray
+GO:2000108	GO - Biological Process	Positive regulation of leukocyte apoptotic process
+GO:0006302	GO - Biological Process	Double-strand break repair
+GO:0051348	GO - Biological Process	Negative regulation of transferase activity
+GO:0065003	GO - Biological Process	Protein-containing complex assembly
+GO:0010564	GO - Biological Process	Regulation of cell cycle process
+GO:2001244	GO - Biological Process	Positive regulation of intrinsic apoptotic signaling pathway
+GO:0051054	GO - Biological Process	Positive regulation of DNA metabolic process
+GO:0051149	GO - Biological Process	Positive regulation of muscle cell differentiation
+GO:0060411	GO - Biological Process	Cardiac septum morphogenesis
+GO:0072089	GO - Biological Process	Stem cell proliferation
+GO:0034620	GO - Biological Process	Cellular response to unfolded protein
+GO:0034975	GO - Biological Process	Protein folding in endoplasmic reticulum
+GO:1905897	GO - Biological Process	Regulation of response to endoplasmic reticulum stress
+GO:0030433	GO - Biological Process	Ubiquitin-dependent ERAD pathway
+GO:0071287	GO - Biological Process	Cellular response to manganese ion
+GO:1990440	GO - Biological Process	Positive regulation of transcription from RNA polymerase II promoter in response to endoplasmic reticulum stress
+GO:1903202	GO - Biological Process	Negative regulation of oxidative stress-induced cell death
+GO:0048167	GO - Biological Process	Regulation of synaptic plasticity
+GO:0060548	GO - Biological Process	Negative regulation of cell death
+GO:0016239	GO - Biological Process	Positive regulation of macroautophagy
+GO:0007154	GO - Biological Process	Cell communication
+GO:0043547	GO - Biological Process	Positive regulation of GTPase activity
+GO:1903204	GO - Biological Process	Negative regulation of oxidative stress-induced neuron death
+GO:0048169	GO - Biological Process	Regulation of long-term neuronal synaptic plasticity
+GO:0010638	GO - Biological Process	Positive regulation of organelle organization
+GO:0051493	GO - Biological Process	Regulation of cytoskeleton organization
+GO:0002764	GO - Biological Process	Immune response-regulating signaling pathway
+GO:0060562	GO - Biological Process	Epithelial tube morphogenesis
+GO:0043122	GO - Biological Process	Regulation of I-kappaB kinase/NF-kappaB signaling
+GO:0009615	GO - Biological Process	Response to virus
+GO:0051092	GO - Biological Process	Positive regulation of NF-kappaB transcription factor activity
+GO:0043433	GO - Biological Process	Negative regulation of DNA-binding transcription factor activity
+GO:0031146	GO - Biological Process	SCF-dependent proteasomal ubiquitin-dependent protein catabolic process
+GO:0070936	GO - Biological Process	Protein K48-linked ubiquitination
+GO:0071316	GO - Biological Process	Cellular response to nicotine
+GO:0007253	GO - Biological Process	Cytoplasmic sequestering of NF-kappaB
+GO:0070431	GO - Biological Process	Nucleotide-binding oligomerization domain containing 2 signaling pathway
+GO:0032088	GO - Biological Process	Negative regulation of NF-kappaB transcription factor activity
+GO:0045185	GO - Biological Process	Maintenance of protein location
+GO:1904668	GO - Biological Process	Positive regulation of ubiquitin protein ligase activity
+GO:0045087	GO - Biological Process	Innate immune response
+GO:0050862	GO - Biological Process	Positive regulation of T cell receptor signaling pathway
+GO:0032495	GO - Biological Process	Response to muramyl dipeptide
+GO:0070498	GO - Biological Process	interleukin-1-mediated signaling pathway
+GO:1904385	GO - Biological Process	Cellular response to angiotensin
+GO:0010743	GO - Biological Process	Regulation of macrophage derived foam cell differentiation
+GO:1905953	GO - Biological Process	Negative regulation of lipid localization
+GO:0010883	GO - Biological Process	Regulation of lipid storage
+GO:0050920	GO - Biological Process	Regulation of chemotaxis
+GO:0007155	GO - Biological Process	Cell adhesion
+GO:0044344	GO - Biological Process	Cellular response to fibroblast growth factor stimulus
+GO:0050921	GO - Biological Process	Positive regulation of chemotaxis
+GO:0042698	GO - Biological Process	Ovulation cycle
+GO:0014068	GO - Biological Process	Positive regulation of phosphatidylinositol 3-kinase signaling
+GO:0070372	GO - Biological Process	Regulation of ERK1 and ERK2 cascade
+GO:0030214	GO - Biological Process	Hyaluronan catabolic process
+GO:0051702	GO - Biological Process	Biological process involved in interaction with symbiont
+GO:1903587	GO - Biological Process	Regulation of blood vessel endothelial cell proliferation involved in sprouting angiogenesis
+GO:1903900	GO - Biological Process	Regulation of viral life cycle
+GO:0051216	GO - Biological Process	Cartilage development
+GO:0042119	GO - Biological Process	Neutrophil activation
+GO:0014911	GO - Biological Process	Positive regulation of smooth muscle cell migration
+GO:0050918	GO - Biological Process	Positive chemotaxis
+GO:0009891	GO - Biological Process	Positive regulation of biosynthetic process
+GO:0070269	GO - Biological Process	Pyroptosis
+GO:0032731	GO - Biological Process	Positive regulation of interleukin-1 beta production
+GO:2001056	GO - Biological Process	Positive regulation of cysteine-type endopeptidase activity
+GO:0045862	GO - Biological Process	Positive regulation of proteolysis
+GO:0050729	GO - Biological Process	Positive regulation of inflammatory response
+GO:0012501	GO - Biological Process	Programmed cell death
+GO:0002221	GO - Biological Process	Pattern recognition receptor signaling pathway
+GO:0098542	GO - Biological Process	Defense response to other organism
+GO:0009617	GO - Biological Process	Response to bacterium
+GO:0140632	GO - Biological Process	Inflammasome complex assembly
+GO:0043280	GO - Biological Process	Positive regulation of cysteine-type endopeptidase activity involved in apoptotic process
+GO:0042742	GO - Biological Process	Defense response to bacterium
+GO:0007231	GO - Biological Process	Osmosensory signaling pathway
+GO:0051260	GO - Biological Process	Protein homooligomerization
+GO:0051607	GO - Biological Process	Defense response to virus
+GO:0050830	GO - Biological Process	Defense response to Gram-positive bacterium
+GO:0002831	GO - Biological Process	Regulation of response to biotic stimulus
+GO:0001959	GO - Biological Process	Regulation of cytokine-mediated signaling pathway
+GO:1904270	GO - Biological Process	Pyroptosome complex assembly
+GO:0050691	GO - Biological Process	Regulation of defense response to virus by host
+GO:0043124	GO - Biological Process	Negative regulation of I-kappaB kinase/NF-kappaB signaling
+GO:0044546	GO - Biological Process	NLRP3 inflammasome complex assembly
+GO:0002720	GO - Biological Process	Positive regulation of cytokine production involved in immune response
+GO:0097264	GO - Biological Process	Self proteolysis
+GO:0032642	GO - Biological Process	Regulation of chemokine production
+GO:0002821	GO - Biological Process	Positive regulation of adaptive immune response
+GO:0032649	GO - Biological Process	Regulation of interferon-gamma production
+GO:0050728	GO - Biological Process	Negative regulation of inflammatory response
+GO:0140374	GO - Biological Process	Antiviral innate immune response
+GO:1900016	GO - Biological Process	Negative regulation of cytokine production involved in inflammatory response
+GO:0032691	GO - Biological Process	Negative regulation of interleukin-1 beta production
+GO:0002230	GO - Biological Process	Positive regulation of defense response to virus by host
+GO:0009595	GO - Biological Process	Detection of biotic stimulus
+GO:0001961	GO - Biological Process	Positive regulation of cytokine-mediated signaling pathway
+GO:0042994	GO - Biological Process	Cytoplasmic sequestering of transcription factor
+GO:1903140	GO - Biological Process	Regulation of establishment of endothelial barrier
+GO:1901222	GO - Biological Process	Regulation of NIK/NF-kappaB signaling
+GO:0031349	GO - Biological Process	Positive regulation of defense response
+GO:0002753	GO - Biological Process	Cytoplasmic pattern recognition receptor signaling pathway
+GO:0051235	GO - Biological Process	Maintenance of location
+GO:2000630	GO - Biological Process	Positive regulation of miRNA metabolic process
+GO:1903347	GO - Biological Process	Negative regulation of bicellular tight junction assembly
+GO:0002224	GO - Biological Process	Toll-like receptor signaling pathway
+GO:0035509	GO - Biological Process	Negative regulation of myosin-light-chain-phosphatase activity
+GO:0032655	GO - Biological Process	Regulation of interleukin-12 production
+GO:1901224	GO - Biological Process	Positive regulation of NIK/NF-kappaB signaling
+GO:0060558	GO - Biological Process	Regulation of calcidiol 1-monooxygenase activity
+GO:0060556	GO - Biological Process	Regulation of vitamin D biosynthetic process
+GO:0010888	GO - Biological Process	Negative regulation of lipid storage
+GO:1901652	GO - Biological Process	Response to peptide
+GO:1902004	GO - Biological Process	Positive regulation of amyloid-beta formation
+GO:0038095	GO - Biological Process	Fc-epsilon receptor signaling pathway
+GO:0045672	GO - Biological Process	Positive regulation of osteoclast differentiation
+GO:0072659	GO - Biological Process	Protein localization to plasma membrane
+GO:0045637	GO - Biological Process	Regulation of myeloid cell differentiation
+GO:0002478	GO - Biological Process	Antigen processing and presentation of exogenous peptide antigen
+GO:0030866	GO - Biological Process	Cortical actin cytoskeleton organization
+GO:0043507	GO - Biological Process	Positive regulation of JUN kinase activity
+GO:0008104	GO - Biological Process	Protein localization
+GO:0008625	GO - Biological Process	Extrinsic apoptotic signaling pathway via death domain receptors
+GO:0032735	GO - Biological Process	Positive regulation of interleukin-12 production
+GO:0007254	GO - Biological Process	JNK cascade
+GO:0043331	GO - Biological Process	Response to dsRNA
+GO:0032374	GO - Biological Process	Regulation of cholesterol transport
+GO:0042531	GO - Biological Process	Positive regulation of tyrosine phosphorylation of STAT protein
+GO:0000082	GO - Biological Process	G1/S transition of mitotic cell cycle
+GO:0044772	GO - Biological Process	Mitotic cell cycle phase transition
+GO:1901990	GO - Biological Process	Regulation of mitotic cell cycle phase transition
+GO:0045930	GO - Biological Process	Negative regulation of mitotic cell cycle
+GO:0010389	GO - Biological Process	Regulation of G2/M transition of mitotic cell cycle
+GO:1901991	GO - Biological Process	Negative regulation of mitotic cell cycle phase transition
+GO:2000045	GO - Biological Process	Regulation of G1/S transition of mitotic cell cycle
+GO:2000134	GO - Biological Process	Negative regulation of G1/S transition of mitotic cell cycle
+GO:0000079	GO - Biological Process	Regulation of cyclin-dependent protein serine/threonine kinase activity
+GO:0031571	GO - Biological Process	Mitotic G1 DNA damage checkpoint signaling
+GO:0051301	GO - Biological Process	Cell division
+GO:0071901	GO - Biological Process	Negative regulation of protein serine/threonine kinase activity
+GO:1901992	GO - Biological Process	Positive regulation of mitotic cell cycle phase transition
+GO:0010971	GO - Biological Process	Positive regulation of G2/M transition of mitotic cell cycle
+GO:0045787	GO - Biological Process	Positive regulation of cell cycle
+GO:0050680	GO - Biological Process	Negative regulation of epithelial cell proliferation
+GO:1904031	GO - Biological Process	Positive regulation of cyclin-dependent protein kinase activity
+GO:0034502	GO - Biological Process	Protein localization to chromosome
+GO:0048638	GO - Biological Process	Regulation of developmental growth
+GO:1904035	GO - Biological Process	Regulation of epithelial cell apoptotic process
+GO:0022414	GO - Biological Process	Reproductive process
+GO:0060749	GO - Biological Process	Mammary gland alveolus development
+GO:0031099	GO - Biological Process	Regeneration
+GO:0016572	GO - Biological Process	Histone phosphorylation
+GO:0007095	GO - Biological Process	Mitotic G2 DNA damage checkpoint signaling
+GO:0071459	GO - Biological Process	Protein localization to chromosome, centromeric region
+GO:0000086	GO - Biological Process	G2/M transition of mitotic cell cycle
+GO:1902105	GO - Biological Process	Regulation of leukocyte differentiation
+GO:2001020	GO - Biological Process	Regulation of response to DNA damage stimulus
+GO:2001022	GO - Biological Process	Positive regulation of response to DNA damage stimulus
+GO:0043967	GO - Biological Process	Histone H4 acetylation
+GO:1902749	GO - Biological Process	Regulation of cell cycle G2/M phase transition
+GO:1903025	GO - Biological Process	Regulation of RNA polymerase II regulatory region sequence-specific DNA binding
+GO:0022402	GO - Biological Process	Cell cycle process
+GO:1901987	GO - Biological Process	Regulation of cell cycle phase transition
+GO:0010661	GO - Biological Process	Positive regulation of muscle cell apoptotic process
+GO:1901798	GO - Biological Process	Positive regulation of signal transduction by p53 class mediator
+GO:1902806	GO - Biological Process	Regulation of cell cycle G1/S phase transition
+GO:0048147	GO - Biological Process	Negative regulation of fibroblast proliferation
+GO:1903214	GO - Biological Process	Regulation of protein targeting to mitochondrion
+GO:0000422	GO - Biological Process	Autophagy of mitochondrion
+GO:0008637	GO - Biological Process	Apoptotic mitochondrial changes
+GO:0051438	GO - Biological Process	Regulation of ubiquitin-protein transferase activity
+GO:0022411	GO - Biological Process	Cellular component disassembly
+GO:0006260	GO - Biological Process	DNA replication
+GO:0006261	GO - Biological Process	DNA-templated DNA replication
+GO:0006287	GO - Biological Process	Base-excision repair, gap-filling
+GO:0033260	GO - Biological Process	Nuclear DNA replication
+GO:0006298	GO - Biological Process	Mismatch repair
+GO:0006677	GO - Biological Process	Glycosylceramide metabolic process
+GO:0006672	GO - Biological Process	Ceramide metabolic process
+GO:0046514	GO - Biological Process	Ceramide catabolic process
+GO:0006629	GO - Biological Process	Lipid metabolic process
+GO:0042552	GO - Biological Process	Myelination
+GO:0002268	GO - Biological Process	Follicular dendritic cell differentiation
+GO:0002467	GO - Biological Process	Germinal center formation
+GO:0032479	GO - Biological Process	Regulation of type I interferon production
+GO:0032688	GO - Biological Process	Negative regulation of interferon-beta production
+GO:0042088	GO - Biological Process	T-helper 1 type immune response
+GO:0002460	GO - Biological Process	Adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
+GO:0048536	GO - Biological Process	Spleen development
+GO:0042093	GO - Biological Process	T-helper cell differentiation
+GO:0032677	GO - Biological Process	Regulation of interleukin-8 production
+GO:0034250	GO - Biological Process	Positive regulation of cellular amide metabolic process
+GO:0033555	GO - Biological Process	Multicellular organismal response to stress
+GO:0048265	GO - Biological Process	Response to pain
+GO:0050951	GO - Biological Process	Sensory perception of temperature stimulus
+GO:0007606	GO - Biological Process	Sensory perception of chemical stimulus
+GO:0050909	GO - Biological Process	Sensory perception of taste
+GO:0009408	GO - Biological Process	Response to heat
+GO:0010524	GO - Biological Process	Positive regulation of calcium ion transport into cytosol
+GO:0048266	GO - Biological Process	Behavioral response to pain
+GO:0050877	GO - Biological Process	Nervous system process
+GO:0050965	GO - Biological Process	Detection of temperature stimulus involved in sensory perception of pain
+GO:0034765	GO - Biological Process	Regulation of ion transmembrane transport
+GO:0072524	GO - Biological Process	Pyridine-containing compound metabolic process
+GO:0009117	GO - Biological Process	Nucleotide metabolic process
+GO:0009165	GO - Biological Process	Nucleotide biosynthetic process
+GO:1901566	GO - Biological Process	Organonitrogen compound biosynthetic process
+GO:0072526	GO - Biological Process	Pyridine-containing compound catabolic process
+GO:0044270	GO - Biological Process	Cellular nitrogen compound catabolic process
+GO:0019674	GO - Biological Process	NAD metabolic process
+GO:1901361	GO - Biological Process	Organic cyclic compound catabolic process
+GO:0046059	GO - Biological Process	dAMP catabolic process
+GO:0006204	GO - Biological Process	IMP catabolic process
+GO:0000255	GO - Biological Process	Allantoin metabolic process
+GO:0034356	GO - Biological Process	NAD biosynthesis via nicotinamide riboside salvage pathway
+GO:0009150	GO - Biological Process	Purine ribonucleotide metabolic process
+GO:0008291	GO - Biological Process	Acetylcholine metabolic process
+GO:0006656	GO - Biological Process	Phosphatidylcholine biosynthetic process
+GO:0001507	GO - Biological Process	Acetylcholine catabolic process in synaptic cleft
+GO:0007528	GO - Biological Process	Neuromuscular junction development
+GO:0006650	GO - Biological Process	Glycerophospholipid metabolic process
+GO:0050808	GO - Biological Process	Synapse organization
+GO:0006646	GO - Biological Process	Phosphatidylethanolamine biosynthetic process
+GO:1905906	GO - Biological Process	Regulation of amyloid fibril formation
+GO:0002763	GO - Biological Process	Positive regulation of myeloid leukocyte differentiation
+GO:0097527	GO - Biological Process	Necroptotic signaling pathway
+GO:0046330	GO - Biological Process	Positive regulation of JNK cascade
+GO:2001237	GO - Biological Process	Negative regulation of extrinsic apoptotic signaling pathway
+GO:0097191	GO - Biological Process	Extrinsic apoptotic signaling pathway
+GO:0007250	GO - Biological Process	Activation of NF-kappaB-inducing kinase activity
+GO:0034142	GO - Biological Process	Toll-like receptor 4 signaling pathway
+GO:0002755	GO - Biological Process	MyD88-dependent toll-like receptor signaling pathway
+GO:1903209	GO - Biological Process	Positive regulation of oxidative stress-induced cell death
+GO:1903959	GO - Biological Process	Regulation of anion transmembrane transport
+GO:0060964	GO - Biological Process	Regulation of miRNA-mediated gene silencing
+GO:2001238	GO - Biological Process	Positive regulation of extrinsic apoptotic signaling pathway
+GO:0032481	GO - Biological Process	Positive regulation of type I interferon production
+GO:0070301	GO - Biological Process	Cellular response to hydrogen peroxide
+GO:0002637	GO - Biological Process	Regulation of immunoglobulin production
+GO:1903265	GO - Biological Process	Positive regulation of tumor necrosis factor-mediated signaling pathway
+GO:0097300	GO - Biological Process	Programmed necrotic cell death
+GO:0000209	GO - Biological Process	Protein polyubiquitination
+GO:1903047	GO - Biological Process	Mitotic cell cycle process
+GO:0030071	GO - Biological Process	Regulation of mitotic metaphase/anaphase transition
+GO:0000226	GO - Biological Process	Microtubule cytoskeleton organization
+GO:0022607	GO - Biological Process	Cellular component assembly
+GO:1905448	GO - Biological Process	Positive regulation of mitochondrial ATP synthesis coupled electron transport
+GO:0007127	GO - Biological Process	Meiosis I
+GO:1904874	GO - Biological Process	Positive regulation of telomerase RNA localization to Cajal body
+GO:0006139	GO - Biological Process	Nucleobase-containing compound metabolic process
+GO:0032206	GO - Biological Process	Positive regulation of telomere maintenance
+GO:0044085	GO - Biological Process	Cellular component biogenesis
+GO:2000781	GO - Biological Process	Positive regulation of double-strand break repair
+GO:0016070	GO - Biological Process	RNA metabolic process
+GO:1905168	GO - Biological Process	Positive regulation of double-strand break repair via homologous recombination
+GO:0086091	GO - Biological Process	Regulation of heart rate by cardiac conduction
+GO:0060306	GO - Biological Process	Regulation of membrane repolarization
+GO:0086002	GO - Biological Process	Cardiac muscle cell action potential involved in contraction
+GO:0001508	GO - Biological Process	Action potential
+GO:0008016	GO - Biological Process	Regulation of heart contraction
+GO:0006941	GO - Biological Process	Striated muscle contraction
+GO:0060307	GO - Biological Process	Regulation of ventricular cardiac muscle cell membrane repolarization
+GO:0086011	GO - Biological Process	Membrane repolarization during action potential
+GO:0086013	GO - Biological Process	Membrane repolarization during cardiac muscle cell action potential
+GO:0086005	GO - Biological Process	Ventricular cardiac muscle cell action potential
+GO:0098915	GO - Biological Process	Membrane repolarization during ventricular cardiac muscle cell action potential
+GO:0097623	GO - Biological Process	Potassium ion export across plasma membrane
+GO:1901380	GO - Biological Process	Negative regulation of potassium ion transmembrane transport
+GO:1904062	GO - Biological Process	Regulation of cation transmembrane transport
+GO:1901379	GO - Biological Process	Regulation of potassium ion transmembrane transport
+GO:0010959	GO - Biological Process	Regulation of metal ion transport
+GO:1902260	GO - Biological Process	Negative regulation of delayed rectifier potassium channel activity
+GO:0055117	GO - Biological Process	Regulation of cardiac muscle contraction
+GO:0098659	GO - Biological Process	Inorganic cation import across plasma membrane
+GO:0086010	GO - Biological Process	Membrane depolarization during action potential
+GO:0043270	GO - Biological Process	Positive regulation of ion transport
+GO:1901381	GO - Biological Process	Positive regulation of potassium ion transmembrane transport
+GO:1990573	GO - Biological Process	Potassium ion import across plasma membrane
+GO:0086014	GO - Biological Process	Atrial cardiac muscle cell action potential
+GO:0086012	GO - Biological Process	Membrane depolarization during cardiac muscle cell action potential
+GO:0086004	GO - Biological Process	Regulation of cardiac muscle cell contraction
+GO:0055075	GO - Biological Process	Potassium ion homeostasis
+GO:0098912	GO - Biological Process	Membrane depolarization during atrial cardiac muscle cell action potential
+GO:1903765	GO - Biological Process	Negative regulation of potassium ion export across plasma membrane
+GO:0086045	GO - Biological Process	Membrane depolarization during AV node cell action potential
+GO:0060372	GO - Biological Process	Regulation of atrial cardiac muscle cell membrane repolarization
+GO:0060452	GO - Biological Process	Positive regulation of cardiac muscle contraction
+GO:0030644	GO - Biological Process	Cellular chloride ion homeostasis
+GO:1901387	GO - Biological Process	Positive regulation of voltage-gated calcium channel activity
+GO:0098771	GO - Biological Process	Inorganic ion homeostasis
+GO:1903169	GO - Biological Process	Regulation of calcium ion transmembrane transport
+GO:0006814	GO - Biological Process	Sodium ion transport
+GO:1904224	GO - Biological Process	Negative regulation of glucuronosyltransferase activity
+GO:2001030	GO - Biological Process	Negative regulation of cellular glucuronidation
+GO:0006805	GO - Biological Process	Xenobiotic metabolic process
+GO:0052695	GO - Biological Process	Cellular glucuronidation
+GO:0045922	GO - Biological Process	Negative regulation of fatty acid metabolic process
+GO:0051552	GO - Biological Process	Flavone metabolic process
+GO:0042440	GO - Biological Process	Pigment metabolic process
+GO:0001889	GO - Biological Process	Liver development
+GO:0052696	GO - Biological Process	Flavonoid glucuronidation
+GO:0052697	GO - Biological Process	Xenobiotic glucuronidation
+GO:0001523	GO - Biological Process	Retinoid metabolic process
+GO:0019439	GO - Biological Process	Aromatic compound catabolic process
+GO:0042573	GO - Biological Process	Retinoic acid metabolic process
+GO:0008210	GO - Biological Process	Estrogen metabolic process
+GO:0006789	GO - Biological Process	Bilirubin conjugation
+GO:0019748	GO - Biological Process	Secondary metabolic process
+GO:0009804	GO - Biological Process	Coumarin metabolic process
+GO:0001676	GO - Biological Process	Long-chain fatty acid metabolic process
+GO:1901360	GO - Biological Process	Organic cyclic compound metabolic process
+GO:0044248	GO - Biological Process	Cellular catabolic process
+GO:0045939	GO - Biological Process	Negative regulation of steroid metabolic process
+GO:0042537	GO - Biological Process	Benzene-containing compound metabolic process
+GO:0009636	GO - Biological Process	Response to toxic substance
+GO:0010811	GO - Biological Process	Positive regulation of cell-substrate adhesion
+GO:0007160	GO - Biological Process	Cell-matrix adhesion
+GO:0061061	GO - Biological Process	Muscle structure development
+GO:0001568	GO - Biological Process	Blood vessel development
+GO:0007492	GO - Biological Process	Endoderm development
+GO:0001704	GO - Biological Process	Formation of primary germ layer
+GO:0085029	GO - Biological Process	Extracellular matrix assembly
+GO:0035987	GO - Biological Process	Endodermal cell differentiation
+GO:0048762	GO - Biological Process	Mesenchymal cell differentiation
+GO:0003007	GO - Biological Process	Heart morphogenesis
+GO:0001837	GO - Biological Process	Epithelial to mesenchymal transition
+GO:0001503	GO - Biological Process	Ossification
+GO:1902894	GO - Biological Process	Negative regulation of miRNA transcription
+GO:0030324	GO - Biological Process	Lung development
+GO:0042178	GO - Biological Process	Xenobiotic catabolic process
+GO:0006721	GO - Biological Process	Terpenoid metabolic process
+GO:0042759	GO - Biological Process	Long-chain fatty acid biosynthetic process
+GO:0016098	GO - Biological Process	Monoterpenoid metabolic process
+GO:0072330	GO - Biological Process	Monocarboxylic acid biosynthetic process
+GO:0006869	GO - Biological Process	Lipid transport
+GO:0009822	GO - Biological Process	Alkaloid catabolic process
+GO:1904486	GO - Biological Process	Response to 17alpha-ethynylestradiol
+GO:0042572	GO - Biological Process	Retinol metabolic process
+GO:0120188	GO - Biological Process	Regulation of bile acid secretion
+GO:1990962	GO - Biological Process	Xenobiotic transport across blood-brain barrier
+GO:0002933	GO - Biological Process	Lipid hydroxylation
+GO:0044070	GO - Biological Process	Regulation of anion transport
+GO:0038183	GO - Biological Process	Bile acid signaling pathway
+GO:0097267	GO - Biological Process	Omega-hydroxylase P450 pathway
+GO:0006787	GO - Biological Process	Porphyrin-containing compound catabolic process
+GO:0046618	GO - Biological Process	Xenobiotic export from cell
+GO:0008203	GO - Biological Process	Cholesterol metabolic process
+GO:0019373	GO - Biological Process	Epoxygenase P450 pathway
+GO:0070633	GO - Biological Process	Transepithelial transport
+GO:0005513	GO - Biological Process	Detection of calcium ion
+GO:0006575	GO - Biological Process	Cellular modified amino acid metabolic process
+GO:0006600	GO - Biological Process	Creatine metabolic process
+GO:0021762	GO - Biological Process	Substantia nigra development
+GO:0042398	GO - Biological Process	Cellular modified amino acid biosynthetic process
+GO:0046314	GO - Biological Process	Phosphocreatine biosynthetic process
+GO:0051343	GO - Biological Process	Positive regulation of cyclic-nucleotide phosphodiesterase activity
+GO:0060315	GO - Biological Process	Negative regulation of ryanodine-sensitive calcium-release channel activity
+GO:0060316	GO - Biological Process	Positive regulation of ryanodine-sensitive calcium-release channel activity
+GO:1901841	GO - Biological Process	Regulation of high voltage-gated calcium channel activity
+GO:1901844	GO - Biological Process	Regulation of cell communication by electrical coupling involved in cardiac conduction
+GO:1905913	GO - Biological Process	Negative regulation of calcium ion export across plasma membrane
+GO:1900242	GO - Biological Process	Regulation of synaptic vesicle endocytosis
+GO:0010801	GO - Biological Process	Negative regulation of peptidyl-threonine phosphorylation
+GO:0032516	GO - Biological Process	Positive regulation of phosphoprotein phosphatase activity
+GO:0006937	GO - Biological Process	Regulation of muscle contraction
+GO:0031954	GO - Biological Process	Positive regulation of protein autophosphorylation
+GO:0006936	GO - Biological Process	Muscle contraction
+GO:0033275	GO - Biological Process	Actin-myosin filament sliding
+GO:0030049	GO - Biological Process	Muscle filament sliding
+GO:0030029	GO - Biological Process	Actin filament-based process
+GO:0030239	GO - Biological Process	Myofibril assembly
+GO:0060415	GO - Biological Process	Muscle tissue morphogenesis
+GO:0051453	GO - Biological Process	Regulation of intracellular pH
+GO:0051452	GO - Biological Process	Intracellular pH reduction
+GO:0045851	GO - Biological Process	pH reduction
+GO:0019344	GO - Biological Process	Cysteine biosynthetic process
+GO:0036376	GO - Biological Process	Sodium ion export across plasma membrane
+GO:0032648	GO - Biological Process	Regulation of interferon-beta production
+GO:0032727	GO - Biological Process	Positive regulation of interferon-alpha production
+GO:0002540	GO - Biological Process	Leukotriene production involved in inflammatory response
+GO:0042559	GO - Biological Process	Pteridine-containing compound biosynthetic process
+GO:0034308	GO - Biological Process	Primary alcohol metabolic process
+GO:0046370	GO - Biological Process	Fructose biosynthetic process
+GO:0005996	GO - Biological Process	Monosaccharide metabolic process
+GO:0046452	GO - Biological Process	Dihydrofolate metabolic process
+GO:0042732	GO - Biological Process	D-xylose metabolic process
+GO:0006545	GO - Biological Process	Glycine biosynthetic process
+GO:0006729	GO - Biological Process	Tetrahydrobiopterin biosynthetic process
+GO:0046654	GO - Biological Process	Tetrahydrofolate biosynthetic process
+GO:0006766	GO - Biological Process	Vitamin metabolic process
+GO:0019751	GO - Biological Process	Polyol metabolic process
+GO:0006068	GO - Biological Process	Ethanol catabolic process
+GO:0046655	GO - Biological Process	Folic acid metabolic process
+GO:2000377	GO - Biological Process	Regulation of reactive oxygen species metabolic process
+GO:0034310	GO - Biological Process	Primary alcohol catabolic process
+GO:0006714	GO - Biological Process	Sesquiterpenoid metabolic process
+GO:1901661	GO - Biological Process	Quinone metabolic process
+GO:0016488	GO - Biological Process	Farnesol catabolic process
+GO:2000379	GO - Biological Process	Positive regulation of reactive oxygen species metabolic process
+GO:0050916	GO - Biological Process	Sensory perception of sweet taste
+GO:0001582	GO - Biological Process	Detection of chemical stimulus involved in sensory perception of sweet taste
+GO:0050912	GO - Biological Process	Detection of chemical stimulus involved in sensory perception of taste
+GO:0098708	GO - Biological Process	Glucose import across plasma membrane
+GO:0050917	GO - Biological Process	Sensory perception of umami taste
+GO:0046323	GO - Biological Process	Glucose import
+GO:0002016	GO - Biological Process	Regulation of blood volume by renin-angiotensin
+GO:0038166	GO - Biological Process	Angiotensin-activated signaling pathway
+GO:0001991	GO - Biological Process	Regulation of systemic arterial blood pressure by circulatory renin-angiotensin
+GO:1903522	GO - Biological Process	Regulation of blood circulation
+GO:0002018	GO - Biological Process	Renin-angiotensin regulation of aldosterone production
+GO:0002034	GO - Biological Process	Maintenance of blood vessel diameter homeostasis by renin-angiotensin
+GO:0002035	GO - Biological Process	Brain renin-angiotensin system
+GO:0002003	GO - Biological Process	Angiotensin maturation
+GO:1903596	GO - Biological Process	Regulation of gap junction assembly
+GO:0042756	GO - Biological Process	Drinking behavior
+GO:0035813	GO - Biological Process	Regulation of renal sodium excretion
+GO:0007199	GO - Biological Process	G protein-coupled receptor signaling pathway coupled to cGMP nucleotide second messenger
+GO:0002019	GO - Biological Process	Regulation of renal output by angiotensin
+GO:0003051	GO - Biological Process	Angiotensin-mediated drinking behavior
+GO:0051387	GO - Biological Process	Negative regulation of neurotrophin TRK receptor signaling pathway
+GO:0033864	GO - Biological Process	Positive regulation of NAD(P)H oxidase activity
+GO:1903598	GO - Biological Process	Positive regulation of gap junction assembly
+GO:1905920	GO - Biological Process	Positive regulation of CoA-transferase activity
+GO:0001933	GO - Biological Process	Negative regulation of protein phosphorylation
+GO:1903961	GO - Biological Process	Positive regulation of anion transmembrane transport
+GO:0034374	GO - Biological Process	Low-density lipoprotein particle remodeling
+GO:0010958	GO - Biological Process	Regulation of amino acid import across plasma membrane
+GO:0010744	GO - Biological Process	Positive regulation of macrophage derived foam cell differentiation
+GO:0050435	GO - Biological Process	Amyloid-beta metabolic process
+GO:0090190	GO - Biological Process	Positive regulation of branching involved in ureteric bud morphogenesis
+GO:0007263	GO - Biological Process	Nitric oxide mediated signal transduction
+GO:0051957	GO - Biological Process	Positive regulation of amino acid transport
+GO:1903779	GO - Biological Process	Regulation of cardiac conduction
+GO:0007565	GO - Biological Process	Female pregnancy
+GO:0050482	GO - Biological Process	Arachidonic acid secretion
+GO:0050731	GO - Biological Process	Positive regulation of peptidyl-tyrosine phosphorylation
+GO:0045777	GO - Biological Process	Positive regulation of blood pressure
+GO:0008406	GO - Biological Process	Gonad development
+GO:0010951	GO - Biological Process	Negative regulation of endopeptidase activity
+GO:0051046	GO - Biological Process	Regulation of secretion
+GO:0015849	GO - Biological Process	Organic acid transport
+GO:0006939	GO - Biological Process	Smooth muscle contraction
+GO:0061098	GO - Biological Process	Positive regulation of protein tyrosine kinase activity
+GO:0014910	GO - Biological Process	Regulation of smooth muscle cell migration
+GO:2000272	GO - Biological Process	Negative regulation of signaling receptor activity
+GO:2000058	GO - Biological Process	Regulation of ubiquitin-dependent protein catabolic process
+GO:2000435	GO - Biological Process	Negative regulation of protein neddylation
+GO:2000059	GO - Biological Process	Negative regulation of ubiquitin-dependent protein catabolic process
+GO:0031397	GO - Biological Process	Negative regulation of protein ubiquitination
+GO:0036293	GO - Biological Process	Response to decreased oxygen levels
+GO:0036294	GO - Biological Process	Cellular response to decreased oxygen levels
+GO:0032434	GO - Biological Process	Regulation of proteasomal ubiquitin-dependent protein catabolic process
+GO:0042176	GO - Biological Process	Regulation of protein catabolic process
+GO:0030330	GO - Biological Process	DNA damage response, signal transduction by p53 class mediator
+GO:0034504	GO - Biological Process	Protein localization to nucleus
+GO:0003179	GO - Biological Process	Heart valve morphogenesis
+GO:0016072	GO - Biological Process	rRNA metabolic process
+GO:0016567	GO - Biological Process	Protein ubiquitination
+GO:0043255	GO - Biological Process	Regulation of carbohydrate biosynthetic process
+GO:0042177	GO - Biological Process	Negative regulation of protein catabolic process
+GO:0051098	GO - Biological Process	Regulation of binding
+GO:1990000	GO - Biological Process	Amyloid fibril formation
+GO:0003283	GO - Biological Process	Atrial septum development
+GO:0000027	GO - Biological Process	Ribosomal large subunit assembly
+GO:0070231	GO - Biological Process	T cell apoptotic process
+GO:0043393	GO - Biological Process	Regulation of protein binding
+GO:0006511	GO - Biological Process	Ubiquitin-dependent protein catabolic process
+GO:0032435	GO - Biological Process	Negative regulation of proteasomal ubiquitin-dependent protein catabolic process
+GO:0051881	GO - Biological Process	Regulation of mitochondrial membrane potential
+GO:0051865	GO - Biological Process	Protein autoubiquitination
+GO:0051045	GO - Biological Process	Negative regulation of membrane protein ectodomain proteolysis
+GO:0048771	GO - Biological Process	Tissue remodeling
+GO:1905049	GO - Biological Process	Negative regulation of metallopeptidase activity
+GO:0030574	GO - Biological Process	Collagen catabolic process
+GO:0022617	GO - Biological Process	Extracellular matrix disassembly
+GO:0002009	GO - Biological Process	Morphogenesis of an epithelium
+GO:0071492	GO - Biological Process	Cellular response to UV-A
+GO:0031293	GO - Biological Process	Membrane protein intracellular domain proteolysis
+GO:1902043	GO - Biological Process	Positive regulation of extrinsic apoptotic signaling pathway via death domain receptors
+GO:0002696	GO - Biological Process	Positive regulation of leukocyte activation
+GO:0010763	GO - Biological Process	Positive regulation of fibroblast migration
+GO:0002687	GO - Biological Process	Positive regulation of leukocyte migration
+GO:2001236	GO - Biological Process	Regulation of extrinsic apoptotic signaling pathway
+GO:0043552	GO - Biological Process	Positive regulation of phosphatidylinositol 3-kinase activity
+GO:0048705	GO - Biological Process	Skeletal system morphogenesis
+GO:0051602	GO - Biological Process	Response to electrical stimulus
+GO:0009056	GO - Biological Process	Catabolic process
+GO:0043114	GO - Biological Process	Regulation of vascular permeability
+GO:0003018	GO - Biological Process	Vascular process in circulatory system
+GO:0035306	GO - Biological Process	Positive regulation of dephosphorylation
+GO:0048660	GO - Biological Process	Regulation of smooth muscle cell proliferation
+GO:0006691	GO - Biological Process	Leukotriene metabolic process
+GO:0042361	GO - Biological Process	Menaquinone catabolic process
+GO:0042376	GO - Biological Process	Phylloquinone catabolic process
+GO:2001300	GO - Biological Process	Lipoxin metabolic process
+GO:1901568	GO - Biological Process	Fatty acid derivative metabolic process
+GO:0010430	GO - Biological Process	Fatty acid omega-oxidation
+GO:0007205	GO - Biological Process	Protein kinase C-activating G protein-coupled receptor signaling pathway
+GO:0051281	GO - Biological Process	Positive regulation of release of sequestered calcium ion into cytosol
+GO:0072378	GO - Biological Process	Blood coagulation, fibrin clot formation
+GO:0031638	GO - Biological Process	Zymogen activation
+GO:0030193	GO - Biological Process	Regulation of blood coagulation
+GO:0072377	GO - Biological Process	Blood coagulation, common pathway
+GO:0042730	GO - Biological Process	Fibrinolysis
+GO:0045907	GO - Biological Process	Positive regulation of vasoconstriction
+GO:0031639	GO - Biological Process	Plasminogen activation
+GO:0034116	GO - Biological Process	Positive regulation of heterotypic cell-cell adhesion
+GO:0010544	GO - Biological Process	Negative regulation of platelet activation
+GO:0030194	GO - Biological Process	Positive regulation of blood coagulation
+GO:1902042	GO - Biological Process	Negative regulation of extrinsic apoptotic signaling pathway via death domain receptors
+GO:1900026	GO - Biological Process	Positive regulation of substrate adhesion-dependent cell spreading
+GO:2000257	GO - Biological Process	Regulation of protein activation cascade
+GO:0043152	GO - Biological Process	Induction of bacterial agglutination
+GO:0045921	GO - Biological Process	Positive regulation of exocytosis
+GO:0022604	GO - Biological Process	Regulation of cell morphogenesis
+GO:0051258	GO - Biological Process	Protein polymerization
+GO:0051918	GO - Biological Process	Negative regulation of fibrinolysis
+GO:0050714	GO - Biological Process	Positive regulation of protein secretion
+GO:0052548	GO - Biological Process	Regulation of endopeptidase activity
+GO:0019730	GO - Biological Process	Antimicrobial humoral response
+GO:0051592	GO - Biological Process	Response to calcium ion
+GO:0032967	GO - Biological Process	Positive regulation of collagen biosynthetic process
+GO:0060284	GO - Biological Process	Regulation of cell development
+GO:0046427	GO - Biological Process	Positive regulation of receptor signaling pathway via JAK-STAT
+GO:0003073	GO - Biological Process	Regulation of systemic arterial blood pressure
+GO:0003085	GO - Biological Process	Negative regulation of systemic arterial blood pressure
+GO:0022898	GO - Biological Process	Regulation of transmembrane transporter activity
+GO:0043407	GO - Biological Process	Negative regulation of MAP kinase activity
+GO:1902905	GO - Biological Process	Positive regulation of supramolecular fiber organization
+GO:0007010	GO - Biological Process	Cytoskeleton organization
+GO:0051495	GO - Biological Process	Positive regulation of cytoskeleton organization
+GO:0030036	GO - Biological Process	Actin cytoskeleton organization
+GO:0034330	GO - Biological Process	Cell junction organization
+GO:0046907	GO - Biological Process	Intracellular transport
+GO:0045216	GO - Biological Process	Cell-cell junction organization
+GO:0044089	GO - Biological Process	Positive regulation of cellular component biogenesis
+GO:0007163	GO - Biological Process	Establishment or maintenance of cell polarity
+GO:0006749	GO - Biological Process	Glutathione metabolic process
+GO:0009404	GO - Biological Process	Toxin metabolic process
+GO:0018894	GO - Biological Process	Dibenzo-p-dioxin metabolic process
+GO:0046222	GO - Biological Process	Aflatoxin metabolic process
+GO:0120252	GO - Biological Process	Hydrocarbon metabolic process
+GO:0009820	GO - Biological Process	Alkaloid metabolic process
+GO:0050665	GO - Biological Process	Hydrogen peroxide biosynthetic process
+GO:0042359	GO - Biological Process	Vitamin D metabolic process
+GO:0002718	GO - Biological Process	Regulation of cytokine production involved in immune response
+GO:0002724	GO - Biological Process	Regulation of T cell cytokine production
+GO:0002706	GO - Biological Process	Regulation of lymphocyte mediated immunity
+GO:0002822	GO - Biological Process	Regulation of adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
+GO:0003332	GO - Biological Process	Negative regulation of extracellular matrix constituent secretion
+GO:1902339	GO - Biological Process	Positive regulation of apoptotic process involved in morphogenesis
+GO:2001141	GO - Biological Process	Regulation of RNA biosynthetic process
+GO:1903721	GO - Biological Process	Positive regulation of I-kappaB phosphorylation
+GO:0007252	GO - Biological Process	I-kappaB phosphorylation
+GO:0051798	GO - Biological Process	Positive regulation of hair follicle development
+GO:0002708	GO - Biological Process	Positive regulation of lymphocyte mediated immunity
+GO:0032102	GO - Biological Process	Negative regulation of response to external stimulus
+GO:0045651	GO - Biological Process	Positive regulation of macrophage differentiation
+GO:0051044	GO - Biological Process	Positive regulation of membrane protein ectodomain proteolysis
+GO:0051051	GO - Biological Process	Negative regulation of transport
+GO:0003177	GO - Biological Process	Pulmonary valve development
+GO:0010614	GO - Biological Process	Negative regulation of cardiac muscle hypertrophy
+GO:0032743	GO - Biological Process	Positive regulation of interleukin-2 production
+GO:0003176	GO - Biological Process	Aortic valve development
+GO:0051254	GO - Biological Process	Positive regulation of RNA metabolic process
+GO:0031641	GO - Biological Process	Regulation of myelination
+GO:0014015	GO - Biological Process	Positive regulation of gliogenesis
+GO:0032755	GO - Biological Process	Positive regulation of interleukin-6 production
+GO:0050671	GO - Biological Process	Positive regulation of lymphocyte proliferation
+GO:0002702	GO - Biological Process	Positive regulation of production of molecular mediator of immune response
+GO:0002697	GO - Biological Process	Regulation of immune effector process
+GO:0032760	GO - Biological Process	Positive regulation of tumor necrosis factor production
+GO:0002274	GO - Biological Process	Myeloid leukocyte activation
+GO:0002703	GO - Biological Process	Regulation of leukocyte mediated immunity
+GO:0032728	GO - Biological Process	Positive regulation of interferon-beta production
+GO:0030890	GO - Biological Process	Positive regulation of B cell proliferation
+GO:0062208	GO - Biological Process	Positive regulation of pattern recognition receptor signaling pathway
+GO:2000343	GO - Biological Process	Positive regulation of chemokine (C-X-C motif) ligand 2 production
+GO:0032729	GO - Biological Process	Positive regulation of interferon-gamma production
+GO:0032733	GO - Biological Process	Positive regulation of interleukin-10 production
+GO:0002366	GO - Biological Process	Leukocyte activation involved in immune response
+GO:1900227	GO - Biological Process	Positive regulation of NLRP3 inflammasome complex assembly
+GO:0042102	GO - Biological Process	Positive regulation of T cell proliferation
+GO:0051770	GO - Biological Process	Positive regulation of nitric-oxide synthase biosynthetic process
+GO:0070935	GO - Biological Process	3-UTR-mediated mRNA stabilization
+GO:0006809	GO - Biological Process	Nitric oxide biosynthetic process
+GO:0006909	GO - Biological Process	Phagocytosis
+GO:0002269	GO - Biological Process	Leukocyte activation involved in inflammatory response
+GO:0061900	GO - Biological Process	Glial cell activation
+GO:0002685	GO - Biological Process	Regulation of leukocyte migration
+GO:0032660	GO - Biological Process	Regulation of interleukin-17 production
+GO:0032689	GO - Biological Process	Negative regulation of interferon-gamma production
+GO:1902622	GO - Biological Process	Regulation of neutrophil migration
+GO:0042100	GO - Biological Process	B cell proliferation
+GO:0043388	GO - Biological Process	Positive regulation of DNA binding
+GO:0002275	GO - Biological Process	Myeloid cell activation involved in immune response
+GO:0045670	GO - Biological Process	Regulation of osteoclast differentiation
+GO:0032675	GO - Biological Process	Regulation of interleukin-6 production
+GO:0032653	GO - Biological Process	Regulation of interleukin-10 production
+GO:0042104	GO - Biological Process	Positive regulation of activated T cell proliferation
+GO:0001774	GO - Biological Process	Microglial cell activation
+GO:1903037	GO - Biological Process	Regulation of leukocyte cell-cell adhesion
+GO:0009892	GO - Biological Process	Negative regulation of metabolic process
+GO:0071677	GO - Biological Process	Positive regulation of mononuclear cell migration
+GO:0001938	GO - Biological Process	Positive regulation of endothelial cell proliferation
+GO:0050829	GO - Biological Process	Defense response to Gram-negative bacterium
+GO:0071346	GO - Biological Process	Cellular response to interferon-gamma
+GO:0002520	GO - Biological Process	Immune system development
+GO:0021782	GO - Biological Process	Glial cell development
+GO:0050767	GO - Biological Process	Regulation of neurogenesis
+GO:0051101	GO - Biological Process	Regulation of DNA binding
+GO:1903038	GO - Biological Process	Negative regulation of leukocyte cell-cell adhesion
+GO:0000423	GO - Biological Process	Mitophagy
+GO:0002437	GO - Biological Process	Inflammatory response to antigenic stimulus
+GO:0048699	GO - Biological Process	Generation of neurons
+GO:1904646	GO - Biological Process	Cellular response to amyloid-beta
+GO:0006303	GO - Biological Process	Double-strand break repair via nonhomologous end joining
+GO:0043277	GO - Biological Process	Apoptotic cell clearance
+GO:0032720	GO - Biological Process	Negative regulation of tumor necrosis factor production
+GO:0048666	GO - Biological Process	Neuron development
+GO:0072091	GO - Biological Process	Regulation of stem cell proliferation
+GO:0016125	GO - Biological Process	Sterol metabolic process
+GO:0007584	GO - Biological Process	Response to nutrient
+GO:0046685	GO - Biological Process	Response to arsenic-containing substance
+GO:0046483	GO - Biological Process	Heterocycle metabolic process
+GO:0019058	GO - Biological Process	Viral life cycle
+GO:0019065	GO - Biological Process	Receptor-mediated endocytosis of virus by host cell
+GO:0046813	GO - Biological Process	Receptor-mediated virion attachment to host cell
+GO:0046718	GO - Biological Process	Viral entry into host cell
+GO:0051146	GO - Biological Process	Striated muscle cell differentiation
+GO:0061844	GO - Biological Process	Antimicrobial humoral immune response mediated by antimicrobial peptide
+GO:0072678	GO - Biological Process	T cell migration
+GO:0060158	GO - Biological Process	Phospholipase C-activating dopamine receptor signaling pathway
+GO:0071467	GO - Biological Process	Cellular response to pH
+GO:0015872	GO - Biological Process	Dopamine transport
+GO:0098810	GO - Biological Process	Neurotransmitter reuptake
+GO:0006836	GO - Biological Process	Neurotransmitter transport
+GO:0098657	GO - Biological Process	Import into cell
+GO:0090494	GO - Biological Process	Dopamine uptake
+GO:0051583	GO - Biological Process	Dopamine uptake involved in synaptic transmission
+GO:0051610	GO - Biological Process	Serotonin uptake
+GO:0051620	GO - Biological Process	Norepinephrine uptake
+GO:0035493	GO - Biological Process	SNARE complex assembly
+GO:0014061	GO - Biological Process	Regulation of norepinephrine secretion
+GO:0099504	GO - Biological Process	Synaptic vesicle cycle
+GO:0006812	GO - Biological Process	Cation transport
+GO:0097164	GO - Biological Process	Ammonium ion metabolic process
+GO:0051953	GO - Biological Process	Negative regulation of amine transport
+GO:0007626	GO - Biological Process	Locomotory behavior
+GO:1990384	GO - Biological Process	Hyaloid vascular plexus regression
+GO:0051584	GO - Biological Process	Regulation of dopamine uptake involved in synaptic transmission
+GO:0010039	GO - Biological Process	Response to iron ion
+GO:0051586	GO - Biological Process	Positive regulation of dopamine uptake involved in synaptic transmission
+GO:0030100	GO - Biological Process	Regulation of endocytosis
+GO:0048168	GO - Biological Process	Regulation of neuronal synaptic plasticity
+GO:0002090	GO - Biological Process	Regulation of receptor internalization
+GO:0007195	GO - Biological Process	Adenylate cyclase-inhibiting dopamine receptor signaling pathway
+GO:0051649	GO - Biological Process	Establishment of localization in cell
+GO:0008344	GO - Biological Process	Adult locomotory behavior
+GO:0032409	GO - Biological Process	Regulation of transporter activity
+GO:0048149	GO - Biological Process	Behavioral response to ethanol
+GO:0071870	GO - Biological Process	Cellular response to catecholamine stimulus
+GO:0045807	GO - Biological Process	Positive regulation of endocytosis
+GO:0034776	GO - Biological Process	Response to histamine
+GO:0060078	GO - Biological Process	Regulation of postsynaptic membrane potential
+GO:0099565	GO - Biological Process	Chemical synaptic transmission, postsynaptic
+GO:0021984	GO - Biological Process	Adenohypophysis development
+GO:1901386	GO - Biological Process	Negative regulation of voltage-gated calcium channel activity
+GO:0006820	GO - Biological Process	Anion transport
+GO:0023052	GO - Biological Process	Signaling
+GO:0040018	GO - Biological Process	Positive regulation of multicellular organism growth
+GO:0017157	GO - Biological Process	Regulation of exocytosis
+GO:1903426	GO - Biological Process	Regulation of reactive oxygen species biosynthetic process
+GO:0035176	GO - Biological Process	Social behavior
+GO:0048488	GO - Biological Process	Synaptic vesicle endocytosis
+GO:0016079	GO - Biological Process	Synaptic vesicle exocytosis
+GO:0050709	GO - Biological Process	Negative regulation of protein secretion
+GO:0007190	GO - Biological Process	Activation of adenylate cyclase activity
+GO:0043950	GO - Biological Process	Positive regulation of cAMP-mediated signaling
+GO:0140352	GO - Biological Process	Export from cell
+GO:0097553	GO - Biological Process	Calcium ion transmembrane import into cytosol
+GO:0051209	GO - Biological Process	Release of sequestered calcium ion into cytosol
+GO:0098703	GO - Biological Process	Calcium ion import across plasma membrane
+GO:0019934	GO - Biological Process	cGMP-mediated signaling
+GO:0086019	GO - Biological Process	Cell-cell signaling involved in cardiac conduction
+GO:0007215	GO - Biological Process	Glutamate receptor signaling pathway
+GO:0045600	GO - Biological Process	Positive regulation of fat cell differentiation
+GO:0150099	GO - Biological Process	Neuron-glial cell signaling
+GO:0060079	GO - Biological Process	Excitatory postsynaptic potential
+GO:0007628	GO - Biological Process	Adult walking behavior
+GO:0051898	GO - Biological Process	Negative regulation of protein kinase B signaling
+GO:0043666	GO - Biological Process	Regulation of phosphoprotein phosphatase activity
+GO:0010863	GO - Biological Process	Positive regulation of phospholipase C activity
+GO:0008542	GO - Biological Process	Visual learning
+GO:0002028	GO - Biological Process	Regulation of sodium ion transport
+GO:1905114	GO - Biological Process	Cell surface receptor signaling pathway involved in cell-cell signaling
+GO:0048639	GO - Biological Process	Positive regulation of developmental growth
+GO:0015850	GO - Biological Process	Organic hydroxy compound transport
+GO:0046717	GO - Biological Process	Acid secretion
+GO:0003012	GO - Biological Process	Muscle system process
+GO:0051349	GO - Biological Process	Positive regulation of lyase activity
+GO:0006816	GO - Biological Process	Calcium ion transport
+GO:0051928	GO - Biological Process	Positive regulation of calcium ion transport
+GO:0098901	GO - Biological Process	Regulation of cardiac muscle cell action potential
+GO:1901021	GO - Biological Process	Positive regulation of calcium ion transmembrane transporter activity
+GO:2001258	GO - Biological Process	Negative regulation of cation channel activity
+GO:0043502	GO - Biological Process	Regulation of muscle adaptation
+GO:0014808	GO - Biological Process	Release of sequestered calcium ion into cytosol by sarcoplasmic reticulum
+GO:0006527	GO - Biological Process	Arginine catabolic process
+GO:0051234	GO - Biological Process	Establishment of localization
+GO:0071313	GO - Biological Process	Cellular response to caffeine
+GO:0051284	GO - Biological Process	Positive regulation of sequestering of calcium ion
+GO:0060402	GO - Biological Process	Calcium ion transport into cytosol
+GO:0086064	GO - Biological Process	Cell communication by electrical coupling involved in cardiac conduction
+GO:0003231	GO - Biological Process	Cardiac ventricle development
+GO:0014074	GO - Biological Process	Response to purine-containing compound
+GO:0045454	GO - Biological Process	Cell redox homeostasis
+GO:0051480	GO - Biological Process	Regulation of cytosolic calcium ion concentration
+GO:1902305	GO - Biological Process	Regulation of sodium ion transmembrane transport
+GO:0098664	GO - Biological Process	G protein-coupled serotonin receptor signaling pathway
+GO:0050890	GO - Biological Process	Cognition
+GO:0046628	GO - Biological Process	Positive regulation of insulin receptor signaling pathway
+GO:0009812	GO - Biological Process	Flavonoid metabolic process
+GO:0030258	GO - Biological Process	Lipid modification
+GO:0006778	GO - Biological Process	Porphyrin-containing compound metabolic process
+GO:0070640	GO - Biological Process	Vitamin D3 metabolic process
+GO:0046394	GO - Biological Process	Carboxylic acid biosynthetic process
+GO:1901616	GO - Biological Process	Organic hydroxy compound catabolic process
+GO:0042167	GO - Biological Process	Heme catabolic process
+GO:0006777	GO - Biological Process	Mo-molybdopterin cofactor biosynthetic process
+GO:0006120	GO - Biological Process	Mitochondrial electron transport, NADH to ubiquinone
+GO:0042776	GO - Biological Process	Proton motive force-driven mitochondrial ATP synthesis
+GO:0032981	GO - Biological Process	Mitochondrial respiratory chain complex I assembly
+GO:0009060	GO - Biological Process	Aerobic respiration
+GO:0019646	GO - Biological Process	Aerobic electron transport chain
+GO:0042775	GO - Biological Process	Mitochondrial ATP synthesis coupled electron transport
+GO:0006121	GO - Biological Process	Mitochondrial electron transport, succinate to ubiquinone
+GO:0006099	GO - Biological Process	Tricarboxylic acid cycle
+GO:0018293	GO - Biological Process	protein-FAD linkage
+GO:0006105	GO - Biological Process	Succinate metabolic process
+GO:0033108	GO - Biological Process	Mitochondrial respiratory chain complex assembly
+GO:0006601	GO - Biological Process	Creatine biosynthetic process
+GO:0090407	GO - Biological Process	Organophosphate biosynthetic process
+GO:0019637	GO - Biological Process	Organophosphate metabolic process
+GO:0019217	GO - Biological Process	Regulation of fatty acid metabolic process
+GO:0016071	GO - Biological Process	mRNA metabolic process
+GO:0045444	GO - Biological Process	Fat cell differentiation
+GO:0002155	GO - Biological Process	Regulation of thyroid hormone mediated signaling pathway
+GO:0032922	GO - Biological Process	Circadian regulation of gene expression
+GO:0070562	GO - Biological Process	Regulation of vitamin D receptor signaling pathway
+GO:0035729	GO - Biological Process	Cellular response to hepatocyte growth factor stimulus
+GO:0046321	GO - Biological Process	Positive regulation of fatty acid oxidation
+GO:0060334	GO - Biological Process	Regulation of interferon-gamma-mediated signaling pathway
+GO:0048384	GO - Biological Process	Retinoic acid receptor signaling pathway
+GO:0001890	GO - Biological Process	Placenta development
+GO:0034391	GO - Biological Process	Regulation of smooth muscle cell apoptotic process
+GO:0031670	GO - Biological Process	Cellular response to nutrient
+GO:0048662	GO - Biological Process	Negative regulation of smooth muscle cell proliferation
+GO:0031100	GO - Biological Process	Animal organ regeneration
+GO:0035065	GO - Biological Process	Regulation of histone acetylation
+GO:0150104	GO - Biological Process	Transport across blood-brain barrier
+GO:0042908	GO - Biological Process	Xenobiotic transport
+GO:0140115	GO - Biological Process	Export across plasma membrane
+GO:1901657	GO - Biological Process	Glycosyl compound metabolic process
+GO:0046173	GO - Biological Process	Polyol biosynthetic process
+GO:0006730	GO - Biological Process	One-carbon metabolic process
+GO:0006775	GO - Biological Process	Fat-soluble vitamin metabolic process
+GO:0000302	GO - Biological Process	Response to reactive oxygen species
+GO:1905908	GO - Biological Process	Positive regulation of amyloid fibril formation
+GO:1902947	GO - Biological Process	Regulation of tau-protein kinase activity
+GO:0042982	GO - Biological Process	Amyloid precursor protein metabolic process
+GO:1902996	GO - Biological Process	Regulation of neurofibrillary tangle assembly
+GO:1902991	GO - Biological Process	Regulation of amyloid precursor protein catabolic process
+GO:0034205	GO - Biological Process	Amyloid-beta formation
+GO:0045732	GO - Biological Process	Positive regulation of protein catabolic process
+GO:1900221	GO - Biological Process	Regulation of amyloid-beta clearance
+GO:1902430	GO - Biological Process	Negative regulation of amyloid-beta formation
+GO:0006509	GO - Biological Process	Membrane protein ectodomain proteolysis
+GO:1902993	GO - Biological Process	Positive regulation of amyloid precursor protein catabolic process
+GO:0051563	GO - Biological Process	Smooth endoplasmic reticulum calcium ion homeostasis
+GO:1902998	GO - Biological Process	Positive regulation of neurofibrillary tangle assembly
+GO:1905891	GO - Biological Process	Regulation of cellular response to thapsigargin
+GO:1905894	GO - Biological Process	Regulation of cellular response to tunicamycin
+GO:1900271	GO - Biological Process	Regulation of long-term synaptic potentiation
+GO:0002265	GO - Biological Process	Astrocyte activation involved in immune response
+GO:0017038	GO - Biological Process	Protein import
+GO:1902951	GO - Biological Process	Negative regulation of dendritic spine maintenance
+GO:0007220	GO - Biological Process	Notch receptor processing
+GO:0032092	GO - Biological Process	Positive regulation of protein binding
+GO:0051222	GO - Biological Process	Positive regulation of protein transport
+GO:0090209	GO - Biological Process	Negative regulation of triglyceride metabolic process
+GO:1900272	GO - Biological Process	Negative regulation of long-term synaptic potentiation
+GO:1902959	GO - Biological Process	Regulation of aspartic-type endopeptidase activity involved in amyloid precursor protein catabolic process
+GO:1990535	GO - Biological Process	Neuron projection maintenance
+GO:1905907	GO - Biological Process	Negative regulation of amyloid fibril formation
+GO:0007219	GO - Biological Process	Notch signaling pathway
+GO:0043691	GO - Biological Process	Reverse cholesterol transport
+GO:0010288	GO - Biological Process	Response to lead ion
+GO:0022010	GO - Biological Process	Central nervous system myelination
+GO:0071280	GO - Biological Process	Cellular response to copper ion
+GO:0006622	GO - Biological Process	Protein targeting to lysosome
+GO:0034248	GO - Biological Process	Regulation of cellular amide metabolic process
+GO:0007176	GO - Biological Process	Regulation of epidermal growth factor-activated receptor activity
+GO:0031345	GO - Biological Process	Negative regulation of cell projection organization
+GO:0061136	GO - Biological Process	Regulation of proteasomal protein catabolic process
+GO:0002021	GO - Biological Process	Response to dietary excess
+GO:0006469	GO - Biological Process	Negative regulation of protein kinase activity
+GO:0120036	GO - Biological Process	Plasma membrane bounded cell projection organization
+GO:0070050	GO - Biological Process	Neuron cellular homeostasis
+GO:0015031	GO - Biological Process	Protein transport
+GO:0015800	GO - Biological Process	Acidic amino acid transport
+GO:0060828	GO - Biological Process	Regulation of canonical Wnt signaling pathway
+GO:0008038	GO - Biological Process	Neuron recognition
+GO:0002253	GO - Biological Process	Activation of immune response
+GO:0048260	GO - Biological Process	Positive regulation of receptor-mediated endocytosis
+GO:0006835	GO - Biological Process	Dicarboxylic acid transport
+GO:0008088	GO - Biological Process	Axo-dendritic transport
+GO:0050818	GO - Biological Process	Regulation of coagulation
+GO:0002526	GO - Biological Process	Acute inflammatory response
+GO:0006750	GO - Biological Process	Glutathione biosynthetic process
+GO:0006534	GO - Biological Process	Cysteine metabolic process
+GO:0097069	GO - Biological Process	Cellular response to thyroxine stimulus
+GO:0044752	GO - Biological Process	Response to human chorionic gonadotropin
+GO:0051409	GO - Biological Process	Response to nitrosative stress
+GO:0006520	GO - Biological Process	Cellular amino acid metabolic process
+GO:1901750	GO - Biological Process	Leukotriene D4 biosynthetic process
+GO:0032436	GO - Biological Process	Positive regulation of proteasomal ubiquitin-dependent protein catabolic process
+GO:0043200	GO - Biological Process	Response to amino acid
+GO:0051900	GO - Biological Process	Regulation of mitochondrial depolarization
+GO:0009743	GO - Biological Process	Response to carbohydrate
+GO:0006751	GO - Biological Process	Glutathione catabolic process
+GO:1901565	GO - Biological Process	Organonitrogen compound catabolic process
+GO:1901606	GO - Biological Process	Alpha-amino acid catabolic process
+GO:0042853	GO - Biological Process	L-alanine catabolic process
+GO:0006090	GO - Biological Process	Pyruvate metabolic process
+GO:0009058	GO - Biological Process	Biosynthetic process
+GO:0097053	GO - Biological Process	L-kynurenine catabolic process
+GO:0000096	GO - Biological Process	Sulfur amino acid metabolic process
+GO:1901605	GO - Biological Process	Alpha-amino acid metabolic process
+GO:0000097	GO - Biological Process	Sulfur amino acid biosynthetic process
+GO:0044272	GO - Biological Process	Sulfur compound biosynthetic process
+GO:0050667	GO - Biological Process	Homocysteine metabolic process
+GO:0019346	GO - Biological Process	Transsulfuration
+GO:0044273	GO - Biological Process	Sulfur compound catabolic process
+GO:0000098	GO - Biological Process	Sulfur amino acid catabolic process
+GO:0009086	GO - Biological Process	Methionine biosynthetic process
+GO:0070814	GO - Biological Process	Hydrogen sulfide biosynthetic process
+GO:0046500	GO - Biological Process	S-adenosylmethionine metabolic process
+GO:0019343	GO - Biological Process	Cysteine biosynthetic process via cystathionine
+GO:0019448	GO - Biological Process	L-cysteine catabolic process
+GO:0071267	GO - Biological Process	L-methionine salvage
+GO:0051593	GO - Biological Process	Response to folic acid
+GO:0042558	GO - Biological Process	Pteridine-containing compound metabolic process
+GO:0042219	GO - Biological Process	Cellular modified amino acid catabolic process
+GO:0033353	GO - Biological Process	S-adenosylmethionine cycle
+GO:0009070	GO - Biological Process	Serine family amino acid biosynthetic process
+GO:0006565	GO - Biological Process	L-serine catabolic process
+GO:0019264	GO - Biological Process	Glycine biosynthetic process from serine
+GO:0043418	GO - Biological Process	Homocysteine catabolic process
+GO:0051289	GO - Biological Process	Protein homotetramerization
+GO:0009113	GO - Biological Process	Purine nucleobase biosynthetic process
+GO:0035999	GO - Biological Process	Tetrahydrofolate interconversion
+GO:0006418	GO - Biological Process	tRNA aminoacylation for protein translation
+GO:0006412	GO - Biological Process	Translation
+GO:0006428	GO - Biological Process	isoleucyl-tRNA aminoacylation
+GO:0006429	GO - Biological Process	leucyl-tRNA aminoacylation
+GO:0032543	GO - Biological Process	Mitochondrial translation
+GO:0048304	GO - Biological Process	Positive regulation of isotype switching to IgG isotypes
+GO:0050864	GO - Biological Process	Regulation of B cell activation
+GO:0051053	GO - Biological Process	Negative regulation of DNA metabolic process
+GO:0019852	GO - Biological Process	L-ascorbic acid metabolic process
+GO:0016053	GO - Biological Process	Organic acid biosynthetic process
+GO:0009069	GO - Biological Process	Serine family amino acid metabolic process
+GO:0019530	GO - Biological Process	Taurine metabolic process
+GO:0008652	GO - Biological Process	Cellular amino acid biosynthetic process
+GO:0006540	GO - Biological Process	Glutamate decarboxylation to succinate
+GO:0009449	GO - Biological Process	Gamma-aminobutyric acid biosynthetic process
+GO:0043603	GO - Biological Process	Cellular amide metabolic process
+GO:0006544	GO - Biological Process	Glycine metabolic process
+GO:0007214	GO - Biological Process	Gamma-aminobutyric acid signaling pathway
+GO:0051932	GO - Biological Process	Synaptic transmission, GABAergic
+GO:0071420	GO - Biological Process	Cellular response to histamine
+GO:1904862	GO - Biological Process	Inhibitory synapse assembly
+GO:0098957	GO - Biological Process	Anterograde axonal transport of mitochondrion
+GO:0048311	GO - Biological Process	Mitochondrion distribution
+GO:0060384	GO - Biological Process	Innervation
+GO:0051936	GO - Biological Process	Gamma-aminobutyric acid reuptake
+GO:0051939	GO - Biological Process	Gamma-aminobutyric acid import
+GO:0014052	GO - Biological Process	Regulation of gamma-aminobutyric acid secretion
+GO:0006995	GO - Biological Process	Cellular response to nitrogen starvation
+GO:0007005	GO - Biological Process	Mitochondrion organization
+GO:0019227	GO - Biological Process	Neuronal action potential propagation
+GO:0000045	GO - Biological Process	Autophagosome assembly
+GO:0098976	GO - Biological Process	Excitatory chemical synaptic transmission
+GO:2000463	GO - Biological Process	Positive regulation of excitatory postsynaptic potential
+GO:0051968	GO - Biological Process	Positive regulation of synaptic transmission, glutamatergic
+GO:0050905	GO - Biological Process	Neuromuscular process
+GO:0060291	GO - Biological Process	Long-term synaptic potentiation
+GO:0001964	GO - Biological Process	Startle response
+GO:1903539	GO - Biological Process	Protein localization to postsynaptic membrane
+GO:0007420	GO - Biological Process	Brain development
+GO:0033058	GO - Biological Process	Directional locomotion
+GO:0072657	GO - Biological Process	Protein localization to membrane
+GO:0051290	GO - Biological Process	Protein heterotetramerization
+GO:0007612	GO - Biological Process	Learning
+GO:0035418	GO - Biological Process	Protein localization to synapse
+GO:0097120	GO - Biological Process	Receptor localization to synapse
+GO:0043113	GO - Biological Process	Receptor clustering
+GO:0045197	GO - Biological Process	Establishment or maintenance of epithelial cell apical/basal polarity
+GO:1905429	GO - Biological Process	Response to glycine
+GO:0035865	GO - Biological Process	Cellular response to potassium ion
+GO:0099072	GO - Biological Process	Regulation of postsynaptic membrane neurotransmitter receptor levels
+GO:0099537	GO - Biological Process	Trans-synaptic signaling
+GO:0010522	GO - Biological Process	Regulation of calcium ion transport into cytosol
+GO:0099645	GO - Biological Process	Neurotransmitter receptor localization to postsynaptic specialization membrane
+GO:0098970	GO - Biological Process	Postsynaptic neurotransmitter receptor diffusion trapping
+GO:0006094	GO - Biological Process	Gluconeogenesis
+GO:0032000	GO - Biological Process	Positive regulation of fatty acid beta-oxidation
+GO:2001171	GO - Biological Process	Positive regulation of ATP biosynthetic process
+GO:0051100	GO - Biological Process	Negative regulation of binding
+GO:0032107	GO - Biological Process	Regulation of response to nutrient levels
+GO:0043392	GO - Biological Process	Negative regulation of DNA binding
+GO:0015721	GO - Biological Process	Bile acid and bile salt transport
+GO:0006734	GO - Biological Process	NADH metabolic process
+GO:0042445	GO - Biological Process	Hormone metabolic process
+GO:0043436	GO - Biological Process	Oxoacid metabolic process
+GO:0006704	GO - Biological Process	Glucocorticoid biosynthetic process
+GO:0120178	GO - Biological Process	Steroid hormone biosynthetic process
+GO:1902644	GO - Biological Process	Tertiary alcohol metabolic process
+GO:0006699	GO - Biological Process	Bile acid biosynthetic process
+GO:0006703	GO - Biological Process	Estrogen biosynthetic process
+GO:0042447	GO - Biological Process	Hormone catabolic process
+GO:0045348	GO - Biological Process	Positive regulation of MHC class II biosynthetic process
+GO:0048143	GO - Biological Process	Astrocyte activation
+GO:0050863	GO - Biological Process	Regulation of T cell activation
+GO:1902107	GO - Biological Process	Positive regulation of leukocyte differentiation
+GO:0098586	GO - Biological Process	Cellular response to virus
+GO:0060559	GO - Biological Process	Positive regulation of calcidiol 1-monooxygenase activity
+GO:0002699	GO - Biological Process	Positive regulation of immune effector process
+GO:0007259	GO - Biological Process	Receptor signaling pathway via JAK-STAT
+GO:0032680	GO - Biological Process	Regulation of tumor necrosis factor production
+GO:0032652	GO - Biological Process	Regulation of interleukin-1 production
+GO:0002761	GO - Biological Process	Regulation of myeloid leukocyte differentiation
+GO:0097192	GO - Biological Process	Extrinsic apoptotic signaling pathway in absence of ligand
+GO:0002891	GO - Biological Process	Positive regulation of immunoglobulin mediated immune response
+GO:2000351	GO - Biological Process	Regulation of endothelial cell apoptotic process
+GO:0002639	GO - Biological Process	Positive regulation of immunoglobulin production
+GO:0043370	GO - Biological Process	Regulation of CD4-positive, alpha-beta T cell differentiation
+GO:0050766	GO - Biological Process	Positive regulation of phagocytosis
+GO:0060397	GO - Biological Process	Growth hormone receptor signaling pathway via JAK-STAT
+GO:2000320	GO - Biological Process	Negative regulation of T-helper 17 cell differentiation
+GO:0070102	GO - Biological Process	interleukin-6-mediated signaling pathway
+GO:1901857	GO - Biological Process	Positive regulation of cellular respiration
+GO:0032740	GO - Biological Process	Positive regulation of interleukin-17 production
+GO:0050777	GO - Biological Process	Negative regulation of immune response
+GO:0007159	GO - Biological Process	Leukocyte cell-cell adhesion
+GO:0010633	GO - Biological Process	Negative regulation of epithelial cell migration
+GO:0031341	GO - Biological Process	Regulation of cell killing
+GO:0042363	GO - Biological Process	Fat-soluble vitamin catabolic process
+GO:0003095	GO - Biological Process	Pressure natriuresis
+GO:0097176	GO - Biological Process	Epoxide metabolic process
+GO:0032305	GO - Biological Process	Positive regulation of icosanoid secretion
+GO:1903241	GO - Biological Process	U2-type prespliceosome assembly
+GO:0000245	GO - Biological Process	Spliceosomal complex assembly
+GO:0000389	GO - Biological Process	mRNA 3-splice site recognition
+GO:0071616	GO - Biological Process	acyl-CoA biosynthetic process
+GO:0046949	GO - Biological Process	fatty-acyl-CoA biosynthetic process
+GO:0043604	GO - Biological Process	Amide biosynthetic process
+GO:0035338	GO - Biological Process	Long-chain fatty-acyl-CoA biosynthetic process
+GO:0006084	GO - Biological Process	acetyl-CoA metabolic process
+GO:2001295	GO - Biological Process	malonyl-CoA biosynthetic process
+GO:0043649	GO - Biological Process	Dicarboxylic acid catabolic process
+GO:2000191	GO - Biological Process	Regulation of fatty acid transport
+GO:0046395	GO - Biological Process	Carboxylic acid catabolic process
+GO:2001302	GO - Biological Process	Lipoxin A4 metabolic process
+GO:0050891	GO - Biological Process	Multicellular organismal water homeostasis
+GO:2001304	GO - Biological Process	Lipoxin B4 metabolic process
+GO:0061436	GO - Biological Process	Establishment of skin barrier
+GO:0090083	GO - Biological Process	Regulation of inclusion body assembly
+GO:0042026	GO - Biological Process	Protein refolding
+GO:0090084	GO - Biological Process	Negative regulation of inclusion body assembly
+GO:2001243	GO - Biological Process	Negative regulation of intrinsic apoptotic signaling pathway
+GO:0051085	GO - Biological Process	Chaperone cofactor-dependent protein refolding
+GO:0032273	GO - Biological Process	Positive regulation of protein polymerization
+GO:1901029	GO - Biological Process	Negative regulation of mitochondrial outer membrane permeabilization involved in apoptotic signaling pathway
+GO:1902236	GO - Biological Process	Negative regulation of endoplasmic reticulum stress-induced intrinsic apoptotic signaling pathway
+GO:0071383	GO - Biological Process	Cellular response to steroid hormone stimulus
+GO:0006567	GO - Biological Process	Threonine catabolic process
+GO:0006563	GO - Biological Process	L-serine metabolic process
+GO:0019438	GO - Biological Process	Aromatic compound biosynthetic process
+GO:0018130	GO - Biological Process	Heterocycle biosynthetic process
+GO:0030218	GO - Biological Process	Erythrocyte differentiation
+GO:0020027	GO - Biological Process	Hemoglobin metabolic process
+GO:0006564	GO - Biological Process	L-serine biosynthetic process
+GO:0045739	GO - Biological Process	Positive regulation of DNA repair
+GO:0035518	GO - Biological Process	Histone H2A monoubiquitination
+GO:2000001	GO - Biological Process	Regulation of DNA damage checkpoint
+GO:0000278	GO - Biological Process	Mitotic cell cycle
+GO:0006473	GO - Biological Process	Protein acetylation
+GO:0009445	GO - Biological Process	Putrescine metabolic process
+GO:0072521	GO - Biological Process	Purine-containing compound metabolic process
+GO:0060012	GO - Biological Process	Synaptic transmission, glycinergic
+GO:0097112	GO - Biological Process	Gamma-aminobutyric acid receptor clustering
+GO:0060013	GO - Biological Process	Righting reflex
+GO:0051262	GO - Biological Process	Protein tetramerization
+GO:0071361	GO - Biological Process	Cellular response to ethanol
+GO:0071294	GO - Biological Process	Cellular response to zinc ion
+GO:0007340	GO - Biological Process	Acrosome reaction
+GO:0072522	GO - Biological Process	Purine-containing compound biosynthetic process
+GO:0006164	GO - Biological Process	Purine nucleotide biosynthetic process
+GO:0097294	GO - Biological Process	De novo XMP biosynthetic process
+GO:1901137	GO - Biological Process	Carbohydrate derivative biosynthetic process
+GO:0044208	GO - Biological Process	De novo AMP biosynthetic process
+GO:0006177	GO - Biological Process	GMP biosynthetic process
+GO:0009152	GO - Biological Process	Purine ribonucleotide biosynthetic process
+GO:0006591	GO - Biological Process	Ornithine metabolic process
+GO:0019547	GO - Biological Process	Arginine catabolic process to ornithine
+GO:0000050	GO - Biological Process	Urea cycle
+GO:0002829	GO - Biological Process	Negative regulation of type 2 immune response
+GO:0089718	GO - Biological Process	Amino acid import across plasma membrane
+GO:0015823	GO - Biological Process	Phenylalanine transport
+GO:1903801	GO - Biological Process	L-leucine import across plasma membrane
+GO:0015827	GO - Biological Process	Tryptophan transport
+GO:0055062	GO - Biological Process	Phosphate ion homeostasis
+GO:0071230	GO - Biological Process	Cellular response to amino acid stimulus
+GO:0031929	GO - Biological Process	TOR signaling
+GO:0032008	GO - Biological Process	Positive regulation of TOR signaling
+GO:1990253	GO - Biological Process	Cellular response to leucine starvation
+GO:0043201	GO - Biological Process	Response to leucine
+GO:0045948	GO - Biological Process	Positive regulation of translational initiation
+GO:0048015	GO - Biological Process	Phosphatidylinositol-mediated signaling
+GO:0002029	GO - Biological Process	Desensitization of G protein-coupled receptor signaling pathway
+GO:0031623	GO - Biological Process	Receptor internalization
+GO:0042632	GO - Biological Process	Cholesterol homeostasis
+GO:0010876	GO - Biological Process	Lipid localization
+GO:0070328	GO - Biological Process	Triglyceride homeostasis
+GO:0060191	GO - Biological Process	Regulation of lipase activity
+GO:0061024	GO - Biological Process	Membrane organization
+GO:0046890	GO - Biological Process	Regulation of lipid biosynthetic process
+GO:0046470	GO - Biological Process	Phosphatidylcholine metabolic process
+GO:0051006	GO - Biological Process	Positive regulation of lipoprotein lipase activity
+GO:0045723	GO - Biological Process	Positive regulation of fatty acid biosynthetic process
+GO:0046339	GO - Biological Process	Diacylglycerol metabolic process
+GO:0090181	GO - Biological Process	Regulation of cholesterol metabolic process
+GO:0045017	GO - Biological Process	Glycerolipid biosynthetic process
+GO:0010742	GO - Biological Process	Macrophage derived foam cell differentiation
+GO:0046165	GO - Biological Process	Alcohol biosynthetic process
+GO:0019432	GO - Biological Process	Triglyceride biosynthetic process
+GO:0006644	GO - Biological Process	Phospholipid metabolic process
+GO:0060249	GO - Biological Process	Anatomical structure homeostasis
+GO:0032849	GO - Biological Process	Positive regulation of cellular pH reduction
+GO:0006898	GO - Biological Process	Receptor-mediated endocytosis
+GO:0002694	GO - Biological Process	Regulation of leukocyte activation
+GO:0061041	GO - Biological Process	Regulation of wound healing
+GO:0035640	GO - Biological Process	Exploration behavior
+GO:0034767	GO - Biological Process	Positive regulation of ion transmembrane transport
+GO:0034113	GO - Biological Process	Heterotypic cell-cell adhesion
+GO:0090303	GO - Biological Process	Positive regulation of wound healing
+GO:0033077	GO - Biological Process	T cell differentiation in thymus
+GO:0015701	GO - Biological Process	Bicarbonate transport
+GO:0009154	GO - Biological Process	Purine ribonucleotide catabolic process
+GO:0032263	GO - Biological Process	GMP salvage
+GO:0032264	GO - Biological Process	IMP salvage
+GO:0007625	GO - Biological Process	Grooming behavior
+GO:0010907	GO - Biological Process	Positive regulation of glucose metabolic process
+GO:0032869	GO - Biological Process	Cellular response to insulin stimulus
+GO:0038083	GO - Biological Process	Peptidyl-tyrosine autophosphorylation
+GO:0050730	GO - Biological Process	Regulation of peptidyl-tyrosine phosphorylation
+GO:0030879	GO - Biological Process	Mammary gland development
+GO:0106027	GO - Biological Process	Neuron projection organization
+GO:0071393	GO - Biological Process	Cellular response to progesterone stimulus
+GO:0061097	GO - Biological Process	Regulation of protein tyrosine kinase activity
+GO:0097062	GO - Biological Process	Dendritic spine maintenance
+GO:0055123	GO - Biological Process	Digestive system development
+GO:0045056	GO - Biological Process	Transcytosis
+GO:0097242	GO - Biological Process	Amyloid-beta clearance
+GO:0032369	GO - Biological Process	Negative regulation of lipid transport
+GO:0043243	GO - Biological Process	Positive regulation of protein-containing complex disassembly
+GO:0010656	GO - Biological Process	Negative regulation of muscle cell apoptotic process
+GO:0071333	GO - Biological Process	Cellular response to glucose stimulus
+GO:0031346	GO - Biological Process	Positive regulation of cell projection organization
+GO:2000243	GO - Biological Process	Positive regulation of reproductive process
+GO:0051781	GO - Biological Process	Positive regulation of cell division
+GO:1904251	GO - Biological Process	Regulation of bile acid metabolic process
+GO:1903413	GO - Biological Process	Cellular response to bile acid
+GO:0070857	GO - Biological Process	Regulation of bile acid biosynthetic process
+GO:0030833	GO - Biological Process	Regulation of actin filament polymerization
+GO:0003254	GO - Biological Process	Regulation of membrane depolarization
+GO:2001257	GO - Biological Process	Regulation of cation channel activity
+GO:0061337	GO - Biological Process	Cardiac conduction
+GO:0060048	GO - Biological Process	Cardiac muscle contraction
+GO:0010765	GO - Biological Process	Positive regulation of sodium ion transport
+GO:0060371	GO - Biological Process	Regulation of atrial cardiac muscle cell membrane depolarization
+GO:0019226	GO - Biological Process	Transmission of nerve impulse
+GO:0019228	GO - Biological Process	Neuronal action potential
+GO:2000649	GO - Biological Process	Regulation of sodium ion transmembrane transporter activity
+GO:0045956	GO - Biological Process	Positive regulation of calcium ion-dependent exocytosis
+GO:0070509	GO - Biological Process	Calcium ion import
+GO:0006576	GO - Biological Process	Cellular biogenic amine metabolic process
+GO:0042415	GO - Biological Process	Norepinephrine metabolic process
+GO:0042326	GO - Biological Process	Negative regulation of phosphorylation
+GO:0032768	GO - Biological Process	Regulation of monooxygenase activity
+GO:0033673	GO - Biological Process	Negative regulation of kinase activity
+GO:1904950	GO - Biological Process	Negative regulation of establishment of protein localization
+GO:0032770	GO - Biological Process	Positive regulation of monooxygenase activity
+GO:1902903	GO - Biological Process	Regulation of supramolecular fiber organization
+GO:0043524	GO - Biological Process	Negative regulation of neuron apoptotic process
+GO:1902956	GO - Biological Process	Regulation of mitochondrial electron transport, NADH to ubiquinone
+GO:1903377	GO - Biological Process	Negative regulation of oxidative stress-induced neuron intrinsic apoptotic signaling pathway
+GO:0070841	GO - Biological Process	Inclusion body assembly
+GO:0070585	GO - Biological Process	Protein localization to mitochondrion
+GO:1903599	GO - Biological Process	Positive regulation of autophagy of mitochondrion
+GO:0097237	GO - Biological Process	Cellular response to toxic substance
+GO:0051589	GO - Biological Process	Negative regulation of neurotransmitter transport
+GO:0051224	GO - Biological Process	Negative regulation of protein transport
+GO:1903421	GO - Biological Process	Regulation of synaptic vesicle recycling
+GO:1902904	GO - Biological Process	Negative regulation of supramolecular fiber organization
+GO:1901984	GO - Biological Process	Negative regulation of protein acetylation
+GO:0051354	GO - Biological Process	Negative regulation of oxidoreductase activity
+GO:0090140	GO - Biological Process	Regulation of mitochondrial fission
+GO:0090151	GO - Biological Process	Establishment of protein localization to mitochondrial membrane
+GO:0044788	GO - Biological Process	Modulation by host of viral process
+GO:0045920	GO - Biological Process	Negative regulation of exocytosis
+GO:0046688	GO - Biological Process	Response to copper ion
+GO:0033157	GO - Biological Process	Regulation of intracellular protein transport
+GO:1902930	GO - Biological Process	Regulation of alcohol biosynthetic process
+GO:1903747	GO - Biological Process	Regulation of establishment of protein localization to mitochondrion
+GO:0031113	GO - Biological Process	Regulation of microtubule polymerization
+GO:0006431	GO - Biological Process	methionyl-tRNA aminoacylation
+GO:0006470	GO - Biological Process	Protein dephosphorylation
+GO:0009083	GO - Biological Process	Branched-chain amino acid catabolic process
+GO:1990830	GO - Biological Process	Cellular response to leukemia inhibitory factor
+GO:0051259	GO - Biological Process	Protein complex oligomerization
+GO:0002181	GO - Biological Process	Cytoplasmic translation
+GO:1905564	GO - Biological Process	Positive regulation of vascular endothelial cell proliferation
+GO:0032094	GO - Biological Process	Response to food
+GO:0001692	GO - Biological Process	Histamine metabolic process
+GO:0021853	GO - Biological Process	Cerebral cortex GABAergic interneuron migration
+GO:0006548	GO - Biological Process	Histidine catabolic process
+GO:0030432	GO - Biological Process	Peristalsis
+GO:0021756	GO - Biological Process	Striatum development
+GO:0001659	GO - Biological Process	Temperature homeostasis
+GO:0043010	GO - Biological Process	Camera-type eye development
+GO:0032930	GO - Biological Process	Positive regulation of superoxide anion generation
+GO:0009648	GO - Biological Process	Photoperiodism
+GO:0042753	GO - Biological Process	Positive regulation of circadian rhythm
+GO:2000323	GO - Biological Process	Negative regulation of glucocorticoid receptor signaling pathway
+GO:0051775	GO - Biological Process	Response to redox state
+GO:2000074	GO - Biological Process	Regulation of type B pancreatic cell development
+GO:0042634	GO - Biological Process	Regulation of hair cycle
+GO:0019731	GO - Biological Process	Antibacterial humoral response
+GO:0050832	GO - Biological Process	Defense response to fungus
+GO:0051873	GO - Biological Process	Killing by host of symbiont cells
+GO:0070944	GO - Biological Process	Neutrophil-mediated killing of bacterium
+GO:0001878	GO - Biological Process	Response to yeast
+GO:0001906	GO - Biological Process	Cell killing
+GO:0019732	GO - Biological Process	Antifungal humoral response
+GO:0002252	GO - Biological Process	Immune effector process
+GO:0032717	GO - Biological Process	Negative regulation of interleukin-8 production
+GO:0002227	GO - Biological Process	Innate immune response in mucosa
+GO:0035821	GO - Biological Process	Modulation of process of another organism
+GO:0032674	GO - Biological Process	Regulation of interleukin-5 production
+GO:0001916	GO - Biological Process	Positive regulation of T cell mediated cytotoxicity
+GO:0006654	GO - Biological Process	Phosphatidic acid biosynthetic process
+GO:1902600	GO - Biological Process	Proton transmembrane transport
+GO:0006122	GO - Biological Process	Mitochondrial electron transport, ubiquinol to cytochrome c
+GO:0009205	GO - Biological Process	Purine ribonucleoside triphosphate metabolic process
+GO:0046034	GO - Biological Process	ATP metabolic process
+GO:1901019	GO - Biological Process	Regulation of calcium ion transmembrane transporter activity
+GO:0090090	GO - Biological Process	Negative regulation of canonical Wnt signaling pathway
+GO:1900180	GO - Biological Process	Regulation of protein localization to nucleus
+GO:0090314	GO - Biological Process	Positive regulation of protein targeting to membrane
+GO:1990090	GO - Biological Process	Cellular response to nerve growth factor stimulus
+GO:1903201	GO - Biological Process	Regulation of oxidative stress-induced cell death
+GO:0045665	GO - Biological Process	Negative regulation of neuron differentiation
+GO:0018107	GO - Biological Process	Peptidyl-threonine phosphorylation
+GO:0050848	GO - Biological Process	Regulation of calcium-mediated signaling
+GO:0006284	GO - Biological Process	Base-excision repair
+GO:0006513	GO - Biological Process	Protein monoubiquitination
+GO:0042770	GO - Biological Process	Signal transduction in response to DNA damage
+GO:0043949	GO - Biological Process	Regulation of cAMP-mediated signaling
+GO:0040015	GO - Biological Process	Negative regulation of multicellular organism growth
+GO:0002025	GO - Biological Process	Norepinephrine-epinephrine-mediated vasodilation involved in regulation of systemic arterial blood pressure
+GO:0031649	GO - Biological Process	Heat generation
+GO:0002024	GO - Biological Process	Diet induced thermogenesis
+GO:0050873	GO - Biological Process	Brown fat cell differentiation
+GO:0003013	GO - Biological Process	Circulatory system process
+GO:0002032	GO - Biological Process	Desensitization of G protein-coupled receptor signaling pathway by arrestin
+GO:0003057	GO - Biological Process	Regulation of the force of heart contraction by chemical signal
+GO:0010739	GO - Biological Process	Positive regulation of protein kinase A signaling
+GO:0043149	GO - Biological Process	Stress fiber assembly
+GO:0010640	GO - Biological Process	Regulation of platelet-derived growth factor receptor signaling pathway
+GO:0045932	GO - Biological Process	Negative regulation of muscle contraction
+GO:0045453	GO - Biological Process	Bone resorption
+GO:0061081	GO - Biological Process	Positive regulation of myeloid leukocyte cytokine production involved in immune response
+GO:0050670	GO - Biological Process	Regulation of lymphocyte proliferation
+GO:0032736	GO - Biological Process	Positive regulation of interleukin-13 production
+GO:0035234	GO - Biological Process	Ectopic germ cell programmed cell death
+GO:0010720	GO - Biological Process	Positive regulation of cell development
+GO:1902230	GO - Biological Process	Negative regulation of intrinsic apoptotic signaling pathway in response to DNA damage
+GO:0070059	GO - Biological Process	Intrinsic apoptotic signaling pathway in response to endoplasmic reticulum stress
+GO:0043029	GO - Biological Process	T cell homeostasis
+GO:0035794	GO - Biological Process	Positive regulation of mitochondrial membrane permeability
+GO:1903131	GO - Biological Process	Mononuclear cell differentiation
+GO:1902893	GO - Biological Process	Regulation of miRNA transcription
+GO:0006970	GO - Biological Process	Response to osmotic stress
+GO:0071277	GO - Biological Process	Cellular response to calcium ion
+GO:0014014	GO - Biological Process	Negative regulation of gliogenesis
+GO:0002260	GO - Biological Process	Lymphocyte homeostasis
+GO:0072655	GO - Biological Process	Establishment of protein localization to mitochondrion
+GO:0010507	GO - Biological Process	Negative regulation of autophagy
+GO:0046415	GO - Biological Process	Urate metabolic process
+GO:0097744	GO - Biological Process	Renal urate salt excretion
+GO:0009169	GO - Biological Process	Purine ribonucleoside monophosphate catabolic process
+GO:0036499	GO - Biological Process	PERK-mediated unfolded protein response
+GO:0006525	GO - Biological Process	Arginine metabolic process
+GO:0071549	GO - Biological Process	Cellular response to dexamethasone stimulus
+GO:0010649	GO - Biological Process	Regulation of cell communication by electrical coupling
+GO:0006310	GO - Biological Process	DNA recombination
+GO:0051249	GO - Biological Process	Regulation of lymphocyte activation
+GO:0072507	GO - Biological Process	Divalent inorganic cation homeostasis
+GO:0072503	GO - Biological Process	Cellular divalent inorganic cation homeostasis
+GO:0055074	GO - Biological Process	Calcium ion homeostasis
+GO:0010961	GO - Biological Process	Cellular magnesium ion homeostasis
+GO:0006828	GO - Biological Process	Manganese ion transport
+GO:0070266	GO - Biological Process	Necroptotic process
+GO:0048806	GO - Biological Process	Genitalia development
+GO:0006710	GO - Biological Process	Androgen catabolic process
+GO:0003006	GO - Biological Process	Developmental process involved in reproduction
+GO:0016048	GO - Biological Process	Detection of temperature stimulus
+GO:0071453	GO - Biological Process	Cellular response to oxygen levels
+GO:0032868	GO - Biological Process	Response to insulin
+GO:0060047	GO - Biological Process	Heart contraction
+GO:0030010	GO - Biological Process	Establishment of cell polarity
+GO:2000010	GO - Biological Process	Positive regulation of protein localization to cell surface
+GO:0097150	GO - Biological Process	Neuronal stem cell population maintenance
+GO:0051647	GO - Biological Process	Nucleus localization
+GO:0050881	GO - Biological Process	Musculoskeletal movement
+GO:0071548	GO - Biological Process	Response to dexamethasone
+GO:0051496	GO - Biological Process	Positive regulation of stress fiber assembly
+GO:0016055	GO - Biological Process	Wnt signaling pathway
+GO:0007281	GO - Biological Process	Germ cell development
+GO:2000177	GO - Biological Process	Regulation of neural precursor cell proliferation
+GO:0060644	GO - Biological Process	Mammary gland epithelial cell differentiation
+GO:2000112	GO - Biological Process	Regulation of cellular macromolecule biosynthetic process
+GO:0017148	GO - Biological Process	Negative regulation of translation
+GO:0000413	GO - Biological Process	Protein peptidyl-prolyl isomerization
+GO:0003015	GO - Biological Process	Heart process
+GO:0042471	GO - Biological Process	Ear morphogenesis
+GO:0090092	GO - Biological Process	Regulation of transmembrane receptor protein serine/threonine kinase signaling pathway
+GO:0061000	GO - Biological Process	Negative regulation of dendritic spine development
+GO:0099054	GO - Biological Process	Presynapse assembly
+GO:0062098	GO - Biological Process	Regulation of programmed necrotic cell death
+GO:0021543	GO - Biological Process	Pallium development
+GO:0031056	GO - Biological Process	Regulation of histone modification
+GO:2000772	GO - Biological Process	Regulation of cellular senescence
+GO:0070228	GO - Biological Process	Regulation of lymphocyte apoptotic process
+GO:0006446	GO - Biological Process	Regulation of translational initiation
+GO:0045727	GO - Biological Process	Positive regulation of translation
+GO:2001252	GO - Biological Process	Positive regulation of chromosome organization
+GO:0045667	GO - Biological Process	Regulation of osteoblast differentiation
+GO:0007423	GO - Biological Process	Sensory organ development
+GO:1905562	GO - Biological Process	Regulation of vascular endothelial cell proliferation
+GO:0120163	GO - Biological Process	Negative regulation of cold-induced thermogenesis
+GO:0070665	GO - Biological Process	Positive regulation of leukocyte proliferation
+GO:0043161	GO - Biological Process	Proteasome-mediated ubiquitin-dependent protein catabolic process
+GO:0008654	GO - Biological Process	Phospholipid biosynthetic process
+GO:0046471	GO - Biological Process	Phosphatidylglycerol metabolic process
+GO:0046469	GO - Biological Process	Platelet activating factor metabolic process
+GO:0036151	GO - Biological Process	Phosphatidylcholine acyl-chain remodeling
+GO:0003206	GO - Biological Process	Cardiac chamber morphogenesis
+GO:0001657	GO - Biological Process	Ureteric bud development
+GO:0002053	GO - Biological Process	Positive regulation of mesenchymal cell proliferation
+GO:0001945	GO - Biological Process	Lymph vessel development
+GO:0061180	GO - Biological Process	Mammary gland epithelium development
+GO:0031054	GO - Biological Process	pre-miRNA processing
+GO:0010586	GO - Biological Process	miRNA metabolic process
+GO:0014066	GO - Biological Process	Regulation of phosphatidylinositol 3-kinase signaling
+GO:0007229	GO - Biological Process	Integrin-mediated signaling pathway
+GO:0033627	GO - Biological Process	Cell adhesion mediated by integrin
+GO:0098609	GO - Biological Process	Cell-cell adhesion
+GO:0045123	GO - Biological Process	Cellular extravasation
+GO:0071404	GO - Biological Process	Cellular response to low-density lipoprotein particle stimulus
+GO:0050901	GO - Biological Process	Leukocyte tethering or rolling
+GO:0150076	GO - Biological Process	Neuroinflammatory response
+GO:0098742	GO - Biological Process	Cell-cell adhesion via plasma-membrane adhesion molecules
+GO:0044409	GO - Biological Process	Entry into host
+GO:0010745	GO - Biological Process	Negative regulation of macrophage derived foam cell differentiation
+GO:0046015	GO - Biological Process	Regulation of transcription by glucose
+GO:0033144	GO - Biological Process	Negative regulation of intracellular steroid hormone receptor signaling pathway
+GO:0031062	GO - Biological Process	Positive regulation of histone methylation
+GO:0045599	GO - Biological Process	Negative regulation of fat cell differentiation
+GO:0090403	GO - Biological Process	Oxidative stress-induced premature senescence
+GO:1903450	GO - Biological Process	Regulation of G1 to G0 transition
+GO:0071455	GO - Biological Process	Cellular response to hyperoxia
+GO:1903243	GO - Biological Process	Negative regulation of cardiac muscle hypertrophy in response to stress
+GO:0001542	GO - Biological Process	Ovulation from ovarian follicle
+GO:0051974	GO - Biological Process	Negative regulation of telomerase activity
+GO:0035902	GO - Biological Process	Response to immobilization stress
+GO:0007276	GO - Biological Process	Gamete generation
+GO:0010822	GO - Biological Process	Positive regulation of mitochondrion organization
+GO:0015698	GO - Biological Process	Inorganic anion transport
+GO:0008299	GO - Biological Process	Isoprenoid biosynthetic process
+GO:0048546	GO - Biological Process	Digestive tract morphogenesis
+GO:0032429	GO - Biological Process	Regulation of phospholipase A2 activity

@@ -16,7 +16,9 @@
             <p>In the Input page, users can provide examples of compounds and comma-separated lists of their protein targets, then click the Make Predictions button to get predictions for each entry. </p>
             <p>Protein targets can be referenced by <i>either</i> their gene name or by their STRING ID. Any combination of inputs from both fields will be processed.</p>
             <p>The <a href="{{prefix}}/data/">Data</a> page has a downloadable file listing all human proteins, including their names and STRING IDs. Protein targets can be obtained from several online resources, some of which are cited below in 'External Resources'. Make sure to use only human proteins, as our models are trained on human protein annotations.</p>
-            <p>There is also an Autofill button provided, which tries to find the compound names in the input table on a list of DrugBank compounds and targets, and automatically fill the target data based on that.</p>
+            <p>There is an Autofill button provided, which tries to find the compound names in the input table on a list of DrugBank compounds and targets, and automatically fill the target data based on that.</p>
+            <p>If a semicolon-separated list of compounds is provided in the Compound column, the Autofill function will add targets found for each compound in the list.</p>
+            <p>If there is no data in the Target columns, the Make Predictions functionality will try to run the Autofill prior to getting predictions for the compounds provided.</p>
             <p>Input example with gene names (results in positive classifications for both male and female mice):</p>
             <ul>
               <li>Compound: Rapamycin</li>
@@ -76,6 +78,7 @@
             <ul>
               <li><a href="https://genomics.senescence.info/drugs/" target="_blank">DrugAge</a>: Database used as a source for all class labels in our training data. It compiles results from peer-reviewed longevity studies on various target organisms, including mus musculus.</li>
               <li><a href="https://go.drugbank.com/" target="_blank">DrugBank</a>: Main source for obtaining protein targets for a compound.</li>
+              <li><a href="https://string-db.org/" target="_blank">STRING</a>: Source for finding STRING IDs for proteins, which can be used as target identifiers (Note: when using STRING IDs, include the organism identifier '9606.' before the protein identifier 'ENSPXXX...', as our models are trained with homo sapiens targets). Another option is downloading our <a href="{{prefix + url_for('static', filename='files/dsdescriptors/Human proteins list.tsv')}}">list of human proteins names and STRING IDs</a> </li>
               <li><a href="https://pubchem.ncbi.nlm.nih.gov/" target="_blank">PubChem</a>: Used for the Chemical Prediction tool, use the name search to find the numeric id associated with a compound.</li>
               <li><a href="https://www.uniprot.org/id-mapping" target="_blank">ID Mapping</a>: Tool from UniProt for converting protein identifiers to different formats. This tool accepts either STRING ID formatting (e.g. 9606.ENSP00000354558) or protein names (e.g., MTOR).</li>
               <li>Alternative target sources:

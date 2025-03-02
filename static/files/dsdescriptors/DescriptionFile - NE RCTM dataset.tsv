@@ -1,0 +1,1060 @@
+Data Description file for Dataset: Neighbour Enrichment - RCTM
+
+Description: Dataset of target annotations collected using the Neibhour Enrichment function in STRING, which includes annotations from nearest neighbour proteins to the input target.
+The predictive features in this dataset refer only to category of Pathways sourced from Reactome.
+
+Special Columns:	Category	Description
+Index	ID	Unique identifier for the compound/sex combination (instance) in the data. Ignored when training the classification model.
+Compound_name	ID	Name of the compound (drug). Ignored when training the classification model.
+class	Target Variable	Class label, with 0 indicating that the drug/sex combination is NOT associated with mouse longevity, and 1 indicating that it IS associated with mouse longevity, based on results from peer-reviewed studies.
+
+Predictive Features:	Category	Description
+HSA-373076	Reactome Pathway	Class A/1 (Rhodopsin-like receptors)
+HSA-388396	Reactome Pathway	GPCR downstream signalling
+HSA-418594	Reactome Pathway	G alpha (i) signalling events
+HSA-375276	Reactome Pathway	Peptide ligand-binding receptors
+HSA-416476	Reactome Pathway	G alpha (q) signalling events
+HSA-8943724	Reactome Pathway	Regulation of PTEN gene transcription
+HSA-6804758	Reactome Pathway	Regulation of TP53 Activity through Acetylation
+HSA-3214815	Reactome Pathway	HDACs deacetylate histones
+HSA-3247509	Reactome Pathway	Chromatin modifying enzymes
+HSA-74160	Reactome Pathway	Gene expression (Transcription)
+HSA-162582	Reactome Pathway	Signal Transduction
+HSA-1643685	Reactome Pathway	Disease
+HSA-212165	Reactome Pathway	Epigenetic regulation of gene expression
+HSA-212436	Reactome Pathway	Generic Transcription Pathway
+HSA-3108232	Reactome Pathway	SUMO E3 ligases SUMOylate target proteins
+HSA-9679506	Reactome Pathway	SARS-CoV Infections
+HSA-2122947	Reactome Pathway	NOTCH1 Intracellular Domain Regulates Transcription
+HSA-2173793	Reactome Pathway	Transcriptional activity of SMAD2/SMAD3:SMAD4 heterotrimer
+HSA-157118	Reactome Pathway	Signaling by NOTCH
+HSA-5663205	Reactome Pathway	Infectious disease
+HSA-2644606	Reactome Pathway	Constitutive Signaling by NOTCH1 PEST Domain Mutants
+HSA-2894862	Reactome Pathway	Constitutive Signaling by NOTCH1 HD+PEST Domain Mutants
+HSA-5250913	Reactome Pathway	Positive epigenetic regulation of rRNA expression
+HSA-73854	Reactome Pathway	RNA Polymerase I Promoter Clearance
+HSA-9006931	Reactome Pathway	Signaling by Nuclear Receptors
+HSA-5617472	Reactome Pathway	Activation of anterior HOX genes in hindbrain development during early embryogenesis
+HSA-6811555	Reactome Pathway	PI5P Regulates TP53 Acetylation
+HSA-9701898	Reactome Pathway	STAT3 nuclear events downstream of ALK signaling
+HSA-9679191	Reactome Pathway	Potential therapeutics for SARS
+HSA-4641265	Reactome Pathway	Repression of WNT target genes
+HSA-9005891	Reactome Pathway	Loss of function of MECP2 in Rett syndrome
+HSA-2559584	Reactome Pathway	Formation of Senescence-Associated Heterochromatin Foci (SAHF)
+HSA-9018519	Reactome Pathway	Estrogen-dependent gene expression
+HSA-6804114	Reactome Pathway	TP53 Regulates Transcription of Genes Involved in G2 Cell Cycle Arrest
+HSA-6804760	Reactome Pathway	Regulation of TP53 Activity through Methylation
+HSA-5663202	Reactome Pathway	Diseases of signal transduction by growth factor receptors and second messengers
+HSA-983231	Reactome Pathway	Factors involved in megakaryocyte development and platelet production
+HSA-350054	Reactome Pathway	Notch-HLH transcription pathway
+HSA-2173795	Reactome Pathway	Downregulation of SMAD2/3:SMAD4 transcriptional activity
+HSA-69278	Reactome Pathway	Cell Cycle, Mitotic
+HSA-9022692	Reactome Pathway	Regulation of MECP2 expression and activity
+HSA-201681	Reactome Pathway	TCF dependent signaling in response to WNT
+HSA-2559585	Reactome Pathway	Oncogene Induced Senescence
+HSA-8864260	Reactome Pathway	Transcriptional regulation by the AP-2 (TFAP2) family of transcription factors
+HSA-2173796	Reactome Pathway	SMAD2/SMAD3:SMAD4 heterotrimer regulates transcription
+HSA-9029569	Reactome Pathway	NR1H3 & NR1H2 regulate gene expression linked to cholesterol transport and efflux
+HSA-3769402	Reactome Pathway	Deactivation of the beta-catenin transactivating complex
+HSA-3899300	Reactome Pathway	SUMOylation of transcription cofactors
+HSA-427389	Reactome Pathway	ERCC6 (CSB) and EHMT2 (G9a) positively regulate rRNA expression
+HSA-73762	Reactome Pathway	RNA Polymerase I Transcription Initiation
+HSA-9707616	Reactome Pathway	Heme signaling
+HSA-9758941	Reactome Pathway	Gastrulation
+HSA-5688426	Reactome Pathway	Deubiquitination
+HSA-201722	Reactome Pathway	Formation of the beta-catenin:TCF transactivating complex
+HSA-1912408	Reactome Pathway	Pre-NOTCH Transcription and Translation
+HSA-2262752	Reactome Pathway	Cellular responses to stress
+HSA-597592	Reactome Pathway	Post-translational protein modification
+HSA-73894	Reactome Pathway	DNA Repair
+HSA-9614085	Reactome Pathway	FOXO-mediated transcription
+HSA-8936459	Reactome Pathway	RUNX1 regulates genes involved in megakaryocyte differentiation and platelet function
+HSA-400253	Reactome Pathway	Circadian Clock
+HSA-427413	Reactome Pathway	NoRC negatively regulates rRNA expression
+HSA-381340	Reactome Pathway	Transcriptional regulation of white adipocyte differentiation
+HSA-8878159	Reactome Pathway	Transcriptional regulation by RUNX3
+HSA-5696398	Reactome Pathway	Nucleotide Excision Repair
+HSA-1989781	Reactome Pathway	PPARA activates gene expression
+HSA-8986944	Reactome Pathway	Transcriptional Regulation by MECP2
+HSA-9022537	Reactome Pathway	Loss of MECP2 binding ability to the NCoR/SMRT complex
+HSA-9609690	Reactome Pathway	HCMV Early Events
+HSA-400206	Reactome Pathway	Regulation of lipid metabolism by PPARalpha
+HSA-9707564	Reactome Pathway	Cytoprotection by HMOX1
+HSA-1266738	Reactome Pathway	Developmental Biology
+HSA-2151201	Reactome Pathway	Transcriptional activation of mitochondrial biogenesis
+HSA-1368071	Reactome Pathway	NR1D1 (REV-ERBA) represses gene expression
+HSA-383280	Reactome Pathway	Nuclear Receptor transcription pathway
+HSA-9623433	Reactome Pathway	NR1H2 & NR1H3 regulate gene expression to control bile acid homeostasis
+HSA-1368082	Reactome Pathway	RORA activates gene expression
+HSA-1368108	Reactome Pathway	BMAL1:CLOCK,NPAS2 activates circadian gene expression
+HSA-8953750	Reactome Pathway	Transcriptional Regulation by E2F6
+HSA-212300	Reactome Pathway	PRC2 methylates histones and DNA
+HSA-2426168	Reactome Pathway	Activation of gene expression by SREBF (SREBP)
+HSA-9710421	Reactome Pathway	Defective pyroptosis
+HSA-3214841	Reactome Pathway	PKMTs methylate histone lysines
+HSA-2559580	Reactome Pathway	Oxidative Stress Induced Senescence
+HSA-8941284	Reactome Pathway	RUNX2 regulates chondrocyte maturation
+HSA-1852241	Reactome Pathway	Organelle biogenesis and maintenance
+HSA-198753	Reactome Pathway	ERK/MAPK targets
+HSA-525793	Reactome Pathway	Myogenesis
+HSA-9006934	Reactome Pathway	Signaling by Receptor Tyrosine Kinases
+HSA-9705683	Reactome Pathway	SARS-CoV-2-host interactions
+HSA-1280215	Reactome Pathway	Cytokine Signaling in Immune system
+HSA-4551638	Reactome Pathway	SUMOylation of chromatin organization proteins
+HSA-380259	Reactome Pathway	Loss of Nlp from mitotic centrosomes
+HSA-8854518	Reactome Pathway	AURKA Activation by TPX2
+HSA-380270	Reactome Pathway	Recruitment of mitotic centrosome proteins and complexes
+HSA-2565942	Reactome Pathway	Regulation of PLK1 Activity at G2/M Transition
+HSA-68886	Reactome Pathway	M Phase
+HSA-3371556	Reactome Pathway	Cellular response to heat stress
+HSA-380320	Reactome Pathway	Recruitment of NuMA to mitotic centrosomes
+HSA-5620912	Reactome Pathway	Anchoring of the basal body to the plasma membrane
+HSA-211000	Reactome Pathway	Gene Silencing by RNA
+HSA-449147	Reactome Pathway	Signaling by Interleukins
+HSA-500792	Reactome Pathway	GPCR ligand binding
+HSA-381771	Reactome Pathway	Synthesis, secretion, and inactivation of Glucagon-like Peptide-1 (GLP-1)
+HSA-418555	Reactome Pathway	G alpha (s) signalling events
+HSA-5625886	Reactome Pathway	Activated PKN1 stimulates transcription of AR (androgen receptor) regulated genes KLK2 and KLK3
+HSA-194315	Reactome Pathway	Signaling by Rho GTPases
+HSA-195258	Reactome Pathway	RHO GTPase Effectors
+HSA-3371497	Reactome Pathway	HSP90 chaperone cycle for steroid hormone receptors (SHR) in the presence of ligand
+HSA-5336415	Reactome Pathway	Uptake and function of diphtheria toxin
+HSA-3371511	Reactome Pathway	HSF1 activation
+HSA-3371568	Reactome Pathway	Attenuation phase
+HSA-9796292	Reactome Pathway	Formation of axial mesoderm
+HSA-399954	Reactome Pathway	Sema3A PAK dependent Axon repulsion
+HSA-9613829	Reactome Pathway	Chaperone Mediated Autophagy
+HSA-9013418	Reactome Pathway	RHOBTB2 GTPase cycle
+HSA-5218920	Reactome Pathway	VEGFR2 mediated vascular permeability
+HSA-2029482	Reactome Pathway	Regulation of actin dynamics for phagocytic cup formation
+HSA-8939211	Reactome Pathway	ESR-mediated signaling
+HSA-9009391	Reactome Pathway	Extra-nuclear estrogen signaling
+HSA-1251985	Reactome Pathway	Nuclear signaling by ERBB4
+HSA-9024446	Reactome Pathway	NR1H2 and NR1H3-mediated signaling
+HSA-450341	Reactome Pathway	Activation of the AP-1 family of transcription factors
+HSA-193807	Reactome Pathway	Synthesis of bile acids and bile salts via 27-hydroxycholesterol
+HSA-159418	Reactome Pathway	Recycling of bile acids and salts
+HSA-193368	Reactome Pathway	Synthesis of bile acids and bile salts via 7alpha-hydroxycholesterol
+HSA-2559583	Reactome Pathway	Cellular Senescence
+HSA-211976	Reactome Pathway	Endogenous sterols
+HSA-2871796	Reactome Pathway	FCERI mediated MAPK activation
+HSA-1227986	Reactome Pathway	Signaling by ERBB2
+HSA-1257604	Reactome Pathway	PIP3 activates AKT signaling
+HSA-1430728	Reactome Pathway	Metabolism
+HSA-6796648	Reactome Pathway	TP53 Regulates Transcription of DNA Repair Genes
+HSA-5683057	Reactome Pathway	MAPK family signaling cascades
+HSA-2219530	Reactome Pathway	Constitutive Signaling by Aberrant PI3K in Cancer
+HSA-9663891	Reactome Pathway	Selective autophagy
+HSA-2559582	Reactome Pathway	Senescence-Associated Secretory Phenotype (SASP)
+HSA-5687128	Reactome Pathway	MAPK6/MAPK4 signaling
+HSA-2029480	Reactome Pathway	Fcgamma receptor (FCGR) dependent phagocytosis
+HSA-4420097	Reactome Pathway	VEGFA-VEGFR2 Pathway
+HSA-3214847	Reactome Pathway	HATs acetylate histones
+HSA-6785807	Reactome Pathway	Interleukin-4 and Interleukin-13 signaling
+HSA-6811558	Reactome Pathway	PI5P, PP2A and IER3 Regulate PI3K/AKT Signaling
+HSA-187037	Reactome Pathway	Signaling by NTRK1 (TRKA)
+HSA-168249	Reactome Pathway	Innate Immune System
+HSA-8878166	Reactome Pathway	Transcriptional regulation by RUNX2
+HSA-556833	Reactome Pathway	Metabolism of lipids
+HSA-9735871	Reactome Pathway	SARS-CoV-1 targets host intracellular signalling and regulatory pathways
+HSA-8863795	Reactome Pathway	Downregulation of ERBB2 signaling
+HSA-9665348	Reactome Pathway	Signaling by ERBB2 ECD mutants
+HSA-9665686	Reactome Pathway	Signaling by ERBB2 TMD/JMD mutants
+HSA-9664565	Reactome Pathway	Signaling by ERBB2 KD Mutants
+HSA-9652282	Reactome Pathway	Drug-mediated inhibition of ERBB2 signaling
+HSA-9665233	Reactome Pathway	Resistance of ERBB2 KD mutants to trastuzumab
+HSA-9665244	Reactome Pathway	Resistance of ERBB2 KD mutants to sapitinib
+HSA-9665245	Reactome Pathway	Resistance of ERBB2 KD mutants to tesevatinib
+HSA-9665246	Reactome Pathway	Resistance of ERBB2 KD mutants to neratinib
+HSA-9665247	Reactome Pathway	Resistance of ERBB2 KD mutants to osimertinib
+HSA-9665249	Reactome Pathway	Resistance of ERBB2 KD mutants to afatinib
+HSA-9665250	Reactome Pathway	Resistance of ERBB2 KD mutants to AEE788
+HSA-9665251	Reactome Pathway	Resistance of ERBB2 KD mutants to lapatinib
+HSA-9665737	Reactome Pathway	Drug resistance in ERBB2 TMD/JMD mutants
+HSA-5218859	Reactome Pathway	Regulated Necrosis
+HSA-9634285	Reactome Pathway	Constitutive Signaling by Overexpressed ERBB2
+HSA-5637810	Reactome Pathway	Constitutive Signaling by EGFRvIII
+HSA-1236382	Reactome Pathway	Constitutive Signaling by Ligand-Responsive EGFR Cancer Variants
+HSA-5675482	Reactome Pathway	Regulation of necroptotic cell death
+HSA-8848021	Reactome Pathway	Signaling by PTK6
+HSA-1251932	Reactome Pathway	PLCG1 events in ERBB2 signaling
+HSA-8866910	Reactome Pathway	TFAP2 (AP-2) family regulates transcription of growth factors and their receptors
+HSA-8847993	Reactome Pathway	ERBB2 Activates PTK6 Signaling
+HSA-6785631	Reactome Pathway	ERBB2 Regulates Cell Motility
+HSA-1963640	Reactome Pathway	GRB2 events in ERBB2 signaling
+HSA-1963642	Reactome Pathway	PI3K events in ERBB2 signaling
+HSA-1250196	Reactome Pathway	SHC1 events in ERBB2 signaling
+HSA-373755	Reactome Pathway	Semaphorin interactions
+HSA-8939902	Reactome Pathway	Regulation of RUNX2 expression and activity
+HSA-8852276	Reactome Pathway	The role of GTSE1 in G2/M progression after G2 checkpoint
+HSA-168928	Reactome Pathway	DDX58/IFIH1-mediated induction of interferon-alpha/beta
+HSA-8937144	Reactome Pathway	Aryl hydrocarbon receptor signalling
+HSA-1234174	Reactome Pathway	Cellular response to hypoxia
+HSA-1234158	Reactome Pathway	Regulation of gene expression by Hypoxia-inducible Factor
+HSA-1234176	Reactome Pathway	Oxygen-dependent proline hydroxylation of Hypoxia-inducible Factor Alpha
+HSA-9768919	Reactome Pathway	NPAS4 regulates expression of target genes
+HSA-3134973	Reactome Pathway	LRR FLII-interacting protein 1 (LRRFIP1) activates type I IFN production
+HSA-9818028	Reactome Pathway	NFE2L2 regulates pentose phosphate pathway genes
+HSA-9617629	Reactome Pathway	Regulation of FOXO transcriptional activity by acetylation
+HSA-168256	Reactome Pathway	Immune System
+HSA-8866907	Reactome Pathway	Activation of the TFAP2 (AP-2) family of transcription factors
+HSA-3700989	Reactome Pathway	Transcriptional Regulation by TP53
+HSA-8941856	Reactome Pathway	RUNX3 regulates NOTCH signaling
+HSA-918233	Reactome Pathway	TRAF3-dependent IRF activation pathway
+HSA-9614657	Reactome Pathway	FOXO-mediated transcription of cell death genes
+HSA-210744	Reactome Pathway	Regulation of gene expression in late stage (branching morphogenesis) pancreatic bud precursor cells
+HSA-9818027	Reactome Pathway	NFE2L2 regulating anti-oxidant/detoxification enzymes
+HSA-6803204	Reactome Pathway	TP53 Regulates Transcription of Genes Involved in Cytochrome C Release
+HSA-9013695	Reactome Pathway	NOTCH4 Intracellular Domain Regulates Transcription
+HSA-5621575	Reactome Pathway	CD209 (DC-SIGN) signaling
+HSA-9793380	Reactome Pathway	Formation of paraxial mesoderm
+HSA-211981	Reactome Pathway	Xenobiotics
+HSA-9013508	Reactome Pathway	NOTCH3 Intracellular Domain Regulates Transcription
+HSA-933541	Reactome Pathway	TRAF6 mediated IRF7 activation
+HSA-69275	Reactome Pathway	G2/M Transition
+HSA-8951664	Reactome Pathway	Neddylation
+HSA-9694516	Reactome Pathway	SARS-CoV-2 Infection
+HSA-9705671	Reactome Pathway	SARS-CoV-2 activates/modulates innate and adaptive immune responses
+HSA-1474244	Reactome Pathway	Extracellular matrix organization
+HSA-3000170	Reactome Pathway	Syndecan interactions
+HSA-1566948	Reactome Pathway	Elastic fibre formation
+HSA-1566977	Reactome Pathway	Fibronectin matrix formation
+HSA-216083	Reactome Pathway	Integrin cell surface interactions
+HSA-202733	Reactome Pathway	Cell surface interactions at the vascular wall
+HSA-3000157	Reactome Pathway	Laminin interactions
+HSA-8874081	Reactome Pathway	MET activates PTK2 signaling
+HSA-2129379	Reactome Pathway	Molecules associated with elastic fibres
+HSA-111459	Reactome Pathway	Activation of caspases through apoptosome-mediated cleavage
+HSA-111463	Reactome Pathway	SMAC (DIABLO) binds to IAPs
+HSA-111464	Reactome Pathway	SMAC(DIABLO)-mediated dissociation of IAP:caspase complexes
+HSA-5357801	Reactome Pathway	Programmed Cell Death
+HSA-109606	Reactome Pathway	Intrinsic Pathway for Apoptosis
+HSA-109581	Reactome Pathway	Apoptosis
+HSA-9627069	Reactome Pathway	Regulation of the apoptosome activity
+HSA-5357786	Reactome Pathway	TNFR1-induced proapoptotic signaling
+HSA-168638	Reactome Pathway	NOD1/2 Signaling Pathway
+HSA-5357905	Reactome Pathway	Regulation of TNFR1 signaling
+HSA-73887	Reactome Pathway	Death Receptor Signaling
+HSA-5357769	Reactome Pathway	Caspase activation via extrinsic apoptotic signalling pathway
+HSA-5357956	Reactome Pathway	TNFR1-induced NFkappaB signaling pathway
+HSA-111465	Reactome Pathway	Apoptotic cleavage of cellular proteins
+HSA-418889	Reactome Pathway	Caspase activation via Dependence Receptors in the absence of ligand
+HSA-168164	Reactome Pathway	Toll Like Receptor 3 (TLR3) Cascade
+HSA-264870	Reactome Pathway	Caspase-mediated cleavage of cytoskeletal proteins
+HSA-937061	Reactome Pathway	TRIF(TICAM1)-mediated TLR4 signaling
+HSA-198323	Reactome Pathway	AKT phosphorylates targets in the cytosol
+HSA-168927	Reactome Pathway	TICAM1, RIP1-mediated IKK complex recruitment
+HSA-5676594	Reactome Pathway	TNF receptor superfamily (TNFSF) members mediating non-canonical NF-kB pathway
+HSA-937041	Reactome Pathway	IKK complex recruitment mediated by RIP1
+HSA-5674400	Reactome Pathway	Constitutive Signaling by AKT1 E17K in Cancer
+HSA-5620971	Reactome Pathway	Pyroptosis
+HSA-422356	Reactome Pathway	Regulation of insulin secretion
+HSA-111885	Reactome Pathway	Opioid Signalling
+HSA-392170	Reactome Pathway	ADP signalling through P2Y purinoceptor 12
+HSA-202040	Reactome Pathway	G-protein activation
+HSA-400042	Reactome Pathway	Adrenaline,noradrenaline inhibits insulin secretion
+HSA-420092	Reactome Pathway	Glucagon-type ligand receptors
+HSA-381676	Reactome Pathway	Glucagon-like Peptide-1 (GLP1) regulates insulin secretion
+HSA-9634597	Reactome Pathway	GPER1 signaling
+HSA-9660821	Reactome Pathway	ADORA2B mediated anti-inflammatory cytokines production
+HSA-991365	Reactome Pathway	Activation of GABAB receptors
+HSA-418597	Reactome Pathway	G alpha (z) signalling events
+HSA-8964315	Reactome Pathway	G beta:gamma signalling through BTK
+HSA-392851	Reactome Pathway	Prostacyclin signalling through prostacyclin receptor
+HSA-418217	Reactome Pathway	G beta:gamma signalling through PLC beta
+HSA-8964616	Reactome Pathway	G beta:gamma signalling through CDC42
+HSA-500657	Reactome Pathway	Presynaptic function of Kainate receptors
+HSA-428930	Reactome Pathway	Thromboxane signalling through TP receptor
+HSA-392451	Reactome Pathway	G beta:gamma signalling through PI3Kgamma
+HSA-418592	Reactome Pathway	ADP signalling through P2Y purinoceptor 1
+HSA-1296041	Reactome Pathway	Activation of G protein gated Potassium channels
+HSA-9615017	Reactome Pathway	FOXO-mediated transcription of oxidative stress, metabolic and neuronal genes
+HSA-997272	Reactome Pathway	Inhibition  of voltage gated Ca2+ channels via Gbeta/gamma subunits
+HSA-456926	Reactome Pathway	Thrombin signalling through proteinase activated receptors (PARs)
+HSA-163359	Reactome Pathway	Glucagon signaling in metabolic regulation
+HSA-6814122	Reactome Pathway	Cooperation of PDCL (PhLP1) and TRiC/CCT in G-protein beta folding
+HSA-432040	Reactome Pathway	Vasopressin regulates renal water homeostasis via Aquaporins
+HSA-4086398	Reactome Pathway	Ca2+ pathway
+HSA-416482	Reactome Pathway	G alpha (12/13) signalling events
+HSA-2980736	Reactome Pathway	Peptide hormone metabolism
+HSA-5250924	Reactome Pathway	B-WICH complex positively regulates rRNA expression
+HSA-73728	Reactome Pathway	RNA Polymerase I Promoter Opening
+HSA-5334118	Reactome Pathway	DNA methylation
+HSA-110330	Reactome Pathway	Recognition and association of DNA glycosylase with site containing an affected purine
+HSA-110331	Reactome Pathway	Cleavage of the damaged purine
+HSA-427359	Reactome Pathway	SIRT1 negatively regulates rRNA expression
+HSA-68616	Reactome Pathway	Assembly of the ORC complex at the origin of replication
+HSA-2299718	Reactome Pathway	Condensation of Prophase Chromosomes
+HSA-9670095	Reactome Pathway	Inhibition of DNA recombination at telomere
+HSA-912446	Reactome Pathway	Meiotic recombination
+HSA-73772	Reactome Pathway	RNA Polymerase I Promoter Escape
+HSA-9616222	Reactome Pathway	Transcriptional regulation of granulopoiesis
+HSA-2559586	Reactome Pathway	DNA Damage/Telomere Stress Induced Senescence
+HSA-5578749	Reactome Pathway	Transcriptional regulation by small RNAs
+HSA-977225	Reactome Pathway	Amyloid fiber formation
+HSA-8939236	Reactome Pathway	RUNX1 regulates transcription of genes involved in differentiation of HSCs
+HSA-3214858	Reactome Pathway	RMTs methylate histone arginines
+HSA-392499	Reactome Pathway	Metabolism of proteins
+HSA-9610379	Reactome Pathway	HCMV Late Events
+HSA-5689901	Reactome Pathway	Metalloprotease DUBs
+HSA-5693571	Reactome Pathway	Nonhomologous End-Joining (NHEJ)
+HSA-5689880	Reactome Pathway	Ub-specific processing proteases
+HSA-5693565	Reactome Pathway	Recruitment and ATM-mediated phosphorylation of repair and signaling proteins at DNA double strand breaks
+HSA-69473	Reactome Pathway	G2/M DNA damage checkpoint
+HSA-5693607	Reactome Pathway	Processing of DNA double-strand break ends
+HSA-5689603	Reactome Pathway	UCH proteinases
+HSA-9711123	Reactome Pathway	Cellular response to chemical stress
+HSA-9619665	Reactome Pathway	EGR2 and SOX10-mediated initiation of Schwann cell myelination
+HSA-198725	Reactome Pathway	Nuclear Events (kinase and transcription factor activation)
+HSA-9006925	Reactome Pathway	Intracellular signaling by second messengers
+HSA-9612973	Reactome Pathway	Autophagy
+HSA-9646399	Reactome Pathway	Aggrephagy
+HSA-9755511	Reactome Pathway	KEAP1-NFE2L2 pathway
+HSA-9759194	Reactome Pathway	Nuclear events mediated by NFE2L2
+HSA-9664873	Reactome Pathway	Pexophagy
+HSA-5689877	Reactome Pathway	Josephin domain DUBs
+HSA-209543	Reactome Pathway	p75NTR recruits signalling complexes
+HSA-209560	Reactome Pathway	NF-kB is activated and signals survival
+HSA-205043	Reactome Pathway	NRIF signals cell death from the nucleus
+HSA-110320	Reactome Pathway	Translesion Synthesis by POLH
+HSA-5205685	Reactome Pathway	PINK1-PRKN Mediated Mitophagy
+HSA-8940973	Reactome Pathway	RUNX2 regulates osteoblast differentiation
+HSA-8878171	Reactome Pathway	Transcriptional regulation by RUNX1
+HSA-9615710	Reactome Pathway	Late endosomal microautophagy
+HSA-5689896	Reactome Pathway	Ovarian tumor domain proteases
+HSA-6781823	Reactome Pathway	Formation of TC-NER Pre-Incision Complex
+HSA-8866654	Reactome Pathway	E3 ubiquitin ligases ubiquitinate target proteins
+HSA-8941858	Reactome Pathway	Regulation of RUNX3 expression and activity
+HSA-168643	Reactome Pathway	Nucleotide-binding domain, leucine rich repeat containing receptor (NLR) signaling pathways
+HSA-5362768	Reactome Pathway	Hh mutants are degraded by ERAD
+HSA-5678895	Reactome Pathway	Defective CFTR causes cystic fibrosis
+HSA-1834949	Reactome Pathway	Cytosolic sensors of pathogen-associated DNA
+HSA-5358346	Reactome Pathway	Hedgehog ligand biogenesis
+HSA-6782135	Reactome Pathway	Dual incision in TC-NER
+HSA-6782210	Reactome Pathway	Gap-filling DNA repair synthesis and ligation in TC-NER
+HSA-9013694	Reactome Pathway	Signaling by NOTCH4
+HSA-9692914	Reactome Pathway	SARS-CoV-1-host interactions
+HSA-382556	Reactome Pathway	ABC-family proteins mediated transport
+HSA-9012999	Reactome Pathway	RHO GTPase cycle
+HSA-9020702	Reactome Pathway	Interleukin-1 signaling
+HSA-6798695	Reactome Pathway	Neutrophil degranulation
+HSA-5621481	Reactome Pathway	C-type lectin receptors (CLRs)
+HSA-5633007	Reactome Pathway	Regulation of TP53 Activity
+HSA-193670	Reactome Pathway	p75NTR negatively regulates cell cycle via SC1
+HSA-9022699	Reactome Pathway	MECP2 regulates neuronal receptors and channels
+HSA-68882	Reactome Pathway	Mitotic Anaphase
+HSA-2500257	Reactome Pathway	Resolution of Sister Chromatid Cohesion
+HSA-69242	Reactome Pathway	S Phase
+HSA-2467813	Reactome Pathway	Separation of Sister Chromatids
+HSA-3108214	Reactome Pathway	SUMOylation of DNA damage response and repair proteins
+HSA-8939243	Reactome Pathway	RUNX1 interacts with co-factors whose precise effect on RUNX1 targets is not known
+HSA-196807	Reactome Pathway	Nicotinate metabolism
+HSA-196849	Reactome Pathway	Metabolism of water-soluble vitamins and cofactors
+HSA-8982491	Reactome Pathway	Glycogen metabolism
+HSA-70221	Reactome Pathway	Glycogen breakdown (glycogenolysis)
+HSA-189085	Reactome Pathway	Digestion of dietary carbohydrate
+HSA-5663084	Reactome Pathway	Diseases of carbohydrate metabolism
+HSA-3229121	Reactome Pathway	Glycogen storage diseases
+HSA-70171	Reactome Pathway	Glycolysis
+HSA-71387	Reactome Pathway	Metabolism of carbohydrates
+HSA-2142753	Reactome Pathway	Arachidonic acid metabolism
+HSA-2162123	Reactome Pathway	Synthesis of Prostaglandins (PG) and Thromboxanes (TX)
+HSA-9025094	Reactome Pathway	Biosynthesis of DPAn-3 SPMs
+HSA-6783783	Reactome Pathway	Interleukin-10 signaling
+HSA-9018679	Reactome Pathway	Biosynthesis of EPA-derived SPMs
+HSA-9018677	Reactome Pathway	Biosynthesis of DHA-derived SPMs
+HSA-9026286	Reactome Pathway	Biosynthesis of DPAn-3-derived protectins and resolvins
+HSA-9027604	Reactome Pathway	Biosynthesis of electrophilic Ï‰-3 PUFA oxo-derivatives
+HSA-9023661	Reactome Pathway	Biosynthesis of E-series 18(R)-resolvins
+HSA-2142770	Reactome Pathway	Synthesis of 15-eicosatetraenoic acid derivatives
+HSA-9018896	Reactome Pathway	Biosynthesis of E-series 18(S)-resolvins
+HSA-197264	Reactome Pathway	Nicotinamide salvaging
+HSA-2142691	Reactome Pathway	Synthesis of Leukotrienes (LT) and Eoxins (EX)
+HSA-446652	Reactome Pathway	Interleukin-1 family signaling
+HSA-8853884	Reactome Pathway	Transcriptional Regulation by VENTX
+HSA-9025106	Reactome Pathway	Biosynthesis of DPAn-6 SPMs
+HSA-9026290	Reactome Pathway	Biosynthesis of DPAn-3-derived maresins
+HSA-211859	Reactome Pathway	Biological oxidations
+HSA-2142700	Reactome Pathway	Synthesis of Lipoxins (LX)
+HSA-2142712	Reactome Pathway	Synthesis of 12-eicosatetraenoic acid derivatives
+HSA-211945	Reactome Pathway	Phase I - Functionalization of compounds
+HSA-442720	Reactome Pathway	CREB1 phosphorylation through the activation of Adenylate Cyclase
+HSA-180024	Reactome Pathway	DARPP-32 events
+HSA-9664323	Reactome Pathway	FCGR3A-mediated IL10 synthesis
+HSA-382551	Reactome Pathway	Transport of small molecules
+HSA-9634600	Reactome Pathway	Regulation of glycolysis by fructose 2,6-bisphosphate metabolism
+HSA-2672351	Reactome Pathway	Stimuli-sensing channels
+HSA-3295583	Reactome Pathway	TRP channels
+HSA-8853659	Reactome Pathway	RET signaling
+HSA-5610780	Reactome Pathway	Degradation of GLI1 by the proteasome
+HSA-5610783	Reactome Pathway	Degradation of GLI2 by the proteasome
+HSA-5610785	Reactome Pathway	GLI3 is processed to GLI3R by the proteasome
+HSA-109582	Reactome Pathway	Hemostasis
+HSA-5578775	Reactome Pathway	Ion homeostasis
+HSA-1280218	Reactome Pathway	Adaptive Immune System
+HSA-375280	Reactome Pathway	Amine ligand-binding receptors
+HSA-112311	Reactome Pathway	Neurotransmitter clearance
+HSA-390666	Reactome Pathway	Serotonin receptors
+HSA-379398	Reactome Pathway	Enzymatic degradation of Dopamine by monoamine oxidase
+HSA-379397	Reactome Pathway	Enzymatic degradation of dopamine by COMT
+HSA-380615	Reactome Pathway	Serotonin clearance from the synaptic cleft
+HSA-209931	Reactome Pathway	Serotonin and melatonin biosynthesis
+HSA-112315	Reactome Pathway	Transmission across Chemical Synapses
+HSA-181430	Reactome Pathway	Norepinephrine Neurotransmitter Release Cycle
+HSA-372790	Reactome Pathway	Signaling by GPCR
+HSA-76002	Reactome Pathway	Platelet activation, signaling and aggregation
+HSA-170670	Reactome Pathway	Adenylate cyclase inhibitory pathway
+HSA-2219528	Reactome Pathway	PI3K/AKT Signaling in Cancer
+HSA-1660499	Reactome Pathway	Synthesis of PIPs at the plasma membrane
+HSA-912631	Reactome Pathway	Regulation of signaling by CBL
+HSA-9006335	Reactome Pathway	Signaling by Erythropoietin
+HSA-912526	Reactome Pathway	Interleukin receptor SHC signaling
+HSA-114604	Reactome Pathway	GPVI-mediated activation cascade
+HSA-198203	Reactome Pathway	PI3K/AKT activation
+HSA-9027276	Reactome Pathway	Erythropoietin activates Phosphoinositide-3-kinase (PI3K)
+HSA-9673767	Reactome Pathway	Signaling by PDGFRA transmembrane, juxtamembrane and kinase domain mutants
+HSA-9673770	Reactome Pathway	Signaling by PDGFRA extracellular domain mutants
+HSA-112399	Reactome Pathway	IRS-mediated signalling
+HSA-210993	Reactome Pathway	Tie2 Signaling
+HSA-9670439	Reactome Pathway	Signaling by phosphorylated juxtamembrane, extracellular and kinase domain KIT mutants
+HSA-389357	Reactome Pathway	CD28 dependent PI3K/Akt signaling
+HSA-201556	Reactome Pathway	Signaling by ALK
+HSA-186763	Reactome Pathway	Downstream signal transduction
+HSA-2424491	Reactome Pathway	DAP12 signaling
+HSA-1433557	Reactome Pathway	Signaling by SCF-KIT
+HSA-109704	Reactome Pathway	PI3K Cascade
+HSA-5673001	Reactome Pathway	RAF/MAP kinase cascade
+HSA-422475	Reactome Pathway	Axon guidance
+HSA-9034015	Reactome Pathway	Signaling by NTRK3 (TRKC)
+HSA-2730905	Reactome Pathway	Role of LAT2/NTAL/LAB on calcium mobilization
+HSA-373753	Reactome Pathway	Nephrin family interactions
+HSA-1266695	Reactome Pathway	Interleukin-7 signaling
+HSA-2029485	Reactome Pathway	Role of phospholipids in phagocytosis
+HSA-9680350	Reactome Pathway	Signaling by CSF1 (M-CSF) in myeloid cells
+HSA-9607240	Reactome Pathway	FLT3 Signaling
+HSA-2454202	Reactome Pathway	Fc epsilon receptor (FCERI) signaling
+HSA-9603381	Reactome Pathway	Activated NTRK3 signals through PI3K
+HSA-177929	Reactome Pathway	Signaling by EGFR
+HSA-1236394	Reactome Pathway	Signaling by ERBB4
+HSA-5655291	Reactome Pathway	Signaling by FGFR4 in disease
+HSA-9703648	Reactome Pathway	Signaling by FLT3 ITD and TKD mutants
+HSA-9013404	Reactome Pathway	RAC2 GTPase cycle
+HSA-180292	Reactome Pathway	GAB1 signalosome
+HSA-202424	Reactome Pathway	Downstream TCR signaling
+HSA-9703465	Reactome Pathway	Signaling by FLT3 fusion proteins
+HSA-5655332	Reactome Pathway	Signaling by FGFR3 in disease
+HSA-5654708	Reactome Pathway	Downstream signaling of activated FGFR3
+HSA-9006115	Reactome Pathway	Signaling by NTRK2 (TRKB)
+HSA-5654716	Reactome Pathway	Downstream signaling of activated FGFR4
+HSA-5654696	Reactome Pathway	Downstream signaling of activated FGFR2
+HSA-5654687	Reactome Pathway	Downstream signaling of activated FGFR1
+HSA-5655302	Reactome Pathway	Signaling by FGFR1 in disease
+HSA-5655253	Reactome Pathway	Signaling by FGFR2 in disease
+HSA-9013149	Reactome Pathway	RAC1 GTPase cycle
+HSA-9725370	Reactome Pathway	Signaling by ALK fusions and activated point mutants
+HSA-8851907	Reactome Pathway	MET activates PI3K/AKT signaling
+HSA-112412	Reactome Pathway	SOS-mediated signalling
+HSA-9028335	Reactome Pathway	Activated NTRK2 signals through PI3K
+HSA-6806834	Reactome Pathway	Signaling by MET
+HSA-2179392	Reactome Pathway	EGFR Transactivation by Gastrin
+HSA-1250342	Reactome Pathway	PI3K events in ERBB4 signaling
+HSA-179812	Reactome Pathway	GRB2 events in EGFR signaling
+HSA-983705	Reactome Pathway	Signaling by the B Cell Receptor (BCR)
+HSA-180336	Reactome Pathway	SHC1 events in EGFR signaling
+HSA-1839117	Reactome Pathway	Signaling by cytosolic FGFR1 fusion mutants
+HSA-5654710	Reactome Pathway	PI-3K cascade:FGFR3
+HSA-5654720	Reactome Pathway	PI-3K cascade:FGFR4
+HSA-5654689	Reactome Pathway	PI-3K cascade:FGFR1
+HSA-5654695	Reactome Pathway	PI-3K cascade:FGFR2
+HSA-9634638	Reactome Pathway	Estrogen-dependent nuclear events downstream of ESR-membrane signaling
+HSA-983695	Reactome Pathway	Antigen activates B Cell Receptor (BCR) leading to generation of second messengers
+HSA-9013420	Reactome Pathway	RHOU GTPase cycle
+HSA-9035034	Reactome Pathway	RHOF GTPase cycle
+HSA-9696264	Reactome Pathway	RND3 GTPase cycle
+HSA-9696273	Reactome Pathway	RND1 GTPase cycle
+HSA-9696270	Reactome Pathway	RND2 GTPase cycle
+HSA-9013405	Reactome Pathway	RHOD GTPase cycle
+HSA-9013409	Reactome Pathway	RHOJ GTPase cycle
+HSA-9013026	Reactome Pathway	RHOB GTPase cycle
+HSA-9013423	Reactome Pathway	RAC3 GTPase cycle
+HSA-8980692	Reactome Pathway	RHOA GTPase cycle
+HSA-9013148	Reactome Pathway	CDC42 GTPase cycle
+HSA-389356	Reactome Pathway	CD28 co-stimulation
+HSA-397795	Reactome Pathway	G-protein beta:gamma signalling
+HSA-182971	Reactome Pathway	EGFR downregulation
+HSA-9013424	Reactome Pathway	RHOV GTPase cycle
+HSA-9013408	Reactome Pathway	RHOG GTPase cycle
+HSA-8849473	Reactome Pathway	PTK6 Expression
+HSA-452723	Reactome Pathway	Transcriptional regulation of pluripotent stem cells
+HSA-389661	Reactome Pathway	Glyoxylate metabolism and glycine degradation
+HSA-196780	Reactome Pathway	Biotin transport and metabolism
+HSA-425407	Reactome Pathway	SLC-mediated transmembrane transport
+HSA-425366	Reactome Pathway	Transport of bile salts and organic acids, metal ions and amine compounds
+HSA-5619102	Reactome Pathway	SLC transporter disorders
+HSA-199220	Reactome Pathway	Vitamin B5 (pantothenate) metabolism
+HSA-1362409	Reactome Pathway	Mitochondrial iron-sulfur cluster biogenesis
+HSA-8964539	Reactome Pathway	Glutamate and glutamine metabolism
+HSA-71291	Reactome Pathway	Metabolism of amino acids and derivatives
+HSA-70263	Reactome Pathway	Gluconeogenesis
+HSA-8963693	Reactome Pathway	Aspartate and asparagine metabolism
+HSA-210500	Reactome Pathway	Glutamate Neurotransmitter Release Cycle
+HSA-1614635	Reactome Pathway	Sulfur amino acid metabolism
+HSA-9033241	Reactome Pathway	Peroxisomal protein import
+HSA-1442490	Reactome Pathway	Collagen degradation
+HSA-419037	Reactome Pathway	NCAM1 interactions
+HSA-3000178	Reactome Pathway	ECM proteoglycans
+HSA-3000480	Reactome Pathway	Scavenging by Class A Receptors
+HSA-71384	Reactome Pathway	Ethanol oxidation
+HSA-209905	Reactome Pathway	Catecholamine biosynthesis
+HSA-141333	Reactome Pathway	Biogenic amines are oxidatively deaminated to aldehydes by MAOA and MAOB
+HSA-430116	Reactome Pathway	GP1b-IX-V activation signalling
+HSA-76009	Reactome Pathway	Platelet Aggregation (Plug Formation)
+HSA-877300	Reactome Pathway	Interferon gamma signaling
+HSA-70326	Reactome Pathway	Glucose metabolism
+HSA-8956320	Reactome Pathway	Nucleotide biosynthesis
+HSA-15869	Reactome Pathway	Metabolism of nucleotides
+HSA-500753	Reactome Pathway	Pyrimidine biosynthesis
+HSA-434316	Reactome Pathway	Fatty Acids bound to GPR40 (FFAR1) regulate insulin secretion
+HSA-390696	Reactome Pathway	Adrenoceptors
+HSA-399997	Reactome Pathway	Acetylcholine regulates insulin secretion
+HSA-2514859	Reactome Pathway	Inactivation, recovery and regulation of the phototransduction cascade
+HSA-9717207	Reactome Pathway	Sensory perception of sweet, bitter, and umami (glutamate) taste
+HSA-112043	Reactome Pathway	PLC beta mediated events
+HSA-380972	Reactome Pathway	Energy dependent regulation of mTOR by LKB1-AMPK
+HSA-5628897	Reactome Pathway	TP53 Regulates Metabolic Genes
+HSA-1632852	Reactome Pathway	Macroautophagy
+HSA-9619483	Reactome Pathway	Activation of AMPK downstream of NMDARs
+HSA-9613354	Reactome Pathway	Lipophagy
+HSA-2151209	Reactome Pathway	Activation of PPARGC1A (PGC-1alpha) by phosphorylation
+HSA-6804756	Reactome Pathway	Regulation of TP53 Activity through Phosphorylation
+HSA-1445148	Reactome Pathway	Translocation of SLC2A4 (GLUT4) to the plasma membrane
+HSA-163680	Reactome Pathway	AMPK inhibits chREBP transcriptional activation activity
+HSA-200425	Reactome Pathway	Carnitine metabolism
+HSA-163685	Reactome Pathway	Integration of energy metabolism
+HSA-199991	Reactome Pathway	Membrane Trafficking
+HSA-3371571	Reactome Pathway	HSF1-dependent transactivation
+HSA-166208	Reactome Pathway	mTORC1-mediated signalling
+HSA-9639288	Reactome Pathway	Amino acids regulate mTORC1
+HSA-3322077	Reactome Pathway	Glycogen synthesis
+HSA-112409	Reactome Pathway	RAF-independent MAPK1/3 activation
+HSA-5675221	Reactome Pathway	Negative regulation of MAPK pathway
+HSA-166058	Reactome Pathway	MyD88:MAL(TIRAP) cascade initiated on plasma membrane
+HSA-9652169	Reactome Pathway	Signaling by MAP2K mutants
+HSA-975138	Reactome Pathway	TRAF6 mediated induction of NFkB and MAP kinases upon TLR7/8 or 9 activation
+HSA-975871	Reactome Pathway	MyD88 cascade initiated on plasma membrane
+HSA-5674499	Reactome Pathway	Negative feedback regulation of MAPK pathway
+HSA-450294	Reactome Pathway	MAP kinase activation
+HSA-170968	Reactome Pathway	Frs2-mediated activation
+HSA-445144	Reactome Pathway	Signal transduction by L1
+HSA-373760	Reactome Pathway	L1CAM interactions
+HSA-450282	Reactome Pathway	MAPK targets/ Nuclear events mediated by MAP kinases
+HSA-6802948	Reactome Pathway	Signaling by high-kinase activity BRAF mutants
+HSA-5674135	Reactome Pathway	MAP2K and MAPK activation
+HSA-9656223	Reactome Pathway	Signaling by RAF1 mutants
+HSA-6802946	Reactome Pathway	Signaling by moderate kinase activity BRAF mutants
+HSA-6802955	Reactome Pathway	Paradoxical activation of RAF signaling by kinase inactive BRAF
+HSA-9649948	Reactome Pathway	Signaling downstream of RAS mutants
+HSA-6802952	Reactome Pathway	Signaling by BRAF and RAF1 fusions
+HSA-444257	Reactome Pathway	RSK activation
+HSA-112411	Reactome Pathway	MAPK1 (ERK2) activation
+HSA-5210891	Reactome Pathway	Uptake and function of anthrax toxins
+HSA-1295596	Reactome Pathway	Spry regulation of FGF signaling
+HSA-881907	Reactome Pathway	Gastrin-CREB signalling pathway via PKC and MAPK
+HSA-9725371	Reactome Pathway	Nuclear events stimulated by ALK signaling in cancer
+HSA-9008059	Reactome Pathway	Interleukin-37 signaling
+HSA-982772	Reactome Pathway	Growth hormone receptor signaling
+HSA-9734009	Reactome Pathway	Defective Intrinsic Pathway for Apoptosis
+HSA-5673000	Reactome Pathway	RAF activation
+HSA-390471	Reactome Pathway	Association of TriC/CCT with target proteins during biosynthesis
+HSA-437239	Reactome Pathway	Recycling pathway of L1
+HSA-9635465	Reactome Pathway	Suppression of apoptosis
+HSA-110056	Reactome Pathway	MAPK3 (ERK1) activation
+HSA-74749	Reactome Pathway	Signal attenuation
+HSA-202670	Reactome Pathway	ERKs are inactivated
+HSA-879415	Reactome Pathway	Advanced glycosylation endproduct receptor signaling
+HSA-162658	Reactome Pathway	Golgi Cisternae Pericentriolar Stack Reorganization
+HSA-1502540	Reactome Pathway	Signaling by Activin
+HSA-5635838	Reactome Pathway	Activation of SMO
+HSA-1181150	Reactome Pathway	Signaling by NODAL
+HSA-5668599	Reactome Pathway	RHO GTPases Activate NADPH Oxidases
+HSA-2122948	Reactome Pathway	Activated NOTCH1 Transmits Signal to the Nucleus
+HSA-5663213	Reactome Pathway	RHO GTPases Activate WASPs and WAVEs
+HSA-375165	Reactome Pathway	NCAM signaling for neurite out-growth
+HSA-9664422	Reactome Pathway	FCGR3A-mediated phagocytosis
+HSA-3371453	Reactome Pathway	Regulation of HSF1-mediated heat shock response
+HSA-8856825	Reactome Pathway	Cargo recognition for clathrin-mediated endocytosis
+HSA-389359	Reactome Pathway	CD28 dependent Vav1 pathway
+HSA-5627123	Reactome Pathway	RHO GTPases activate PAKs
+HSA-428540	Reactome Pathway	Activation of RAC1
+HSA-2682334	Reactome Pathway	EPH-Ephrin signaling
+HSA-3928664	Reactome Pathway	Ephrin signaling
+HSA-202433	Reactome Pathway	Generation of second messenger molecules
+HSA-376176	Reactome Pathway	Signaling by ROBO receptors
+HSA-9013406	Reactome Pathway	RHOQ GTPase cycle
+HSA-8950505	Reactome Pathway	Gene and protein expression by JAK-STAT signaling after Interleukin-12 stimulation
+HSA-9013407	Reactome Pathway	RHOH GTPase cycle
+HSA-3928662	Reactome Pathway	EPHB-mediated forward signaling
+HSA-445355	Reactome Pathway	Smooth Muscle Contraction
+HSA-373752	Reactome Pathway	Netrin-1 signaling
+HSA-450531	Reactome Pathway	Regulation of mRNA stability by proteins that bind AU-rich elements
+HSA-198765	Reactome Pathway	Signalling to ERK5
+HSA-8957322	Reactome Pathway	Metabolism of steroids
+HSA-193048	Reactome Pathway	Androgen biosynthesis
+HSA-193775	Reactome Pathway	Synthesis of bile acids and bile salts via 24-hydroxycholesterol
+HSA-194002	Reactome Pathway	Glucocorticoid biosynthesis
+HSA-193993	Reactome Pathway	Mineralocorticoid biosynthesis
+HSA-1640170	Reactome Pathway	Cell Cycle
+HSA-6804757	Reactome Pathway	Regulation of TP53 Degradation
+HSA-69620	Reactome Pathway	Cell Cycle Checkpoints
+HSA-114452	Reactome Pathway	Activation of BH3-only proteins
+HSA-69541	Reactome Pathway	Stabilization of p53
+HSA-6803207	Reactome Pathway	TP53 Regulates Transcription of Caspase Activators and Caspases
+HSA-6804759	Reactome Pathway	Regulation of TP53 Activity through Association with Co-factors
+HSA-3232118	Reactome Pathway	SUMOylation of transcription factors
+HSA-5693532	Reactome Pathway	DNA Double-Strand Break Repair
+HSA-9709570	Reactome Pathway	Impaired BRCA2 binding to RAD51
+HSA-5685938	Reactome Pathway	HDR through Single Strand Annealing (SSA)
+HSA-5693616	Reactome Pathway	Presynaptic phase of homologous DNA pairing and strand exchange
+HSA-349425	Reactome Pathway	Autodegradation of the E3 ubiquitin ligase COP1
+HSA-157579	Reactome Pathway	Telomere Maintenance
+HSA-381183	Reactome Pathway	ATF6 (ATF6-alpha) activates chaperone genes
+HSA-983170	Reactome Pathway	Antigen Presentation: Folding, assembly and peptide loading of class I MHC
+HSA-901042	Reactome Pathway	Calnexin/calreticulin cycle
+HSA-442742	Reactome Pathway	CREB1 phosphorylation through NMDA receptor-mediated activation of RAS signaling
+HSA-187687	Reactome Pathway	Signalling to ERKs
+HSA-5654741	Reactome Pathway	Signaling by FGFR3
+HSA-5654743	Reactome Pathway	Signaling by FGFR4
+HSA-5654736	Reactome Pathway	Signaling by FGFR1
+HSA-5654738	Reactome Pathway	Signaling by FGFR2
+HSA-9034864	Reactome Pathway	Activated NTRK3 signals through RAS
+HSA-2428933	Reactome Pathway	SHC-related events triggered by IGF1R
+HSA-9026519	Reactome Pathway	Activated NTRK2 signals through RAS
+HSA-8851805	Reactome Pathway	MET activates RAS signaling
+HSA-9028731	Reactome Pathway	Activated NTRK2 signals through FRS2 and FRS3
+HSA-171007	Reactome Pathway	p38MAPK events
+HSA-1250347	Reactome Pathway	SHC1 events in ERBB4 signaling
+HSA-8849471	Reactome Pathway	PTK6 Regulates RHO GTPases, RAS GTPase and MAP kinases
+HSA-9027284	Reactome Pathway	Erythropoietin activates RAS
+HSA-5218921	Reactome Pathway	VEGFR2 mediated cell proliferation
+HSA-5654704	Reactome Pathway	SHC-mediated cascade:FGFR3
+HSA-442982	Reactome Pathway	Ras activation upon Ca2+ influx through NMDA receptor
+HSA-5654706	Reactome Pathway	FRS-mediated FGFR3 signaling
+HSA-5654719	Reactome Pathway	SHC-mediated cascade:FGFR4
+HSA-5654688	Reactome Pathway	SHC-mediated cascade:FGFR1
+HSA-5654712	Reactome Pathway	FRS-mediated FGFR4 signaling
+HSA-5654693	Reactome Pathway	FRS-mediated FGFR1 signaling
+HSA-5654699	Reactome Pathway	SHC-mediated cascade:FGFR2
+HSA-9648002	Reactome Pathway	RAS processing
+HSA-5654700	Reactome Pathway	FRS-mediated FGFR2 signaling
+HSA-5658442	Reactome Pathway	Regulation of RAS by GAPs
+HSA-1169091	Reactome Pathway	Activation of NF-kappaB in B cells
+HSA-2871837	Reactome Pathway	FCERI mediated NF-kB activation
+HSA-5607764	Reactome Pathway	CLEC7A (Dectin-1) signaling
+HSA-5684264	Reactome Pathway	MAP3K8 (TPL2)-dependent MAPK1/3 activation
+HSA-1810476	Reactome Pathway	RIP-mediated NFkB activation via ZBP1
+HSA-933542	Reactome Pathway	TRAF6 mediated NF-kB activation
+HSA-5603029	Reactome Pathway	IkBA variant leads to EDA-ID
+HSA-445989	Reactome Pathway	TAK1-dependent IKK and NF-kappa-B activation
+HSA-5607761	Reactome Pathway	Dectin-1 mediated noncanonical NF-kB signaling
+HSA-5602636	Reactome Pathway	IKBKB deficiency causes SCID
+HSA-5603027	Reactome Pathway	IKBKG deficiency causes anhidrotic ectodermal dysplasia with immunodeficiency (EDA-ID) (via TLR)
+HSA-983169	Reactome Pathway	Class I MHC mediated antigen processing & presentation
+HSA-5676590	Reactome Pathway	NIK-->noncanonical NF-kB signaling
+HSA-4755510	Reactome Pathway	SUMOylation of immune response proteins
+HSA-933543	Reactome Pathway	NF-kB activation through FADD/RIP-1 pathway mediated by caspase-8 and -10
+HSA-937039	Reactome Pathway	IRAK1 recruits IKK complex
+HSA-975144	Reactome Pathway	IRAK1 recruits IKK complex upon TLR7/8 or 9 stimulation
+HSA-1170546	Reactome Pathway	Prolactin receptor signaling
+HSA-9758274	Reactome Pathway	Regulation of NF-kappa B signaling
+HSA-9692916	Reactome Pathway	SARS-CoV-1 activates/modulates innate immune responses
+HSA-9762114	Reactome Pathway	GSK3B and BTRC:CUL1-mediated-degradation of NFE2L2
+HSA-174113	Reactome Pathway	SCF-beta-TrCP mediated degradation of Emi1
+HSA-2644607	Reactome Pathway	Loss of Function of FBXW7 in Cancer and NOTCH1 Signaling
+HSA-5660668	Reactome Pathway	CLEC7A/inflammasome pathway
+HSA-3134963	Reactome Pathway	DEx/H-box helicases activate type I IFN and inflammatory cytokines production
+HSA-195253	Reactome Pathway	Degradation of beta-catenin by the destruction complex
+HSA-1236974	Reactome Pathway	ER-Phagosome pathway
+HSA-448706	Reactome Pathway	Interleukin-1 processing
+HSA-193692	Reactome Pathway	Regulated proteolysis of p75NTR
+HSA-9708530	Reactome Pathway	Regulation of BACH1 activity
+HSA-844456	Reactome Pathway	The NLRP3 inflammasome
+HSA-9660826	Reactome Pathway	Purinergic signaling in leishmaniasis infection
+HSA-69231	Reactome Pathway	Cyclin D associated events in G1
+HSA-180534	Reactome Pathway	Vpu mediated degradation of CD4
+HSA-9604323	Reactome Pathway	Negative regulation of NOTCH4 signaling
+HSA-8854050	Reactome Pathway	FBXL7 down-regulates AURKA during mitotic entry and in early mitosis
+HSA-187577	Reactome Pathway	SCF(Skp2)-mediated degradation of p27/p21
+HSA-917937	Reactome Pathway	Iron uptake and transport
+HSA-983168	Reactome Pathway	Antigen processing: Ubiquitination & Proteasome degradation
+HSA-68949	Reactome Pathway	Orc1 removal from chromatin
+HSA-1474228	Reactome Pathway	Degradation of the extracellular matrix
+HSA-622312	Reactome Pathway	Inflammasomes
+HSA-844615	Reactome Pathway	The AIM2 inflammasome
+HSA-844623	Reactome Pathway	The IPAF inflammasome
+HSA-5626978	Reactome Pathway	TNFR1-mediated ceramide production
+HSA-5668541	Reactome Pathway	TNFR2 non-canonical NF-kB pathway
+HSA-450321	Reactome Pathway	JNK (c-Jun kinases) phosphorylation and  activation mediated by activated human TAK1
+HSA-450302	Reactome Pathway	Activated TAK1 mediates p38 MAPK activation
+HSA-9661069	Reactome Pathway	Defective binding of RB1 mutants to E2F1,(E2F2, E2F3)
+HSA-453279	Reactome Pathway	Mitotic G1 phase and G1/S transition
+HSA-69206	Reactome Pathway	G1/S Transition
+HSA-69202	Reactome Pathway	Cyclin E associated events during G1/S transition
+HSA-69656	Reactome Pathway	Cyclin A:Cdk2-associated events at S phase entry
+HSA-8849470	Reactome Pathway	PTK6 Regulates Cell Cycle
+HSA-9630794	Reactome Pathway	Evasion of Oncogene Induced Senescence Due to Defective p16INK4A binding to CDK4 and CDK6
+HSA-9632700	Reactome Pathway	Evasion of Oxidative Stress Induced Senescence Due to Defective p16INK4A binding to CDK4 and CDK6
+HSA-9754119	Reactome Pathway	Drug-mediated inhibition of CDK4/CDK6 activity
+HSA-6791312	Reactome Pathway	TP53 Regulates Transcription of Cell Cycle Genes
+HSA-6804116	Reactome Pathway	TP53 Regulates Transcription of Genes Involved in G1 Cell Cycle Arrest
+HSA-69563	Reactome Pathway	p53-Dependent G1 DNA Damage Response
+HSA-174143	Reactome Pathway	APC/C-mediated degradation of cell cycle proteins
+HSA-8934593	Reactome Pathway	Regulation of RUNX1 Expression and Activity
+HSA-9617828	Reactome Pathway	FOXO-mediated transcription of cell cycle genes
+HSA-69273	Reactome Pathway	Cyclin A/B1/B2 associated events during G2/M transition
+HSA-1538133	Reactome Pathway	G0 and Early G1
+HSA-75815	Reactome Pathway	Ubiquitin-dependent degradation of Cyclin D
+HSA-176408	Reactome Pathway	Regulation of APC/C activators between G1/S and early anaphase
+HSA-5651801	Reactome Pathway	PCNA-Dependent Long Patch Base Excision Repair
+HSA-5696397	Reactome Pathway	Gap-filling DNA repair synthesis and ligation in GG-NER
+HSA-5656169	Reactome Pathway	Termination of translesion DNA synthesis
+HSA-5685942	Reactome Pathway	HDR through Homologous Recombination (HRR)
+HSA-110314	Reactome Pathway	Recognition of DNA damage by PCNA-containing replication complex
+HSA-5696400	Reactome Pathway	Dual Incision in GG-NER
+HSA-110312	Reactome Pathway	Translesion synthesis by REV1
+HSA-5655862	Reactome Pathway	Translesion synthesis by POLK
+HSA-5656121	Reactome Pathway	Translesion synthesis by POLI
+HSA-176187	Reactome Pathway	Activation of ATR in response to replication stress
+HSA-5358565	Reactome Pathway	Mismatch repair (MMR) directed by MSH2:MSH6 (MutSalpha)
+HSA-5358606	Reactome Pathway	Mismatch repair (MMR) directed by MSH2:MSH3 (MutSbeta)
+HSA-69166	Reactome Pathway	Removal of the Flap Intermediate
+HSA-174437	Reactome Pathway	Removal of the Flap Intermediate from the C-strand
+HSA-110362	Reactome Pathway	POLB-Dependent Long Patch Base Excision Repair
+HSA-1660662	Reactome Pathway	Glycosphingolipid metabolism
+HSA-5668914	Reactome Pathway	Diseases of metabolism
+HSA-139853	Reactome Pathway	Elevation of cytosolic Ca2+ levels
+HSA-74259	Reactome Pathway	Purine catabolism
+HSA-1483191	Reactome Pathway	Synthesis of PC
+HSA-1483206	Reactome Pathway	Glycerophospholipid biosynthesis
+HSA-1483213	Reactome Pathway	Synthesis of PE
+HSA-975110	Reactome Pathway	TRAF6 mediated IRF7 activation in TLR7/8 or 9 signaling
+HSA-9693928	Reactome Pathway	Defective RIPK1-mediated regulated necrosis
+HSA-3371378	Reactome Pathway	Regulation by c-FLIP
+HSA-5218900	Reactome Pathway	CASP8 activity is inhibited
+HSA-69416	Reactome Pathway	Dimerization of procaspase-8
+HSA-141444	Reactome Pathway	Amplification  of signal from unattached  kinetochores via a MAD2  inhibitory signal
+HSA-9648025	Reactome Pathway	EML4 and NUDC in mitotic spindle formation
+HSA-5663220	Reactome Pathway	RHO GTPases Activate Formins
+HSA-174048	Reactome Pathway	APC/C:Cdc20 mediated degradation of Cyclin B
+HSA-69478	Reactome Pathway	G2/M DNA replication checkpoint
+HSA-176417	Reactome Pathway	Phosphorylation of Emi1
+HSA-2980767	Reactome Pathway	Activation of NIMA Kinases NEK9, NEK6, NEK7
+HSA-2514853	Reactome Pathway	Condensation of Prometaphase Chromosomes
+HSA-174184	Reactome Pathway	Cdc20:Phospho-APC/C mediated degradation of Cyclin A
+HSA-174178	Reactome Pathway	APC/C:Cdh1 mediated degradation of Cdc20 and other APC/C:Cdh1 targeted proteins in late mitosis/early G1
+HSA-2995383	Reactome Pathway	Initiation of Nuclear Envelope (NE) Reformation
+HSA-176412	Reactome Pathway	Phosphorylation of the APC/C
+HSA-179409	Reactome Pathway	APC-Cdc20 mediated degradation of Nek2A
+HSA-3301854	Reactome Pathway	Nuclear Pore Complex (NPC) Disassembly
+HSA-113507	Reactome Pathway	E2F-enabled inhibition of pre-replication complex formation
+HSA-2465910	Reactome Pathway	MASTL Facilitates Mitotic Progression
+HSA-75035	Reactome Pathway	Chk1/Chk2(Cds1) mediated inactivation of Cyclin B:Cdk1 complex
+HSA-4419969	Reactome Pathway	Depolymerisation of the Nuclear Lamina
+HSA-174154	Reactome Pathway	APC/C:Cdc20 mediated degradation of Securin
+HSA-5696394	Reactome Pathway	DNA Damage Recognition in GG-NER
+HSA-171319	Reactome Pathway	Telomere Extension By Telomerase
+HSA-191273	Reactome Pathway	Cholesterol biosynthesis
+HSA-5607763	Reactome Pathway	CLEC7A (Dectin-1) induces NFAT activation
+HSA-114508	Reactome Pathway	Effects of PIP2 hydrolysis
+HSA-2871809	Reactome Pathway	FCERI mediated Ca+2 mobilization
+HSA-5576891	Reactome Pathway	Cardiac conduction
+HSA-5576890	Reactome Pathway	Phase 3 - rapid repolarisation
+HSA-5576893	Reactome Pathway	Phase 2 - plateau phase
+HSA-1296071	Reactome Pathway	Potassium Channels
+HSA-1296072	Reactome Pathway	Voltage gated Potassium channels
+HSA-5576892	Reactome Pathway	Phase 0 - rapid depolarisation
+HSA-156580	Reactome Pathway	Phase II - Conjugation of compounds
+HSA-156588	Reactome Pathway	Glucuronidation
+HSA-9748784	Reactome Pathway	Drug ADME
+HSA-9749641	Reactome Pathway	Aspirin ADME
+HSA-9753281	Reactome Pathway	Paracetamol ADME
+HSA-5579029	Reactome Pathway	Metabolic disorders of biological oxidation enzymes
+HSA-189483	Reactome Pathway	Heme degradation
+HSA-3000171	Reactome Pathway	Non-integrin membrane-ECM interactions
+HSA-9027307	Reactome Pathway	Biosynthesis of maresin-like SPMs
+HSA-9754706	Reactome Pathway	Atorvastatin ADME
+HSA-211999	Reactome Pathway	CYP2E1 reactions
+HSA-2161517	Reactome Pathway	Abacavir transmembrane transport
+HSA-2142670	Reactome Pathway	Synthesis of epoxy (EET) and dihydroxyeicosatrienoic acids (DHET)
+HSA-2142816	Reactome Pathway	Synthesis of (16-20)-hydroxyeicosatetraenoic acids (HETE)
+HSA-9757110	Reactome Pathway	Prednisone ADME
+HSA-442729	Reactome Pathway	CREB1 phosphorylation through the activation of CaMKII/CaMKK/CaMKIV cascasde
+HSA-111932	Reactome Pathway	CaMK IV-mediated phosphorylation of CREB
+HSA-9619229	Reactome Pathway	Activation of RAC1 downstream of NMDARs
+HSA-9617324	Reactome Pathway	Negative regulation of NMDA receptor-mediated neuronal transmission
+HSA-71288	Reactome Pathway	Creatine metabolism
+HSA-390522	Reactome Pathway	Striated Muscle Contraction
+HSA-397014	Reactome Pathway	Muscle contraction
+HSA-1247673	Reactome Pathway	Erythrocytes take up oxygen and release carbon dioxide
+HSA-1237044	Reactome Pathway	Erythrocytes take up carbon dioxide and release oxygen
+HSA-425381	Reactome Pathway	Bicarbonate transporters
+HSA-1475029	Reactome Pathway	Reversible hydration of carbon dioxide
+HSA-425393	Reactome Pathway	Transport of inorganic cations/anions and amino acids/oligopeptides
+HSA-77387	Reactome Pathway	Insulin receptor recycling
+HSA-917977	Reactome Pathway	Transferrin endocytosis and recycling
+HSA-983712	Reactome Pathway	Ion channel transport
+HSA-1222556	Reactome Pathway	ROS and RNS production in phagocytes
+HSA-9018678	Reactome Pathway	Biosynthesis of specialized proresolving mediators (SPMs)
+HSA-2142688	Reactome Pathway	Synthesis of 5-eicosatetraenoic acids
+HSA-9020265	Reactome Pathway	Biosynthesis of aspirin-triggered D-series resolvins
+HSA-9018676	Reactome Pathway	Biosynthesis of D-series resolvins
+HSA-9018682	Reactome Pathway	Biosynthesis of maresins
+HSA-3299685	Reactome Pathway	Detoxification of Reactive Oxygen Species
+HSA-5652227	Reactome Pathway	Fructose biosynthesis
+HSA-5661270	Reactome Pathway	Formation of xylulose-5-phosphate
+HSA-1474151	Reactome Pathway	Tetrahydrobiopterin (BH4) synthesis, recycling, salvage and regulation
+HSA-196757	Reactome Pathway	Metabolism of folate and pterines
+HSA-196854	Reactome Pathway	Metabolism of vitamins and cofactors
+HSA-422085	Reactome Pathway	Synthesis, secretion, and deacylation of Ghrelin
+HSA-189200	Reactome Pathway	Cellular hexose transport
+HSA-8981373	Reactome Pathway	Intestinal hexose absorption
+HSA-420499	Reactome Pathway	Class C/3 (Metabotropic glutamate/pheromone receptors)
+HSA-2022377	Reactome Pathway	Metabolism of Angiotensinogen to Angiotensins
+HSA-6807070	Reactome Pathway	PTEN Regulation
+HSA-8866652	Reactome Pathway	Synthesis of active ubiquitin: roles of E1 and E2 enzymes
+HSA-186712	Reactome Pathway	Regulation of beta-cell development
+HSA-156902	Reactome Pathway	Peptide chain elongation
+HSA-192823	Reactome Pathway	Viral mRNA Translation
+HSA-2408557	Reactome Pathway	Selenocysteine synthesis
+HSA-72764	Reactome Pathway	Eukaryotic Translation Termination
+HSA-975956	Reactome Pathway	Nonsense Mediated Decay (NMD) independent of the Exon Junction Complex (EJC)
+HSA-72689	Reactome Pathway	Formation of a pool of free 40S subunits
+HSA-9633012	Reactome Pathway	Response of EIF2AK4 (GCN2) to amino acid deficiency
+HSA-156827	Reactome Pathway	L13a-mediated translational silencing of Ceruloplasmin expression
+HSA-1799339	Reactome Pathway	SRP-dependent cotranslational protein targeting to membrane
+HSA-72706	Reactome Pathway	GTP hydrolysis and joining of the 60S ribosomal subunit
+HSA-975957	Reactome Pathway	Nonsense Mediated Decay (NMD) enhanced by the Exon Junction Complex (EJC)
+HSA-1592389	Reactome Pathway	Activation of Matrix Metalloproteinases
+HSA-114608	Reactome Pathway	Platelet degranulation
+HSA-381426	Reactome Pathway	Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs)
+HSA-391906	Reactome Pathway	Leukotriene receptors
+HSA-211958	Reactome Pathway	Miscellaneous substrates
+HSA-211979	Reactome Pathway	Eicosanoids
+HSA-211935	Reactome Pathway	Fatty acids
+HSA-140837	Reactome Pathway	Intrinsic Pathway of Fibrin Clot Formation
+HSA-140875	Reactome Pathway	Common Pathway of Fibrin Clot Formation
+HSA-8957275	Reactome Pathway	Post-translational protein phosphorylation
+HSA-354194	Reactome Pathway	GRB2:SOS provides linkage to MAPK signaling for Integrins
+HSA-372708	Reactome Pathway	p130Cas linkage to MAPK signaling for integrins
+HSA-5602498	Reactome Pathway	MyD88 deficiency (TLR2/4)
+HSA-5603041	Reactome Pathway	IRAK4 deficiency (TLR2/4)
+HSA-5686938	Reactome Pathway	Regulation of TLR by endogenous ligand
+HSA-9662001	Reactome Pathway	Defective factor VIII causes hemophilia A
+HSA-159763	Reactome Pathway	Transport of gamma-carboxylated protein precursors from the endoplasmic reticulum to the Golgi apparatus
+HSA-159740	Reactome Pathway	Gamma-carboxylation of protein precursors
+HSA-159782	Reactome Pathway	Removal of aminoterminal propeptides from gamma-carboxylated proteins
+HSA-1500931	Reactome Pathway	Cell-Cell communication
+HSA-5626467	Reactome Pathway	RHO GTPases activate IQGAPs
+HSA-156590	Reactome Pathway	Glutathione conjugation
+HSA-9018681	Reactome Pathway	Biosynthesis of protectins
+HSA-5423646	Reactome Pathway	Aflatoxin activation and detoxification
+HSA-9748787	Reactome Pathway	Azathioprine ADME
+HSA-75893	Reactome Pathway	TNF signaling
+HSA-9686347	Reactome Pathway	Microbial modulation of RIPK1-mediated regulated necrosis
+HSA-9013957	Reactome Pathway	TLR3-mediated TICAM1-dependent programmed cell death
+HSA-2562578	Reactome Pathway	TRIF-mediated programmed cell death
+HSA-937042	Reactome Pathway	IRAK2 mediated activation of TAK1 complex
+HSA-9014325	Reactome Pathway	TICAM1,TRAF6-dependent induction of TAK1 complex
+HSA-9645460	Reactome Pathway	Alpha-protein kinase 1 signaling pathway
+HSA-975163	Reactome Pathway	IRAK2 mediated activation of TAK1 complex upon TLR7/8 or 9 stimulation
+HSA-937072	Reactome Pathway	TRAF6-mediated induction of TAK1 complex within TLR4 complex
+HSA-5669034	Reactome Pathway	TNFs bind their physiological receptors
+HSA-936964	Reactome Pathway	Activation of IRF3/IRF7 mediated by TBK1/IKK epsilon
+HSA-211897	Reactome Pathway	Cytochrome P450 - arranged by substrate type
+HSA-442660	Reactome Pathway	Na+/Cl- dependent neurotransmitter transporters
+HSA-9694614	Reactome Pathway	Attachment and Entry
+HSA-380994	Reactome Pathway	ATF4 activates genes in response to endoplasmic reticulum  stress
+HSA-181429	Reactome Pathway	Serotonin Neurotransmitter Release Cycle
+HSA-212676	Reactome Pathway	Dopamine Neurotransmitter Release Cycle
+HSA-112316	Reactome Pathway	Neuronal System
+HSA-379401	Reactome Pathway	Dopamine clearance from the synaptic cleft
+HSA-390651	Reactome Pathway	Dopamine receptors
+HSA-112040	Reactome Pathway	G-protein mediated events
+HSA-3858494	Reactome Pathway	Beta-catenin independent WNT signaling
+HSA-2025928	Reactome Pathway	Calcineurin activates NFAT
+HSA-203615	Reactome Pathway	eNOS activation
+HSA-392154	Reactome Pathway	Nitric oxide stimulates guanylate cyclase
+HSA-400508	Reactome Pathway	Incretin synthesis, secretion, and inactivation
+HSA-390650	Reactome Pathway	Histamine receptors
+HSA-112314	Reactome Pathway	Neurotransmitter receptors and postsynaptic signal transmission
+HSA-947581	Reactome Pathway	Molybdenum cofactor biosynthesis
+HSA-5576886	Reactome Pathway	Phase 4 - resting membrane potential
+HSA-6799198	Reactome Pathway	Complex I biogenesis
+HSA-1428517	Reactome Pathway	The citric acid (TCA) cycle and respiratory electron transport
+HSA-71403	Reactome Pathway	Citric acid cycle (TCA cycle)
+HSA-611105	Reactome Pathway	Respiratory electron transport
+HSA-70268	Reactome Pathway	Pyruvate metabolism
+HSA-1660517	Reactome Pathway	Synthesis of PIPs at the late endosome membrane
+HSA-1660514	Reactome Pathway	Synthesis of PIPs at the Golgi membrane
+HSA-1660516	Reactome Pathway	Synthesis of PIPs at the early endosome membrane
+HSA-4090294	Reactome Pathway	SUMOylation of intracellular receptors
+HSA-9017802	Reactome Pathway	Noncanonical activation of NOTCH3
+HSA-9013700	Reactome Pathway	NOTCH4 Activation and Transmission of Signal to the Nucleus
+HSA-2979096	Reactome Pathway	NOTCH2 Activation and Transmission of Signal to the Nucleus
+HSA-174403	Reactome Pathway	Glutathione synthesis and recycling
+HSA-5578999	Reactome Pathway	Defective GCLC causes HAGGSD
+HSA-9664535	Reactome Pathway	LTC4-CYSLTR mediated IL4 production
+HSA-71406	Reactome Pathway	Pyruvate metabolism and Citric Acid (TCA) cycle
+HSA-8963691	Reactome Pathway	Phenylalanine and tyrosine metabolism
+HSA-71240	Reactome Pathway	Tryptophan catabolism
+HSA-1614558	Reactome Pathway	Degradation of cysteine and homocysteine
+HSA-2408508	Reactome Pathway	Metabolism of ingested SeMet, Sec, MeSec into H2Se
+HSA-156581	Reactome Pathway	Methylation
+HSA-3359467	Reactome Pathway	Defective MTRR causes HMAE
+HSA-3359469	Reactome Pathway	Defective MTR causes HMAG
+HSA-9759218	Reactome Pathway	Cobalamin (Cbl) metabolism
+HSA-379724	Reactome Pathway	tRNA Aminoacylation
+HSA-379716	Reactome Pathway	Cytosolic tRNA aminoacylation
+HSA-379726	Reactome Pathway	Mitochondrial tRNA aminoacylation
+HSA-2408522	Reactome Pathway	Selenoamino acid metabolism
+HSA-888568	Reactome Pathway	GABA synthesis
+HSA-9022927	Reactome Pathway	MECP2 regulates transcription of genes involved in GABA signaling
+HSA-977443	Reactome Pathway	GABA receptor activation
+HSA-888593	Reactome Pathway	Reuptake of GABA
+HSA-445095	Reactome Pathway	Interaction between L1 and Ankyrins
+HSA-442755	Reactome Pathway	Activation of NMDA receptors and postsynaptic events
+HSA-9609736	Reactome Pathway	Assembly and cell surface presentation of NMDA receptors
+HSA-438066	Reactome Pathway	Unblocking of NMDA receptors, glutamate binding and activation
+HSA-9620244	Reactome Pathway	Long-term potentiation
+HSA-8849932	Reactome Pathway	Synaptic adhesion-like molecules
+HSA-6794361	Reactome Pathway	Neurexins and neuroligins
+HSA-451308	Reactome Pathway	Activation of Ca-permeable Kainate Receptor
+HSA-447038	Reactome Pathway	NrCAM interactions
+HSA-9032500	Reactome Pathway	Activated NTRK2 signals through FYN
+HSA-399719	Reactome Pathway	Trafficking of AMPA receptors
+HSA-5682910	Reactome Pathway	LGI-ADAM interactions
+HSA-8979227	Reactome Pathway	Triglyceride metabolism
+HSA-196071	Reactome Pathway	Metabolism of steroid hormones
+HSA-193144	Reactome Pathway	Estrogen biosynthesis
+HSA-8978868	Reactome Pathway	Fatty acid metabolism
+HSA-75105	Reactome Pathway	Fatty acyl-CoA biosynthesis
+HSA-75876	Reactome Pathway	Synthesis of very long-chain fatty acyl-CoAs
+HSA-877312	Reactome Pathway	Regulation of IFNG signaling
+HSA-8877330	Reactome Pathway	RUNX1 and FOXP3 control the development of regulatory T lymphocytes (Tregs)
+HSA-9020558	Reactome Pathway	Interleukin-2 signaling
+HSA-8854691	Reactome Pathway	Interleukin-20 family signaling
+HSA-9705462	Reactome Pathway	Inactivation of CSF3 (G-CSF) signaling
+HSA-4641258	Reactome Pathway	Degradation of DVL
+HSA-72163	Reactome Pathway	mRNA Splicing - Major Pathway
+HSA-72165	Reactome Pathway	mRNA Splicing - Minor Pathway
+HSA-163765	Reactome Pathway	ChREBP activates metabolic gene expression
+HSA-9029558	Reactome Pathway	NR1H2 & NR1H3 regulate gene expression linked to lipogenesis
+HSA-8849175	Reactome Pathway	Threonine catabolism
+HSA-189451	Reactome Pathway	Heme biosynthesis
+HSA-69481	Reactome Pathway	G2/M Checkpoints
+HSA-6798163	Reactome Pathway	Choline catabolism
+HSA-73817	Reactome Pathway	Purine ribonucleoside monophosphate biosynthesis
+HSA-70635	Reactome Pathway	Urea cycle
+HSA-352230	Reactome Pathway	Amino acid transport across the plasma membrane
+HSA-210991	Reactome Pathway	Basigin interactions
+HSA-428643	Reactome Pathway	Organic anion transporters
+HSA-204174	Reactome Pathway	Regulation of pyruvate dehydrogenase (PDH) complex
+HSA-1855204	Reactome Pathway	Synthesis of IP3 and IP4 in the cytosol
+HSA-5358351	Reactome Pathway	Signaling by Hedgehog
+HSA-381753	Reactome Pathway	Olfactory Signaling Pathway
+HSA-170660	Reactome Pathway	Adenylate cyclase activating pathway
+HSA-111933	Reactome Pathway	Calmodulin induced events
+HSA-975634	Reactome Pathway	Retinoid metabolism and transport
+HSA-75109	Reactome Pathway	Triglyceride biosynthesis
+HSA-74217	Reactome Pathway	Purine salvage
+HSA-418457	Reactome Pathway	cGMP effects
+HSA-74713	Reactome Pathway	IRS activation
+HSA-2428928	Reactome Pathway	IRS-related events triggered by IGF1R
+HSA-2586552	Reactome Pathway	Signaling by Leptin
+HSA-167044	Reactome Pathway	Signalling to RAS
+HSA-354192	Reactome Pathway	Integrin signaling
+HSA-9658195	Reactome Pathway	Leishmania infection
+HSA-380612	Reactome Pathway	Metabolism of serotonin
+HSA-389513	Reactome Pathway	CTLA4 inhibitory signaling
+HSA-4641262	Reactome Pathway	Disassembly of the destruction complex and recruitment of AXIN to the membrane
+HSA-70895	Reactome Pathway	Branched-chain amino acid catabolism
+HSA-9010553	Reactome Pathway	Regulation of expression of SLITs and ROBOs
+HSA-6791226	Reactome Pathway	Major pathway of rRNA processing in the nucleolus and cytosol
+HSA-1660661	Reactome Pathway	Sphingolipid de novo biosynthesis
+HSA-392518	Reactome Pathway	Signal amplification
+HSA-70921	Reactome Pathway	Histidine catabolism
+HSA-6803157	Reactome Pathway	Antimicrobial peptides
+HSA-1483166	Reactome Pathway	Synthesis of PA
+HSA-5362517	Reactome Pathway	Signaling by Retinoic Acid
+HSA-2132295	Reactome Pathway	MHC class II antigen presentation
+HSA-6783310	Reactome Pathway	Fanconi Anemia Pathway
+HSA-5696395	Reactome Pathway	Formation of Incision Complex in GG-NER
+HSA-5685939	Reactome Pathway	HDR through MMEJ (alt-NHEJ)
+HSA-111453	Reactome Pathway	BH3-only proteins associate with and inactivate anti-apoptotic BCL-2 members
+HSA-9673324	Reactome Pathway	WNT5:FZD7-mediated leishmania damping
+HSA-8948747	Reactome Pathway	Regulation of PTEN localization
+HSA-9683683	Reactome Pathway	Maturation of protein E
+HSA-9694493	Reactome Pathway	Maturation of protein E
+HSA-9637628	Reactome Pathway	Modulation by Mtb of host immune system
+HSA-9706377	Reactome Pathway	FLT3 signaling by CBL mutants
+HSA-1253288	Reactome Pathway	Downregulation of ERBB4 signaling
+HSA-3785653	Reactome Pathway	Myoclonic epilepsy of Lafora
+HSA-8849469	Reactome Pathway	PTK6 Regulates RTKs and Their Effectors AKT1 and DOK1
+HSA-8876493	Reactome Pathway	InlA-mediated entry of Listeria monocytogenes into host cells
+HSA-9636383	Reactome Pathway	Prevention of phagosomal-lysosomal fusion
+HSA-9013973	Reactome Pathway	TICAM1-dependent activation of IRF3/IRF7
+HSA-1358803	Reactome Pathway	Downregulation of ERBB2:ERBB3 signaling
+HSA-174490	Reactome Pathway	Membrane binding and targetting of GAG proteins
+HSA-2691232	Reactome Pathway	Constitutive Signaling by NOTCH1 HD Domain Mutants
+HSA-3134975	Reactome Pathway	Regulation of innate immune responses to cytosolic DNA
+HSA-8875360	Reactome Pathway	InlB-mediated entry of Listeria monocytogenes into host cell
+HSA-9706369	Reactome Pathway	Negative regulation of FLT3
+HSA-2173791	Reactome Pathway	TGF-beta receptor signaling in EMT (epithelial to mesenchymal transition)
+HSA-8866427	Reactome Pathway	VLDLR internalisation and degradation
+HSA-4641263	Reactome Pathway	Regulation of FZD by ubiquitination
+HSA-6807004	Reactome Pathway	Negative regulation of MET activity
+HSA-901032	Reactome Pathway	ER Quality Control Compartment (ERQC)
+HSA-9013507	Reactome Pathway	NOTCH3 Activation and Transmission of Signal to the Nucleus
+HSA-2173788	Reactome Pathway	Downregulation of TGF-beta receptor signaling
+HSA-162588	Reactome Pathway	Budding and maturation of HIV virion
+HSA-917729	Reactome Pathway	Endosomal Sorting Complex Required For Transport (ESCRT)
+HSA-936440	Reactome Pathway	Negative regulators of DDX58/IFIH1 signaling
+HSA-211733	Reactome Pathway	Regulation of activated PAK-2p34 by proteasome mediated degradation
+HSA-69601	Reactome Pathway	Ubiquitin Mediated Degradation of Phosphorylated Cdc25A
+HSA-180585	Reactome Pathway	Vif-mediated degradation of APOBEC3G
+HSA-450408	Reactome Pathway	AUF1 (hnRNP D0) binds and destabilizes mRNA
+HSA-4641257	Reactome Pathway	Degradation of AXIN
+HSA-174084	Reactome Pathway	Autodegradation of Cdh1 by Cdh1:APC/C
+HSA-4608870	Reactome Pathway	Asymmetric localization of PCP proteins
+HSA-8948751	Reactome Pathway	Regulation of PTEN stability and activity
+HSA-69017	Reactome Pathway	CDK-mediated phosphorylation and removal of Cdc6
+HSA-1169408	Reactome Pathway	ISG15 antiviral mechanism
+HSA-5632684	Reactome Pathway	Hedgehog on state
+HSA-68867	Reactome Pathway	Assembly of the pre-replicative complex
+HSA-198693	Reactome Pathway	AKT phosphorylates targets in the nucleus
+HSA-9614399	Reactome Pathway	Regulation of localization of FOXO transcription factors
+HSA-211163	Reactome Pathway	AKT-mediated inactivation of FOXO1A
+HSA-9755779	Reactome Pathway	SARS-CoV-2 targets host intracellular signalling and regulatory pathways
+HSA-199418	Reactome Pathway	Negative regulation of the PI3K/AKT network
+HSA-165159	Reactome Pathway	MTOR signalling
+HSA-350562	Reactome Pathway	Regulation of ornithine decarboxylase (ODC)
+HSA-1296053	Reactome Pathway	Classical Kir channels
+HSA-9027283	Reactome Pathway	Erythropoietin activates STAT5
+HSA-9675108	Reactome Pathway	Nervous system development
+HSA-201688	Reactome Pathway	WNT mediated activation of DVL
+HSA-8934903	Reactome Pathway	Receptor Mediated Mitophagy
+HSA-390466	Reactome Pathway	Chaperonin-mediated protein folding
+HSA-9022538	Reactome Pathway	Loss of MECP2 binding ability to 5mC-DNA
+HSA-1483257	Reactome Pathway	Phospholipid metabolism
+HSA-9022702	Reactome Pathway	MECP2 regulates transcription of neuronal ligands
+HSA-72649	Reactome Pathway	Translation initiation complex formation
+HSA-72702	Reactome Pathway	Ribosomal scanning and start codon recognition
+HSA-1482925	Reactome Pathway	Acyl chain remodelling of PG
+HSA-1482788	Reactome Pathway	Acyl chain remodelling of PC
+HSA-1482801	Reactome Pathway	Acyl chain remodelling of PS
+HSA-1482839	Reactome Pathway	Acyl chain remodelling of PE
+HSA-418890	Reactome Pathway	Role of second messengers in netrin-1 signaling
+HSA-2173789	Reactome Pathway	TGF-beta receptor signaling activates SMADs
+HSA-195399	Reactome Pathway	VEGF binds to VEGFR leading to receptor dimerization
+HSA-8953854	Reactome Pathway	Metabolism of RNA
+HSA-203927	Reactome Pathway	MicroRNA (miRNA) biogenesis
+HSA-198933	Reactome Pathway	Immunoregulatory interactions between a Lymphoid and a non-Lymphoid cell

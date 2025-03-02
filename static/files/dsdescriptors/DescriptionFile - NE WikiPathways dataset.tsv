@@ -1,0 +1,608 @@
+Data Description file for Dataset: Neighbour Enrichment - WikiPathways
+
+Description: Dataset of target annotations collected using the Neibhour Enrichment function in STRING, which includes annotations from nearest neighbour proteins to the input target.
+The predictive features in this dataset refer only to category of Pathways sourced from WikiPathways.
+
+Special Columns:	Category	Description
+Index	ID	Unique identifier for the compound/sex combination (instance) in the data. Ignored when training the classification model.
+Compound_name	ID	Name of the compound (drug). Ignored when training the classification model.
+class	Target Variable	Class label, with 0 indicating that the drug/sex combination is NOT associated with mouse longevity, and 1 indicating that it IS associated with mouse longevity, based on results from peer-reviewed studies.
+
+Predictive Features:	Category	Description
+WP4320	WikiPathways	Effect of progerin on genes involved in Hutchinson-Gilford progeria syndrome
+WP3651	WikiPathways	Pathways affected in adenoid cystic carcinoma
+WP138	WikiPathways	Androgen receptor signaling pathway
+WP179	WikiPathways	Cell cycle
+WP3594	WikiPathways	Circadian rhythm genes
+WP61	WikiPathways	Notch signaling pathway
+WP2261	WikiPathways	Glioblastoma signaling pathways
+WP2446	WikiPathways	Retinoblastoma gene in cancer
+WP399	WikiPathways	Wnt signaling pathway and pluripotency
+WP5049	WikiPathways	Glycolysis in senescence
+WP366	WikiPathways	TGF-beta signaling pathway
+WP5046	WikiPathways	NAD metabolism in oncogene-induced senescence and mitochondrial dysfunction-associated senescence
+WP3414	WikiPathways	Initiation of transcription and translation elongation at the HIV-1 LTR
+WP5097	WikiPathways	CCL18 signaling pathway
+WP2828	WikiPathways	Bladder cancer
+WP1541	WikiPathways	Energy metabolism
+WP1971	WikiPathways	Integrated cancer pathway
+WP2586	WikiPathways	Aryl hydrocarbon receptor pathway
+WP268	WikiPathways	Notch signaling
+WP3611	WikiPathways	Photodynamic therapy-induced AP-1 survival signaling
+WP4312	WikiPathways	Rett syndrome causing genes
+WP4879	WikiPathways	Overlap between signal transduction pathways contributing to LMNA laminopathies
+WP304	WikiPathways	Kit receptor signaling pathway
+WP3998	WikiPathways	Prader-Willi and Angelman syndrome
+WP45	WikiPathways	G1 to S cell cycle control
+WP4685	WikiPathways	Melanoma
+WP707	WikiPathways	DNA damage response
+WP1530	WikiPathways	miRNA regulation of DNA damage response
+WP3584	WikiPathways	MECP2 and associated Rett syndrome
+WP4255	WikiPathways	Non-small cell lung cancer
+WP4674	WikiPathways	Head and neck squamous cell carcinoma
+WP4263	WikiPathways	Pancreatic adenocarcinoma pathway
+WP4658	WikiPathways	Small cell lung cancer
+WP2064	WikiPathways	Neural crest differentiation
+WP5087	WikiPathways	Malignant pleural mesothelioma
+WP2263	WikiPathways	Androgen receptor network in prostate cancer
+WP2431	WikiPathways	Spinal cord injury
+WP5322	WikiPathways	CKAP4 signaling pathway map
+WP4657	WikiPathways	22q11.2 copy number variation syndrome
+WP236	WikiPathways	Adipogenesis
+WP2916	WikiPathways	Interactome of polycomb repressive complex 2 (PRC2) 
+WP4533	WikiPathways	Transcription co-factors SKI and SKIL protein partners
+WP4204	WikiPathways	Tumor suppressor activity of SMARCB1
+WP2023	WikiPathways	Cell differentiation - expanded index
+WP2029	WikiPathways	Cell differentiation - index
+WP2795	WikiPathways	Cardiac hypertrophic response
+WP474	WikiPathways	Endochondral ossification
+WP4808	WikiPathways	Endochondral ossification with skeletal dysplasias
+WP1991	WikiPathways	SRF and miRs in smooth muscle differentiation and proliferation
+WP5224	WikiPathways	2q37 copy number variation syndrome
+WP3888	WikiPathways	VEGFA-VEGFR2 signaling
+WP3996	WikiPathways	Ethanol effects on histone modifications
+WP1544	WikiPathways	MicroRNAs in cardiomyocyte hypertrophy
+WP3981	WikiPathways	miRNA regulation of prostate cancer signaling pathways
+WP2876	WikiPathways	Pregnane X receptor pathway
+WP2355	WikiPathways	Corticotropin-releasing hormone signaling pathway
+WP2882	WikiPathways	Nuclear receptors meta-pathway
+WP3932	WikiPathways	Focal adhesion: PI3K-Akt-mTOR-signaling pathway
+WP4746	WikiPathways	Thyroid hormones production and peripheral downstream signaling effects
+WP2875	WikiPathways	Constitutive androstane receptor pathway
+WP4262	WikiPathways	Breast cancer pathway
+WP712	WikiPathways	Estrogen signaling pathway
+WP2873	WikiPathways	Aryl hydrocarbon receptor pathway
+WP437	WikiPathways	EGF/EGFR signaling pathway
+WP2881	WikiPathways	Estrogen receptor pathway
+WP2034	WikiPathways	Leptin signaling pathway
+WP4659	WikiPathways	Gastrin signaling pathway
+WP313	WikiPathways	Hepatocyte growth factor receptor signaling
+WP2526	WikiPathways	PDGF pathway
+WP286	WikiPathways	IL-3 signaling pathway
+WP2018	WikiPathways	RANKL/RANK signaling pathway
+WP5235	WikiPathways	Estradiol regulation in porto-sinusoidal vascular disease
+WP2032	WikiPathways	Thyroid stimulating hormone (TSH) signaling pathway
+WP2324	WikiPathways	AGE/RAGE pathway
+WP5130	WikiPathways	Th17 cell differentiation pathway
+WP2037	WikiPathways	Prolactin signaling pathway
+WP2814	WikiPathways	Mammary gland development pathway - Puberty (Stage 2 of 4)
+WP4919	WikiPathways	Neuroinflammation
+WP2435	WikiPathways	Quercetin and Nf-kB / AP-1 induced apoptosis
+WP4928	WikiPathways	MAPK pathway in congenital thyroid cancer
+WP2380	WikiPathways	Brain-derived neurotrophic factor (BDNF) signaling pathway
+WP4666	WikiPathways	Hepatitis B infection
+WP289	WikiPathways	Myometrial relaxation and contraction pathways
+WP3612	WikiPathways	Photodynamic therapy-induced NFE2L2 (NRF2) survival signaling
+WP1528	WikiPathways	Physiological and pathological hypertrophy of the heart
+WP4483	WikiPathways	Relationship between inflammation, COX-2 and EGFR
+WP3972	WikiPathways	PDGFR-beta pathway
+WP408	WikiPathways	Oxidative stress response
+WP4880	WikiPathways	Host-pathogen interaction of human coronaviruses - interferon induction
+WP4877	WikiPathways	Host-pathogen interaction of human coronaviruses - MAPK signaling
+WP34	WikiPathways	Ovarian infertility
+WP5269	WikiPathways	Genetic causes of porto-sinusoidal vascular disease
+WP4564	WikiPathways	Neural crest cell migration during development
+WP127	WikiPathways	IL-5 signaling pathway
+WP4565	WikiPathways	Neural crest cell migration in cancer
+WP49	WikiPathways	IL-2 signaling pathway
+WP5300	WikiPathways	TROP2 regulatory signaling
+WP3286	WikiPathways	Copper homeostasis
+WP4747	WikiPathways	Netrin-UNC5B signaling pathway
+WP4754	WikiPathways	IL-18 signaling pathway
+WP560	WikiPathways	TGF-beta receptor signaling
+WP4205	WikiPathways	MET in type 1 papillary renal cell carcinoma
+WP4816	WikiPathways	TGF-beta receptor signaling in skeletal dysplasias
+WP3863	WikiPathways	T-cell antigen receptor (TCR) pathway during Staphylococcus aureus infection
+WP2374	WikiPathways	Oncostatin M signaling pathway
+WP3680	WikiPathways	Physico-chemical features and toxicity-associated pathways
+WP2880	WikiPathways	Glucocorticoid receptor pathway
+WP4216	WikiPathways	Chromosomal and microsatellite instability in colorectal cancer 
+WP4341	WikiPathways	Non-genomic actions of 1,25 dihydroxyvitamin D3
+WP2840	WikiPathways	Hair follicle development: cytodifferentiation - part 3 of 3
+WP5098	WikiPathways	T-cell activation SARS-CoV-2
+WP1772	WikiPathways	Apoptosis modulation and signaling
+WP673	WikiPathways	ErbB signaling pathway
+WP69	WikiPathways	T-cell receptor signaling pathway
+WP231	WikiPathways	TNF-alpha signaling pathway
+WP75	WikiPathways	Toll-like receptor signaling pathway
+WP3931	WikiPathways	Embryonic stem cell pluripotency pathways
+WP4630	WikiPathways	Measles virus infection
+WP706	WikiPathways	Sudden infant death syndrome (SIDS) susceptibility pathways
+WP481	WikiPathways	Insulin signaling
+WP2817	WikiPathways	Mammary gland development pathway - Pregnancy and lactation (Stage 3 of 4)
+WP5316	WikiPathways	Primary ovarian insufficiency
+WP306	WikiPathways	Focal adhesion
+WP170	WikiPathways	Nuclear receptors
+WP4545	WikiPathways	Oxysterols derived from cholesterol
+WP4298	WikiPathways	Acute viral myocarditis
+WP185	WikiPathways	Integrin-mediated cell adhesion
+WP4673	WikiPathways	Male infertility
+WP4155	WikiPathways	Endometrial cancer
+WP3303	WikiPathways	RAC1/PAK1/p38/MMP2 pathway
+WP4172	WikiPathways	PI3K-Akt signaling pathway
+WP2363	WikiPathways	Gastric cancer network 2
+WP2870	WikiPathways	Extracellular vesicle-mediated signaling in recipient cells
+WP4949	WikiPathways	16p11.2 proximal deletion syndrome
+WP4806	WikiPathways	EGFR tyrosine kinase inhibitor resistance
+WP710	WikiPathways	DNA damage response (only ATM dependent)
+WP4241	WikiPathways	Type 2 papillary renal cell carcinoma
+WP4018	WikiPathways	Clear cell renal cell carcinoma pathways
+WP3614	WikiPathways	Photodynamic therapy-induced HIF-1 survival signaling
+WP1539	WikiPathways	Angiogenesis
+WP3672	WikiPathways	lncRNA-mediated mechanisms of therapeutic resistance
+WP3657	WikiPathways	Hematopoietic stem cell gene regulation by GABP alpha/beta complex
+WP4206	WikiPathways	Hereditary leiomyomatosis and renal cell carcinoma pathway
+WP3646	WikiPathways	Hepatitis C and hepatocellular carcinoma
+WP254	WikiPathways	Apoptosis
+WP314	WikiPathways	Fas ligand pathway and stress induction of heat shock proteins
+WP5182	WikiPathways	Pro-survival signaling of neuroprotectin D1
+WP384	WikiPathways	Apoptosis modulation by HSP70
+WP2507	WikiPathways	Nanomaterial induced apoptosis
+WP5090	WikiPathways	Complement system in neuronal development and plasticity
+WP3941	WikiPathways	Oxidative damage response
+WP4864	WikiPathways	Host-pathogen interaction of human coronaviruses - apoptosis
+WP3982	WikiPathways	miRNA regulation of p53 pathway in prostate cancer
+WP4838	WikiPathways	Regucalcin in proximal tubule epithelial kidney cells
+WP2371	WikiPathways	Parkinsons disease pathway
+WP2036	WikiPathways	TNF-related weak inducer of apoptosis (TWEAK) signaling pathway
+WP3959	WikiPathways	DNA IR-double strand breaks and cellular response via ATM
+WP2059	WikiPathways	Alzheimers disease and miRNA effects
+WP5124	WikiPathways	Alzheimers disease
+WP4288	WikiPathways	MTHFR deficiency
+WP2447	WikiPathways	Amyotrophic lateral sclerosis (ALS)
+WP1433	WikiPathways	Nucleotide-binding oligomerization domain (NOD) pathway
+WP4008	WikiPathways	NO/cGMP/PKG mediated neuroprotection
+WP2328	WikiPathways	Allograft rejection
+WP2513	WikiPathways	Nanoparticle triggered regulated necrosis
+WP4396	WikiPathways	Nonalcoholic fatty liver disease
+WP3617	WikiPathways	Photodynamic therapy-induced NF-kB survival signaling
+WP5115	WikiPathways	Network map of SARS-CoV-2 signaling pathway
+WP5180	WikiPathways	DYRK1A
+WP4963	WikiPathways	p53 transcriptional gene network
+WP1602	WikiPathways	Nicotine effect on dopaminergic neurons
+WP536	WikiPathways	Calcium regulation in cardiac cells
+WP3929	WikiPathways	Chemokine signaling pathway
+WP2197	WikiPathways	Endothelin pathways
+WP24	WikiPathways	Peptide GPCRs
+WP455	WikiPathways	GPCRs, class A rhodopsin-like
+WP4874	WikiPathways	CAMKK2 pathway
+WP23	WikiPathways	B cell receptor signaling pathway
+WP5205	WikiPathways	Clock-controlled autophagy in bone metabolism
+WP2884	WikiPathways	NRF2 pathway
+WP2272	WikiPathways	Pathogenic Escherichia coli infection
+WP5039	WikiPathways	SARS-CoV-2 innate immunity evasion and cell-specific immune response
+WP5117	WikiPathways	Cohesin complex - Cornelia de Lange syndrome
+WP5118	WikiPathways	SMC1/SMC3 role in DNA damage - Cornelia de Lange Syndrome
+WP3644	WikiPathways	NAD+ metabolism
+WP4240	WikiPathways	Regulation of sister chromatid separation at the metaphase-anaphase transition
+WP3645	WikiPathways	NAD+ biosynthetic pathways
+WP3995	WikiPathways	Prion disease pathway
+WP3630	WikiPathways	NAD metabolism, sirtuins and aging
+WP4210	WikiPathways	Tryptophan catabolism leading to NAD+ production
+WP4191	WikiPathways	Caloric restriction and aging
+WP500	WikiPathways	Glycogen synthesis and degradation
+WP5173	WikiPathways	Disorders of galactose metabolism 
+WP534	WikiPathways	Glycolysis and gluconeogenesis
+WP5220	WikiPathways	Metabolic reprogramming in pancreatic cancer
+WP167	WikiPathways	Eicosanoid synthesis
+WP5122	WikiPathways	Prostaglandin and leukotriene metabolism in senescence 
+WP5321	WikiPathways	Prostaglandin and leukotriene metabolism in senescence 
+WP5149	WikiPathways	Lipid metabolism in senescent cells
+WP4719	WikiPathways	Eicosanoid metabolism via cyclooxygenases (COX)
+WP5088	WikiPathways	Prostaglandin signaling
+WP4586	WikiPathways	Metabolism of alpha-linolenic acid
+WP98	WikiPathways	Prostaglandin synthesis and regulation
+WP4891	WikiPathways	COVID-19 adverse outcome pathway
+WP15	WikiPathways	Selenium micronutrient network
+WP3287	WikiPathways	Overview of nanoparticle effects
+WP4478	WikiPathways	LTF danger signal response pathway
+WP5055	WikiPathways	Burn wound healing
+WP5113	WikiPathways	Antiviral and anti-inflammatory effects of Nrf2 on SARS-CoV-2 pathway
+WP5285	WikiPathways	Immune infiltration in pancreatic cancer
+WP5137	WikiPathways	Linoleic acid oxylipin metabolism
+WP3624	WikiPathways	Lung fibrosis
+WP176	WikiPathways	Folate metabolism
+WP5095	WikiPathways	Overview of proinflammatory and profibrotic mediators
+WP4493	WikiPathways	Cells and molecules involved in local acute inflammatory response 
+WP4884	WikiPathways	Pathogenesis of SARS-CoV-2 mediated by nsp9-nsp10 complex
+WP4925	WikiPathways	Unfolded protein response
+WP5272	WikiPathways	LDL- influence on CD14 and TLR4
+WP530	WikiPathways	Cytokines and inflammatory response
+WP3851	WikiPathways	TLR4 signaling and tolerance
+WP4721	WikiPathways	Eicosanoid metabolism via lipooxygenases (LOX)
+WP3893	WikiPathways	Development and heterogeneity of the ILC family
+WP4481	WikiPathways	Resistin as a regulator of inflammation
+WP4496	WikiPathways	Signal transduction through IL1R
+WP4329	WikiPathways	miRNA role in immune response in sepsis
+WP382	WikiPathways	MAPK signaling pathway
+WP2203	WikiPathways	Thymic stromal lymphopoietin (TSLP) signaling pathway
+WP1533	WikiPathways	Vitamin B12 metabolism
+WP2849	WikiPathways	Hematopoietic stem cell differentiation
+WP5222	WikiPathways	2q13 copy number variation syndrome
+WP4313	WikiPathways	Ferroptosis
+WP4655	WikiPathways	Cytosolic DNA-sensing pathway
+WP5083	WikiPathways	Neuroinflammation and glutamatergic signaling
+WP5155	WikiPathways	Arachidonic acid (AA, ARA) oxylipin metabolism
+WP4707	WikiPathways	Aspirin and miRNAs
+WP4223	WikiPathways	Ras signaling
+WP4756	WikiPathways	Renin-angiotensin-aldosterone system (RAAS)
+WP2436	WikiPathways	Dopamine metabolism
+WP3869	WikiPathways	Cannabinoid receptor signaling
+WP3965	WikiPathways	Lipid metabolism pathway
+WP4941	WikiPathways	GPR143 in melanocytes and retinal pigment epithelium cells
+WP2636	WikiPathways	Common pathways underlying drug addiction
+WP4249	WikiPathways	Hedgehog signaling pathway
+WP35	WikiPathways	G protein signaling pathways
+WP4540	WikiPathways	Hippo signaling regulation pathways
+WP4321	WikiPathways	Thermogenesis
+WP4541	WikiPathways	Hippo-Merlin signaling dysregulation
+WP5283	WikiPathways	Chronic hyperglycemia impairment of neuron function
+WP1403	WikiPathways	AMP-activated protein kinase signaling
+WP3679	WikiPathways	Cell-type dependent selectivity of CCK2R signaling
+WP247	WikiPathways	Small ligand GPCRs
+WP1455	WikiPathways	Serotonin transporter activity
+WP4220	WikiPathways	Neurotransmitter disorders
+WP58	WikiPathways	Monoamine GPCRs
+WP550	WikiPathways	Biogenic amine synthesis
+WP465	WikiPathways	Tryptophan metabolism
+WP727	WikiPathways	Monoamine transport
+WP722	WikiPathways	Serotonin HTR1 group and FOS pathway
+WP4156	WikiPathways	Biosynthesis and regeneration of tetrahydrobiopterin and catabolism of phenylalanine
+WP3944	WikiPathways	Serotonin and anxiety-related events
+WP3947	WikiPathways	Serotonin and anxiety
+WP4698	WikiPathways	Vitamin D-sensitive calcium signaling in depression
+WP2267	WikiPathways	Synaptic vesicle pathway
+WP4900	WikiPathways	Purinergic signaling
+WP117	WikiPathways	GPCRs, other
+WP26	WikiPathways	S1P receptor signal transduction
+WP3591	WikiPathways	Sleep regulation
+WP4222	WikiPathways	Phosphodiesterases in neuronal function
+WP4539	WikiPathways	Synaptic signaling pathways associated with autism spectrum disorder
+WP51	WikiPathways	Regulation of actin cytoskeleton
+WP3844	WikiPathways	PI3K-AKT-mTOR signaling pathway and therapeutic opportunities
+WP4582	WikiPathways	Cancer immunotherapy by CTLA4 blockade
+WP4217	WikiPathways	Ebola virus infection in host
+WP3915	WikiPathways	Angiopoietin-like protein 8 regulatory pathway
+WP4239	WikiPathways	Epithelial to mesenchymal transition in colorectal cancer
+WP3937	WikiPathways	Microglia pathogen phagocytosis pathway
+WP4566	WikiPathways	Translation inhibitors in chronically activated PDGFRA cells
+WP4787	WikiPathways	Osteoblast differentiation and related diseases
+WP395	WikiPathways	IL-4 signaling pathway
+WP4829	WikiPathways	mBDNF and proBDNF regulation of GABA neurotransmission
+WP4871	WikiPathways	Kisspeptin/kisspeptin receptor system in the ovary
+WP5191	WikiPathways	Resolvin E1 and resolvin D1 signaling pathways promoting inflammation resolution
+WP244	WikiPathways	Alpha 6 beta 4 signaling pathway
+WP524	WikiPathways	G13 signaling pathway
+WP585	WikiPathways	Interferon type I signaling pathways
+WP3935	WikiPathways	Leptin-insulin signaling overlap
+WP5181	WikiPathways	Roles of ceramides in development of insulin resistance
+WP205	WikiPathways	IL-7 signaling pathway
+WP2643	WikiPathways	Nanoparticle-mediated activation of receptor signaling
+WP2533	WikiPathways	Glycerophospholipid biosynthetic pathway
+WP364	WikiPathways	IL6 signaling pathway
+WP2332	WikiPathways	Interleukin-11 signaling pathway
+WP4971	WikiPathways	Phosphoinositides metabolism
+WP195	WikiPathways	IL-1 signaling pathway
+WP5072	WikiPathways	Modulators of TCR signaling and T cell activation
+WP5192	WikiPathways	Modulation of PI3K-Akt-mTOR signaling by bioactive sphingolipids
+WP4549	WikiPathways	Fragile X syndrome
+WP22	WikiPathways	IL-9 signaling pathway
+WP5101	WikiPathways	Congenital generalized lipodystrophy
+WP4141	WikiPathways	PI3K/AKT/mTOR - vitamin D3 signaling
+WP1584	WikiPathways	Type II diabetes mellitus
+WP5074	WikiPathways	Kallmann syndrome
+WP581	WikiPathways	EPO receptor signaling
+WP5200	WikiPathways	Dravet syndrome
+WP2112	WikiPathways	IL-17 signaling pathway
+WP3676	WikiPathways	BDNF-TrkB signaling
+WP3850	WikiPathways	Factors and pathways affecting insulin-like growth factor (IGF1)-Akt signaling
+WP4558	WikiPathways	Overview of interferons-mediated signaling pathway
+WP4136	WikiPathways	Fibrin complement receptor 3 signaling pathway
+WP2038	WikiPathways	Microtubule cytoskeleton regulation
+WP5144	WikiPathways	NRP1-triggered signaling pathways in pancreatic cancer 
+WP4906	WikiPathways	3q29 copy number variation syndrome
+WP1982	WikiPathways	Sterol regulatory element-binding proteins (SREBP) signaling
+WP2249	WikiPathways	Metastatic brain tumor
+WP3872	WikiPathways	Regulation of apoptosis by parathyroid hormone-related protein
+WP1471	WikiPathways	Target of rapamycin signaling
+WP5323	WikiPathways	Fatty Acids and Lipoproteins Transport in Hepatocytes
+WP4301	WikiPathways	Inhibition of exosome biogenesis and secretion by Manumycin A in CRPC cells
+WP3298	WikiPathways	Melatonin metabolism and effects
+WP5236	WikiPathways	Markers of kidney cell lineage
+WP3678	WikiPathways	Amplification and expansion of oncogenic pathways as metastatic traits
+WP4317	WikiPathways	Mitochondrial fatty acid synthesis pathway
+WP5031	WikiPathways	Biotin metabolism, including IMDs
+WP3925	WikiPathways	Amino acid metabolism
+WP4595	WikiPathways	Urea cycle and associated pathways
+WP106	WikiPathways	Alanine and aspartate metabolism
+WP5312	WikiPathways	Metabolic pathways of fibroblasts
+WP4290	WikiPathways	Metabolic reprogramming in colon cancer
+WP4157	WikiPathways	GABA metabolism (aka GHB)
+WP4583	WikiPathways	Biomarkers for urea cycle disorders
+WP2453	WikiPathways	TCA cycle and deficiency of pyruvate dehydrogenase complex (PDHc)
+WP497	WikiPathways	Urea cycle and metabolism of amino groups
+WP2911	WikiPathways	miRNA targets in ECM and membrane receptors
+WP4966	WikiPathways	Fluoroacetic acid toxicity
+WP2855	WikiPathways	Dopaminergic neurogenesis
+WP453	WikiPathways	Inflammatory response pathway
+WP5036	WikiPathways	Angiotensin II receptor type 1 pathway
+WP2035	WikiPathways	Follicle stimulating hormone (FSH) signaling pathway
+WP4553	WikiPathways	FBXL10 enhancement of MAP/ERK signaling in diffuse large B-cell lymphoma
+WP4153	WikiPathways	Degradation pathway of sphingolipids, including diseases
+WP4584	WikiPathways	Biomarkers for pyrimidine metabolism disorders
+WP4225	WikiPathways	Pyrimidine metabolism and related diseases
+WP4022	WikiPathways	Pyrimidine metabolism
+WP1601	WikiPathways	Fluoropyrimidine activity
+WP4589	WikiPathways	Major receptors targeted by epinephrine and norepinephrine
+WP4760	WikiPathways	PKC-gamma calcium signaling pathway in ataxia
+WP4923	WikiPathways	Autophagy
+WP4905	WikiPathways	1q21.1 copy number variation syndrome
+WP4577	WikiPathways	Neurodegeneration with brain iron accumulation (NBIA) subtypes pathway
+WP3934	WikiPathways	Leptin and adiponectin
+WP3878	WikiPathways	ATM signaling in development and disease 
+WP3595	WikiPathways	mir-124 predicted interactions with cell cycle and differentiation 
+WP2011	WikiPathways	SREBF and miR33 in cholesterol and lipid homeostasis
+WP3879	WikiPathways	4-hydroxytamoxifen, dexamethasone, and retinoic acids regulation of p27 expression
+WP1981	WikiPathways	Thyroxine (thyroid hormone) production
+WP363	WikiPathways	Wnt signaling pathway
+WP5329	WikiPathways	Cholesterol biosynthesis pathway in hepatocytes
+WP4538	WikiPathways	Regulatory circuits of the STAT3 signaling pathway
+WP422	WikiPathways	MAPK cascade
+WP2637	WikiPathways	Interleukin-1 (IL-1) structural pathway
+WP734	WikiPathways	Serotonin receptor 4/6/7 and NR3C signaling
+WP732	WikiPathways	Serotonin receptor 2 and ELK-SRF/GATA4 signaling
+WP4767	WikiPathways	FGFR3 signaling in chondrocyte proliferation and terminal differentiation
+WP4535	WikiPathways	Envelope proteins and their potential roles in EDMD physiopathology
+WP2868	WikiPathways	TCA cycle nutrient use and invasiveness of ovarian cancer
+WP4269	WikiPathways	Ethanol metabolism production of ROS by CYP2E1
+WP2815	WikiPathways	Mammary gland development pathway - Involution (Stage 4 of 4)
+WP1434	WikiPathways	Osteopontin signaling
+WP3301	WikiPathways	MFAP5-mediated ovarian cancer cell motility and invasiveness
+WP4560	WikiPathways	MFAP5 effect on permeability and motility of endothelial cells via cytoskeleton rearrangement
+WP4585	WikiPathways	Cancer immunotherapy by PD-1 blockade
+WP5231	WikiPathways	Hippocampal synaptogenesis and neurogenesis
+WP2516	WikiPathways	ATM signaling pathway
+WP5221	WikiPathways	2q11.2 copy number variation syndrome
+WP5198	WikiPathways	Inflammatory bowel disease signaling
+WP4389	WikiPathways	Bile acids synthesis and enterohepatic circulation 
+WP3859	WikiPathways	TGF-beta signaling in thyroid cells for epithelial-mesenchymal transition
+WP3668	WikiPathways	Hypothesized pathways in pathogenesis of cardiovascular disease
+WP4875	WikiPathways	Disruption of postsynaptic signaling by CNV
+WP4331	WikiPathways	Neovascularisation processes
+WP400	WikiPathways	p38 MAPK signaling pathway
+WP4534	WikiPathways	Mechanoregulation and pathology of YAP/TAZ via Hippo and non-Hippo mechanisms
+WP3302	WikiPathways	eIF5A regulation in response to inhibition of the nuclear export system
+WP2864	WikiPathways	Apoptosis-related network due to altered Notch3 in ovarian cancer
+WP5277	WikiPathways	Steroid hormone precursor biosynthesis
+WP5279	WikiPathways	Mineralocorticoid biosynthesis
+WP5280	WikiPathways	Glucocorticoid biosynthesis
+WP4524	WikiPathways	Alternative pathway of fetal androgen synthesis
+WP4523	WikiPathways	Classical pathway of steroidogenesis with glucocorticoid and mineralocorticoid metabolism
+WP696	WikiPathways	Benzo(a)pyrene metabolism
+WP702	WikiPathways	Metapathway biotransformation Phase I and II
+WP496	WikiPathways	Steroid biosynthesis
+WP554	WikiPathways	ACE inhibitor pathway
+WP4969	WikiPathways	RAS and bradykinin pathways in COVID-19
+WP4016	WikiPathways	DNA IR-damage and cellular response via ATR
+WP1742	WikiPathways	TP53 network
+WP186	WikiPathways	Homologous recombination
+WP1545	WikiPathways	miRNAs involved in DNA damage response
+WP4946	WikiPathways	DNA repair pathways, full network
+WP3613	WikiPathways	Photodynamic therapy-induced unfolded protein response
+WP4861	WikiPathways	Endoplasmic reticulum stress response in coronavirus infection
+WP3853	WikiPathways	ERK pathway in Huntingtons disease
+WP2509	WikiPathways	Nanoparticle triggered autophagic cell death
+WP4932	WikiPathways	7q11.23 copy number variation syndrome
+WP4562	WikiPathways	Canonical NF-kB pathway
+WP4961	WikiPathways	STING pathway in Kawasaki-like disease and COVID-19
+WP4479	WikiPathways	Supression of HMGB1 mediated inflammation by THBD
+WP4480	WikiPathways	Altered glycosylation of MUC1 in tumor microenvironment
+WP3865	WikiPathways	Novel intracellular components of RIG-I-like receptor pathway
+WP4482	WikiPathways	Vitamin D in inflammatory diseases
+WP262	WikiPathways	Ebstein-Barr virus LMP1 signaling
+WP3858	WikiPathways	Toll-like receptor signaling related to MyD88
+WP3849	WikiPathways	MAPK and NFkB signaling pathways inhibited by Yersinia YopJ
+WP288	WikiPathways	Nod-like receptor (NLR) signaling pathway
+WP4876	WikiPathways	Activation of NLRP3 inflammasome by SARS-CoV-2
+WP4788	WikiPathways	Autosomal recessive osteopetrosis pathways
+WP4337	WikiPathways	ncRNAs involved in STAT3 signaling in hepatocellular carcinoma
+WP2583	WikiPathways	T cell receptor and co-stimulatory signaling
+WP3890	WikiPathways	Nanomaterial-induced inflammasome activation
+WP2865	WikiPathways	IL1 and megakaryocytes in obesity
+WP5183	WikiPathways	SARS-CoV-2 mitochondrial chronic oxidative stress and endothelial dysfunction
+WP3926	WikiPathways	ApoE and miR-146 in inflammation and atherosclerosis
+WP3656	WikiPathways	Interleukin-1 induced activation of NF-kB
+WP3877	WikiPathways	MYD88 distinct input-output pathway
+WP5174	WikiPathways	Ulcerative colitis signaling
+WP4559	WikiPathways	Interactions between immune cells and microRNAs in tumor microenvironment
+WP5038	WikiPathways	Mitochondrial immune response to SARS-CoV-2
+WP5121	WikiPathways	Sphingolipid metabolism in senescence
+WP2877	WikiPathways	Vitamin D receptor pathway
+WP3969	WikiPathways	H19 action Rb-E2F1 signaling and CDK-Beta-catenin activity
+WP4970	WikiPathways	Galanin receptor pathway
+WP2878	WikiPathways	PPAR-alpha pathway
+WP2572	WikiPathways	Primary focal segmental glomerulosclerosis (FSGS)
+WP4790	WikiPathways	FGF23 signaling in hypophosphatemic rickets and related disorders
+WP4844	WikiPathways	Influence of laminopathies on Wnt signaling
+WP4258	WikiPathways	lncRNA in canonical Wnt signaling and colorectal cancer
+WP531	WikiPathways	DNA mismatch repair
+WP5114	WikiPathways	Nucleotide excision repair in xeroderma pigmentosum 
+WP4753	WikiPathways	Nucleotide excision repair
+WP466	WikiPathways	DNA replication
+WP4752	WikiPathways	Base excision repair
+WP5292	WikiPathways	Glycosphingolipid metabolism
+WP5275	WikiPathways	Ether lipid biosynthesis
+WP1422	WikiPathways	Sphingolipid pathway
+WP4352	WikiPathways	Ciliary landscape
+WP5120	WikiPathways	Inclusion body myositis
+WP2485	WikiPathways	NAD biosynthesis II (from tryptophan)
+WP528	WikiPathways	Acetylcholine synthesis
+WP3933	WikiPathways	Kennedy pathway from sphingolipids
+WP197	WikiPathways	Cholesterol biosynthesis pathway
+WP5193	WikiPathways	Cholesterol synthesis disorders
+WP5333	WikiPathways	Cholesterol metabolism
+WP4718	WikiPathways	Cholesterol metabolism with Bloch and Kandutsch-Russell pathways
+WP5304	WikiPathways	Cholesterol metabolism
+WP1992	WikiPathways	Genes targeted by miRNAs in adipocytes
+WP698	WikiPathways	Glucuronidation
+WP1604	WikiPathways	Codeine and morphine metabolism
+WP697	WikiPathways	Estrogen metabolism
+WP691	WikiPathways	Tamoxifen metabolism
+WP5276	WikiPathways	Estrogen metabolism
+WP229	WikiPathways	Irinotecan pathway
+WP3874	WikiPathways	Canonical and non-canonical TGF-B signaling
+WP3670	WikiPathways	Interactions between LOXL4 and oxidative stress pathway
+WP2406	WikiPathways	Cardiac progenitor differentiation
+WP2289	WikiPathways	Drug induction of bile acid pathway
+WP299	WikiPathways	Nuclear receptors in lipid metabolism and toxicity
+WP43	WikiPathways	Oxidation by cytochrome P450
+WP2879	WikiPathways	Farnesoid X receptor pathway
+WP4174	WikiPathways	Metabolism of tetrahydrocannabinol (THC)
+WP4917	WikiPathways	Proximal tubule transport
+WP678	WikiPathways	Arachidonate epoxygenase / epoxide hydrolase
+WP206	WikiPathways	Fatty acid omega-oxidation
+WP5238	WikiPathways	Cholestasis
+WP3640	WikiPathways	Imatinib and chronic myeloid leukemia
+WP5176	WikiPathways	Disorders of bile acid synthesis and biliary transport
+WP5190	WikiPathways	Creatine pathway
+WP3300	WikiPathways	Dual hijack model of Vif in HIV infection
+WP4860	WikiPathways	Hijack of ubiquitination by SARS-CoV-2
+WP383	WikiPathways	Striated muscle contraction pathway
+WP5314	WikiPathways	Lactate shuttle in glial cells
+WP5171	WikiPathways	Leukotriene metabolic pathway
+WP100	WikiPathways	Glutathione metabolism
+WP2525	WikiPathways	Trans-sulfuration, one-carbon metabolism and related pathways
+WP690	WikiPathways	Polyol pathway
+WP1946	WikiPathways	Cori cycle
+WP5178	WikiPathways	Disorders of fructose metabolism
+WP5133	WikiPathways	Non-classical role of vitamin D
+WP4883	WikiPathways	SARS-CoV-2 and ACE2 receptor: molecular mechanisms
+WP4799	WikiPathways	Downregulation of ACE2 by SARS-CoV-2 spike protein
+WP5076	WikiPathways	Soluble ACE2-mediated cell entry of SARS-CoV-2
+WP4818	WikiPathways	Conversion of angiotensinogen to angiotensin II 
+WP5089	WikiPathways	Kinin-Kallikrein pathway
+WP477	WikiPathways	Cytoplasmic ribosomal proteins
+WP129	WikiPathways	Matrix metalloproteinases
+WP5315	WikiPathways	Sebaleic acid formation and metabolism
+WP558	WikiPathways	Complement and coagulation cascades
+WP272	WikiPathways	Blood clotting cascade
+WP4927	WikiPathways	COVID-19, thrombosis and anticoagulation
+WP2806	WikiPathways	Complement system
+WP5186	WikiPathways	Vitamin K metabolism and activation of dependent proteins
+WP699	WikiPathways	Aflatoxin B1 metabolism
+WP2646	WikiPathways	Lidocaine metabolism
+WP2816	WikiPathways	Felbamate metabolism
+WP3891	WikiPathways	Benzene metabolism
+WP5066	WikiPathways	FOXA2 pathway
+WP4462	WikiPathways	Platelet-mediated interactions with vascular and circulating cells
+WP5218	WikiPathways	Extrafollicular and follicular B cell activation by SARS-CoV-2
+WP5044	WikiPathways	Kynurenine pathway and links to cell senescence
+WP3633	WikiPathways	Caffeine and theobromine metabolism
+WP2542	WikiPathways	Sulindac metabolic pathway
+WP3871	WikiPathways	Valproic acid pathway
+WP5188	WikiPathways	Retinol metabolism
+WP5029	WikiPathways	Amino acid transport defects (IEMs)
+WP5284	WikiPathways	Cell interactions of the pancreatic cancer microenvironment
+WP5092	WikiPathways	Interactions of natural killer cells in pancreatic cancer
+WP3958	WikiPathways	GPR40 pathway
+WP2118	WikiPathways	Arrhythmogenic right ventricular cardiomyopathy
+WP4726	WikiPathways	Sphingolipid metabolism: integrated pathway
+WP4962	WikiPathways	Airway smooth muscle cell contraction
+WP5294	WikiPathways	Sildenafil treatment
+WP2874	WikiPathways	Liver X receptor pathway
+WP1600	WikiPathways	Nicotine metabolism in liver cells
+WP694	WikiPathways	Arylamine metabolism
+WP3942	WikiPathways	PPAR signaling pathway
+WP623	WikiPathways	Oxidative phosphorylation
+WP111	WikiPathways	Electron transport chain: OXPHOS system in mitochondria
+WP4324	WikiPathways	Mitochondrial complex I assembly model OXPHOS system
+WP78	WikiPathways	TCA cycle (aka Krebs or citric acid cycle)
+WP4920	WikiPathways	Mitochondrial complex II assembly
+WP4236	WikiPathways	Krebs cycle disorders
+WP3599	WikiPathways	Transcription factor regulation in adipogenesis
+WP2895	WikiPathways	Differentiation of white and brown adipocyte
+WP5265	WikiPathways	Neurogenesis regulation in the olfactory epithelium
+WP3	WikiPathways	Transcriptional activation by NRF2 in response to phytochemicals
+WP4357	WikiPathways	NRF2-ARE regulation
+WP4518	WikiPathways	Gamma-glutamyl cycle for the biosynthesis and degradation of glutathione, including diseases
+WP3953	WikiPathways	mRNA, protein, and metabolite inducation pathway by cyclosporin A
+WP4504	WikiPathways	Cysteine and methionine catabolism
+WP5050	WikiPathways	TCA cycle in senescence
+WP5166	WikiPathways	Glyoxylate metabolism
+WP4292	WikiPathways	Methionine metabolism leading to sulfur amino acids and related disorders
+WP2333	WikiPathways	Trans-sulfuration pathway
+WP241	WikiPathways	One-carbon metabolism
+WP1589	WikiPathways	Folate-alcohol and cancer pathway hypotheses
+WP3580	WikiPathways	Methionine de novo and salvage pathway
+WP4259	WikiPathways	Disorders of folate metabolism and transport
+WP1495	WikiPathways	Glycine metabolism
+WP4688	WikiPathways	Serine metabolism
+WP4271	WikiPathways	Vitamin B12 disorders
+WP4159	WikiPathways	GABA receptor signaling
+WP4148	WikiPathways	Splicing factor NOVA regulated synaptic proteins
+WP501	WikiPathways	GPCRs, class C metabotropic glutamate, pheromone
+WP4629	WikiPathways	Aerobic glycolysis
+WP2456	WikiPathways	HIF1A and PPARG regulation of glycolysis
+WP4494	WikiPathways	Selective expression of chemokine receptors during T-cell polarization
+WP619	WikiPathways	Type II interferon signaling
+WP4484	WikiPathways	Control of immune tolerance by vasoactive intestinal peptide
+WP4495	WikiPathways	IL-10 anti-inflammatory signaling pathway 
+WP4950	WikiPathways	16p11.2 distal deletion syndrome
+WP4720	WikiPathways	Eicosanoid metabolism via cytochrome P450 monooxygenases pathway
+WP411	WikiPathways	mRNA processing
+WP4336	WikiPathways	ncRNAs involved in Wnt signaling in hepatocellular carcinoma
+WP428	WikiPathways	Wnt signaling
+WP357	WikiPathways	Fatty acid biosynthesis
+WP4724	WikiPathways	Omega-9 fatty acid synthesis
+WP4723	WikiPathways	Omega-3 / omega-6 fatty acid synthesis
+WP368	WikiPathways	Mitochondrial long chain fatty acid beta-oxidation
+WP5061	WikiPathways	Fatty acid transporters
+WP143	WikiPathways	Fatty acid beta-oxidation
+WP5064	WikiPathways	7-oxo-C and 7-beta-HC pathways
+WP4224	WikiPathways	Purine metabolism and related disorders
+WP3634	WikiPathways	Insulin signaling in adipocytes (normal condition)
+WP3635	WikiPathways	Insulin signaling in adipocytes (diabetic condition)
+WP430	WikiPathways	Statin inhibition of cholesterol production
+WP5318	WikiPathways	Female steroid hormones in cardiomyocyte energy metabolism
+WP1531	WikiPathways	Vitamin D metabolism
+WP325	WikiPathways	Triacylglyceride synthesis
+WP716	WikiPathways	Vitamin A and carotenoid metabolism
+WP4722	WikiPathways	Glycerolipids and glycerophospholipids
+WP4792	WikiPathways	Purine metabolism
+WP2359	WikiPathways	Parkin-ubiquitin proteasomal system pathway
+WP4686	WikiPathways	Leucine, isoleucine and valine metabolism
+WP410	WikiPathways	Exercise-induced circadian regulation
+WP4921	WikiPathways	Mitochondrial complex III assembly
+WP516	WikiPathways	Hypertrophy model
+WP3927	WikiPathways	BMP signaling in eyelid development
+WP4150	WikiPathways	Wnt signaling in kidney disease
+WP5211	WikiPathways	Glucose metabolism in triple-negative breast cancer cells
+WP4186	WikiPathways	Somatroph axis (GH) and its relationship to dietary restriction and aging
+WP4542	WikiPathways	Leukocyte-intrinsic Hippo pathway functions
+WP3658	WikiPathways	Wnt/beta-catenin signaling pathway in leukemia
+WP5102	WikiPathways	Familial partial lipodystrophy
+WP4149	WikiPathways	White fat cell differentiation
+WP107	WikiPathways	Translation factors
+WP4823	WikiPathways	Genes controlling nephrogenesis
+WP2805	WikiPathways	exRNA mechanism of action and biogenesis
+WP5053	WikiPathways	Development of ureteric collection system

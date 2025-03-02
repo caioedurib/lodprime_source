@@ -1,0 +1,486 @@
+Data Description file for Dataset: Functional Annotation - InterPro
+
+Description: Dataset of target annotations collected using the Neibhour Enrichment function in STRING, which includes annotations from nearest neighbour proteins to the input target.
+The predictive features in this dataset refer only to category of protein domains sourced from InterPro.
+
+Special Columns:	Category	Description
+Index	ID	Unique identifier for the compound/sex combination (instance) in the data. Ignored when training the classification model.
+Compound_name	ID	Name of the compound (drug). Ignored when training the classification model.
+class	Target Variable	Class label, with 0 indicating that the drug/sex combination is NOT associated with mouse longevity, and 1 indicating that it IS associated with mouse longevity, based on results from peer-reviewed studies.
+
+Predictive Features:	Category	Description
+IPR000276	InterPro	G protein-coupled receptor, rhodopsin-like
+IPR017452	InterPro	GPCR, rhodopsin-like, 7TM
+IPR000286	InterPro	Histone deacetylase family
+IPR003084	InterPro	Histone deacetylase
+IPR023696	InterPro	Ureohydrolase domain superfamily
+IPR023801	InterPro	Histone deacetylase domain
+IPR037138	InterPro	Histone deacetylase domain superfamily
+IPR017320	InterPro	Histone deacetylase class II, eukaryotic-type
+IPR024643	InterPro	Histone deacetylase, glutamine rich N-terminal domain
+IPR046949	InterPro	Histone deacetylase 4/5/7/9
+IPR000536	InterPro	Nuclear hormone receptor, ligand-binding domain
+IPR001628	InterPro	Zinc finger, nuclear hormone receptor-type
+IPR013088	InterPro	Zinc finger, NHR/GATA-type
+IPR035500	InterPro	Nuclear hormone receptor-like domain superfamily
+IPR001103	InterPro	Androgen receptor
+IPR001723	InterPro	Nuclear hormone receptor
+IPR024178	InterPro	Estrogen receptor/oestrogen-related receptor
+IPR001292	InterPro	Estrogen receptor
+IPR024736	InterPro	Oestrogen-type nuclear receptor final C-terminal domain
+IPR046944	InterPro	Estrogen receptor, N-terminal
+IPR021064	InterPro	Estrogen receptor beta-like, N-terminal
+IPR028355	InterPro	Estrogen receptor beta/gamma
+IPR001404	InterPro	Heat shock protein Hsp90 family
+IPR003594	InterPro	Histidine kinase/HSP90-like ATPase
+IPR019805	InterPro	Heat shock protein Hsp90, conserved site
+IPR020568	InterPro	Ribosomal protein S5 domain 2-type fold
+IPR020575	InterPro	Heat shock protein Hsp90, N-terminal
+IPR036890	InterPro	Histidine kinase/HSP90-like ATPase superfamily
+IPR037196	InterPro	HSP90, C-terminal domain
+IPR000014	InterPro	PAS domain
+IPR001610	InterPro	PAC motif
+IPR011598	InterPro	Myc-type, basic helix-loop-helix (bHLH) domain
+IPR013655	InterPro	PAS fold-3
+IPR013767	InterPro	PAS fold
+IPR035965	InterPro	PAS domain superfamily
+IPR036638	InterPro	Helix-loop-helix DNA-binding domain superfamily
+IPR001102	InterPro	Transglutaminase, N-terminal
+IPR002931	InterPro	Transglutaminase-like
+IPR008958	InterPro	Transglutaminase, C-terminal
+IPR013783	InterPro	Immunoglobulin-like fold
+IPR013808	InterPro	Transglutaminase, active site
+IPR014756	InterPro	Immunoglobulin E-set
+IPR023608	InterPro	Protein-glutamine gamma-glutamyltransferase, animal
+IPR036238	InterPro	Transglutaminase, C-terminal domain superfamily
+IPR036985	InterPro	Transglutaminase-like superfamily
+IPR038765	InterPro	Papain-like cysteine peptidase superfamily
+IPR001309	InterPro	Peptidase C14, p20 domain
+IPR002138	InterPro	Peptidase C14, caspase non-catalytic subunit p10
+IPR002398	InterPro	Peptidase C14 family
+IPR011600	InterPro	Peptidase C14, caspase domain
+IPR015917	InterPro	Peptidase C14A, caspase catalytic domain
+IPR016129	InterPro	Peptidase family C14A, His active site
+IPR029030	InterPro	Caspase-like domain superfamily
+IPR033139	InterPro	Peptidase family C14A, cysteine active site
+IPR013083	InterPro	Zinc finger, RING/FYVE/PHD-type
+IPR003193	InterPro	ADP-ribosyl cyclase (CD38/157)
+IPR017853	InterPro	Glycoside hydrolase superfamily
+IPR000742	InterPro	EGF-like domain
+IPR010255	InterPro	Haem peroxidase superfamily
+IPR019791	InterPro	Haem peroxidase, animal-type
+IPR037120	InterPro	Haem peroxidase domain superfamily, animal type
+IPR002110	InterPro	Ankyrin repeat
+IPR005821	InterPro	Ion transport domain
+IPR036770	InterPro	Ankyrin repeat-containing domain superfamily
+IPR000175	InterPro	Sodium:neurotransmitter symporter
+IPR037272	InterPro	Sodium:neurotransmitter symporter superfamily
+IPR013086	InterPro	Sodium:neurotransmitter symporter, serotonin, N-terminal
+IPR000341	InterPro	Phosphatidylinositol 3-kinase Ras-binding (PI3K RBD) domain
+IPR000403	InterPro	Phosphatidylinositol 3-/4-kinase, catalytic domain
+IPR001263	InterPro	Phosphoinositide 3-kinase, accessory (PIK) domain
+IPR002420	InterPro	C2 phosphatidylinositol 3-kinase-type domain
+IPR003113	InterPro	Phosphatidylinositol 3-kinase, adaptor-binding domain
+IPR011009	InterPro	Protein kinase-like domain superfamily
+IPR015433	InterPro	Phosphatidylinositol kinase
+IPR016024	InterPro	Armadillo-type fold
+IPR018936	InterPro	Phosphatidylinositol 3/4-kinase, conserved site
+IPR029071	InterPro	Ubiquitin-like domain superfamily
+IPR035892	InterPro	C2 domain superfamily
+IPR036940	InterPro	Phosphatidylinositol 3-/4-kinase, catalytic domain superfamily
+IPR042236	InterPro	Phosphoinositide 3-kinase, accessory (PIK) domain superfamily
+IPR045580	InterPro	PIK3 catalytic subunit gamma, adaptor-binding domain
+IPR002893	InterPro	Zinc finger, MYND-type
+IPR005123	InterPro	Oxoglutarate/iron-dependent dioxygenase
+IPR006620	InterPro	Prolyl 4-hydroxylase, alpha subunit
+IPR044862	InterPro	Prolyl 4-hydroxylase alpha subunit, Fe(2+) 2OG dioxygenase domain
+IPR045864	InterPro	Class II Aminoacyl-tRNA synthetase/Biotinyl protein ligase (BPL) and lipoyl protein ligase (LPL)
+IPR001734	InterPro	Sodium/solute symporter
+IPR018212	InterPro	Sodium/solute symporter, conserved site
+IPR038377	InterPro	Sodium/glucose symporter superfamily
+IPR013785	InterPro	Aldolase-type TIM barrel
+IPR006095	InterPro	Glutamate/phenylalanine/leucine/valine/L-tryptophan dehydrogenase
+IPR006096	InterPro	Glutamate/phenylalanine/leucine/valine/L-tryptophan dehydrogenase, C-terminal
+IPR006097	InterPro	Glutamate/phenylalanine/leucine/valine/L-tryptophan dehydrogenase, dimerisation domain
+IPR033524	InterPro	Leu/Phe/Val dehydrogenases active site
+IPR033922	InterPro	NAD(P) binding domain of glutamate dehydrogenase
+IPR036291	InterPro	NAD(P)-binding domain superfamily
+IPR046346	InterPro	Aminoacid dehydrogenase-like, N-terminal domain superfamily
+IPR011990	InterPro	Tetratricopeptide-like helical domain superfamily
+IPR019734	InterPro	Tetratricopeptide repeat
+IPR002048	InterPro	EF-hand domain
+IPR011992	InterPro	EF-hand domain pair
+IPR018247	InterPro	EF-Hand 1, calcium-binding site
+IPR006043	InterPro	Nucleobase cation symporter 2 family
+IPR006042	InterPro	Xanthine/uracil permease
+IPR002233	InterPro	Adrenoceptor family
+IPR000719	InterPro	Protein kinase domain
+IPR008271	InterPro	Serine/threonine-protein kinase, active site
+IPR017441	InterPro	Protein kinase, ATP binding site
+IPR028375	InterPro	KA1 domain/Ssp2, C-terminal
+IPR032270	InterPro	AMPK, C-terminal adenylate sensor domain
+IPR028797	InterPro	PRKAA1, UBA-like autoinhibitory domain
+IPR039137	InterPro	5-AMP-activated protein kinase alpha 1 catalytic subunit, C-terminal
+IPR028783	InterPro	PRKAA2, UBA-like autoinhibitory domain
+IPR039148	InterPro	5-AMP-activated protein kinase catalytic subunit alpha-2, C-terminal
+IPR006828	InterPro	Association with the SNF1 complex (ASC) domain
+IPR032640	InterPro	AMP-activated protein kinase, glycogen-binding domain
+IPR037256	InterPro	ASC domain superfamily
+IPR000644	InterPro	CBS domain
+IPR003527	InterPro	Mitogen-activated protein (MAP) kinase, conserved site
+IPR008349	InterPro	Mitogen-activated protein (MAP) kinase, ERK1/2
+IPR008350	InterPro	Mitogen-activated protein (MAP) kinase, ERK3/4
+IPR018170	InterPro	Aldo/keto reductase, conserved site
+IPR020471	InterPro	Aldo-keto reductase
+IPR023210	InterPro	NADP-dependent oxidoreductase domain
+IPR036812	InterPro	NADP-dependent oxidoreductase domain superfamily
+IPR044482	InterPro	Aldo-keto reductase family 1 member C
+IPR008967	InterPro	p53-like transcription factor, DNA-binding domain superfamily
+IPR013126	InterPro	Heat shock protein 70 family
+IPR018181	InterPro	Heat shock protein 70, conserved site
+IPR029047	InterPro	Heat shock protein 70kD, peptide-binding domain superfamily
+IPR029048	InterPro	Heat shock protein 70kD, C-terminal domain superfamily
+IPR043129	InterPro	ATPase, nucleotide binding domain
+IPR000961	InterPro	AGC-kinase, C-terminal
+IPR017892	InterPro	Protein kinase, C-terminal
+IPR016186	InterPro	C-type lectin-like/link domain superfamily
+IPR016187	InterPro	C-type lectin fold
+IPR001315	InterPro	CARD domain
+IPR011029	InterPro	Death-like domain superfamily
+IPR000626	InterPro	Ubiquitin-like domain
+IPR022007	InterPro	I-kappa-kinase-beta NEMO binding domain
+IPR041185	InterPro	IKBKB, scaffold dimerization domain
+IPR046375	InterPro	IKBKB, scaffold dimerization domain superfamily
+IPR000451	InterPro	NF-kappa-B/Dorsal
+IPR000488	InterPro	Death domain
+IPR002909	InterPro	IPT domain
+IPR011539	InterPro	Rel homology domain, DNA-binding domain
+IPR030492	InterPro	Rel homology domain, conserved site
+IPR032397	InterPro	Rel homology dimerisation domain
+IPR033926	InterPro	NFkappaB IPT domain
+IPR037059	InterPro	Rel homology domain (RHD), DNA-binding domain superfamily
+IPR030497	InterPro	Nuclear factor NF-kappa-B, p100 subunit, RHD domain, N-terminal
+IPR030503	InterPro	Nuclear factor NF-kappa-B, p105 subunit, Rel homology domain, N-terminal
+IPR047096	InterPro	Nuclear factor NF-kappa-B p105 subunit, death domain
+IPR000997	InterPro	Cholinesterase
+IPR002018	InterPro	Carboxylesterase, type B
+IPR014788	InterPro	Acetylcholinesterase, tetramerisation domain
+IPR019819	InterPro	Carboxylesterase type B, conserved site
+IPR019826	InterPro	Carboxylesterase type B, active site
+IPR029058	InterPro	Alpha/Beta hydrolase fold
+IPR000555	InterPro	JAB1/MPN/MOV34 metalloenzyme domain
+IPR037518	InterPro	MPN domain
+IPR006716	InterPro	ERG2/sigma1 receptor-like
+IPR000595	InterPro	Cyclic nucleotide-binding domain
+IPR000700	InterPro	PAS-associated, C-terminal
+IPR003938	InterPro	Potassium channel, voltage-dependent, EAG/ELK/ERG
+IPR003967	InterPro	Potassium channel, voltage-dependent, ERG
+IPR014710	InterPro	RmlC-like jelly roll fold
+IPR018490	InterPro	Cyclic nucleotide-binding domain superfamily
+IPR001128	InterPro	Cytochrome P450
+IPR002401	InterPro	Cytochrome P450, E-class, group I
+IPR017972	InterPro	Cytochrome P450, conserved site
+IPR036396	InterPro	Cytochrome P450 superfamily
+IPR002350	InterPro	Kazal domain
+IPR004156	InterPro	Organic anion transporter polypeptide
+IPR020846	InterPro	Major facilitator superfamily domain
+IPR036058	InterPro	Kazal domain superfamily
+IPR036259	InterPro	MFS transporter superfamily
+IPR000749	InterPro	ATP:guanido phosphotransferase
+IPR014746	InterPro	Glutamine synthetase/guanido kinase, catalytic domain
+IPR022413	InterPro	ATP:guanido phosphotransferase, N-terminal
+IPR022414	InterPro	ATP:guanido phosphotransferase, catalytic domain
+IPR022415	InterPro	ATP:guanido phosphotransferase active site
+IPR036802	InterPro	ATP:guanido phosphotransferase, N-terminal domain superfamily
+IPR001148	InterPro	Alpha carbonic anhydrase domain
+IPR018338	InterPro	Carbonic anhydrase, alpha-class, conserved site
+IPR023561	InterPro	Carbonic anhydrase, alpha-class
+IPR036398	InterPro	Alpha carbonic anhydrase domain superfamily
+IPR030495	InterPro	Transcription factor p65, RHD domain, N-terminal
+IPR000907	InterPro	Lipoxygenase
+IPR001024	InterPro	PLAT/LH2 domain
+IPR001885	InterPro	Lipoxygenase, mammalian
+IPR013819	InterPro	Lipoxygenase, C-terminal
+IPR020833	InterPro	Lipoxygenase, iron binding site
+IPR020834	InterPro	Lipoxygenase, conserved site
+IPR036226	InterPro	Lipoxigenase, C-terminal domain superfamily
+IPR036392	InterPro	PLAT/LH2 domain superfamily
+IPR042062	InterPro	Lipoxygenase, vertebrates, PLAT domain
+IPR001548	InterPro	Peptidase M2, peptidyl-dipeptidase A
+IPR000562	InterPro	Fibronectin type II domain
+IPR000585	InterPro	Hemopexin-like domain
+IPR001818	InterPro	Peptidase M10, metallopeptidase
+IPR002477	InterPro	Peptidoglycan binding-like
+IPR006026	InterPro	Peptidase, metallopeptidase
+IPR013806	InterPro	Kringle-like fold
+IPR018486	InterPro	Hemopexin, conserved site
+IPR018487	InterPro	Hemopexin-like repeats
+IPR021158	InterPro	Peptidase M10A, cysteine switch, zinc binding site
+IPR021190	InterPro	Peptidase M10A
+IPR024079	InterPro	Metallopeptidase, catalytic domain superfamily
+IPR033739	InterPro	Peptidase M10A, catalytic domain
+IPR036365	InterPro	PGBD-like superfamily
+IPR036375	InterPro	Hemopexin-like domain superfamily
+IPR036943	InterPro	Fibronectin type II domain superfamily
+IPR000001	InterPro	Kringle
+IPR000294	InterPro	Gamma-carboxyglutamic acid-rich (GLA) domain
+IPR001254	InterPro	Serine proteases, trypsin domain
+IPR001314	InterPro	Peptidase S1A, chymotrypsin family
+IPR009003	InterPro	Peptidase S1, PA clan
+IPR018056	InterPro	Kringle, conserved site
+IPR018114	InterPro	Serine proteases, trypsin family, histidine active site
+IPR033116	InterPro	Serine proteases, trypsin family, serine active site
+IPR035972	InterPro	Gamma-carboxyglutamic acid-rich (GLA) domain superfamily
+IPR038178	InterPro	Kringle superfamily
+IPR043504	InterPro	Peptidase S1, PA clan, chymotrypsin-like fold
+IPR003966	InterPro	Prothrombin/thrombin
+IPR018992	InterPro	Thrombin light chain
+IPR037111	InterPro	Thrombin light chain domain superfamily
+IPR001806	InterPro	Small GTPase
+IPR005225	InterPro	Small GTP-binding protein domain
+IPR027417	InterPro	P-loop containing nucleoside triphosphate hydrolase
+IPR004045	InterPro	Glutathione S-transferase, N-terminal
+IPR004046	InterPro	Glutathione S-transferase, C-terminal
+IPR010987	InterPro	Glutathione S-transferase, C-terminal-like
+IPR036249	InterPro	Thioredoxin-like superfamily
+IPR036282	InterPro	Glutathione S-transferase, C-terminal domain superfamily
+IPR040079	InterPro	Glutathione transferase family
+IPR006052	InterPro	Tumour necrosis factor domain
+IPR006053	InterPro	Tumour necrosis factor
+IPR008983	InterPro	Tumour necrosis factor-like domain superfamily
+IPR021184	InterPro	Tumour necrosis factor, conserved site
+IPR002959	InterPro	Tumour necrosis factor alpha
+IPR001611	InterPro	Leucine-rich repeat
+IPR032675	InterPro	Leucine-rich repeat domain superfamily
+IPR000921	InterPro	Histamine H1 receptor
+IPR002435	InterPro	Sodium:neurotransmitter symporter, noradrenaline
+IPR008066	InterPro	Cytochrome P450, E-class, group I, CYP1
+IPR003439	InterPro	ABC transporter-like, ATP-binding domain
+IPR003593	InterPro	AAA+ ATPase domain
+IPR011527	InterPro	ABC transporter type 1, transmembrane domain
+IPR017871	InterPro	ABC transporter-like, conserved site
+IPR036640	InterPro	ABC transporter type 1, transmembrane domain superfamily
+IPR000674	InterPro	Aldehyde oxidase/xanthine dehydrogenase, a/b hammerhead
+IPR001041	InterPro	2Fe-2S ferredoxin-type iron-sulfur binding domain
+IPR002346	InterPro	Molybdopterin dehydrogenase, FAD-binding
+IPR002888	InterPro	[2Fe-2S]-binding
+IPR005107	InterPro	CO dehydrogenase flavoprotein, C-terminal
+IPR006058	InterPro	2Fe-2S ferredoxin, iron-sulphur binding site
+IPR008274	InterPro	Aldehyde oxidase/xanthine dehydrogenase, first molybdopterin binding domain
+IPR012675	InterPro	Beta-grasp domain superfamily
+IPR016166	InterPro	FAD-binding domain, PCMH-type
+IPR016167	InterPro	FAD-binding, type PCMH, subdomain 1
+IPR016169	InterPro	FAD-binding, type PCMH, subdomain 2
+IPR016208	InterPro	Aldehyde oxidase/xanthine dehydrogenase
+IPR022407	InterPro	Oxidoreductase, molybdopterin binding site
+IPR036010	InterPro	2Fe-2S ferredoxin-like superfamily
+IPR036318	InterPro	FAD-binding, type PCMH-like superfamily
+IPR036683	InterPro	CO dehydrogenase flavoprotein, C-terminal domain superfamily
+IPR036856	InterPro	Aldehyde oxidase/xanthine dehydrogenase, a/b hammerhead superfamily
+IPR036884	InterPro	[2Fe-2S]-binding domain superfamily
+IPR037165	InterPro	Aldehyde oxidase/xanthine dehydrogenase, molybdopterin binding domain superfamily
+IPR046867	InterPro	Aldehyde oxidase/xanthine dehydrogenase, second molybdopterin binding domain
+IPR026193	InterPro	NADH-ubiquinone oxidoreductase flavoprotein 3
+IPR036188	InterPro	FAD/NAD(P)-binding domain superfamily
+IPR003952	InterPro	Fumarate reductase/succinate dehydrogenase, FAD-binding site
+IPR003953	InterPro	FAD-dependent oxidoreductase 2, FAD binding domain
+IPR011281	InterPro	Succinate dehydrogenase, flavoprotein subunit
+IPR014006	InterPro	Succinate dehydrogenase/fumarate reductase, flavoprotein subunit
+IPR015939	InterPro	Fumarate reductase/succinate dehydrogenase flavoprotein-like, C-terminal
+IPR027477	InterPro	Succinate dehydrogenase/fumarate reductase flavoprotein, catalytic domain superfamily
+IPR030664	InterPro	FAD-dependent oxidoreductase SdhA/FrdA/AprA
+IPR037099	InterPro	Fumarate reductase/succinate dehydrogenase flavoprotein-like, C-terminal domain superfamily
+IPR029063	InterPro	S-adenosyl-L-methionine-dependent methyltransferase superfamily
+IPR003074	InterPro	Peroxisome proliferator-activated receptor
+IPR003077	InterPro	Peroxisome proliferator-activated receptor gamma
+IPR022590	InterPro	Peroxisome proliferator-activated receptor gamma, N-terminal
+IPR002347	InterPro	Short-chain dehydrogenase/reductase SDR
+IPR020904	InterPro	Short-chain dehydrogenase/reductase, conserved site
+IPR045313	InterPro	Carbonyl reductase [NADPH] 1-like
+IPR002223	InterPro	Pancreatic trypsin inhibitor Kunitz domain
+IPR008154	InterPro	Amyloidogenic glycoprotein, extracellular
+IPR008155	InterPro	Amyloidogenic glycoprotein
+IPR011178	InterPro	Amyloidogenic glycoprotein, copper-binding
+IPR011993	InterPro	PH-like domain superfamily
+IPR015849	InterPro	Amyloidogenic glycoprotein, heparin-binding
+IPR019543	InterPro	Beta-amyloid precursor protein C-terminal
+IPR019744	InterPro	Amyloidogenic glycoprotein, copper-binding domain conserved site
+IPR019745	InterPro	Amyloidogenic glycoprotein, intracellular domain, conserved site
+IPR020901	InterPro	Proteinase inhibitor I2, Kunitz, conserved site
+IPR024329	InterPro	Amyloidogenic glycoprotein, E2 domain
+IPR036176	InterPro	E2 domain superfamily
+IPR036454	InterPro	Amyloidogenic glycoprotein, heparin-binding domain superfamily
+IPR036669	InterPro	Amyloidogenic glycoprotein, copper-binding domain superfamily
+IPR036880	InterPro	Pancreatic trypsin inhibitor Kunitz domain superfamily
+IPR013803	InterPro	Amyloidogenic glycoprotein, amyloid-beta peptide
+IPR037071	InterPro	Amyloidogenic glycoprotein, amyloid-beta peptide superfamily
+IPR003961	InterPro	Fibronectin type III
+IPR036116	InterPro	Fibronectin type III superfamily
+IPR004839	InterPro	Aminotransferase, class I/classII
+IPR015421	InterPro	Pyridoxal phosphate-dependent transferase, major domain
+IPR015422	InterPro	Pyridoxal phosphate-dependent transferase, small domain
+IPR015424	InterPro	Pyridoxal phosphate-dependent transferase
+IPR009080	InterPro	Aminoacyl-tRNA synthetase, class Ia, anticodon-binding
+IPR014729	InterPro	Rossmann-like alpha/beta/alpha sandwich fold
+IPR036388	InterPro	Winged helix-like DNA-binding domain superfamily
+IPR016185	InterPro	Pre-ATP-grasp domain superfamily
+IPR004887	InterPro	Glutathione synthase, substrate-binding domain
+IPR005615	InterPro	Glutathione synthase
+IPR014042	InterPro	Glutathione synthase, alpha-helical
+IPR014049	InterPro	Glutathione synthase, N-terminal, eukaryotic
+IPR014709	InterPro	Glutathione synthase, C-terminal, eukaryotic
+IPR037013	InterPro	Glutathione synthase, substrate-binding domain superfamily
+IPR000192	InterPro	Aminotransferase class V domain
+IPR020578	InterPro	Aminotransferase class-V, pyridoxal-phosphate binding site
+IPR001390	InterPro	Gamma-aminobutyric-acid A receptor, alpha subunit
+IPR006028	InterPro	Gamma-aminobutyric acid A receptor/Glycine receptor alpha
+IPR006029	InterPro	Neurotransmitter-gated ion-channel transmembrane domain
+IPR006201	InterPro	Neurotransmitter-gated ion-channel
+IPR006202	InterPro	Neurotransmitter-gated ion-channel ligand-binding domain
+IPR018000	InterPro	Neurotransmitter-gated ion-channel, conserved site
+IPR036719	InterPro	Neurotransmitter-gated ion-channel transmembrane domain superfamily
+IPR036734	InterPro	Neurotransmitter-gated ion-channel ligand-binding domain superfamily
+IPR038050	InterPro	Neuronal acetylcholine receptor
+IPR047024	InterPro	Gamma-aminobutyric acid receptor subunit alpha 1-6, transmembrane domain
+IPR005431	InterPro	Gamma-aminobutyric-acid A receptor, alpha 1 subunit
+IPR047079	InterPro	Gamma-aminobutyric acid receptor subunit alpha-1, extracellular domain
+IPR005432	InterPro	Gamma-aminobutyric-acid A receptor, alpha 2 subunit
+IPR047023	InterPro	Gamma-aminobutyric acid receptor subunit alpha-2, extracellular domain
+IPR005433	InterPro	Gamma-aminobutyric-acid A receptor, alpha 3 subunit
+IPR005434	InterPro	Gamma-aminobutyric-acid A receptor, alpha 4 subunit
+IPR005435	InterPro	Gamma-aminobutyric-acid A receptor, alpha 5 subunit
+IPR005436	InterPro	Gamma-aminobutyric-acid A receptor, alpha 6 subunit
+IPR002289	InterPro	Gamma-aminobutyric-acid A receptor, beta subunit
+IPR008098	InterPro	Gamma-aminobutyric-acid A receptor delta subunit
+IPR008099	InterPro	Gamma-aminobutyric-acid A receptor epsilon subunit
+IPR005437	InterPro	Gamma-aminobutyric acid receptor subunit gamma-1/4
+IPR005438	InterPro	Gamma-aminobutyric-acid A receptor, gamma 1 subunit
+IPR005439	InterPro	Gamma-aminobutyric-acid A receptor, gamma 2 subunit
+IPR005440	InterPro	Gamma-aminobutyric-acid A receptor, gamma 3 subunit
+IPR008100	InterPro	Gamma-aminobutyric-acid A receptor pi subunit
+IPR047032	InterPro	Gamma-aminobutyric acid receptor subunit pi, transmembrane domain
+IPR008101	InterPro	Gamma-aminobutyric-acid A receptor theta subunit
+IPR001320	InterPro	Ionotropic glutamate receptor, C-terminal
+IPR001508	InterPro	Ionotropic glutamate receptor, metazoa
+IPR001828	InterPro	Receptor, ligand binding region
+IPR015683	InterPro	Ionotropic glutamate receptor
+IPR019594	InterPro	Ionotropic glutamate receptor, L-glutamate and glycine-binding domain
+IPR028082	InterPro	Periplasmic binding protein-like I
+IPR018882	InterPro	Calmodulin-binding domain C0, NMDA receptor, NR1 subunit
+IPR018884	InterPro	Glutamate [NMDA] receptor, epsilon subunit, C-terminal
+IPR003076	InterPro	Peroxisome proliferator-activated receptor alpha
+IPR001728	InterPro	Thyroid hormone receptor
+IPR001791	InterPro	Laminin G domain
+IPR013320	InterPro	Concanavalin A-like lectin/glucanase domain superfamily
+IPR015915	InterPro	Kelch-type beta propeller
+IPR001031	InterPro	Thioesterase
+IPR001227	InterPro	Acyl transferase domain superfamily
+IPR006162	InterPro	Phosphopantetheine attachment site
+IPR009081	InterPro	Phosphopantetheine binding ACP domain
+IPR011032	InterPro	GroES-like superfamily
+IPR013149	InterPro	Alcohol dehydrogenase-like, C-terminal
+IPR013217	InterPro	Methyltransferase type 12
+IPR014030	InterPro	Beta-ketoacyl synthase, N-terminal
+IPR014031	InterPro	Beta-ketoacyl synthase, C-terminal
+IPR014043	InterPro	Acyl transferase
+IPR016035	InterPro	Acyl transferase/acyl hydrolase/lysophospholipase
+IPR016036	InterPro	Malonyl-CoA ACP transacylase, ACP-binding
+IPR016039	InterPro	Thiolase-like
+IPR018201	InterPro	Beta-ketoacyl synthase, active site
+IPR020841	InterPro	Polyketide synthase, beta-ketoacyl synthase domain
+IPR020843	InterPro	Polyketide synthase, enoylreductase domain
+IPR036736	InterPro	ACP-like superfamily
+IPR013968	InterPro	Polyketide synthase, ketoreductase domain
+IPR020806	InterPro	Polyketide synthase, phosphopantetheine-binding domain
+IPR020807	InterPro	Polyketide synthase, dehydratase domain
+IPR032821	InterPro	Polyketide synthase, C-terminal extension
+IPR042104	InterPro	Polyketide synthase, dehydratase domain superfamily
+IPR006076	InterPro	FAD dependent oxidoreductase
+IPR008127	InterPro	Glycine receptor alpha
+IPR008128	InterPro	Glycine receptor alpha1
+IPR008060	InterPro	Glycine receptor beta
+IPR047029	InterPro	Glycine receptor subunit beta, transmembrane domain
+IPR047031	InterPro	Glycine receptor subunit beta, extracellular domain
+IPR008130	InterPro	Glycine receptor alpha3
+IPR008129	InterPro	Glycine receptor alpha2
+IPR000089	InterPro	Biotin/lipoyl attachment
+IPR011053	InterPro	Single hybrid motif
+IPR000068	InterPro	GPCR, family 3, extracellular calcium-sensing receptor-related
+IPR000337	InterPro	GPCR, family 3
+IPR011500	InterPro	GPCR, family 3, nine cysteines domain
+IPR017978	InterPro	GPCR family 3, C-terminal
+IPR017979	InterPro	GPCR, family 3, conserved site
+IPR038550	InterPro	GPCR, family 3, nine cysteines domain superfamily
+IPR000725	InterPro	Olfactory receptor
+IPR041890	InterPro	Carbonic anhydrase VII
+IPR041874	InterPro	Carbonic anhydrase, CA4/CA15
+IPR034804	InterPro	Fumarate reductase/succinate dehydrogenase, transmembrane subunit
+IPR007992	InterPro	Succinate dehydrogenase [ubiquinone] cytochrome b small subunit, CybS
+IPR001245	InterPro	Serine-threonine/tyrosine-protein kinase, catalytic domain
+IPR008266	InterPro	Tyrosine-protein kinase, active site
+IPR020635	InterPro	Tyrosine-protein kinase, catalytic domain
+IPR044114	InterPro	Bile acid receptor, ligand binding domain
+IPR001613	InterPro	Flavin amine oxidase
+IPR002937	InterPro	Amine oxidase
+IPR001058	InterPro	Synuclein
+IPR002460	InterPro	Alpha-synuclein
+IPR001094	InterPro	Flavodoxin-like
+IPR001433	InterPro	Oxidoreductase FAD/NAD(P)-binding
+IPR001709	InterPro	Flavoprotein pyridine nucleotide cytochrome reductase
+IPR003097	InterPro	Sulfite reductase [NADPH] flavoprotein alpha-component-like, FAD-binding
+IPR008254	InterPro	Flavodoxin/nitric oxide synthase
+IPR017927	InterPro	FAD-binding domain, ferredoxin reductase-type
+IPR017938	InterPro	Riboflavin synthase-like beta-barrel
+IPR023173	InterPro	NADPH-cytochrome p450 reductase, FAD-binding, alpha-helical domain superfamily
+IPR029039	InterPro	Flavoprotein-like superfamily
+IPR039261	InterPro	Ferredoxin-NADP reductase (FNR), nucleotide-binding domain
+IPR036390	InterPro	Winged helix DNA-binding domain superfamily
+IPR003980	InterPro	Histamine H3 receptor
+IPR000025	InterPro	Melatonin receptor family
+IPR002278	InterPro	Melatonin receptor 1A/1B
+IPR003680	InterPro	Flavodoxin-like fold
+IPR017896	InterPro	4Fe-4S ferredoxin-type, iron-sulphur binding domain
+IPR017900	InterPro	4Fe-4S ferredoxin, iron-sulphur binding, conserved site
+IPR029045	InterPro	ClpP/crotonase-like domain superfamily
+IPR000507	InterPro	Beta 1 adrenoceptor
+IPR000332	InterPro	Beta 2 adrenoceptor
+IPR008996	InterPro	Cytokine IL1/FGF
+IPR005828	InterPro	Major facilitator, sugar transporter-like
+IPR003000	InterPro	Sirtuin family
+IPR026590	InterPro	Sirtuin family, catalytic core domain
+IPR026591	InterPro	Sirtuin, catalytic core small domain superfamily
+IPR029035	InterPro	DHS-like NAD/FAD-binding domain superfamily
+IPR004166	InterPro	MHCK/EF2 kinase
+IPR032415	InterPro	TRPM, tetramerisation domain
+IPR037162	InterPro	TRPM, tetramerisation domain superfamily
+IPR041491	InterPro	TRPM, SLOG domain
+IPR029601	InterPro	Transient receptor potential cation channel subfamily M member 7, alpha-kinase domain
+IPR000826	InterPro	Formyl peptide receptor-related
+IPR015943	InterPro	WD40/YVTN repeat-like-containing domain superfamily
+IPR036322	InterPro	WD40-repeat-containing domain superfamily
+IPR001849	InterPro	Pleckstrin homology domain
+IPR039026	InterPro	Protein Kinase B, pleckstrin homology domain
+IPR034676	InterPro	Protein kinase B alpha, catalytic domain
+IPR013518	InterPro	Potassium channel, inwardly rectifying, Kir, cytoplasmic
+IPR016449	InterPro	Potassium channel, inwardly rectifying, Kir
+IPR040445	InterPro	Potassium channel, inwardly rectifying, transmembrane domain
+IPR041647	InterPro	Inward rectifier potassium channel, C-terminal
+IPR013673	InterPro	Potassium channel, inwardly rectifying, Kir, N-terminal
+IPR003271	InterPro	Potassium channel, inwardly rectifying, Kir2.1
+IPR033348	InterPro	Aryl hydrocarbon receptor, basic helix-loop-helix domain
+IPR045216	InterPro	Casein Kinase 2, subunit alpha
+IPR000413	InterPro	Integrin alpha chain
+IPR013517	InterPro	FG-GAP repeat
+IPR013519	InterPro	Integrin alpha beta-propellor
+IPR013649	InterPro	Integrin alpha-2
+IPR018184	InterPro	Integrin alpha chain, C-terminal cytoplasmic region, conserved site
+IPR028994	InterPro	Integrin alpha, N-terminal
+IPR032695	InterPro	Integrin domain superfamily
+IPR002369	InterPro	Integrin beta subunit, VWA domain
+IPR012896	InterPro	Integrin beta subunit, tail
+IPR014836	InterPro	Integrin beta subunit, cytoplasmic domain
+IPR015812	InterPro	Integrin beta subunit
+IPR016201	InterPro	PSI domain
+IPR033760	InterPro	Integrin beta N-terminal
+IPR036349	InterPro	Integrin beta tail domain superfamily
+IPR036465	InterPro	Von Willebrand factor A-like domain superfamily

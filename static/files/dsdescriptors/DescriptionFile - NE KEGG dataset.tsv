@@ -1,0 +1,308 @@
+Data Description file for Dataset: Neighbour Enrichment - KEGG
+
+Description: Dataset of target annotations collected using the Neibhour Enrichment function in STRING, which includes annotations from nearest neighbour proteins to the input target.
+The predictive features in this dataset refer only to KEGG Pathway annotations.
+
+Special Columns:	Category	Description
+Index	ID	Unique identifier for the compound/sex combination (instance) in the data. Ignored when training the classification model.
+Compound_name	ID	Name of the compound (drug). Ignored when training the classification model.
+class	Target Variable	Class label, with 0 indicating that the drug/sex combination is NOT associated with mouse longevity, and 1 indicating that it IS associated with mouse longevity, based on results from peer-reviewed studies.
+
+Predictive Features:	Category	Description
+hsa04024	KEGG Pathway	cAMP signaling pathway
+hsa04080	KEGG Pathway	Neuroactive ligand-receptor interaction
+hsa04923	KEGG Pathway	Regulation of lipolysis in adipocytes
+hsa05220	KEGG Pathway	Chronic myeloid leukemia
+hsa04110	KEGG Pathway	Cell cycle
+hsa04919	KEGG Pathway	Thyroid hormone signaling pathway
+hsa05203	KEGG Pathway	Viral carcinogenesis
+hsa04330	KEGG Pathway	Notch signaling pathway
+hsa05200	KEGG Pathway	Pathways in cancer
+hsa05016	KEGG Pathway	Huntington disease
+hsa01522	KEGG Pathway	Endocrine resistance
+hsa05165	KEGG Pathway	Human papillomavirus infection
+hsa05215	KEGG Pathway	Prostate cancer
+hsa04310	KEGG Pathway	Wnt signaling pathway
+hsa05161	KEGG Pathway	Hepatitis B
+hsa05206	KEGG Pathway	MicroRNAs in cancer
+hsa05202	KEGG Pathway	Transcriptional misregulation in cancer
+hsa05167	KEGG Pathway	Kaposi sarcoma-associated herpesvirus infection
+hsa05169	KEGG Pathway	Epstein-Barr virus infection
+hsa05166	KEGG Pathway	Human T-cell leukemia virus 1 infection
+hsa05219	KEGG Pathway	Bladder cancer
+hsa04520	KEGG Pathway	Adherens junction
+hsa05212	KEGG Pathway	Pancreatic cancer
+hsa05214	KEGG Pathway	Glioma
+hsa05218	KEGG Pathway	Melanoma
+hsa05223	KEGG Pathway	Non-small cell lung cancer
+hsa05222	KEGG Pathway	Small cell lung cancer
+hsa04218	KEGG Pathway	Cellular senescence
+hsa05224	KEGG Pathway	Breast cancer
+hsa05226	KEGG Pathway	Gastric cancer
+hsa05160	KEGG Pathway	Hepatitis C
+hsa05225	KEGG Pathway	Hepatocellular carcinoma
+hsa04371	KEGG Pathway	Apelin signaling pathway
+hsa04915	KEGG Pathway	Estrogen signaling pathway
+hsa05418	KEGG Pathway	Fluid shear stress and atherosclerosis
+hsa05132	KEGG Pathway	Salmonella infection
+hsa05216	KEGG Pathway	Thyroid cancer
+hsa04612	KEGG Pathway	Antigen processing and presentation
+hsa04151	KEGG Pathway	PI3K-Akt signaling pathway
+hsa04657	KEGG Pathway	IL-17 signaling pathway
+hsa04659	KEGG Pathway	Th17 cell differentiation
+hsa04914	KEGG Pathway	Progesterone-mediated oocyte maturation
+hsa04137	KEGG Pathway	Mitophagy - animal
+hsa04917	KEGG Pathway	Prolactin signaling pathway
+hsa05231	KEGG Pathway	Choline metabolism in cancer
+hsa04926	KEGG Pathway	Relaxin signaling pathway
+hsa05135	KEGG Pathway	Yersinia infection
+hsa04921	KEGG Pathway	Oxytocin signaling pathway
+hsa05130	KEGG Pathway	Pathogenic Escherichia coli infection
+hsa05031	KEGG Pathway	Amphetamine addiction
+hsa05120	KEGG Pathway	Epithelial cell signaling in Helicobacter pylori infection
+hsa05140	KEGG Pathway	Leishmaniasis
+hsa05133	KEGG Pathway	Pertussis
+hsa04662	KEGG Pathway	B cell receptor signaling pathway
+hsa04012	KEGG Pathway	ErbB signaling pathway
+hsa04658	KEGG Pathway	Th1 and Th2 cell differentiation
+hsa04912	KEGG Pathway	GnRH signaling pathway
+hsa05210	KEGG Pathway	Colorectal cancer
+hsa05235	KEGG Pathway	PD-L1 expression and PD-1 checkpoint pathway in cancer
+hsa05323	KEGG Pathway	Rheumatoid arthritis
+hsa05142	KEGG Pathway	Chagas disease
+hsa04620	KEGG Pathway	Toll-like receptor signaling pathway
+hsa04625	KEGG Pathway	C-type lectin receptor signaling pathway
+hsa04660	KEGG Pathway	T cell receptor signaling pathway
+hsa04928	KEGG Pathway	Parathyroid hormone synthesis, secretion and action
+hsa04668	KEGG Pathway	TNF signaling pathway
+hsa04380	KEGG Pathway	Osteoclast differentiation
+hsa04210	KEGG Pathway	Apoptosis
+hsa05162	KEGG Pathway	Measles
+hsa04932	KEGG Pathway	Non-alcoholic fatty liver disease
+hsa04530	KEGG Pathway	Tight junction
+hsa04621	KEGG Pathway	NOD-like receptor signaling pathway
+hsa04510	KEGG Pathway	Focal adhesion
+hsa05205	KEGG Pathway	Proteoglycans in cancer
+hsa05170	KEGG Pathway	Human immunodeficiency virus 1 infection
+hsa05131	KEGG Pathway	Shigellosis
+hsa05163	KEGG Pathway	Human cytomegalovirus infection
+hsa05100	KEGG Pathway	Bacterial invasion of epithelial cells
+hsa05213	KEGG Pathway	Endometrial cancer
+hsa05230	KEGG Pathway	Central carbon metabolism in cancer
+hsa04141	KEGG Pathway	Protein processing in endoplasmic reticulum
+hsa04010	KEGG Pathway	MAPK signaling pathway
+hsa01521	KEGG Pathway	EGFR tyrosine kinase inhibitor resistance
+hsa01524	KEGG Pathway	Platinum drug resistance
+hsa04066	KEGG Pathway	HIF-1 signaling pathway
+hsa05211	KEGG Pathway	Renal cell carcinoma
+hsa04720	KEGG Pathway	Long-term potentiation
+hsa04350	KEGG Pathway	TGF-beta signaling pathway
+hsa04916	KEGG Pathway	Melanogenesis
+hsa04922	KEGG Pathway	Glucagon signaling pathway
+hsa04935	KEGG Pathway	Growth hormone synthesis, secretion and action
+hsa04068	KEGG Pathway	FoxO signaling pathway
+hsa04120	KEGG Pathway	Ubiquitin mediated proteolysis
+hsa04630	KEGG Pathway	JAK-STAT signaling pathway
+hsa05152	KEGG Pathway	Tuberculosis
+hsa05164	KEGG Pathway	Influenza A
+hsa04512	KEGG Pathway	ECM-receptor interaction
+hsa04215	KEGG Pathway	Apoptosis - multiple species
+hsa05145	KEGG Pathway	Toxoplasmosis
+hsa04115	KEGG Pathway	p53 signaling pathway
+hsa05134	KEGG Pathway	Legionellosis
+hsa05168	KEGG Pathway	Herpes simplex virus 1 infection
+hsa04217	KEGG Pathway	Necroptosis
+hsa05416	KEGG Pathway	Viral myocarditis
+hsa04064	KEGG Pathway	NF-kappa B signaling pathway
+hsa05010	KEGG Pathway	Alzheimer disease
+hsa05012	KEGG Pathway	Parkinson disease
+hsa05020	KEGG Pathway	Prion disease
+hsa05014	KEGG Pathway	Amyotrophic lateral sclerosis
+hsa04390	KEGG Pathway	Hippo signaling pathway
+hsa05034	KEGG Pathway	Alcoholism
+hsa04713	KEGG Pathway	Circadian entrainment
+hsa04727	KEGG Pathway	GABAergic synapse
+hsa05032	KEGG Pathway	Morphine addiction
+hsa04724	KEGG Pathway	Glutamatergic synapse
+hsa04725	KEGG Pathway	Cholinergic synapse
+hsa04726	KEGG Pathway	Serotonergic synapse
+hsa04728	KEGG Pathway	Dopaminergic synapse
+hsa04723	KEGG Pathway	Retrograde endocannabinoid signaling
+hsa04062	KEGG Pathway	Chemokine signaling pathway
+hsa04920	KEGG Pathway	Adipocytokine signaling pathway
+hsa04934	KEGG Pathway	Cushing syndrome
+hsa04971	KEGG Pathway	Gastric acid secretion
+hsa05322	KEGG Pathway	Systemic lupus erythematosus
+hsa04213	KEGG Pathway	Longevity regulating pathway - multiple species
+hsa00760	KEGG Pathway	Nicotinate and nicotinamide metabolism
+hsa04640	KEGG Pathway	Hematopoietic cell lineage
+hsa01100	KEGG Pathway	Metabolic pathways
+hsa04514	KEGG Pathway	Cell adhesion molecules
+hsa05340	KEGG Pathway	Primary immunodeficiency
+hsa00500	KEGG Pathway	Starch and sucrose metabolism
+hsa04973	KEGG Pathway	Carbohydrate digestion and absorption
+hsa00052	KEGG Pathway	Galactose metabolism
+hsa04931	KEGG Pathway	Insulin resistance
+hsa04970	KEGG Pathway	Salivary secretion
+hsa04972	KEGG Pathway	Pancreatic secretion
+hsa04910	KEGG Pathway	Insulin signaling pathway
+hsa00524	KEGG Pathway	Neomycin, kanamycin and gentamicin biosynthesis
+hsa00051	KEGG Pathway	Fructose and mannose metabolism
+hsa00520	KEGG Pathway	Amino sugar and nucleotide sugar metabolism
+hsa04930	KEGG Pathway	Type II diabetes mellitus
+hsa00010	KEGG Pathway	Glycolysis / Gluconeogenesis
+hsa01200	KEGG Pathway	Carbon metabolism
+hsa04142	KEGG Pathway	Lysosome
+hsa00590	KEGG Pathway	Arachidonic acid metabolism
+hsa04913	KEGG Pathway	Ovarian steroidogenesis
+hsa05144	KEGG Pathway	Malaria
+hsa04933	KEGG Pathway	AGE-RAGE signaling pathway in diabetic complications
+hsa05146	KEGG Pathway	Amoebiasis
+hsa00591	KEGG Pathway	Linoleic acid metabolism
+hsa01523	KEGG Pathway	Antifolate resistance
+hsa05143	KEGG Pathway	African trypanosomiasis
+hsa05332	KEGG Pathway	Graft-versus-host disease
+hsa04216	KEGG Pathway	Ferroptosis
+hsa04060	KEGG Pathway	Cytokine-cytokine receptor interaction
+hsa04370	KEGG Pathway	VEGF signaling pathway
+hsa05321	KEGG Pathway	Inflammatory bowel disease
+hsa04623	KEGG Pathway	Cytosolic DNA-sensing pathway
+hsa04664	KEGG Pathway	Fc epsilon RI signaling pathway
+hsa04750	KEGG Pathway	Inflammatory mediator regulation of TRP channels
+hsa04061	KEGG Pathway	Viral protein interaction with cytokine and cytokine receptor
+hsa04072	KEGG Pathway	Phospholipase D signaling pathway
+hsa05204	KEGG Pathway	Chemical carcinogenesis
+hsa04924	KEGG Pathway	Renin secretion
+hsa04925	KEGG Pathway	Aldosterone synthesis and secretion
+hsa04114	KEGG Pathway	Oocyte meiosis
+hsa04270	KEGG Pathway	Vascular smooth muscle contraction
+hsa04261	KEGG Pathway	Adrenergic signaling in cardiomyocytes
+hsa04020	KEGG Pathway	Calcium signaling pathway
+hsa04014	KEGG Pathway	Ras signaling pathway
+hsa04744	KEGG Pathway	Phototransduction
+hsa04740	KEGG Pathway	Olfactory transduction
+hsa04070	KEGG Pathway	Phosphatidylinositol signaling system
+hsa04722	KEGG Pathway	Neurotrophin signaling pathway
+hsa04022	KEGG Pathway	cGMP-PKG signaling pathway
+hsa04015	KEGG Pathway	Rap1 signaling pathway
+hsa04340	KEGG Pathway	Hedgehog signaling pathway
+hsa05110	KEGG Pathway	Vibrio cholerae infection
+hsa05030	KEGG Pathway	Cocaine addiction
+hsa04961	KEGG Pathway	Endocrine and other factor-regulated calcium reabsorption
+hsa04927	KEGG Pathway	Cortisol synthesis and secretion
+hsa04918	KEGG Pathway	Thyroid hormone synthesis
+hsa04742	KEGG Pathway	Taste transduction
+hsa04911	KEGG Pathway	Insulin secretion
+hsa04211	KEGG Pathway	Longevity regulating pathway
+hsa04540	KEGG Pathway	Gap junction
+hsa04976	KEGG Pathway	Bile secretion
+hsa05414	KEGG Pathway	Dilated cardiomyopathy
+hsa04611	KEGG Pathway	Platelet activation
+hsa04140	KEGG Pathway	Autophagy - animal
+hsa04714	KEGG Pathway	Thermogenesis
+hsa00970	KEGG Pathway	Aminoacyl-tRNA biosynthesis
+hsa00380	KEGG Pathway	Tryptophan metabolism
+hsa00790	KEGG Pathway	Folate biosynthesis
+hsa00350	KEGG Pathway	Tyrosine metabolism
+hsa04721	KEGG Pathway	Synaptic vesicle cycle
+hsa04730	KEGG Pathway	Long-term depression
+hsa04670	KEGG Pathway	Leukocyte transendothelial migration
+hsa04071	KEGG Pathway	Sphingolipid signaling pathway
+hsa04360	KEGG Pathway	Axon guidance
+hsa04960	KEGG Pathway	Aldosterone-regulated sodium reabsorption
+hsa04929	KEGG Pathway	GnRH secretion
+hsa05221	KEGG Pathway	Acute myeloid leukemia
+hsa04150	KEGG Pathway	mTOR signaling pathway
+hsa04152	KEGG Pathway	AMPK signaling pathway
+hsa04550	KEGG Pathway	Signaling pathways regulating pluripotency of stem cells
+hsa04666	KEGG Pathway	Fc gamma R-mediated phagocytosis
+hsa04810	KEGG Pathway	Regulation of actin cytoskeleton
+hsa04650	KEGG Pathway	Natural killer cell mediated cytotoxicity
+hsa05017	KEGG Pathway	Spinocerebellar ataxia
+hsa00562	KEGG Pathway	Inositol phosphate metabolism
+hsa04144	KEGG Pathway	Endocytosis
+hsa00785	KEGG Pathway	Lipoic acid metabolism
+hsa00061	KEGG Pathway	Fatty acid biosynthesis
+hsa01212	KEGG Pathway	Fatty acid metabolism
+hsa04977	KEGG Pathway	Vitamin digestion and absorption
+hsa00220	KEGG Pathway	Arginine biosynthesis
+hsa00250	KEGG Pathway	Alanine, aspartate and glutamate metabolism
+hsa01230	KEGG Pathway	Biosynthesis of amino acids
+hsa00471	KEGG Pathway	D-Glutamine and D-glutamate metabolism
+hsa04964	KEGG Pathway	Proximal tubule bicarbonate reclamation
+hsa00910	KEGG Pathway	Nitrogen metabolism
+hsa01210	KEGG Pathway	2-Oxocarboxylic acid metabolism
+hsa00330	KEGG Pathway	Arginine and proline metabolism
+hsa00400	KEGG Pathway	Phenylalanine, tyrosine and tryptophan biosynthesis
+hsa00360	KEGG Pathway	Phenylalanine metabolism
+hsa00020	KEGG Pathway	Citrate cycle (TCA cycle)
+hsa00270	KEGG Pathway	Cysteine and methionine metabolism
+hsa00310	KEGG Pathway	Lysine degradation
+hsa04146	KEGG Pathway	Peroxisome
+hsa04974	KEGG Pathway	Protein digestion and absorption
+hsa00340	KEGG Pathway	Histidine metabolism
+hsa00053	KEGG Pathway	Ascorbate and aldarate metabolism
+hsa00410	KEGG Pathway	beta-Alanine metabolism
+hsa00620	KEGG Pathway	Pyruvate metabolism
+hsa00071	KEGG Pathway	Fatty acid degradation
+hsa00280	KEGG Pathway	Valine, leucine and isoleucine degradation
+hsa00561	KEGG Pathway	Glycerolipid metabolism
+hsa00770	KEGG Pathway	Pantothenate and CoA biosynthesis
+hsa00260	KEGG Pathway	Glycine, serine and threonine metabolism
+hsa00140	KEGG Pathway	Steroid hormone biosynthesis
+hsa00982	KEGG Pathway	Drug metabolism - cytochrome P450
+hsa00040	KEGG Pathway	Pentose and glucuronate interconversions
+hsa00600	KEGG Pathway	Sphingolipid metabolism
+hsa00240	KEGG Pathway	Pyrimidine metabolism
+hsa04710	KEGG Pathway	Circadian rhythm
+hsa05410	KEGG Pathway	Hypertrophic cardiomyopathy
+hsa04136	KEGG Pathway	Autophagy - other
+hsa00980	KEGG Pathway	Metabolism of xenobiotics by cytochrome P450
+hsa03440	KEGG Pathway	Homologous recombination
+hsa04622	KEGG Pathway	RIG-I-like receptor signaling pathway
+hsa03030	KEGG Pathway	DNA replication
+hsa03430	KEGG Pathway	Mismatch repair
+hsa03420	KEGG Pathway	Nucleotide excision repair
+hsa03410	KEGG Pathway	Base excision repair
+hsa00565	KEGG Pathway	Ether lipid metabolism
+hsa00230	KEGG Pathway	Purine metabolism
+hsa00564	KEGG Pathway	Glycerophospholipid metabolism
+hsa03008	KEGG Pathway	Ribosome biogenesis in eukaryotes
+hsa00100	KEGG Pathway	Steroid biosynthesis
+hsa00983	KEGG Pathway	Drug metabolism - other enzymes
+hsa00860	KEGG Pathway	Porphyrin and chlorophyll metabolism
+hsa00830	KEGG Pathway	Retinol metabolism
+hsa02010	KEGG Pathway	ABC transporters
+hsa04966	KEGG Pathway	Collecting duct acid secretion
+hsa00480	KEGG Pathway	Glutathione metabolism
+hsa00670	KEGG Pathway	One carbon pool by folate
+hsa04614	KEGG Pathway	Renin-angiotensin system
+hsa04610	KEGG Pathway	Complement and coagulation cascades
+hsa03010	KEGG Pathway	Ribosome
+hsa04145	KEGG Pathway	Phagosome
+hsa00232	KEGG Pathway	Caffeine metabolism
+hsa05412	KEGG Pathway	Arrhythmogenic right ventricular cardiomyopathy
+hsa04260	KEGG Pathway	Cardiac muscle contraction
+hsa03320	KEGG Pathway	PPAR signaling pathway
+hsa00190	KEGG Pathway	Oxidative phosphorylation
+hsa04979	KEGG Pathway	Cholesterol metabolism
+hsa00640	KEGG Pathway	Propanoate metabolism
+hsa00430	KEGG Pathway	Taurine and hypotaurine metabolism
+hsa00450	KEGG Pathway	Selenocompound metabolism
+hsa00630	KEGG Pathway	Glyoxylate and dicarboxylate metabolism
+hsa03460	KEGG Pathway	Fanconi anemia pathway
+hsa00650	KEGG Pathway	Butanoate metabolism
+hsa04940	KEGG Pathway	Type I diabetes mellitus
+hsa00030	KEGG Pathway	Pentose phosphate pathway
+hsa05033	KEGG Pathway	Nicotine addiction
+hsa00120	KEGG Pathway	Primary bile acid biosynthesis
+hsa05330	KEGG Pathway	Allograft rejection
+hsa05310	KEGG Pathway	Asthma
+hsa04672	KEGG Pathway	Intestinal immune network for IgA production
+hsa05320	KEGG Pathway	Autoimmune thyroid disease
+hsa03040	KEGG Pathway	Spliceosome
+hsa04975	KEGG Pathway	Fat digestion and absorption
+hsa05150	KEGG Pathway	Staphylococcus aureus infection
+hsa05217	KEGG Pathway	Basal cell carcinoma
+hsa04978	KEGG Pathway	Mineral absorption
+hsa03013	KEGG Pathway	RNA transport
