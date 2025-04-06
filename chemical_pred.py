@@ -29,7 +29,6 @@ def make_predictions(model, dict_InputTable):
         model_name = 'model_Fingerprints_maleonly'
     with open(f'internal_files/models/{model_name}.pkl', "rb") as f:  # add try-catch for file not found error
         rf_model = load(f)
-        dict_KEGG_predictions = {}
         for row_number in dict_InputTable.keys():
             if dict_InputTable[row_number][1] == "":  # if no cid is provided in the table for this row, use name as identifier
                 fingerprint = get_filteredfingerprint(dict_InputTable[row_number][0], model, False)
@@ -40,7 +39,7 @@ def make_predictions(model, dict_InputTable):
                 prediction = round(prediction[0][1]*100) # pos 5: male prediction
             else:
                 prediction = 0
-                dict_InputTable[row_number][2] = f'Warning: compound in row {row_number} not found, skipped. Provided identifiers: Name={dict_InputTable[row_number][0]} CID={dict_InputTable[row_number][1]}.'
+                dict_InputTable[row_number][2].append(f'Warning: entry in row {row_number} not found, skipped. Provided identifiers: Name={dict_InputTable[row_number][0]} CID={dict_InputTable[row_number][1]}.')
             if model == 'mixed-sex':
                 dict_InputTable[row_number][4] = prediction  # position 4 for female mouse prediction
             elif model == 'male-only':
@@ -71,7 +70,6 @@ def get_filteredfingerprint(identifier, model, cid_provided):
             global keep_positions_maleonlyds
             filtered_fingerprint = np.take(full_fingerprint, keep_positions_maleonlyds)
     else:
-        print(f'Warning: Identifier not found: {identifier}. Skipping entry for chemical prediction.')
         return [0]
     if model == 'mixed-sex':
         filtered_fingerprint = np.insert(filtered_fingerprint, 0, 1) # add a 1 value at the beggining of the array for sex = F
@@ -86,18 +84,23 @@ def Btn_MakeChemPredictions(targets_list):
         rowcount = rowcount + 1
         compound_name = row["compound"]
         compound_cid = row["cid"]
-        if compound_name == "":
-            try:
-                compound_name = pcp.get_compounds(identifier={compound_cid}, namespace='cid')[0].iupac_name
-            except:
-                compound_name = "Not found."
         if compound_cid == "":
             try:
                 compound_cid = pcp.get_compounds(identifier={compound_name}, namespace='name')[0].cid
             except:
                 compound_cid = -1
+        try:
+            searched_compound_name = pcp.get_compounds(identifier={compound_cid}, namespace='cid')[0].iupac_name
+        except:
+            searched_compound_name = "Not found."
+
         #compound_names, warnings = validate_str_ids(row["compound"])
-        dict_inputTable.setdefault(rowcount, [compound_name, compound_cid, "", 0, 0])
+        dict_inputTable.setdefault(rowcount, [searched_compound_name, compound_cid, [], 0, 0])
+        if searched_compound_name != "Not found" and compound_name != searched_compound_name:
+            if compound_name == "":
+                dict_inputTable[rowcount][2].append(f'Warning: The blank compound name in row {rowcount} has been filled using the CID provided (Name found: {searched_compound_name}).')
+            else:
+                dict_inputTable[rowcount][2].append(f'Warning: A different compound name was found for the CID provided in row {rowcount}. The name given name ({compound_name}) has been replaced by the one in the system ({searched_compound_name}). Please make sure the provided cid refers to the desired compound.')
 
     dict_inputTable = check_knownclasslabels(dict_inputTable, 2)  # warning position is 2 for chem predictions
     dict_inputTable = make_predictions('mixed-sex', dict_inputTable)  # make F predictions for each row of the table

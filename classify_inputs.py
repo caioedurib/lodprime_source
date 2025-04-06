@@ -1,18 +1,9 @@
 #classify_inputs.py
 from pickle import load
-from random import randint
 import numpy as np
 import pandas as pd
-import sklearn
 from csv import reader
-'''
-# working example of pickle load
-from sklearn import datasets
-X, y = datasets.load_iris(return_X_y=True)
-with open("files/classifier.pkl", "rb") as f: #add try-catch for file not found error
-    clf = load(f)
-    print(clf.predict(X[0:1]))
-'''
+
 
 '''
  - get input objects from HTML form post, they should be comma separated lists
@@ -53,25 +44,46 @@ df_Process_Male = filter_male_dataset(df_AllCategories, 'FeatureList - Process')
 df_AllCategories = filter_male_dataset(df_AllCategories, 'FeatureList - All Categories')
 df_Component_Male = filter_male_dataset(df_Component_Mixed, 'FeatureList - Component')
 df_KEGG_Male = filter_male_dataset(df_KEGG_Mixed, 'FeatureList - KEGG')
-print('Files loaded succesfully :)')
+print('Files loaded succesfully.')
 
 df_DrugBank_source = pd.read_csv('static/files/datasets/DrugBank_TargetsSource.tsv', sep='\t', index_col=0, encoding='utf-8')
 df_KnownClassLabel_source = pd.read_csv('static/files/datasets/Compounds with known class label.tsv', sep='\t', index_col=0, encoding='utf-8')
 
 
+def transform_class_label(class_label):
+    if class_label == '1':
+        return 'positive'
+    elif class_label == '0':
+        return 'negative'
+    else:
+        return 'unknown'
+
+
 def check_knownclasslabels(dict_InputTable, warning_position):
-    print(f'checking known class labels with pos {warning_position}')
     global df_KnownClassLabel_source
     for row_number in dict_InputTable.keys():
         current_compound = dict_InputTable[row_number][0]
-        try:
-            Class_M = df_KnownClassLabel_source.loc[current_compound]['Class_M']  # exact name search
-            Class_F = df_KnownClassLabel_source.loc[current_compound]['Class_F']  # exact name search
-            # FIXME: Need to trim input, as this message will fail if a space is used.
-            print(f'Known compound found: {current_compound}. It has Class_Male = {Class_M} and Class_Female = {Class_F}')
-            dict_InputTable[row_number][warning_position].append(f'Known compound found: {current_compound}. It has Class_Male = {Class_M} and Class_Female = {Class_F}')  # errors and warnings in position 3.
-        except:
-            print(f'Compound not found: {current_compound}.')
+        if ';' in current_compound:  # if it is a list of compounds, try finding each element of the list separately.
+            compound_list = current_compound.split(';')
+            for compound in compound_list:
+                compound = compound.strip()  # remove leading/trailing spaces
+                try:
+                    Class_M = df_KnownClassLabel_source.loc[compound]['Class_M']  # exact name search
+                    Class_F = df_KnownClassLabel_source.loc[compound]['Class_F']  # exact name search
+                    print(f'Known compound found: {compound}. Class label for male mice: {transform_class_label(Class_M)}. Class label for female mice: {transform_class_label(Class_F)}')
+                    dict_InputTable[row_number][warning_position].append(f'Known compound found: {compound}. Class label for male mice: {transform_class_label(Class_M)}. Class label for female mice: {transform_class_label(Class_F)}')  # errors and warnings in position 3.
+                except:
+                    continue
+        else:
+            current_compound = current_compound.strip()  # remove leading/trailing spaces
+            try:
+                Class_M = df_KnownClassLabel_source.loc[current_compound]['Class_M']  # exact name search
+                Class_F = df_KnownClassLabel_source.loc[current_compound]['Class_F']  # exact name search
+
+                print(f'Known compound found: {current_compound}. Class label for male mice: {transform_class_label(Class_M)}. Class label for female mice: {transform_class_label(Class_F)}')
+                dict_InputTable[row_number][warning_position].append(f'Known compound found: {current_compound}. Class label for male mice: {transform_class_label(Class_M)}. Class label for female mice: {transform_class_label(Class_F)}')  # errors and warnings in position 3.
+            except:
+                continue
     return dict_InputTable
 
 
@@ -80,8 +92,8 @@ def find_targets(input_string):
     try:
         targets_list = df_DrugBank_source.loc[input_string]['Targets_List_STRINGIDs']  # exact name search
     except:
-        targets_list = "Not found"
-    if targets_list == "Not found":
+        targets_list = "No targets found"
+    if targets_list == "No targets found":  # failed exact name search, look through the file row by row
         for row in df_DrugBank_source.itertuples():
             try:
                 if row[1].find(input_string) != -1:  # drugbank id search
@@ -95,8 +107,8 @@ def find_targets(input_string):
     try:
         genenames_list = df_DrugBank_source.loc[input_string]['Targets_List_GeneNames']  # exact name search
     except:
-        genenames_list = "Not found"
-    if genenames_list == "Not found":
+        genenames_list = "No targets found"
+    if genenames_list == "No targets found":  # failed exact name search, look through the file row by row
         for row in df_DrugBank_source.itertuples():
             try:
                 if row[1].find(input_string) != -1:  # drugbank id search
@@ -112,20 +124,36 @@ def find_targets(input_string):
 
 def Btn_Autofill_Targets(input_table):
     for row in input_table:
-        compounds = row["compound"].split(';')
-        all_targets = []
-        all_genenames = []
-        for compound_name in compounds:
-            if compound_name != "":
-                targets_list, genenames_list = find_targets(compound_name)
-                all_targets.extend(targets_list)
-                all_genenames.extend(genenames_list)
+        if ';' in row["compound"]:
+            compounds = row["compound"].split(';')
+            all_targets = []
+            all_genenames = []
+            for compound_name in compounds:
+                if compound_name != "":
+                    targets_list, genenames_list = find_targets(compound_name)
+                    all_targets.extend(targets_list)
+                    all_genenames.extend(genenames_list)
+                else:
+                    pass
+            count_removed = len(all_targets)
+            all_targets = [item for item in all_targets if item != 'No targets found']  # avoid having 'not found on the output list if other compounds had targets
+            count_removed = count_removed - len(all_targets)
+            all_genenames = [item for item in all_genenames if item != 'No targets found']   # avoid having 'not found on the output list if other compounds had targets
+            if count_removed == len(compounds):
+                row["str_ids"] = 'No targets found (for any elements of the list)'
+                row["gene_names"] = 'No targets found (for any elements of the list)'
             else:
-                # TODO: Add a warning for "missing" compound name
+                row["str_ids"] = ', '.join(all_targets)
+                row["gene_names"] = ', '.join(all_genenames)
+        else:
+            if row["compound"] != "":
+                targets_list, genenames_list = find_targets(row["compound"])
+                row["str_ids"] = ', '.join(targets_list)
+                row["gene_names"] = ', '.join(genenames_list)
+            else:
                 pass
-        row["str_ids"] = ', '.join(all_targets)
-        row["gene_names"] = ', '.join(all_genenames)
     return input_table
+
 
 #KEGG: model_NEKEGG_mixedsex
 def make_predictions(filtered_df, model_name, dict_InputTable):
@@ -169,37 +197,37 @@ def get_ensemble_predictions(dict_InputTable):
     dict_predictions_Process_Male = make_predictions(df_Process_Male, 'model_NEProcess_maleonly', dict_InputTable)
 
     for rownumber in dict_InputTable.keys():
-        result_prediction = 0
-        valid_predictions = 5
-        if dict_predictions_FAInterPro_Male[rownumber] != -1:
-            result_prediction = result_prediction + dict_predictions_FAInterPro_Male[rownumber]
-        else:
-            valid_predictions = valid_predictions -1
-            dict_InputTable[rownumber][3].append(f'Warning: Model InterPro Domains (M) had no valid data for {dict_InputTable[rownumber][0]}.')
-        if dict_predictions_AllCats_Male[rownumber] != -1:
-            result_prediction = result_prediction + dict_predictions_AllCats_Male[rownumber]
-        else:
-            valid_predictions = valid_predictions -1
-            dict_InputTable[rownumber][3].append(f'Warning: Model All Categories (M) had no valid data for {dict_InputTable[rownumber][0]}.')
-        if dict_predictions_Component_Male[rownumber] != -1:
-            result_prediction = result_prediction + dict_predictions_Component_Male[rownumber]
-        else:
-            valid_predictions = valid_predictions -1
-            dict_InputTable[rownumber][3].append(f'Warning: Model GO Components (M) had no valid data for {dict_InputTable[rownumber][0]}.')
-        if dict_predictions_KEGG_Male[rownumber] != -1:
-            result_prediction = result_prediction + dict_predictions_KEGG_Male[rownumber]
-        else:
-            valid_predictions = valid_predictions -1
-            dict_InputTable[rownumber][3].append(f'Warning: Model KEGG Pathways (M) had no valid data for {dict_InputTable[rownumber][0]}.')
-        if dict_predictions_Process_Male[rownumber] != -1:
-            result_prediction = result_prediction + dict_predictions_Process_Male[rownumber]
-        else:
-            valid_predictions = valid_predictions - 1
-            dict_InputTable[rownumber][3].append(f'Warning: Model GO Process (M) had no valid data for {dict_InputTable[rownumber][0]}.')
-        if valid_predictions != 0:  # if there are any valid predictions, average them
-            result_prediction = round(result_prediction / valid_predictions)
-        else:  # otherwise return defaul value of 0
+        if 'NO TARGETS FOUND' in dict_InputTable[rownumber][1] or 'NO TARGETS FOUND (FOR ANY ELEMENTS OF THE LIST)' in dict_InputTable[rownumber][1]:  # if string id has the error message.
             result_prediction = 0
+            dict_InputTable[rownumber][3].append(f'Warning: entry {dict_InputTable[rownumber][0]} has no valid targets, skipped.')
+        else:
+            print(dict_InputTable[rownumber][1])
+            result_prediction = 0
+            valid_predictions = 5
+            if dict_predictions_FAInterPro_Male[rownumber] != -1:
+                result_prediction = result_prediction + dict_predictions_FAInterPro_Male[rownumber]
+            else:
+                valid_predictions = valid_predictions -1
+            if dict_predictions_AllCats_Male[rownumber] != -1:
+                result_prediction = result_prediction + dict_predictions_AllCats_Male[rownumber]
+            else:
+                valid_predictions = valid_predictions -1
+            if dict_predictions_Component_Male[rownumber] != -1:
+                result_prediction = result_prediction + dict_predictions_Component_Male[rownumber]
+            else:
+                valid_predictions = valid_predictions -1
+            if dict_predictions_KEGG_Male[rownumber] != -1:
+                result_prediction = result_prediction + dict_predictions_KEGG_Male[rownumber]
+            else:
+                valid_predictions = valid_predictions -1
+            if dict_predictions_Process_Male[rownumber] != -1:
+                result_prediction = result_prediction + dict_predictions_Process_Male[rownumber]
+            else:
+                valid_predictions = valid_predictions - 1
+            if valid_predictions != 0:  # if there are any valid predictions, average them
+                result_prediction = round(result_prediction / valid_predictions)
+            else:  # otherwise return defaul value of 0
+                result_prediction = 0
         dict_InputTable[rownumber][5] = result_prediction  # pos 5: male mice prediction, from male-only model
 
     dict_predictions_KEGG_Female = make_predictions(df_KEGG_Mixed, 'model_NEKEGG_mixedsex', dict_InputTable)
@@ -209,42 +237,41 @@ def get_ensemble_predictions(dict_InputTable):
     dict_predictions_FAInterPro_Female = make_predictions(df_FAInterPro_Mixed, 'model_FAInterPro_mixedsex', dict_InputTable)
 
     for rownumber in dict_InputTable.keys():
-        result_prediction = 0
-        valid_predictions = 5
-        if dict_predictions_KEGG_Female[rownumber] != -1:
-            result_prediction = result_prediction + dict_predictions_KEGG_Female[rownumber]
-        else:
-            valid_predictions = valid_predictions - 1
-            dict_InputTable[rownumber][3].append(f'Warning: Model KEGG Pathways (F) had no valid data for {dict_InputTable[rownumber][0]}.')
-        if dict_predictions_RCTM_Female[rownumber] != -1:
-            result_prediction = result_prediction + dict_predictions_RCTM_Female[rownumber]
-        else:
-            valid_predictions = valid_predictions - 1
-            dict_InputTable[rownumber][3].append(f'Warning: Model Reactome Pathways (F) had no valid data for {dict_InputTable[rownumber][0]}.')
-        if dict_predictions_Component_Female[rownumber] != -1:
-            result_prediction = result_prediction + dict_predictions_Component_Female[rownumber]
-        else:
-            valid_predictions = valid_predictions - 1
-            dict_InputTable[rownumber][3].append(f'Warning: Model GO Component (F) had no valid data for {dict_InputTable[rownumber][0]}.')
-        if dict_predictions_WikiPathways_Female[rownumber] != -1:
-            result_prediction = result_prediction + dict_predictions_WikiPathways_Female[rownumber]
-        else:
-            valid_predictions = valid_predictions - 1
-            dict_InputTable[rownumber][3].append(f'Warning: Model Wiki Pathways (F) had no valid data for {dict_InputTable[rownumber][0]}.')
-        if dict_predictions_FAInterPro_Female[rownumber] != -1:
-            result_prediction = result_prediction + dict_predictions_FAInterPro_Female[rownumber]
-        else:
-            valid_predictions = valid_predictions - 1
-            dict_InputTable[rownumber][3].append(f'Warning: Model InterPro Domains (F) had no valid data for {dict_InputTable[rownumber][0]}.')
-        if valid_predictions != 0:  # if there are any valid predictions, average them
-            result_prediction = round(result_prediction / valid_predictions)
-        else:  # otherwise return defaul value of 0
+        if 'NO TARGETS FOUND' in dict_InputTable[rownumber][1] or 'NO TARGETS FOUND (FOR ANY ELEMENTS OF THE LIST)' in dict_InputTable[rownumber][1]:  # if string id has the error message.
             result_prediction = 0
+        else:
+            result_prediction = 0
+            valid_predictions = 5
+            if dict_predictions_KEGG_Female[rownumber] != -1:
+                result_prediction = result_prediction + dict_predictions_KEGG_Female[rownumber]
+            else:
+                valid_predictions = valid_predictions - 1
+                #dict_InputTable[rownumber][3].append(f'Warning: Model KEGG Pathways (F) had no valid data for {dict_InputTable[rownumber][0]}.')
+            if dict_predictions_RCTM_Female[rownumber] != -1:
+                result_prediction = result_prediction + dict_predictions_RCTM_Female[rownumber]
+            else:
+                valid_predictions = valid_predictions - 1
+            if dict_predictions_Component_Female[rownumber] != -1:
+                result_prediction = result_prediction + dict_predictions_Component_Female[rownumber]
+            else:
+                valid_predictions = valid_predictions - 1
+            if dict_predictions_WikiPathways_Female[rownumber] != -1:
+                result_prediction = result_prediction + dict_predictions_WikiPathways_Female[rownumber]
+            else:
+                valid_predictions = valid_predictions - 1
+            if dict_predictions_FAInterPro_Female[rownumber] != -1:
+                result_prediction = result_prediction + dict_predictions_FAInterPro_Female[rownumber]
+            else:
+                valid_predictions = valid_predictions - 1
+            if valid_predictions != 0:  # if there are any valid predictions, average them
+                result_prediction = round(result_prediction / valid_predictions)
+            else:  # otherwise return defaul value of 0
+                result_prediction = 0
         dict_InputTable[rownumber][6] = result_prediction  # pos 6: female mice prediction, from mixed-sex model
     return dict_InputTable
 
 
-# Receives a dictionary object with each row in input table, with their respecti str_ids and gene_names, to be looked up on Indexing_Source - Annotation Datasets
+# Receives a dictionary object with each row in input table, with their respective str_ids and gene_names, to be looked up on Indexing_Source - Annotation Datasets
 # fills out a list of numeric indexes for each row (dictionary item), which can then be used in iloc (faster than loc) on the prediction function
 def update_indexes_list(dict_InputTable):
     df_index_source = pd.read_csv(f'internal_files/input_source/Indexing_Source - Annotation Datasets.tsv', sep='\t', index_col=0)
@@ -259,12 +286,11 @@ def update_indexes_list(dict_InputTable):
         if len(gene_ids) > 0:
             geneids_indexes_list = df_index_source[df_index_source['Protein_Name'].isin(gene_ids)].index.tolist()
         indexes_list = strids_indexes_list + geneids_indexes_list
-        indexes_list = [i for n, i in enumerate(indexes_list) if i not in indexes_list[:n]] #remove duplicates list comprehension
+        indexes_list = [i for n, i in enumerate(indexes_list) if i not in indexes_list[:n]]  # list comprehension for removing duplicates
         dict_InputTable[compound][4] = indexes_list  # pos 4: indexes
     return dict_InputTable
 
 
-# TODO: merge repeating sections of these validation functions into one.
 def validate_str_ids(str_id_list):
     """
     Check for potential malformed str_ids.
@@ -281,9 +307,11 @@ def validate_str_ids(str_id_list):
     stripped_gene_name_array = [s.strip() for s in str_id_array]
 
     for str_id in stripped_gene_name_array:
-        if str_id != "" and str_id[:9] != '9606.ENSP':
-            #warnings.append(f"String ID '{str_id}' does not have human protein preamble (9606.ENSP).")
-            warnings.append(f"Warning: String ID '{str_id}' not recognized. A full list of human protein identifiers is available for download in the Data page.")
+        if 'NO TARGETS FOUND' not in str_id:
+            if str_id != "" and str_id[:9] != '9606.ENSP':
+                #warnings.append(f"String ID '{str_id}' does not have human protein preamble (9606.ENSP).")
+                warnings.append(f"Warning: String ID '{str_id}' not recognized. A full list of human protein identifiers is available for download in the Data page.")
+
     return stripped_gene_name_array, warnings
 
 
@@ -295,8 +323,9 @@ def validate_gene_names(gene_names_list):
     """
     warnings = []
     gene_names_list = gene_names_list.upper()  # Gene names are always capitalized
-    if '\t' in gene_names_list:
-        warnings.append(f"Gene name not recognized. A full list of human protein identifiers is available for download in the Data page.")
+    if 'NO TARGETS FOUND' not in gene_names_list:
+        if '\t' in gene_names_list:
+            warnings.append(f"Gene name not recognized. A full list of human protein identifiers is available for download in the Data page.")
 
     gene_name_array = gene_names_list.split(',')
     stripped_gene_name_array = [s.strip() for s in gene_name_array]
