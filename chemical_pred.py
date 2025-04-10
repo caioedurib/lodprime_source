@@ -6,6 +6,7 @@ from classify_inputs import check_knownclasslabels
 #link to pcp package github: https://github.com/mcs07/PubChemPy/blob/master/examples/Chemical%20fingerprints%20and%20similarity.ipynb
 # paper link: https://jcheminf.biomedcentral.com/articles/10.1186/s13321-017-0195-1
 from classify_inputs import validate_str_ids
+from util import writelog_chempred
 
 keep_positions_mixedsexds = []
 keep_positions_maleonlyds = []
@@ -123,4 +124,5 @@ def Btn_MakeChemPredictions(targets_list):
             row["detailed_results"] = warning_text
         else:
             row["detailed_results"] = ""
+    writelog_chempred(targets_list)  # add prediction results to log file
     return targets_list

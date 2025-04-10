@@ -3,7 +3,7 @@ from pickle import load
 import numpy as np
 import pandas as pd
 from csv import reader
-
+from util import writelog_targetpred
 
 '''
  - get input objects from HTML form post, they should be comma separated lists
@@ -201,7 +201,6 @@ def get_ensemble_predictions(dict_InputTable):
             result_prediction = 0
             dict_InputTable[rownumber][3].append(f'Warning: entry {dict_InputTable[rownumber][0]} has no valid targets, skipped.')
         else:
-            print(dict_InputTable[rownumber][1])
             result_prediction = 0
             valid_predictions = 5
             if dict_predictions_FAInterPro_Male[rownumber] != -1:
@@ -403,5 +402,6 @@ def Btn_MakeTargetPredictions(targets_list):
             row["detailed_results"] = warning_text
         else:
             row["detailed_results"] = ""
+    writelog_targetpred(targets_list)  # add prediction results to log file
     return targets_list
 

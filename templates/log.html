@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+
+{% block body %}
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-6">
+            <table id="statTable" class="display" style="border: 1px solid black; border-collapse: collapse;">
+                <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Count</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Times Make Prediction was clicked:</td>
+                    <td style="text-align: center">{{ press_counter }}</td>
+                </tr>
+                <tr>
+                    <td>Successful predictions (number of drugs):</td>
+                    <td style="text-align: center">{{ success_counter }}</td>
+                </tr>
+                <tr>
+                    <td>Failed predictions (invalid input):</td>
+                    <td style="text-align: center">{{ failure_counter }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row pt-5">
+        <div class="tsvTitle col-6">
+            Target TSV
+        </div>
+        <div class="tsvTitle col-6">
+            Chemical TSV
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <textarea id="targetCsv" class="csvDisplay">{{ target_csv }}</textarea>
+        </div>
+        <div class="col-6">
+            <textarea id="chemCsv" class="csvDisplay">{{ chem_csv }}</textarea>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
