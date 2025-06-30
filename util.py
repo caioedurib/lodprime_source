@@ -25,7 +25,7 @@ if password == 'REPLACEME':
 def writelog(pred_type, output):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     log_line = {'timestamp': timestamp, 'pred_type': pred_type, 'output': output}
-    print(json.dumps(log_line))
+    # print(json.dumps(log_line))
     with open('internal_files/log.json', 'a+') as log_file:
         log_file.write(json.dumps(log_line))
         log_file.write('\n')
@@ -38,18 +38,7 @@ def writelog_targetpred(targets_list):
             result_status = "Success"
         else:
             result_status = "Failed"
-        compound = row["compound"]
-        target_number = row["target_number"]
-        m_prediction = row["m_prediction"]
-        f_prediction = row["f_prediction"]
-
-        result.append({
-            'compound': compound,
-            'target_number': int(target_number),
-            'm_prediction': int(m_prediction),
-            'f_prediction': int(f_prediction),
-            'result_status': result_status
-        })
+        result.append({'result_status': result_status})
     if len(result) != 0:
         writelog('target_pred', result)
 
@@ -57,21 +46,11 @@ def writelog_targetpred(targets_list):
 def writelog_chempred(targets_list):
     result = []
     for row in targets_list:
-        if row["cid"] != -1:
+        if row["compound"] != "Not found.":
             result_status = "Success"
         else:
             result_status = "Failed"
-        compound = row["compound"]
-        cid = row["cid"]
-        m_prediction = row["m_prediction"]
-        f_prediction = row["f_prediction"]
-        result.append({
-            'compound': compound,
-            'cid': int(cid),
-            'm_prediction': int(m_prediction),
-            'f_prediction': int(f_prediction),
-            'result_status': result_status
-        })
+        result.append({'result_status': result_status})
     if len(result) != 0:
         writelog('chemical_pred', result)
 
