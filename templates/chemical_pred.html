@@ -112,7 +112,7 @@
             <label for="file-selector" class="btn btn-success inputpagebtn">Load From File</label>
             <input type="file" style="display:none" id="file-selector" onchange="ChemInputTable_LoadFromFile(this)">
             <button class="btn btn-success inputpagebtn ml-5" onclick="ChemInputTable_ClearTable()">Clear Table</button> <br>
-            <button class="btn btn-success inputpagebtn mt-2" onclick="ChemInputTable_MakePredictions()">Make Predictions</button>
+            <button class="btn btn-success inputpagebtn mt-2" onclick="ChemInputTable_MakePredictions('{{prefix}}')">Make Predictions</button>
         </div>
 </div>
 

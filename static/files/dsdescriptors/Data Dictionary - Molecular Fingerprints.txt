@@ -1,5 +1,4 @@
-PubChem Substructure Fingerprint
-V1.3							   http://pubchem.ncbi.nlm.nih.gov
+PubChem Substructure Fingerprint V1.3  (original source: http://pubchem.ncbi.nlm.nih.gov)
 
 The PubChem System generates a binary substructure fingerprint for 
 chemical structures.  These fingerprints are used by PubChem for 

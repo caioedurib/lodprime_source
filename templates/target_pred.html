@@ -51,7 +51,7 @@
             <ul>
                 <li>Click the + button on the input table below to create new lines.</li>
                 <li>For each line, fill in the required information (compound name and its human protein targets) about the compounds you want predictions for.</li>
-                <li><b>The compound name information may be of a single compound or a semicolon-separated list of compounds (not comma, as some compounds have commas in their names).</b></li>
+                <li><b>Inputting multiple compound names in a semicolon-separated list and clicking the Autofill button will result in an instance that combines the targets it finds each compound in the list. Note that, although this allows for testing predictions for combinations of compounds, our models were trained with only single compound data.</b></li>
                 <li>The 'Autofill' button reads the compound names and tries to retrieve their targets from DrugBank, if the drug name is recognized (a "Not found" message appears in the target fields otherwise). Warning: this will remove data previously included in the targets fieds.</li>
                 <li>Protein targets may be represented by their STRING Target IDs (e.g.: 9606.ENSP00000345659) or by their names (e.g.: CA7, for the same protein). Any field can be left blank.</li>
                 <li>Our models are trained on annotations from human proteins, so the inputs must use human protein targets.</li>
@@ -124,7 +124,7 @@
             <input type="file" style="display:none" id="file-selector" onchange="InputTable_LoadFromFile(this)">
             <button class="btn btn-success inputpagebtn ml-5" onclick="InputTable_AutofillTargets()">Autofill Targets</button>
             <button class="btn btn-success inputpagebtn ml-5" onclick="InputTable_ClearTable()">Clear Table</button> <br>
-            <button class="btn btn-success inputpagebtn mt-2" onclick="InputTable_MakePredictions()">Make Predictions</button>
+            <button class="btn btn-success inputpagebtn mt-2" onclick="InputTable_MakePredictions('{{prefix}}')">Make Predictions</button>
         </div>
 </div>
 

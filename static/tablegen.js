@@ -126,7 +126,7 @@ function InputTable_AutofillEmpty(){
 
 
 // Send data to python to get predictions.
-function InputTable_MakePredictions(){
+function InputTable_MakePredictions(prefix){
 
     // Autofill any "empty" lines.
     InputTable_AutofillEmpty();
@@ -134,7 +134,6 @@ function InputTable_MakePredictions(){
    // Select table as DataTable instance, convert data to array (deep copy)
    let table = $('#table_input').DataTable();
    let tableJSON = convertTableJSON(table);
-    // TODO: Reveal spinner here
    // Send AJAX request, append returned html to the page.
    $.post(window.location, { targets_list: tableJSON}, function(data) {
         result = JSON.parse(data);
@@ -156,9 +155,12 @@ function InputTable_MakePredictions(){
                 printdetailedResults += result[i]["detailed_results"] +'<br>';
             }
         }
-        // TODO: Hide spinner here
         printdetailedResults += "</b>"
         resultTable += "</table>";
+        resultTable += "<br><b>Note</b>: The outputs are the probabilities for each compound's association with mouse longevity. <i>Values above 50% are positive classifications</i>, with values closer to 100% indicating a stronger association.";
+        resultTable += "The male and female prediction models are different, as discussed in the additional details section of our <a href=";
+        resultTable += prefix;
+        resultTable +="/help/>Help</a> page.<br>In summary, male-mice prediction models have higher predictive accuracy, as we had enough data to train models from male-only examples. Female-mice predictions are made from models trained with mixed-sex data while setting the sex variable as female for the instances generated from the input.";
         $("#result").html(resultTable);
         $("#detailed_results").html(printdetailedResults);
        $('#Btn_DetailedPredictionsFile').prop("hidden", false)
@@ -345,11 +347,11 @@ function ChemInputTable_LoadFromFile(fileInput) {
 
 
 // Send data to python to get predictions.
-function ChemInputTable_MakePredictions(){
+function ChemInputTable_MakePredictions(prefix){
+    console.log(prefix);
    // Select table as DataTable instance, convert data to array (deep copy)
    let table = $('#table_cheminput').DataTable();
    let tableJSON = ChemconvertTableJSON(table);
-    // TODO: Reveal spinner here
    // Send AJAX request, append returned html to the page.
    $.post(window.location, { targets_list: tableJSON}, function(data) {
         result = JSON.parse(data);
@@ -369,12 +371,15 @@ function ChemInputTable_MakePredictions(){
                 printdetailedResults += result[i]["detailed_results"] +'<br>';
             }
         }
-        // TODO: Hide spinner here
-        printdetailedResults += "</b>"
+        printdetailedResults += "</b>";
         resultTable += "</table>";
+        resultTable += "<br><b>Note</b>: The outputs are the probabilities for each compound's association with mouse longevity. <i>Values above 50% are positive classifications</i>, with values closer to 100% indicating a stronger association.";
+        resultTable += "The male and female prediction models are different, as discussed in the additional details section of our <a href=";
+        resultTable += prefix;
+        resultTable +="/help/>Help</a> page.<br>In summary, male-mice prediction models have higher predictive accuracy, as we had enough data to train models from male-only examples. Female-mice predictions are made from models trained with mixed-sex data while setting the sex variable as female for the instances generated from the input.";
         $("#result").html(resultTable);
         $("#detailed_results").html(printdetailedResults);
-        $('#Btn_DetailedPredictionsFile').prop("hidden", false)
+        $('#Btn_DetailedPredictionsFile').prop("hidden", false);
    })
 }
 
