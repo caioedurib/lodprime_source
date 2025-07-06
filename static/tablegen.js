@@ -23,6 +23,10 @@ function CreateTable_data(table_id, info_bool, paging_bool, searching_bool) {
     return gen_table;
 }
 
+function focusLastRow() {
+    setTimeout(() => { $('table tbody tr').last().children()[1].click(); }, 100);
+}
+
 // Convert table data into JSON
 function convertTableJSON(table) {
    let tableArray = structuredClone(table.rows().data().toArray());
@@ -53,6 +57,7 @@ function InputTable_ClearTable() {
   table.clear().draw();
   localStorage.removeItem("DataTables_tableData");
   InputTable_AddRow('', '', '');
+  focusLastRow();
 }
 
 // Add a row to the table.
@@ -64,6 +69,11 @@ function InputTable_AddRow(compound, str_ids, gene_names) {
         .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>\
         </svg>'
     table.row.add([removeIcon, compound.toString(), str_ids.toString(), gene_names.toString()]).draw();
+}
+
+function InputTable_AddRowClick() {
+    InputTable_AddRow('', '', '');
+    focusLastRow();
 }
 
 // Gen colour based on prediction result 0-100
@@ -193,14 +203,16 @@ function saveTable() {
 function loadTable() {
     let loadData = localStorage.getItem('DataTables_tableData');
     // Check if it's valid JSON, return empty if not.
-    if(!loadData){
-        return;
+    if(!loadData || loadData == "[]") {
+        InputTable_AddRow('', '', '');
+    } else {
+        let parseData = JSON.parse(loadData);
+        for ( i = 0; i < parseData.length; i++) {
+            row = parseData[i];
+            InputTable_AddRow(row.compound, row.str_ids, row.gene_names)
+        }
     }
-    let parseData = JSON.parse(loadData);
-    for ( i = 0; i < parseData.length; i++) {
-        row = parseData[i];
-        InputTable_AddRow(row.compound, row.str_ids, row.gene_names)
-    }
+    focusLastRow();
 }
 
 function InputTable_LoadFromFile(fileInput) {
@@ -273,7 +285,7 @@ function ChemconvertTableJSON(table) {
 function ChemInputTable_RemoveRow(delRow) {
   let table = $('#table_cheminput').DataTable();
   table.row(delRow).remove().draw();
-  saveTable();
+  ChemsaveTable();
 }
 
 // Clear the whole table and local data
@@ -282,6 +294,7 @@ function ChemInputTable_ClearTable() {
   table.clear().draw();
   localStorage.removeItem("DataTables_chemtableData");
   ChemInputTable_AddRow('', '');
+  focusLastRow();
 }
 
 // Add a row to the table.
@@ -293,6 +306,11 @@ function ChemInputTable_AddRow(compound, cid) {
         .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"/>\
         </svg>'
     table.row.add([removeIcon, compound.toString(), cid.toString()]).draw();
+}
+
+function ChemInputTable_AddRowClick() {
+    ChemInputTable_AddRow('', '', '');
+    focusLastRow();
 }
 
 
@@ -307,14 +325,16 @@ function ChemsaveTable() {
 function ChemloadTable() {
     let loadData = localStorage.getItem('DataTables_chemtableData');
     // Check if it's valid JSON, return empty if not.
-    if(!loadData){
-        return;
+    if(!loadData || loadData == "[]"){
+        ChemInputTable_AddRow('', '');
+    } else {
+        let parseData = JSON.parse(loadData);
+        for ( i = 0; i < parseData.length; i++) {
+            row = parseData[i];
+            ChemInputTable_AddRow(row.compound, row.cid)
+        }
     }
-    let parseData = JSON.parse(loadData);
-    for ( i = 0; i < parseData.length; i++) {
-        row = parseData[i];
-        ChemInputTable_AddRow(row.compound, row.cid)
-    }
+    focusLastRow();
 }
 
 function ChemInputTable_LoadFromFile(fileInput) {
