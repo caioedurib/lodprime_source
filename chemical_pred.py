@@ -91,7 +91,9 @@ def Btn_MakeChemPredictions(targets_list):
             except:
                 compound_cid = -1
         try:
-            searched_compound_name = pcp.get_compounds(identifier={compound_cid}, namespace='cid')[0].iupac_name
+            compound_cid_from_name = pcp.get_compounds(compound_cid, 'cid')[0]
+            # Try searching for the synonym first, only using IUPAC name if it does not exist
+            searched_compound_name = compound_cid_from_name.synonyms[0] if compound_cid_from_name.synonyms else compound_cid_from_name.iupac_name
         except:
             searched_compound_name = "Not found."
 

@@ -46,7 +46,6 @@ def removeInvalidInstances(df):
     return df
 
 
-# TODO: check columns of input datasets to make sure features and class are correctly placed/removed
 def load_dataset(path, fixed_sex):
     df = pd.read_csv(path, na_values='?', sep='\t', encoding='unicode_escape', index_col=0)
     #remove possible header features not used in internal code
@@ -119,7 +118,6 @@ if __name__ == "__main__":
 '''
     NOTE: Inputs will NOT have a sex features in male-only models, and when using mixed-sex models we only need to generate F instances (M predictions should come from male-only models)
 Changes agreeded uppon during meeting with Aleksey on 06/06/24:
-    - No need for home page, straight to input (I disagree. To check with Alex) 
     - Load targets from DrugBank file, user's input of drug name should be enough to autocomplete targets
     - Use DrugBank synonym's file to get the correct drug's code/targets
         - recommending pubchemid from name
