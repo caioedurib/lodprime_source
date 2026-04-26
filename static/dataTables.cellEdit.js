@@ -101,35 +101,47 @@ jQuery.fn.dataTable.Api.register('MakeCellsEditable()', function (settings) {
         table = null;
     }
 
-    if (table != null) {
-        // On cell click
+     if (table != null) {
+        // On cell click (keep for fallback/manual use)
         $(table.body()).on('click', 'td', function () {
 
             var currentColumnIndex = table.cell(this).index().column;
 
-            // DETERMINE WHAT COLUMNS CAN BE EDITED
             if ((settings.columns && settings.columns.indexOf(currentColumnIndex) > -1) || (!settings.columns)) {
                 var row = table.row($(this).parents('tr'));
                 editableCellsRow = row;
 
                 var cell = table.cell(this).node();
                 var oldValue = table.cell(this).data();
-                // Sanitize value
                 oldValue = sanitizeCellValue(oldValue);
 
-                // Show input
-                if (!$(cell).find('input').length && !$(cell).find('select').length && !$(cell).find('textarea').length) {
-                    // Input CSS
+                if (!$(cell).find('input, select, textarea').length) {
                     var input = getInputHtml(currentColumnIndex, settings, oldValue);
                     $(cell).html(input.html);
+
                     if (input.focus) {
                         $('#ejbeatycelledit').focus();
                     }
                 }
             }
         });
-    }
+        $(table.body()).find('td').each(function () {
 
+            var currentColumnIndex = table.cell(this).index().column;
+
+            if ((settings.columns && settings.columns.indexOf(currentColumnIndex) > -1) || (!settings.columns)) {
+
+                var cell = table.cell(this).node();
+                var oldValue = table.cell(this).data();
+                oldValue = sanitizeCellValue(oldValue);
+
+                if (!$(cell).find('input, select, textarea').length) {
+                    var input = getInputHtml(currentColumnIndex, settings, oldValue);
+                    $(cell).html(input.html);
+                }
+            }
+        });
+    }
 });
 
 function getInputHtml(currentColumnIndex, settings, oldValue) {
