@@ -77,8 +77,11 @@ jQuery.fn.dataTable.Api.register('MakeCellsEditable()', function (settings) {
             // Get current page
             var currentPageIndex = table.page.info().page;
 
-            //Redraw table
+            //Redraw table (changed to single-click switching)
+            setTimeout(function() {
             table.page(currentPageIndex).draw(false);
+            }, 0);
+
         },
         // CANCEL
         cancelEditableCell: function (callingElement) {
@@ -214,7 +217,9 @@ function getInputHtml(currentColumnIndex, settings, oldValue) {
             input.html = startWrapperHtml + "<input id='ejbeatycelledit' class='" + inputCss + "' value='" + oldValue + "'" + (listenToKeys ? " onkeyup='if(event.keyCode==13) {$(this).updateEditableCell(this);} else if (event.keyCode===27) {$(this).cancelEditableCell(this);}'" : "") + "></input>&nbsp;<a href='javascript:void(0);' class='" + confirmCss + "' onclick='$(this).updateEditableCell(this)'>Confirm</a> <a href='javascript:void(0);' class='" + cancelCss + "' onclick='$(this).cancelEditableCell(this)'>Cancel</a>" + endWrapperHtml;
             break;
         case "textarea":
-            input.html = startWrapperHtml + "<textarea id='ejbeatycelledit' class='" + inputCss + "'  onfocusout='$(this).updateEditableCell(this)' >"+oldValue+"</textarea>" + endWrapperHtml;
+            // removed onfocusout='$(this).updateEditableCell(this) to allow single-click switching
+            //input.html = startWrapperHtml + "<textarea id='ejbeatycelledit' class='" + inputCss + "'  onfocusout='$(this).updateEditableCell(this)' >"+oldValue+"</textarea>" + endWrapperHtml;
+            input.html = startWrapperHtml + "<textarea id='ejbeatycelledit' class='" + inputCss +">"+oldValue+"</textarea>" + endWrapperHtml;
             break;
         case "textarea-confirm":
             input.html = startWrapperHtml + "<textarea id='ejbeatycelledit' class='" + inputCss + "'>"+oldValue+"</textarea><a href='javascript:void(0);' class='" + confirmCss + "' onclick='$(this).updateEditableCell(this)'>Confirm</a> <a href='javascript:void(0);' class='" + cancelCss + "' onclick='$(this).cancelEditableCell(this)'>Cancel</a>" + endWrapperHtml;
@@ -222,8 +227,9 @@ function getInputHtml(currentColumnIndex, settings, oldValue) {
 	case "number-confirm" :
 	    input.html = startWrapperHtml + "<input id='ejbeatycelledit' type='number' class='" + inputCss + "' value='"+oldValue+"'" + (listenToKeys ? " onkeyup='if(event.keyCode==13) {$(this).updateEditableCell(this);} else if (event.keyCode===27) {$(this).cancelEditableCell(this);}'" : "") + "></input>&nbsp;<a href='javascript:void(0);' class='" + confirmCss + "' onclick='$(this).updateEditableCell(this)'>Confirm</a> <a href='javascript:void(0);' class='" + cancelCss + "' onclick='$(this).cancelEditableCell(this)'>Cancel</a>" + endWrapperHtml;
 	    break;
-        default: // text input
-            input.html = startWrapperHtml + "<input id='ejbeatycelledit' class='" + inputCss + "' onfocusout='$(this).updateEditableCell(this)' value='" + oldValue + "'></input>" + endWrapperHtml;
+        default: // text input - removed onfocusout='$(this).updateEditableCell(this) to allow single-click switching
+            //input.html = startWrapperHtml + "<input id='ejbeatycelledit' class='" + inputCss + "' onfocusout='$(this).updateEditableCell(this)' value='" + oldValue + "'></input>" + endWrapperHtml;
+            input.html = startWrapperHtml + "<input id='ejbeatycelledit' class='" + inputCss +">"+oldValue + "'></input>" + endWrapperHtml;
             break;
     }
     return input;
